@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Awesome Offensive OneLiners">
+  <rect width="64" height="64" rx="12" fill="#0b0f14"/>
+  <path d="M15 20l13 12-13 12" fill="none" stroke="#22d3ee" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M34 44h15" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+</svg>

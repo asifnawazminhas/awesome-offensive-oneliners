@@ -1,60 +1,96 @@
+<div class="ol-hero" markdown>
+
+<div class="ol-eyebrow">$ one command at a time</div>
+
 # Awesome Offensive OneLiners
 
-A practical collection of one-line commands for penetration testing, Active Directory, red teaming, web security and offensive security operations.
+A practical collection of copyable one-line commands for penetration testing, Active Directory, red teaming, web security and offensive security operations.
+
+<div class="ol-actions">
+<a class="ol-button primary" href="active-directory/">Browse commands</a>
+<a class="ol-button" href="https://github.com/asifnawazminhas/awesome-offensive-oneliners" target="_blank" rel="noopener">View on GitHub</a>
+</div>
+
+</div>
+
+<div class="ol-stats">
+  <div class="ol-stat"><strong>8</strong><span>major sections</span></div>
+  <div class="ol-stat"><strong>30+</strong><span>focused pages</span></div>
+  <div class="ol-stat"><strong>100+</strong><span>practical commands</span></div>
+  <div class="ol-stat"><strong>/</strong><span>press to search</span></div>
+</div>
+
+## Jump in
 
 <div class="grid cards" markdown>
 
--   :material-microsoft-windows:{ .lg .middle } **Active Directory**
+-   :material-domain:{ .lg .middle } **Active Directory**
 
     ---
 
-    Enumeration, Kerberos, delegation, AD CS, lateral movement and domain operations.
+    Enumeration, Kerberos, delegation, AD CS and BloodHound.
 
--   :material-powershell:{ .lg .middle } **Windows**
+    [:octicons-arrow-right-24: Open section](active-directory/)
+
+-   :material-microsoft-windows:{ .lg .middle } **Windows**
 
     ---
 
-    PowerShell, services, registry, Defender, AppLocker, WDAC and privilege escalation.
+    Enumeration, application control, services, registry and PowerShell.
+
+    [:octicons-arrow-right-24: Open section](windows/)
 
 -   :material-linux:{ .lg .middle } **Linux**
 
     ---
 
-    Enumeration, networking, files, processes and privilege escalation.
+    Enumeration, privilege escalation, networking and file operations.
+
+    [:octicons-arrow-right-24: Open section](linux/)
 
 -   :material-web:{ .lg .middle } **Web**
 
     ---
 
-    Reconnaissance, HTTP testing, APIs, authentication and common web vulnerabilities.
+    Recon, authentication, APIs and injection testing.
+
+    [:octicons-arrow-right-24: Open section](web/)
 
 -   :material-radar:{ .lg .middle } **Recon**
 
     ---
 
-    DNS, subdomains, ports, services, content discovery and OSINT.
+    DNS, subdomains, HTTP discovery and Nmap.
+
+    [:octicons-arrow-right-24: Open section](recon/)
 
 -   :material-target:{ .lg .middle } **Red Team**
 
     ---
 
-    Discovery, execution, persistence, credential access, lateral movement and C2 operations.
+    Discovery, execution, lateral movement and tunneling.
+
+    [:octicons-arrow-right-24: Open section](red-team/)
 
 -   :material-key:{ .lg .middle } **Credentials**
 
     ---
 
-    Kerberos, NTLM, hashes, password cracking, DPAPI and credential testing.
+    Kerberos, hashes, NTLM and DPAPI.
+
+    [:octicons-arrow-right-24: Open section](credentials/)
 
 -   :material-tools:{ .lg .middle } **Tools**
 
     ---
 
-    Nmap, NetExec, Impacket, PowerView, Rubeus, Certipy, BloodHound and more.
+    NetExec, Impacket, PowerView, Rubeus, Certipy, BloodHound, curl and jq.
+
+    [:octicons-arrow-right-24: Open section](tools/)
 
 </div>
 
-## Quick example
+## Quick examples
 
 ### Find constrained delegation
 
@@ -62,21 +98,23 @@ A practical collection of one-line commands for penetration testing, Active Dire
 Get-DomainComputer -TrustedToAuth -Properties DnsHostName,msDS-AllowedToDelegateTo
 ```
 
-**Tool:** PowerView  
-**Platform:** Windows  
-**Category:** Active Directory  
-**Tags:** Kerberos, Delegation, Enumeration
+**Tool:** PowerView · **Platform:** Windows · **Tags:** Kerberos, Delegation, Enumeration
 
-## Project goal
+### Discover live web services
 
-The goal of Awesome Offensive OneLiners is simple:
+```bash
+httpx -l hosts.txt -silent -status-code -title -tech-detect
+```
 
-> One command. One objective. Minimal noise.
+**Tool:** httpx · **Platform:** Linux/macOS · **Tags:** Recon, HTTP, Fingerprinting
 
-The project focuses on commands that are useful during authorised penetration testing, red team exercises, labs and security research.
+### Enumerate SMB hosts with NetExec
 
-## Repository
+```bash
+nxc smb <CIDR> --gen-relay-list relay.txt
+```
 
-The source code and content are maintained in:
+**Tool:** NetExec · **Platform:** Linux · **Tags:** SMB, Discovery, Relay
 
-[awesome-offensive-oneliners](https://github.com/asifnawazminhas/awesome-offensive-oneliners){ target="_blank" rel="noopener" }
+!!! note "Project principle"
+    One command. One objective. Minimal noise. Replace placeholders such as `<TARGET>`, `<DOMAIN>`, `<USER>` and `<PASSWORD>` before use.
