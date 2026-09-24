@@ -1,0 +1,3 @@
+Markdown pages: 66
+H2 entries: 273
+Literal icon syntax files: 0

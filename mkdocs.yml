@@ -89,11 +89,17 @@ nav:
   - Home: index.md
   - Active Directory:
       - Overview: active-directory/index.md
-      - Enumeration: active-directory/enumeration.md
+      - Domain Discovery: active-directory/domain-discovery.md
+      - Users & Groups: active-directory/users-groups.md
+      - Computers & DCs: active-directory/computers-dcs.md
+      - SMB, Shares & Sessions: active-directory/smb-shares-sessions.md
       - Kerberos: active-directory/kerberos.md
       - Delegation: active-directory/delegation.md
+      - ACLs, GPOs & Trusts: active-directory/acls-gpo-trusts.md
       - AD CS: active-directory/adcs.md
       - BloodHound: active-directory/bloodhound.md
+      - LAPS & gMSA: active-directory/laps-gmsa.md
+      - LDAP & Native: active-directory/ldap-native.md
   - Windows:
       - Overview: windows/index.md
       - Enumeration: windows/enumeration.md
@@ -107,15 +113,28 @@ nav:
       - Networking & Files: linux/networking-files.md
   - Web:
       - Overview: web/index.md
-      - Recon: web/recon.md
+      - VHosts & Content: web/vhosts-content.md
+      - Parameters: web/parameters.md
+      - Technologies: web/technologies.md
+      - Popular Software: web/products.md
       - Authentication: web/authentication.md
-      - APIs: web/api.md
+      - APIs & GraphQL: web/api-graphql.md
+      - XSS: web/xss.md
       - Injection: web/injection.md
+      - SSRF & SSTI: web/ssrf-ssti.md
+      - JWT & OAuth/OIDC: web/jwt-oauth.md
+      - CORS, CSRF & Headers: web/cors-csrf-headers.md
   - Recon:
       - Overview: recon/index.md
-      - DNS & Subdomains: recon/dns-subdomains.md
-      - HTTP & Content: recon/http-content.md
-      - Nmap: recon/nmap.md
+      - Passive Subdomains: recon/passive-subdomains.md
+      - DNS Resolution: recon/dns-resolution.md
+      - Permutations: recon/permutations.md
+      - HTTP Probing: recon/http-probing.md
+      - Ports & Services: recon/ports-services.md
+      - Historical URLs: recon/urls-history.md
+      - JavaScript: recon/javascript.md
+      - Shodan: recon/shodan.md
+      - Pipelines: recon/pipelines.md
   - Red Team:
       - Overview: red-team/index.md
       - Discovery: red-team/discovery.md
@@ -130,7 +149,12 @@ nav:
   - Tools:
       - Overview: tools/index.md
       - NetExec: tools/netexec.md
+      - PowerView: tools/powerview.md
+      - Subfinder & Amass: tools/subfinder-amass.md
+      - ffuf & Gobuster: tools/ffuf-gobuster.md
+      - httpx & Katana: tools/httpx-katana.md
+      - Nuclei: tools/nuclei.md
       - Impacket: tools/impacket.md
-      - PowerView & Rubeus: tools/powerview-rubeus.md
+      - Rubeus: tools/powerview-rubeus.md
       - Certipy & BloodHound: tools/certipy-bloodhound.md
       - curl & jq: tools/curl-jq.md

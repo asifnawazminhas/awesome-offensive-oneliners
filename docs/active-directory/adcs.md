@@ -1,44 +1,58 @@
 # Active Directory Certificate Services
 
-Discovery and certificate workflow one-liners for AD CS assessments.
+Discover certificate services, templates and common AD CS exposure.
 
-### Discover certificate authorities
+<div class="ol-section-kicker"><span>AD</span></div>
 
-```bash
-certipy find -u <USER>@<DOMAIN> -p <PASSWORD> -dc-ip <DC_IP>
-```
-
-**Tool:** Certipy · **Platform:** Linux · **Tags:** AD CS, Discovery
-
-### Find vulnerable templates
+## Certipy find
 
 ```bash
-certipy find -u <USER>@<DOMAIN> -p <PASSWORD> -dc-ip <DC_IP> -vulnerable -stdout
+certipy find -u '<USER>@<DOMAIN>' -p '<PASSWORD>' -dc-ip <DC_IP>
 ```
 
-**Tool:** Certipy · **Platform:** Linux · **Tags:** AD CS, Templates
+**Tool:** Certipy · **Platform:** Linux/macOS
 
-### Export BloodHound-ready AD CS data
+
+## Certipy vulnerable templates
 
 ```bash
-certipy find -u <USER>@<DOMAIN> -p <PASSWORD> -dc-ip <DC_IP> -bloodhound
+certipy find -u '<USER>@<DOMAIN>' -p '<PASSWORD>' -dc-ip <DC_IP> -vulnerable
 ```
 
-**Tool:** Certipy · **Platform:** Linux · **Tags:** AD CS, BloodHound
+**Tool:** Certipy · **Platform:** Linux/macOS
 
-### Request certificate
+
+## Certipy JSON output
 
 ```bash
-certipy req -u <USER>@<DOMAIN> -p <PASSWORD> -ca <CA_NAME> -template <TEMPLATE> -dc-ip <DC_IP>
+certipy find -u '<USER>@<DOMAIN>' -p '<PASSWORD>' -dc-ip <DC_IP> -json
 ```
 
-**Tool:** Certipy · **Platform:** Linux · **Tags:** AD CS, Certificate
+**Tool:** Certipy · **Platform:** Linux/macOS
 
-### Authenticate with PFX
 
-```bash
-certipy auth -pfx <CERTIFICATE>.pfx -dc-ip <DC_IP>
+## Certify enumerate
+
+```cmd
+Certify.exe find
 ```
 
-**Tool:** Certipy · **Platform:** Linux · **Tags:** AD CS, PKINIT
+**Tool:** Certify · **Platform:** Windows
 
+
+## Certify vulnerable templates
+
+```cmd
+Certify.exe find /vulnerable
+```
+
+**Tool:** Certify · **Platform:** Windows
+
+
+## PowerShell enterprise CAs
+
+```powershell
+Get-ChildItem Cert:\LocalMachine\CA | Select Subject,Thumbprint
+```
+
+**Tool:** PowerShell · **Platform:** Windows

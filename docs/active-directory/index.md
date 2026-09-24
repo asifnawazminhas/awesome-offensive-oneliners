@@ -1,54 +1,19 @@
----
-hide:
-  - toc
----
-
 # Active Directory
 
-Fast commands for domain enumeration, Kerberos, delegation, AD CS and graph-based analysis.
+AD discovery and attack-path one-liners with NetExec, PowerView, Impacket, Certipy and native fallbacks.
 
-<div class="ol-section-kicker"><span>AD</span><strong>32</strong> commands · 5 focused pages</div>
+<div class="ol-section-kicker"><span>AD</span></div>
 
-<div class="grid cards ol-section-native" markdown>
-
--   :material-account-search:{ .lg .middle } **Enumeration** · `10 commands`
-
-    ---
-
-    Users, groups, computers, trusts and domain discovery.
-
-    [:octicons-arrow-right-24: Open Enumeration](enumeration/)
-
--   :material-ticket-account:{ .lg .middle } **Kerberos** · `8 commands`
-
-    ---
-
-    SPNs, tickets, roasting and Kerberos-focused checks.
-
-    [:octicons-arrow-right-24: Open Kerberos](kerberos/)
-
--   :material-arrow-decision:{ .lg .middle } **Delegation** · `5 commands`
-
-    ---
-
-    Constrained, unconstrained and resource-based delegation.
-
-    [:octicons-arrow-right-24: Open Delegation](delegation/)
-
--   :material-certificate:{ .lg .middle } **AD CS** · `5 commands`
-
-    ---
-
-    Certificate Services discovery and common assessment workflows.
-
-    [:octicons-arrow-right-24: Open AD CS](adcs/)
-
--   :material-graph-outline:{ .lg .middle } **BloodHound** · `4 commands`
-
-    ---
-
-    Collection and graph-analysis launch commands.
-
-    [:octicons-arrow-right-24: Open BloodHound](bloodhound/)
-
+<div class="ol-mini-grid">
+<div class="ol-mini-card"><strong><a href="domain-discovery/">Domain discovery</a></strong><span>8 commands · domain, DCs and policy</span></div>
+<div class="ol-mini-card"><strong><a href="users-groups/">Users & groups</a></strong><span>9 commands · accounts, groups and memberships</span></div>
+<div class="ol-mini-card"><strong><a href="computers-dcs/">Computers & DCs</a></strong><span>6 commands · hosts, OS and controller discovery</span></div>
+<div class="ol-mini-card"><strong><a href="smb-shares-sessions/">SMB, shares & sessions</a></strong><span>8 commands · NetExec, smbclient and PowerView</span></div>
+<div class="ol-mini-card"><strong><a href="kerberos/">Kerberos</a></strong><span>10 commands · SPNs, roasting and tickets</span></div>
+<div class="ol-mini-card"><strong><a href="delegation/">Delegation</a></strong><span>6 commands · unconstrained, constrained and RBCD</span></div>
+<div class="ol-mini-card"><strong><a href="acls-gpo-trusts/">ACLs, GPOs & trusts</a></strong><span>8 commands · relationship discovery</span></div>
+<div class="ol-mini-card"><strong><a href="adcs/">AD CS</a></strong><span>6 commands · Certipy and Certify</span></div>
+<div class="ol-mini-card"><strong><a href="bloodhound/">BloodHound</a></strong><span>5 commands · Linux and Windows collection</span></div>
+<div class="ol-mini-card"><strong><a href="laps-gmsa/">LAPS & gMSA</a></strong><span>4 commands · managed secrets discovery</span></div>
+<div class="ol-mini-card"><strong><a href="ldap-native/">LDAP & native</a></strong><span>5 commands · fallback enumeration</span></div>
 </div>

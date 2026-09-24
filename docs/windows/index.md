@@ -1,46 +1,12 @@
----
-hide:
-  - toc
----
-
 # Windows
 
-One-liners for host discovery, application control checks, services, registry and PowerShell.
+Host-focused one-liners for Windows discovery, services, registry, PowerShell and application control.
 
-<div class="ol-section-kicker"><span>WIN</span><strong>26</strong> commands · 4 focused pages</div>
+<div class="ol-section-kicker"><span>WIN</span></div>
 
-<div class="grid cards ol-section-native" markdown>
-
--   :material-magnify:{ .lg .middle } **Enumeration** · `8 commands`
-
-    ---
-
-    Host, user, process and environment discovery.
-
-    [:octicons-arrow-right-24: Open Enumeration](enumeration/)
-
--   :material-shield-lock-outline:{ .lg .middle } **App Control** · `7 commands`
-
-    ---
-
-    AppLocker, WDAC and execution-control checks.
-
-    [:octicons-arrow-right-24: Open App Control](app-control/)
-
--   :material-cog-outline:{ .lg .middle } **Services & Registry** · `5 commands`
-
-    ---
-
-    Service and registry inspection one-liners.
-
-    [:octicons-arrow-right-24: Open Services & Registry](services-registry/)
-
--   :material-powershell:{ .lg .middle } **PowerShell** · `6 commands`
-
-    ---
-
-    Useful PowerShell operator commands.
-
-    [:octicons-arrow-right-24: Open PowerShell](powershell/)
-
+<div class="ol-mini-grid">
+<div class="ol-mini-card"><strong><a href="enumeration/">Enumeration</a></strong><span>8 commands · host, user, process and environment discovery</span></div>
+<div class="ol-mini-card"><strong><a href="app-control/">App Control</a></strong><span>7 commands · AppLocker, WDAC and execution-control checks</span></div>
+<div class="ol-mini-card"><strong><a href="services-registry/">Services & Registry</a></strong><span>5 commands · service and registry inspection</span></div>
+<div class="ol-mini-card"><strong><a href="powershell/">PowerShell</a></strong><span>6 commands · useful operator one-liners</span></div>
 </div>

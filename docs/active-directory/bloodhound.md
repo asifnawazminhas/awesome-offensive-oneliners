@@ -1,36 +1,49 @@
-# BloodHound
+# BloodHound collection
 
-Collection one-liners for BloodHound-oriented analysis.
+Collect graph data quickly from Linux or Windows.
 
-### Collect default BloodHound data
+<div class="ol-section-kicker"><span>AD</span></div>
+
+## BloodHound.py collection
 
 ```bash
-bloodhound-python -u <USER> -p <PASSWORD> -d <DOMAIN> -ns <DC_IP> -c All
+bloodhound-python -u <USER> -p '<PASSWORD>' -d <DOMAIN> -ns <DC_IP> -c All
 ```
 
-**Tool:** bloodhound-python · **Platform:** Linux · **Tags:** BloodHound, Collection
+**Tool:** bloodhound-python · **Platform:** Linux/macOS
 
-### Collect with SharpHound
 
-```powershell
+## BloodHound.py DC-only collection
+
+```bash
+bloodhound-python -u <USER> -p '<PASSWORD>' -d <DOMAIN> -ns <DC_IP> -c DCOnly
+```
+
+**Tool:** bloodhound-python · **Platform:** Linux/macOS
+
+
+## SharpHound all collection
+
+```cmd
 SharpHound.exe -c All --zipfilename bloodhound.zip
 ```
 
-**Tool:** SharpHound · **Platform:** Windows · **Tags:** BloodHound, Collection
+**Tool:** SharpHound · **Platform:** Windows
 
-### Collect DC-only data
 
-```powershell
+## SharpHound domain-controller only
+
+```cmd
 SharpHound.exe -c DCOnly --zipfilename dconly.zip
 ```
 
-**Tool:** SharpHound · **Platform:** Windows · **Tags:** BloodHound, Collection
+**Tool:** SharpHound · **Platform:** Windows
 
-### BloodHound CE collector
 
-```bash
-bloodhound-ce-python -u <USER> -p <PASSWORD> -d <DOMAIN> -ns <DC_IP> -c All
+## SharpHound loop collection
+
+```cmd
+SharpHound.exe -c Session --Loop --LoopDuration 00:30:00 --LoopInterval 00:01:00
 ```
 
-**Tool:** BloodHound CE Python · **Platform:** Linux · **Tags:** BloodHound, Collection
-
+**Tool:** SharpHound · **Platform:** Windows

@@ -1,52 +1,58 @@
-# Web Authentication
+# Authentication and sessions
 
-Authentication and token inspection one-liners.
+Fast checks around login flows, cookies, headers and sessions.
 
-### Basic auth request
+<div class="ol-section-kicker"><span>WEB</span></div>
 
-```bash
-curl -sk -u <USER>:<PASSWORD> https://<TARGET>/<PATH>
-```
-
-**Tool:** curl · **Platform:** Linux/macOS · **Tags:** Authentication, Basic Auth
-
-### Bearer token request
+## Inspect response cookies
 
 ```bash
-curl -sk -H "Authorization: Bearer <TOKEN>" https://<TARGET>/<PATH>
+curl -skI https://<TARGET>/login | grep -i set-cookie
 ```
 
-**Tool:** curl · **Platform:** Linux/macOS · **Tags:** Authentication, Bearer
+**Tool:** curl · **Platform:** Cross-platform
 
-### Cookie-authenticated request
+
+## Follow login redirects
 
 ```bash
-curl -sk -H "Cookie: <NAME>=<VALUE>" https://<TARGET>/<PATH>
+curl -skIL https://<TARGET>/login | grep -Ei '^(HTTP/|location:|set-cookie:)'
 ```
 
-**Tool:** curl · **Platform:** Linux/macOS · **Tags:** Authentication, Cookie
+**Tool:** curl · **Platform:** Cross-platform
 
-### OIDC discovery
+
+## POST form login
 
 ```bash
-curl -sk https://<TARGET>/.well-known/openid-configuration | jq
+curl -sk -c cookies.txt -X POST https://<TARGET>/login -d 'username=<USER>&password=<PASSWORD>'
 ```
 
-**Tool:** curl + jq · **Platform:** Linux/macOS · **Tags:** OIDC, Discovery
+**Tool:** curl · **Platform:** Cross-platform
 
-### JWKS endpoint
+
+## Reuse session cookie
 
 ```bash
-curl -sk https://<TARGET>/.well-known/jwks.json | jq
+curl -skb cookies.txt https://<TARGET>/account
 ```
 
-**Tool:** curl + jq · **Platform:** Linux/macOS · **Tags:** JWT, JWKS
+**Tool:** curl · **Platform:** Cross-platform
 
-### Decode JWT payload
+
+## Check security headers
 
 ```bash
-python3 -c "import base64,json,sys; p=sys.argv[1].split('.')[1]; print(json.dumps(json.loads(base64.urlsafe_b64decode(p+'='*(-len(p)%4))),indent=2))" <JWT>
+curl -skI https://<TARGET> | grep -Ei 'strict-transport-security|content-security-policy|x-frame-options|x-content-type-options|referrer-policy'
 ```
 
-**Tool:** Python · **Platform:** Linux/macOS · **Tags:** JWT, Decode
+**Tool:** curl · **Platform:** Cross-platform
 
+
+## Compare authenticated and unauthenticated status
+
+```bash
+for c in "" "-b cookies.txt"; do eval curl -sk -o /dev/null -w '%{http_code} %{size_download}\n' $c https://<TARGET>/admin; done
+```
+
+**Tool:** curl · **Platform:** Linux/macOS

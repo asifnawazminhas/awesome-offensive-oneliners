@@ -1,38 +1,11 @@
----
-hide:
-  - toc
----
-
 # Linux
 
-One-liners for host enumeration, privilege escalation checks, networking and file operations.
+Host-focused one-liners for enumeration, privilege escalation checks, networking and files.
 
-<div class="ol-section-kicker"><span>LNX</span><strong>20</strong> commands · 3 focused pages</div>
+<div class="ol-section-kicker"><span>LNX</span></div>
 
-<div class="grid cards ol-section-native" markdown>
-
--   :material-magnify:{ .lg .middle } **Enumeration** · `8 commands`
-
-    ---
-
-    Host, process, user and environment discovery.
-
-    [:octicons-arrow-right-24: Open Enumeration](enumeration/)
-
--   :material-arrow-up-bold-hexagon-outline:{ .lg .middle } **Privilege Escalation** · `6 commands`
-
-    ---
-
-    Fast checks for common local escalation paths.
-
-    [:octicons-arrow-right-24: Open Privilege Escalation](privilege-escalation/)
-
--   :material-lan:{ .lg .middle } **Networking & Files** · `6 commands`
-
-    ---
-
-    Sockets, transfers, files and networking helpers.
-
-    [:octicons-arrow-right-24: Open Networking & Files](networking-files/)
-
+<div class="ol-mini-grid">
+<div class="ol-mini-card"><strong><a href="enumeration/">Enumeration</a></strong><span>8 commands · users, processes, services and environment</span></div>
+<div class="ol-mini-card"><strong><a href="privilege-escalation/">Privilege Escalation</a></strong><span>6 commands · sudo, SUID, capabilities and writable paths</span></div>
+<div class="ol-mini-card"><strong><a href="networking-files/">Networking & Files</a></strong><span>6 commands · listeners, routes, transfers and file search</span></div>
 </div>

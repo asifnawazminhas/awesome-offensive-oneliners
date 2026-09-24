@@ -1,44 +1,58 @@
 # Delegation
 
-Quick checks for Kerberos delegation configurations.
+Find unconstrained, constrained and resource-based delegation configuration.
 
-### Constrained delegation
+<div class="ol-section-kicker"><span>AD</span></div>
+
+## PowerView unconstrained computers
+
+```powershell
+Get-DomainComputer -Unconstrained | Select dnshostname,useraccountcontrol
+```
+
+**Tool:** PowerView · **Platform:** Windows
+
+
+## PowerView constrained delegation
 
 ```powershell
 Get-DomainComputer -TrustedToAuth -Properties DnsHostName,msDS-AllowedToDelegateTo
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** Delegation, Kerberos
+**Tool:** PowerView · **Platform:** Windows
 
-### Unconstrained delegation
 
-```powershell
-Get-DomainComputer -Unconstrained | Select-Object dnshostname,useraccountcontrol
-```
-
-**Tool:** PowerView · **Platform:** Windows · **Tags:** Delegation, Kerberos
-
-### Users trusted for delegation
+## PowerView user constrained delegation
 
 ```powershell
-Get-DomainUser -TrustedToAuth
+Get-DomainUser -TrustedToAuth -Properties samaccountname,msDS-AllowedToDelegateTo
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** Delegation, Users
+**Tool:** PowerView · **Platform:** Windows
 
-### RBCD attribute search
+
+## PowerView RBCD targets
 
 ```powershell
-Get-DomainComputer -LDAPFilter "(msDS-AllowedToActOnBehalfOfOtherIdentity=*)" -Properties dnshostname,msDS-AllowedToActOnBehalfOfOtherIdentity
+Get-DomainComputer -LDAPFilter '(msDS-AllowedToActOnBehalfOfOtherIdentity=*)' -Properties dnshostname,msDS-AllowedToActOnBehalfOfOtherIdentity
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** RBCD, Delegation
+**Tool:** PowerView · **Platform:** Windows
 
-### NetExec delegation module
+
+## NetExec trusted-for-delegation
 
 ```bash
-nxc ldap <DC> -u <USER> -p <PASSWORD> -M find-delegation
+nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --trusted-for-delegation
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** Delegation, LDAP
+**Tool:** NetExec · **Platform:** Linux/macOS
 
+
+## LDAP constrained-delegation query
+
+```bash
+ldapsearch -x -H ldap://<DC_IP> -D '<USER>@<DOMAIN>' -w '<PASSWORD>' -b '<BASE_DN>' '(msDS-AllowedToDelegateTo=*)' sAMAccountName msDS-AllowedToDelegateTo
+```
+
+**Tool:** ldapsearch · **Platform:** Linux/macOS

@@ -1,68 +1,112 @@
 # NetExec
 
-Common NetExec one-liners across SMB, LDAP, WinRM and MSSQL.
+Fast NetExec reference grouped around common SMB and LDAP tasks.
 
-### SMB host discovery
+<div class="ol-section-kicker"><span>TOOLS</span></div>
+
+## SMB discovery
 
 ```bash
 nxc smb <CIDR>
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** SMB, Discovery
+**Tool:** NetExec · **Platform:** Linux/macOS
 
-### SMB authenticated check
 
-```bash
-nxc smb <CIDR> -u <USER> -p <PASSWORD>
-```
-
-**Tool:** NetExec · **Platform:** Linux · **Tags:** SMB, Authentication
-
-### SMB shares
+## SMB password authentication
 
 ```bash
-nxc smb <HOST> -u <USER> -p <PASSWORD> --shares
+nxc smb <TARGETS> -u <USER> -p '<PASSWORD>'
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** SMB, Shares
+**Tool:** NetExec · **Platform:** Linux/macOS
 
-### SMB sessions
+
+## SMB NTLM authentication
 
 ```bash
-nxc smb <HOST> -u <USER> -p <PASSWORD> --sessions
+nxc smb <TARGETS> -u <USER> -H <HASH>
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** SMB, Sessions
+**Tool:** NetExec · **Platform:** Linux/macOS
 
-### LDAP users
+
+## SMB shares
 
 ```bash
-nxc ldap <DC> -u <USER> -p <PASSWORD> --users
+nxc smb <TARGET> -u <USER> -p '<PASSWORD>' --shares
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** LDAP, Users
+**Tool:** NetExec · **Platform:** Linux/macOS
 
-### LDAP groups
+
+## SMB sessions
 
 ```bash
-nxc ldap <DC> -u <USER> -p <PASSWORD> --groups
+nxc smb <TARGET> -u <USER> -p '<PASSWORD>' --sessions
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** LDAP, Groups
+**Tool:** NetExec · **Platform:** Linux/macOS
 
-### WinRM authentication
+
+## SMB logged-on users
 
 ```bash
-nxc winrm <HOST> -u <USER> -p <PASSWORD>
+nxc smb <TARGET> -u <USER> -p '<PASSWORD>' --loggedon-users
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** WinRM, Authentication
+**Tool:** NetExec · **Platform:** Linux/macOS
 
-### MSSQL authentication
+
+## SMB password policy
 
 ```bash
-nxc mssql <HOST> -u <USER> -p <PASSWORD>
+nxc smb <DC_IP> -u <USER> -p '<PASSWORD>' --pass-pol
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** MSSQL, Authentication
+**Tool:** NetExec · **Platform:** Linux/macOS
 
+
+## LDAP users
+
+```bash
+nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --users
+```
+
+**Tool:** NetExec · **Platform:** Linux/macOS
+
+
+## LDAP groups
+
+```bash
+nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --groups
+```
+
+**Tool:** NetExec · **Platform:** Linux/macOS
+
+
+## LDAP computers
+
+```bash
+nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --computers
+```
+
+**Tool:** NetExec · **Platform:** Linux/macOS
+
+
+## Kerberoast
+
+```bash
+nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --kerberoasting kerberoast.txt
+```
+
+**Tool:** NetExec · **Platform:** Linux/macOS
+
+
+## AS-REP roast
+
+```bash
+nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --asreproast asrep.txt
+```
+
+**Tool:** NetExec · **Platform:** Linux/macOS
