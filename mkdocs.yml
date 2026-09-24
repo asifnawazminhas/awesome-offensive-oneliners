@@ -71,9 +71,9 @@ markdown_extensions:
       custom_checkbox: true
 
 extra_css:
-  - assets/stylesheets/extra.css?v=9
+  - assets/stylesheets/extra.css?v=10
 extra_javascript:
-  - assets/javascripts/extra.js?v=9
+  - assets/javascripts/extra.js?v=10
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -88,7 +88,11 @@ nav:
       - Overview: active-directory/index.md
       - Domain Discovery: active-directory/domain-discovery.md
       - DNS & SPN Discovery: active-directory/dns-spn.md
+      - AD DNS Deep Discovery: active-directory/dns-deep.md
+      - SPN Service Classes: active-directory/spn-service-classes.md
       - Users & Groups: active-directory/users-groups.md
+      - Advanced Group Membership: active-directory/group-membership-advanced.md
+      - Account Hygiene: active-directory/account-hygiene.md
       - Computers & DCs: active-directory/computers-dcs.md
       - SMB, Shares & Sessions: active-directory/smb-shares-sessions.md
       - Local Admin Discovery: active-directory/local-admins.md
@@ -105,10 +109,14 @@ nav:
       - LAPS & gMSA: active-directory/laps-gmsa.md
       - Machine Account Quota: active-directory/maq.md
       - Password Policy: active-directory/password-policy.md
+      - Fine-Grained Password Policies: active-directory/fine-grained-password-policy.md
+      - Deleted Objects: active-directory/deleted-objects.md
       - MSSQL: active-directory/mssql.md
       - WinRM & RDP: active-directory/winrm-rdp.md
       - LDAP Filters: active-directory/ldap-filters.md
+      - LDAP Paging: active-directory/ldap-paging.md
       - NetExec Modules: active-directory/netexec-modules.md
+      - NetExec DB & Workspace: active-directory/netexec-workspace.md
       - LDAP & Native: active-directory/ldap-native.md
   - Windows:
       - Overview: windows/index.md
@@ -126,6 +134,7 @@ nav:
       - AMSI State: windows/amsi-state.md
       - PowerShell Logging: windows/powershell-logging.md
       - App Control: windows/app-control.md
+      - Constrained Language Mode: windows/clm.md
       - Execution Control Validation: windows/execution-control.md
       - LOLBin Discovery: windows/lolbins-discovery.md
       - PowerShell: windows/powershell.md
@@ -157,8 +166,16 @@ nav:
       - Technologies: web/technologies.md
       - Popular Software: web/products.md
       - Authentication: web/authentication.md
+      - Host Header Injection: web/host-header.md
+      - HTTP Parameter Pollution: web/http-parameter-pollution.md
+      - JSON / XML Switching: web/content-type-switching.md
+      - XXE: web/xxe.md
+      - CRLF Injection: web/crlf-injection.md
+      - Browser Headers & Cookies: web/browser-security-headers.md
       - API Authorization: web/api-authz.md
       - APIs & GraphQL: web/api-graphql.md
+      - GraphQL Introspection: web/graphql-advanced.md
+      - SOAP & WSDL: web/soap-wsdl.md
       - WebSockets: web/websockets.md
       - XSS: web/xss.md
       - Prototype Pollution: web/prototype-pollution.md
@@ -190,6 +207,10 @@ nav:
       - Historical URLs: recon/urls-history.md
       - JavaScript: recon/javascript.md
       - Code Search: recon/code-search.md
+      - GitHub & GitLab Code Search: recon/github-code-search.md
+      - Cloud Naming & Buckets: recon/cloud-naming.md
+      - DNS Quality Checks: recon/dns-quality.md
+      - Redirects & Historical JS: recon/redirect-js.md
       - Shodan: recon/shodan.md
       - Pipelines: recon/pipelines.md
   - Red Team:
@@ -202,6 +223,7 @@ nav:
       - Staging & File Transfer: red-team/staging-file-transfer.md
       - Lateral Movement: red-team/lateral-movement.md
       - Tunneling: red-team/tunneling.md
+      - Sliver C2: red-team/sliver.md
   - Credentials:
       - Overview: credentials/index.md
       - Kerberos: credentials/kerberos.md
@@ -230,6 +252,16 @@ nav:
       - kxss: tools/kxss.md
       - httpx & Katana: tools/httpx-katana.md
       - Nuclei: tools/nuclei.md
+      - Sliver: tools/sliver.md
+      - sqlmap: tools/sqlmap.md
+      - wfuzz: tools/wfuzz.md
+      - dirsearch: tools/dirsearch.md
+      - PureDNS: tools/puredns.md
+      - alterx: tools/alterx.md
+      - Masscan: tools/masscan.md
+      - rpcclient: tools/rpcclient.md
+      - Evil-WinRM: tools/evil-winrm.md
+      - OpenSSL: tools/openssl.md
       - Hashcat: tools/hashcat.md
       - John: tools/john.md
       - curl & jq: tools/curl-jq.md

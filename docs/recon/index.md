@@ -24,4 +24,8 @@ Passive and active asset discovery one-liners, from domains to live services and
 <div class="ol-mini-card"><strong><a href="code-search/">Code Search</a></strong><span>5 commands · GitHub and GitLab search</span></div>
 <div class="ol-mini-card"><strong><a href="shodan/">Shodan</a></strong><span>7 commands · host and product searches</span></div>
 <div class="ol-mini-card"><strong><a href="pipelines/">Pipelines</a></strong><span>6 commands · multi-tool recon chains</span></div>
+<div class="ol-mini-card"><strong><a href="github-code-search/">GitHub & GitLab Search</a></strong><span>5 commands · CLI and API code-search pivots</span></div>
+<div class="ol-mini-card"><strong><a href="cloud-naming/">Cloud Naming</a></strong><span>5 commands · bucket and hostname permutations</span></div>
+<div class="ol-mini-card"><strong><a href="dns-quality/">DNS Quality Checks</a></strong><span>5 commands · wildcards and resolver validation</span></div>
+<div class="ol-mini-card"><strong><a href="redirect-js/">Redirects & Historical JS</a></strong><span>5 commands · redirect chains and archived JavaScript</span></div>
 </div>

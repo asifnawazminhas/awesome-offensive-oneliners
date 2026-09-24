@@ -107,4 +107,4 @@ Get-MpPreference | Select-Object AttackSurfaceReductionRules_Ids,AttackSurfaceRe
 
 ---
 
-**Related:** [Overview](./) · [Amsi State](amsi-state.md) · [Defender Asr](defender-asr.md)
+**Related:** [Overview](./) · [Constrained Language Mode](clm.md) · [AMSI State](amsi-state.md) · [Defender & ASR](defender-asr.md)

@@ -46,3 +46,8 @@ mkdocs build --strict
 ## Responsible use
 
 Use these commands only in systems and environments where you have explicit authorization to test.
+
+
+## Recent coverage
+
+Expanded AD DNS/SPN/group/account discovery, modern web parser/header checks, recon quality pipelines, CLM validation, LOLBin coverage, Sliver C2, and additional operator tool references.

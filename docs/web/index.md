@@ -30,4 +30,12 @@ One-liners for web discovery, authorization, modern application stacks and commo
 <div class="ol-mini-card"><strong><a href="cache/">Cache Poisoning & Deception</a></strong><span>5 commands · cache layer and unkeyed input checks</span></div>
 <div class="ol-mini-card"><strong><a href="jwt-oauth/">JWT & OAuth/OIDC</a></strong><span>5 commands · token and discovery metadata</span></div>
 <div class="ol-mini-card"><strong><a href="cors-csrf-headers/">CORS, CSRF & Headers</a></strong><span>5 commands · browser policy checks</span></div>
+<div class="ol-mini-card"><strong><a href="host-header/">Host Header Injection</a></strong><span>5 commands · host-derived routing and link checks</span></div>
+<div class="ol-mini-card"><strong><a href="http-parameter-pollution/">HTTP Parameter Pollution</a></strong><span>5 commands · duplicate-parameter parser checks</span></div>
+<div class="ol-mini-card"><strong><a href="content-type-switching/">JSON / XML Switching</a></strong><span>5 commands · parser and content-type behaviour</span></div>
+<div class="ol-mini-card"><strong><a href="xxe/">XXE</a></strong><span>4 commands · XML external-entity probes</span></div>
+<div class="ol-mini-card"><strong><a href="crlf-injection/">CRLF Injection</a></strong><span>4 commands · response-header injection checks</span></div>
+<div class="ol-mini-card"><strong><a href="browser-security-headers/">Browser Headers & Cookies</a></strong><span>7 commands · CSP, flags and SameSite</span></div>
+<div class="ol-mini-card"><strong><a href="graphql-advanced/">GraphQL Introspection</a></strong><span>5 commands · schema and mutation discovery</span></div>
+<div class="ol-mini-card"><strong><a href="soap-wsdl/">SOAP & WSDL</a></strong><span>5 commands · service and contract discovery</span></div>
 </div>

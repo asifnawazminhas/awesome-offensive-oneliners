@@ -18,8 +18,8 @@ Copyable one-liners for penetration testing, Active Directory, web security, rec
 </div>
 
 <div class="ol-stats">
-<div class="ol-stat"><strong><!-- ONELINER_COUNT -->840+<!-- /ONELINER_COUNT --></strong><span>practical one-liners</span></div>
-<div class="ol-stat"><strong><!-- PAGE_COUNT -->140+<!-- /PAGE_COUNT --></strong><span>focused pages</span></div>
+<div class="ol-stat"><strong><!-- ONELINER_COUNT -->1040+<!-- /ONELINER_COUNT --></strong><span>practical one-liners</span></div>
+<div class="ol-stat"><strong><!-- PAGE_COUNT -->170+<!-- /PAGE_COUNT --></strong><span>focused pages</span></div>
 <div class="ol-stat"><strong>8</strong><span>major sections</span></div>
 <div class="ol-stat"><strong>/</strong><span>instant search</span></div>
 </div>

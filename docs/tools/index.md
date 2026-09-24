@@ -5,7 +5,7 @@ Fast one-liner references for commonly used offensive-security tooling.
 <div class="ol-section-kicker"><span>TOOL</span></div>
 
 <div class="ol-mini-grid">
-<div class="ol-mini-card"><strong><a href="netexec/">NetExec</a></strong><span>12 commands · SMB, LDAP and protocol enumeration</span></div>
+<div class="ol-mini-card"><strong><a href="netexec/">NetExec</a></strong><span>25 commands · SMB, LDAP and protocol enumeration</span></div>
 <div class="ol-mini-card"><strong><a href="powerview/">PowerView</a></strong><span>11 commands · AD enumeration from PowerShell</span></div>
 <div class="ol-mini-card"><strong><a href="impacket/">Impacket</a></strong><span>7 commands · Kerberos, SMB, secrets and remote administration</span></div>
 <div class="ol-mini-card"><strong><a href="powerview-rubeus/">Rubeus</a></strong><span>6 commands · tickets, roasting and delegation workflows</span></div>
@@ -29,4 +29,14 @@ Fast one-liner references for commonly used offensive-security tooling.
 <div class="ol-mini-card"><strong><a href="hashcat/">Hashcat</a></strong><span>6 commands · hash cracking</span></div>
 <div class="ol-mini-card"><strong><a href="john/">John</a></strong><span>6 commands · hash and archive cracking</span></div>
 <div class="ol-mini-card"><strong><a href="curl-jq/">curl & jq</a></strong><span>6 commands · HTTP and JSON helpers</span></div>
+<div class="ol-mini-card"><strong><a href="sqlmap/">sqlmap</a></strong><span>6 commands · SQL injection automation</span></div>
+<div class="ol-mini-card"><strong><a href="wfuzz/">wfuzz</a></strong><span>5 commands · content, parameter and vhost fuzzing</span></div>
+<div class="ol-mini-card"><strong><a href="dirsearch/">dirsearch</a></strong><span>5 commands · content discovery</span></div>
+<div class="ol-mini-card"><strong><a href="puredns/">PureDNS</a></strong><span>4 commands · resolution and DNS bruteforce</span></div>
+<div class="ol-mini-card"><strong><a href="alterx/">alterx</a></strong><span>4 commands · subdomain permutations</span></div>
+<div class="ol-mini-card"><strong><a href="masscan/">Masscan</a></strong><span>4 commands · high-speed port discovery</span></div>
+<div class="ol-mini-card"><strong><a href="rpcclient/">rpcclient</a></strong><span>5 commands · RPC and SMB enumeration</span></div>
+<div class="ol-mini-card"><strong><a href="evil-winrm/">Evil-WinRM</a></strong><span>4 commands · WinRM client operations</span></div>
+<div class="ol-mini-card"><strong><a href="openssl/">OpenSSL</a></strong><span>5 commands · TLS and certificate inspection</span></div>
+<div class="ol-mini-card"><strong><a href="sliver/">Sliver</a></strong><span>11 commands · C2 listeners and session operations</span></div>
 </div>

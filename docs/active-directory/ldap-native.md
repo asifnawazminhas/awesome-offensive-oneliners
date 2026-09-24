@@ -39,15 +39,6 @@ rpcclient -U '<DOMAIN>/<USER>%<PASSWORD>' <DC_IP> -c enumdomgroups
 
 **Tool:** rpcclient · **Platform:** Linux/macOS · **Context:** Domain user
 
-
-## enum4linux-ng
-
-```bash
-enum4linux-ng -A -u <USER> -p '<PASSWORD>' <DC_IP>
-```
-
-**Tool:** enum4linux-ng · **Platform:** Linux/macOS · **Context:** Domain user
-
 ---
 
 **Related:** [Overview](./) · [Ldap Filters](ldap-filters.md) · [Local Admins](local-admins.md)

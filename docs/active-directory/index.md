@@ -28,5 +28,13 @@ AD discovery and attack-path one-liners with NetExec, PowerView, Impacket, Certi
 <div class="ol-mini-card"><strong><a href="winrm-rdp/">WinRM & RDP</a></strong><span>7 commands · remote management discovery</span></div>
 <div class="ol-mini-card"><strong><a href="ldap-filters/">LDAP Filters</a></strong><span>6 commands · targeted LDAP searches</span></div>
 <div class="ol-mini-card"><strong><a href="netexec-modules/">NetExec Modules</a></strong><span>10 commands · common nxc enumeration</span></div>
-<div class="ol-mini-card"><strong><a href="ldap-native/">LDAP & Native</a></strong><span>5 commands · fallback enumeration</span></div>
+<div class="ol-mini-card"><strong><a href="ldap-native/">LDAP & Native</a></strong><span>4 commands · fallback enumeration</span></div>
+<div class="ol-mini-card"><strong><a href="dns-deep/">AD DNS Deep Discovery</a></strong><span>8 commands · AD-integrated DNS and record discovery</span></div>
+<div class="ol-mini-card"><strong><a href="spn-service-classes/">SPN Service Classes</a></strong><span>7 commands · service-specific SPN discovery</span></div>
+<div class="ol-mini-card"><strong><a href="group-membership-advanced/">Advanced Group Membership</a></strong><span>6 commands · nested groups and foreign principals</span></div>
+<div class="ol-mini-card"><strong><a href="account-hygiene/">Account Hygiene</a></strong><span>7 commands · adminCount, protected and stale accounts</span></div>
+<div class="ol-mini-card"><strong><a href="fine-grained-password-policy/">Fine-Grained Password Policies</a></strong><span>5 commands · PSO and resultant policy checks</span></div>
+<div class="ol-mini-card"><strong><a href="deleted-objects/">Deleted Objects</a></strong><span>4 commands · Recycle Bin and deleted-object visibility</span></div>
+<div class="ol-mini-card"><strong><a href="ldap-paging/">LDAP Paging</a></strong><span>4 commands · large LDAP result sets</span></div>
+<div class="ol-mini-card"><strong><a href="netexec-workspace/">NetExec DB & Workspace</a></strong><span>6 commands · database and export helpers</span></div>
 </div>

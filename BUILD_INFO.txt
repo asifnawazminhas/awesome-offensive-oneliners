@@ -1,17 +1,15 @@
-Awesome Offensive OneLiners - Deep v9
-
-Focus: one-liners first, concise operational context only.
+Awesome Offensive OneLiners - Deep v10
 
 Highlights:
-- 840+ practical one-liners and 140+ focused pages reflected on the homepage.
-- Homepage duplicate H1 removed.
-- Search example chips added for faster discovery.
-- Context metadata added consistently across command entries.
-- Related links added across focused pages for lateral navigation.
-- Long one-liner pages automatically hide noisy right-side TOCs.
-- Tool index descriptions polished for operator-facing language.
-- Context label legend added to conventions.
-- Homepage statistics are recalculated automatically before each GitHub Pages build.
-- Flexible metadata-chip rendering now supports entries with or without Tags.
-- CSS/JS cache-busting bumped to v9.
-- Existing AD, Web, Recon, Windows, Linux, Red Team, Credentials and Tools coverage preserved.
+- 175 focused Markdown content pages counted by homepage stats script
+- 1044 fenced one-liner/code reference blocks before homepage rounding
+- Expanded AD DNS, SPN service classes, nested groups, foreign principals, adminCount, protected users, stale accounts, FGPP, deleted objects, LDAP paging and NetExec helpers
+- Expanded Web coverage for Host header injection, HPP, JSON/XML switching, XXE, CRLF, CSP/cookie/SameSite inspection, GraphQL introspection and SOAP/WSDL
+- Expanded Recon coverage for GitHub/GitLab code search, cloud naming patterns, DNS wildcard/resolver quality, redirect chains and historical JavaScript
+- Expanded Windows CLM checks
+- Expanded LOLBin examples
+- Added Sliver C2 references
+- Added sqlmap, wfuzz, dirsearch, PureDNS, alterx, Masscan, rpcclient, Evil-WinRM, OpenSSL and Sliver tool pages
+- Expanded NetExec reference
+- enum4linux/enum4linux-ng intentionally excluded
+- Automatic section command counts and homepage statistics retained
