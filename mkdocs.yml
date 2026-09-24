@@ -104,6 +104,7 @@ nav:
       - Overview: windows/index.md
       - Enumeration: windows/enumeration.md
       - App Control: windows/app-control.md
+      - Privilege Escalation: windows/privilege-escalation.md
       - Services & Registry: windows/services-registry.md
       - PowerShell: windows/powershell.md
   - Linux:
@@ -113,7 +114,8 @@ nav:
       - Networking & Files: linux/networking-files.md
   - Web:
       - Overview: web/index.md
-      - VHosts & Content: web/vhosts-content.md
+      - VHost Discovery: web/vhosts.md
+      - Content Discovery: web/content-discovery.md
       - Parameters: web/parameters.md
       - Technologies: web/technologies.md
       - Popular Software: web/products.md
@@ -139,6 +141,10 @@ nav:
       - Overview: red-team/index.md
       - Discovery: red-team/discovery.md
       - Execution: red-team/execution.md
+      - Download Cradles: red-team/download-cradles.md
+      - LOLBin & Local Execution: red-team/lolbins.md
+      - Reverse Shells: red-team/reverse-shells.md
+      - Staging & File Transfer: red-team/staging-file-transfer.md
       - Lateral Movement: red-team/lateral-movement.md
       - Tunneling: red-team/tunneling.md
   - Credentials:

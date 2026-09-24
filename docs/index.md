@@ -18,8 +18,8 @@ Copyable one-liners for penetration testing, Active Directory, web security, rec
 </div>
 
 <div class="ol-stats">
-<div class="ol-stat"><strong>270+</strong><span>practical one-liners</span></div>
-<div class="ol-stat"><strong>50+</strong><span>focused pages</span></div>
+<div class="ol-stat"><strong>360+</strong><span>practical one-liners</span></div>
+<div class="ol-stat"><strong>70+</strong><span>focused pages</span></div>
 <div class="ol-stat"><strong>8</strong><span>major sections</span></div>
 <div class="ol-stat"><strong>/</strong><span>instant search</span></div>
 </div>
@@ -29,7 +29,7 @@ Copyable one-liners for penetration testing, Active Directory, web security, rec
 <div class="ol-mini-grid">
 <div class="ol-mini-card"><strong><a href="active-directory/">Active Directory</a></strong><span>NetExec, PowerView, Kerberos, delegation, ACLs, AD CS, BloodHound and more.</span></div>
 <div class="ol-mini-card"><strong><a href="recon/">Recon</a></strong><span>Subfinder, Amass, DNS, HTTP probing, Shodan, URLs, JavaScript and pipelines.</span></div>
-<div class="ol-mini-card"><strong><a href="web/">Web</a></strong><span>Vhosts, content, parameters, technologies, APIs, auth, injection and modern web stacks.</span></div>
+<div class="ol-mini-card"><strong><a href="web/">Web</a></strong><span>VHost discovery, content, parameters, technologies, APIs, auth, injection and modern web stacks.</span></div>
 <div class="ol-mini-card"><strong><a href="tools/">Tools</a></strong><span>Fast references for NetExec, Impacket, ffuf, httpx, nuclei, Rubeus, Certipy and more.</span></div>
 <div class="ol-mini-card"><strong><a href="windows/">Windows</a></strong><span>Enumeration, services, registry, PowerShell, application control and local discovery.</span></div>
 <div class="ol-mini-card"><strong><a href="linux/">Linux</a></strong><span>Host enumeration, networking, files, processes and privilege escalation checks.</span></div>

@@ -1,3 +1,13 @@
-Markdown pages: 66
-H2 entries: 273
-Literal icon syntax files: 0
+Awesome Offensive OneLiners - Deep v7
+
+Focus: one-liners first, concise operational context only.
+
+Highlights:
+- Dedicated VHost Discovery page with ffuf, Gobuster, wfuzz and curl validation.
+- Separate Content Discovery page.
+- Expanded parameter discovery and fuzzing with Arjun, ParamSpider, x8, ffuf, wfuzz, gau, waybackurls, gf, qsreplace and kxss.
+- Expanded subdomain enumeration with Subfinder API sources, Amass active/passive, Assetfinder, Findomain, crt.sh and PureDNS.
+- Expanded Windows privilege-escalation enumeration.
+- Expanded Linux privilege-escalation enumeration.
+- Expanded AppLocker/WDAC/CLM/Code Integrity checks.
+- Existing AD, red-team, tooling and technology-fingerprinting content preserved.
