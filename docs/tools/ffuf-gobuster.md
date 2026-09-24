@@ -10,7 +10,7 @@ High-frequency discovery commands for content, parameters and virtual hosts.
 ffuf -w <WORDLIST> -u https://<TARGET>/FUZZ -ac
 ```
 
-**Tool:** ffuf · **Platform:** Linux/macOS
+**Tool:** ffuf · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## ffuf vhosts
@@ -19,7 +19,7 @@ ffuf -w <WORDLIST> -u https://<TARGET>/FUZZ -ac
 ffuf -w <WORDLIST> -u https://<TARGET>/ -H "Host: FUZZ.<DOMAIN>" -ac
 ```
 
-**Tool:** ffuf · **Platform:** Linux/macOS
+**Tool:** ffuf · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## ffuf GET parameters
@@ -28,7 +28,7 @@ ffuf -w <WORDLIST> -u https://<TARGET>/ -H "Host: FUZZ.<DOMAIN>" -ac
 ffuf -w <WORDLIST> -u 'https://<TARGET>/page?FUZZ=test' -ac
 ```
 
-**Tool:** ffuf · **Platform:** Linux/macOS
+**Tool:** ffuf · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## Gobuster directories
@@ -37,7 +37,7 @@ ffuf -w <WORDLIST> -u 'https://<TARGET>/page?FUZZ=test' -ac
 gobuster dir -u https://<TARGET> -w <WORDLIST> -k
 ```
 
-**Tool:** gobuster · **Platform:** Linux/macOS
+**Tool:** gobuster · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## Gobuster vhosts
@@ -46,4 +46,8 @@ gobuster dir -u https://<TARGET> -w <WORDLIST> -k
 gobuster vhost -u https://<TARGET> -w <WORDLIST> --append-domain
 ```
 
-**Tool:** gobuster · **Platform:** Linux/macOS
+**Tool:** gobuster · **Platform:** Linux/macOS · **Context:** No auth
+
+---
+
+**Related:** [Overview](./) · [Feroxbuster](feroxbuster.md) · [Gau](gau.md)

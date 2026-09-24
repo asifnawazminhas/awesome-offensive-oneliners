@@ -8,7 +8,7 @@ Small HTTP and JSON one-liners that are useful everywhere.
 curl -sk https://<TARGET>/api | jq
 ```
 
-**Tool:** curl + jq · **Platform:** Linux/macOS · **Tags:** HTTP, JSON
+**Tool:** curl + jq · **Platform:** Linux/macOS · **Tags:** HTTP, JSON · **Context:** User
 
 ### POST JSON
 
@@ -16,7 +16,7 @@ curl -sk https://<TARGET>/api | jq
 curl -sk -X POST https://<TARGET>/api -H "Content-Type: application/json" -d '{"key":"value"}' | jq
 ```
 
-**Tool:** curl + jq · **Platform:** Linux/macOS · **Tags:** HTTP, JSON
+**Tool:** curl + jq · **Platform:** Linux/macOS · **Tags:** HTTP, JSON · **Context:** User
 
 ### Extract JSON field
 
@@ -24,7 +24,7 @@ curl -sk -X POST https://<TARGET>/api -H "Content-Type: application/json" -d '{"
 curl -sk https://<TARGET>/api | jq -r '.items[].name'
 ```
 
-**Tool:** curl + jq · **Platform:** Linux/macOS · **Tags:** JSON, Parsing
+**Tool:** curl + jq · **Platform:** Linux/macOS · **Tags:** JSON, Parsing · **Context:** User
 
 ### Save response headers
 
@@ -32,7 +32,7 @@ curl -sk https://<TARGET>/api | jq -r '.items[].name'
 curl -skD headers.txt https://<TARGET>/ -o body.html
 ```
 
-**Tool:** curl · **Platform:** Linux/macOS · **Tags:** HTTP, Headers
+**Tool:** curl · **Platform:** Linux/macOS · **Tags:** HTTP, Headers · **Context:** User
 
 ### Send custom Host header
 
@@ -40,7 +40,7 @@ curl -skD headers.txt https://<TARGET>/ -o body.html
 curl -ski https://<IP>/ -H "Host: <HOSTNAME>"
 ```
 
-**Tool:** curl · **Platform:** Linux/macOS · **Tags:** HTTP, Host Header
+**Tool:** curl · **Platform:** Linux/macOS · **Tags:** HTTP, Host Header · **Context:** User
 
 ### Send Referer header
 
@@ -48,5 +48,8 @@ curl -ski https://<IP>/ -H "Host: <HOSTNAME>"
 curl -ski https://<TARGET>/ -H "Referer: https://example.com/"
 ```
 
-**Tool:** curl · **Platform:** Linux/macOS · **Tags:** HTTP, Referer
+**Tool:** curl · **Platform:** Linux/macOS · **Tags:** HTTP, Referer · **Context:** User
 
+---
+
+**Related:** [Overview](./) · [Certipy Bloodhound](certipy-bloodhound.md) · [Dnsx](dnsx.md)

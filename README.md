@@ -4,6 +4,13 @@ A practical collection of copyable one-line commands for penetration testing, Ac
 
 **Website:** https://oneliners.asifnawazminhas.com/
 
+## Project at a glance
+
+- 840+ practical one-liners
+- 140+ focused pages
+- 8 major sections
+- Search-first navigation with context labels and related-command links
+
 ## Philosophy
 
 **One command. One objective. Minimal noise.**

@@ -8,7 +8,7 @@ Fast Linux host enumeration commands.
 id
 ```
 
-**Tool:** Linux · **Platform:** Linux · **Tags:** Identity, Enumeration
+**Tool:** Linux · **Platform:** Linux · **Tags:** Identity, Enumeration · **Context:** User
 
 ### Kernel and OS
 
@@ -16,7 +16,7 @@ id
 uname -a && cat /etc/os-release
 ```
 
-**Tool:** Linux · **Platform:** Linux · **Tags:** OS, Enumeration
+**Tool:** Linux · **Platform:** Linux · **Tags:** OS, Enumeration · **Context:** User
 
 ### Listening sockets
 
@@ -24,7 +24,7 @@ uname -a && cat /etc/os-release
 ss -lntup
 ```
 
-**Tool:** iproute2 · **Platform:** Linux · **Tags:** Network, Ports
+**Tool:** iproute2 · **Platform:** Linux · **Tags:** Network, Ports · **Context:** User
 
 ### Network interfaces
 
@@ -32,7 +32,7 @@ ss -lntup
 ip -br addr
 ```
 
-**Tool:** iproute2 · **Platform:** Linux · **Tags:** Network, Interfaces
+**Tool:** iproute2 · **Platform:** Linux · **Tags:** Network, Interfaces · **Context:** User
 
 ### Routing table
 
@@ -40,7 +40,7 @@ ip -br addr
 ip route
 ```
 
-**Tool:** iproute2 · **Platform:** Linux · **Tags:** Network, Routes
+**Tool:** iproute2 · **Platform:** Linux · **Tags:** Network, Routes · **Context:** User
 
 ### Sudo permissions
 
@@ -48,7 +48,7 @@ ip route
 sudo -l
 ```
 
-**Tool:** sudo · **Platform:** Linux · **Tags:** Privilege Escalation, sudo
+**Tool:** sudo · **Platform:** Linux · **Tags:** Privilege Escalation, sudo · **Context:** User
 
 ### SUID files
 
@@ -56,7 +56,7 @@ sudo -l
 find / -perm -4000 -type f 2>/dev/null
 ```
 
-**Tool:** find · **Platform:** Linux · **Tags:** Privilege Escalation, SUID
+**Tool:** find · **Platform:** Linux · **Tags:** Privilege Escalation, SUID · **Context:** User
 
 ### Cron jobs
 
@@ -64,5 +64,8 @@ find / -perm -4000 -type f 2>/dev/null
 grep -R "" /etc/cron* 2>/dev/null | head -n 100
 ```
 
-**Tool:** grep · **Platform:** Linux · **Tags:** Cron, Enumeration
+**Tool:** grep · **Platform:** Linux · **Tags:** Cron, Enumeration · **Context:** User
 
+---
+
+**Related:** [Overview](./) · [Cron](cron.md) · [Networking Files](networking-files.md)

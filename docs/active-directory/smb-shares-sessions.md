@@ -10,7 +10,7 @@ Find reachable SMB hosts, shares, sessions and logged-on users.
 nxc smb <CIDR>
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
 
 
 ## NetExec authenticated SMB sweep
@@ -19,7 +19,7 @@ nxc smb <CIDR>
 nxc smb <CIDR> -u <USER> -p '<PASSWORD>'
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
 
 
 ## NetExec pass-the-hash validation
@@ -28,7 +28,7 @@ nxc smb <CIDR> -u <USER> -p '<PASSWORD>'
 nxc smb <CIDR> -u <USER> -H <HASH>
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
 
 
 ## NetExec shares
@@ -37,7 +37,7 @@ nxc smb <CIDR> -u <USER> -H <HASH>
 nxc smb <TARGET> -u <USER> -p '<PASSWORD>' --shares
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
 
 
 ## NetExec sessions
@@ -46,7 +46,7 @@ nxc smb <TARGET> -u <USER> -p '<PASSWORD>' --shares
 nxc smb <TARGET> -u <USER> -p '<PASSWORD>' --sessions
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
 
 
 ## NetExec logged-on users
@@ -55,7 +55,7 @@ nxc smb <TARGET> -u <USER> -p '<PASSWORD>' --sessions
 nxc smb <TARGET> -u <USER> -p '<PASSWORD>' --loggedon-users
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
 
 
 ## smbclient list shares
@@ -64,7 +64,7 @@ nxc smb <TARGET> -u <USER> -p '<PASSWORD>' --loggedon-users
 smbclient -L //<TARGET>/ -U '<DOMAIN>/<USER>%<PASSWORD>'
 ```
 
-**Tool:** smbclient · **Platform:** Linux/macOS
+**Tool:** smbclient · **Platform:** Linux/macOS · **Context:** Domain user
 
 
 ## PowerView shares
@@ -73,4 +73,8 @@ smbclient -L //<TARGET>/ -U '<DOMAIN>/<USER>%<PASSWORD>'
 Get-DomainComputer | Get-NetShare
 ```
 
-**Tool:** PowerView · **Platform:** Windows
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
+
+---
+
+**Related:** [Overview](./) · [Sid History](sid-history.md) · [Trusts](trusts.md)

@@ -10,7 +10,7 @@ Small pipelines that move from one discovery stage to the next.
 subfinder -d <DOMAIN> -silent | dnsx -silent | httpx -silent -status-code -title -tech-detect
 ```
 
-**Tool:** subfinder + dnsx + httpx · **Platform:** Linux/macOS · **Tags:** Pipeline
+**Tool:** subfinder + dnsx + httpx · **Platform:** Linux/macOS · **Tags:** Pipeline · **Context:** No auth
 
 
 ## Domain to open web ports
@@ -19,7 +19,7 @@ subfinder -d <DOMAIN> -silent | dnsx -silent | httpx -silent -status-code -title
 subfinder -d <DOMAIN> -silent | naabu -top-ports 1000 -silent | httpx -silent -status-code -title
 ```
 
-**Tool:** subfinder + naabu + httpx · **Platform:** Linux/macOS · **Tags:** Pipeline
+**Tool:** subfinder + naabu + httpx · **Platform:** Linux/macOS · **Tags:** Pipeline · **Context:** No auth
 
 
 ## Live sites to URLs
@@ -28,7 +28,7 @@ subfinder -d <DOMAIN> -silent | naabu -top-ports 1000 -silent | httpx -silent -s
 subfinder -d <DOMAIN> -silent | httpx -silent | katana -silent | uro | sort -u
 ```
 
-**Tool:** subfinder + httpx + katana + uro · **Platform:** Linux/macOS · **Tags:** Pipeline
+**Tool:** subfinder + httpx + katana + uro · **Platform:** Linux/macOS · **Tags:** Pipeline · **Context:** No auth
 
 
 ## URLs to parameterized candidates
@@ -37,7 +37,7 @@ subfinder -d <DOMAIN> -silent | httpx -silent | katana -silent | uro | sort -u
 katana -u <URL> -silent | uro | grep '=' | sort -u
 ```
 
-**Tool:** katana + uro · **Platform:** Linux/macOS
+**Tool:** katana + uro · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## URLs to reflected parameter candidates
@@ -46,7 +46,7 @@ katana -u <URL> -silent | uro | grep '=' | sort -u
 cat urls.txt | grep '=' | uro | kxss
 ```
 
-**Tool:** uro + kxss · **Platform:** Linux/macOS
+**Tool:** uro + kxss · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## Subdomains to screenshots
@@ -55,4 +55,8 @@ cat urls.txt | grep '=' | uro | kxss
 subfinder -d <DOMAIN> -silent | httpx -silent -screenshot -system-chrome
 ```
 
-**Tool:** subfinder + httpx · **Platform:** Linux/macOS
+**Tool:** subfinder + httpx · **Platform:** Linux/macOS · **Context:** No auth
+
+---
+
+**Related:** [Overview](./) · [Permutations](permutations.md) · [Ports Services](ports-services.md)

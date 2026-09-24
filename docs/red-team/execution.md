@@ -8,7 +8,7 @@ Remote execution one-liners for authorised environments.
 Invoke-Command -ComputerName <HOST> -ScriptBlock { hostname; whoami }
 ```
 
-**Tool:** PowerShell Remoting · **Platform:** Windows · **Tags:** Execution, WinRM
+**Tool:** PowerShell Remoting · **Platform:** Windows · **Tags:** Execution, WinRM · **Context:** User
 
 ### WinRM with evil-winrm
 
@@ -16,7 +16,7 @@ Invoke-Command -ComputerName <HOST> -ScriptBlock { hostname; whoami }
 evil-winrm -i <HOST> -u <USER> -p <PASSWORD>
 ```
 
-**Tool:** Evil-WinRM · **Platform:** Linux · **Tags:** WinRM, Remote Access
+**Tool:** Evil-WinRM · **Platform:** Linux · **Tags:** WinRM, Remote Access · **Context:** User
 
 ### WMI command with Impacket
 
@@ -24,7 +24,7 @@ evil-winrm -i <HOST> -u <USER> -p <PASSWORD>
 wmiexec.py <DOMAIN>/<USER>:<PASSWORD>@<HOST>
 ```
 
-**Tool:** Impacket · **Platform:** Linux · **Tags:** WMI, Remote Execution
+**Tool:** Impacket · **Platform:** Linux · **Tags:** WMI, Remote Execution · **Context:** User
 
 ### SMB exec with Impacket
 
@@ -32,7 +32,7 @@ wmiexec.py <DOMAIN>/<USER>:<PASSWORD>@<HOST>
 psexec.py <DOMAIN>/<USER>:<PASSWORD>@<HOST>
 ```
 
-**Tool:** Impacket · **Platform:** Linux · **Tags:** SMB, Remote Execution
+**Tool:** Impacket · **Platform:** Linux · **Tags:** SMB, Remote Execution · **Context:** User
 
 ### NetExec command execution
 
@@ -40,5 +40,8 @@ psexec.py <DOMAIN>/<USER>:<PASSWORD>@<HOST>
 nxc smb <HOST> -u <USER> -p <PASSWORD> -x "whoami"
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** SMB, Execution
+**Tool:** NetExec · **Platform:** Linux · **Tags:** SMB, Execution · **Context:** User
 
+---
+
+**Related:** [Overview](./) · [Download Cradles](download-cradles.md) · [Lateral Movement](lateral-movement.md)

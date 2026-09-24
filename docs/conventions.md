@@ -17,3 +17,18 @@ Use these placeholders consistently before copying a command.
 | `<URL>` | complete URL |
 
 Keep replacements shell-safe and quote values when required.
+
+
+## Context labels
+
+Context labels are intentionally compact and describe the typical access level needed to use a one-liner.
+
+| Label | Meaning |
+|---|---|
+| `No auth` | no authenticated session required |
+| `User` | standard local, application or shell user context |
+| `Domain user` | authenticated Active Directory domain account |
+| `Local admin` | local administrator privileges required |
+| `SYSTEM` | Windows SYSTEM context required |
+
+Treat these as quick operator hints, not guarantees: product configuration and delegated rights can change what is available.

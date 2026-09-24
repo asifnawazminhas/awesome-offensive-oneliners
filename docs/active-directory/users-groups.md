@@ -19,7 +19,7 @@ Get-DomainUser | Select-Object samaccountname
 Get-DomainUser -LDAPFilter '(!(userAccountControl:1.2.840.113556.1.4.803:=2))' | Select samaccountname
 ```
 
-**Tool:** PowerView · **Platform:** Windows
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
 
 
 ## PowerView privileged descriptions
@@ -28,7 +28,7 @@ Get-DomainUser -LDAPFilter '(!(userAccountControl:1.2.840.113556.1.4.803:=2))' |
 Get-DomainUser -Properties samaccountname,description | Where-Object description | Format-Table -Auto
 ```
 
-**Tool:** PowerView · **Platform:** Windows
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
 
 
 ## NetExec LDAP users
@@ -37,7 +37,7 @@ Get-DomainUser -Properties samaccountname,description | Where-Object description
 nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --users
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
 
 
 ## NetExec LDAP groups
@@ -46,7 +46,7 @@ nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --users
 nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --groups
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
 
 
 ## Impacket GetADUsers
@@ -55,7 +55,7 @@ nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --groups
 GetADUsers.py -all '<DOMAIN>/<USER>:<PASSWORD>' -dc-ip <DC_IP>
 ```
 
-**Tool:** Impacket · **Platform:** Linux/macOS
+**Tool:** Impacket · **Platform:** Linux/macOS · **Context:** Domain user
 
 
 ## Native domain users
@@ -64,7 +64,7 @@ GetADUsers.py -all '<DOMAIN>/<USER>:<PASSWORD>' -dc-ip <DC_IP>
 net user /domain
 ```
 
-**Tool:** net.exe · **Platform:** Windows
+**Tool:** net.exe · **Platform:** Windows · **Context:** Domain user
 
 
 ## Native domain admins
@@ -73,7 +73,7 @@ net user /domain
 net group "Domain Admins" /domain
 ```
 
-**Tool:** net.exe · **Platform:** Windows
+**Tool:** net.exe · **Platform:** Windows · **Context:** Domain user
 
 
 ## PowerView members of a group
@@ -82,4 +82,8 @@ net group "Domain Admins" /domain
 Get-DomainGroupMember -Identity 'Domain Admins' -Recurse
 ```
 
-**Tool:** PowerView · **Platform:** Windows
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
+
+---
+
+**Related:** [Overview](./) · [Trusts](trusts.md) · [Winrm Rdp](winrm-rdp.md)

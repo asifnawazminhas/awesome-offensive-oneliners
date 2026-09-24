@@ -10,7 +10,7 @@ Collect archived and indexed URLs, then normalize them.
 echo <DOMAIN> | waybackurls | sort -u
 ```
 
-**Tool:** waybackurls · **Platform:** Linux/macOS
+**Tool:** waybackurls · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## gau URLs
@@ -19,7 +19,7 @@ echo <DOMAIN> | waybackurls | sort -u
 gau --subs <DOMAIN> | sort -u
 ```
 
-**Tool:** gau · **Platform:** Linux/macOS
+**Tool:** gau · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## Combine and normalize URLs
@@ -28,7 +28,7 @@ gau --subs <DOMAIN> | sort -u
 (echo <DOMAIN> | waybackurls; gau --subs <DOMAIN>) | uro | sort -u > urls.txt
 ```
 
-**Tool:** waybackurls + gau + uro · **Platform:** Linux/macOS · **Tags:** Pipeline
+**Tool:** waybackurls + gau + uro · **Platform:** Linux/macOS · **Tags:** Pipeline · **Context:** No auth
 
 
 ## Keep parameterized URLs
@@ -37,7 +37,7 @@ gau --subs <DOMAIN> | sort -u
 cat urls.txt | grep '=' | uro | sort -u
 ```
 
-**Tool:** grep + uro · **Platform:** Linux/macOS
+**Tool:** grep + uro · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## Keep JavaScript URLs
@@ -46,7 +46,7 @@ cat urls.txt | grep '=' | uro | sort -u
 cat urls.txt | grep -Ei '\.js($|\?)' | sort -u
 ```
 
-**Tool:** grep · **Platform:** Linux/macOS
+**Tool:** grep · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## Extract extensions from URLs
@@ -55,4 +55,8 @@ cat urls.txt | grep -Ei '\.js($|\?)' | sort -u
 cat urls.txt | sed -E 's/.*\.([a-zA-Z0-9]{1,8})([?#].*)?$/\1/' | sort | uniq -c | sort -nr
 ```
 
-**Tool:** sed · **Platform:** Linux/macOS
+**Tool:** sed · **Platform:** Linux/macOS · **Context:** No auth
+
+---
+
+**Related:** [Overview](./) · [Shodan](shodan.md)

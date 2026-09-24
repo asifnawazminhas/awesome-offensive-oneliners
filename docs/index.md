@@ -1,5 +1,3 @@
-# Awesome Offensive OneLiners
-
 <div class="ol-hero" markdown>
 
 <div class="ol-eyebrow">$ one command at a time</div>
@@ -10,6 +8,8 @@ Copyable one-liners for penetration testing, Active Directory, web security, rec
 
 <div class="ol-search-launch" tabindex="0" role="button"><span class="ol-search-icon">⌕</span><span class="ol-search-placeholder">Search commands, tools, techniques...</span><kbd>/</kbd></div>
 
+<div class="ol-search-examples"><span>Try:</span><button type="button" data-ol-search="kerberoast">kerberoast</button><button type="button" data-ol-search="vhost">vhost</button><button type="button" data-ol-search="jwt">jwt</button><button type="button" data-ol-search="subfinder">subfinder</button><button type="button" data-ol-search="wdac">wdac</button><button type="button" data-ol-search="reverse shell">reverse shell</button></div>
+
 <div class="ol-actions">
 <a class="ol-button primary" href="recon/">Browse commands</a>
 <a class="ol-button" href="https://github.com/asifnawazminhas/awesome-offensive-oneliners" target="_blank" rel="noopener">View on GitHub</a>
@@ -18,8 +18,8 @@ Copyable one-liners for penetration testing, Active Directory, web security, rec
 </div>
 
 <div class="ol-stats">
-<div class="ol-stat"><strong>840+</strong><span>practical one-liners</span></div>
-<div class="ol-stat"><strong>140+</strong><span>focused pages</span></div>
+<div class="ol-stat"><strong><!-- ONELINER_COUNT -->840+<!-- /ONELINER_COUNT --></strong><span>practical one-liners</span></div>
+<div class="ol-stat"><strong><!-- PAGE_COUNT -->140+<!-- /PAGE_COUNT --></strong><span>focused pages</span></div>
 <div class="ol-stat"><strong>8</strong><span>major sections</span></div>
 <div class="ol-stat"><strong>/</strong><span>instant search</span></div>
 </div>

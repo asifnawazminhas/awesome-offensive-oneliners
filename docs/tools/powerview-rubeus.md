@@ -8,7 +8,7 @@ Compact reference for common PowerView and Rubeus tasks.
 Get-DomainUser | Select-Object samaccountname
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, Users
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, Users · **Context:** Domain user
 
 ### PowerView computers
 
@@ -16,7 +16,7 @@ Get-DomainUser | Select-Object samaccountname
 Get-DomainComputer | Select-Object dnshostname,operatingsystem
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, Computers
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, Computers · **Context:** Domain user
 
 ### PowerView trusts
 
@@ -24,7 +24,7 @@ Get-DomainComputer | Select-Object dnshostname,operatingsystem
 Get-DomainTrust
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, Trusts
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, Trusts · **Context:** Domain user
 
 ### Rubeus tickets
 
@@ -32,7 +32,7 @@ Get-DomainTrust
 Rubeus.exe triage
 ```
 
-**Tool:** Rubeus · **Platform:** Windows · **Tags:** Kerberos, Tickets
+**Tool:** Rubeus · **Platform:** Windows · **Tags:** Kerberos, Tickets · **Context:** Domain user
 
 ### Rubeus Kerberoast
 
@@ -40,7 +40,7 @@ Rubeus.exe triage
 Rubeus.exe kerberoast /outfile:kerberoast.txt
 ```
 
-**Tool:** Rubeus · **Platform:** Windows · **Tags:** Kerberos, Kerberoast
+**Tool:** Rubeus · **Platform:** Windows · **Tags:** Kerberos, Kerberoast · **Context:** Domain user
 
 ### Rubeus AS-REP roast
 
@@ -48,5 +48,8 @@ Rubeus.exe kerberoast /outfile:kerberoast.txt
 Rubeus.exe asreproast /format:hashcat /outfile:asrep.txt
 ```
 
-**Tool:** Rubeus · **Platform:** Windows · **Tags:** Kerberos, AS-REP
+**Tool:** Rubeus · **Platform:** Windows · **Tags:** Kerberos, AS-REP · **Context:** Domain user
 
+---
+
+**Related:** [Overview](./) · [Nuclei](nuclei.md) · [Powerview](powerview.md)

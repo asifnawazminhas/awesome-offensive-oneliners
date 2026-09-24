@@ -10,7 +10,7 @@ High-value relationship discovery using PowerView and native commands.
 Find-InterestingDomainAcl -ResolveGUIDs
 ```
 
-**Tool:** PowerView · **Platform:** Windows
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
 
 
 ## PowerView target ACL
@@ -19,7 +19,7 @@ Find-InterestingDomainAcl -ResolveGUIDs
 Get-DomainObjectAcl -Identity <OBJECT> -ResolveGUIDs
 ```
 
-**Tool:** PowerView · **Platform:** Windows
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
 
 
 ## PowerView GPO list
@@ -28,7 +28,7 @@ Get-DomainObjectAcl -Identity <OBJECT> -ResolveGUIDs
 Get-DomainGPO | Select displayname,gpcfilesyspath
 ```
 
-**Tool:** PowerView · **Platform:** Windows
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
 
 
 ## PowerView OU GPO links
@@ -37,7 +37,7 @@ Get-DomainGPO | Select displayname,gpcfilesyspath
 Get-DomainOU -Properties name,gplink
 ```
 
-**Tool:** PowerView · **Platform:** Windows
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
 
 
 ## PowerView trusts
@@ -46,7 +46,7 @@ Get-DomainOU -Properties name,gplink
 Get-DomainTrust
 ```
 
-**Tool:** PowerView · **Platform:** Windows
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
 
 
 ## Native domain trusts
@@ -55,7 +55,7 @@ Get-DomainTrust
 nltest /domain_trusts
 ```
 
-**Tool:** nltest · **Platform:** Windows
+**Tool:** nltest · **Platform:** Windows · **Context:** Domain user
 
 
 ## Forest trusts
@@ -64,7 +64,7 @@ nltest /domain_trusts
 Get-ForestTrust
 ```
 
-**Tool:** PowerView · **Platform:** Windows
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
 
 
 ## NetExec LDAP domain trusts
@@ -73,4 +73,8 @@ Get-ForestTrust
 nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --groups | grep -i trust
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
+
+---
+
+**Related:** [Overview](./) · [Acls](acls.md)

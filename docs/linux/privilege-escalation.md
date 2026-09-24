@@ -15,7 +15,7 @@ Fast checks for common local privilege-escalation conditions.
 sudo -l
 ```
 
-**Tool:** sudo · **Platform:** Linux · **Tags:** Sudo, Privileges
+**Tool:** sudo · **Platform:** Linux · **Tags:** Sudo, Privileges · **Context:** User
 
 ## SUID binaries
 
@@ -23,7 +23,7 @@ sudo -l
 find / -perm -4000 -type f 2>/dev/null
 ```
 
-**Tool:** find · **Platform:** Linux · **Tags:** SUID, Privilege Escalation
+**Tool:** find · **Platform:** Linux · **Tags:** SUID, Privilege Escalation · **Context:** User
 
 ## SGID binaries
 
@@ -31,7 +31,7 @@ find / -perm -4000 -type f 2>/dev/null
 find / -perm -2000 -type f 2>/dev/null
 ```
 
-**Tool:** find · **Platform:** Linux · **Tags:** SGID, Privilege Escalation
+**Tool:** find · **Platform:** Linux · **Tags:** SGID, Privilege Escalation · **Context:** User
 
 ## File capabilities
 
@@ -39,7 +39,7 @@ find / -perm -2000 -type f 2>/dev/null
 getcap -r / 2>/dev/null
 ```
 
-**Tool:** getcap · **Platform:** Linux · **Tags:** Capabilities
+**Tool:** getcap · **Platform:** Linux · **Tags:** Capabilities · **Context:** User
 
 ## passwd and shadow permissions
 
@@ -47,7 +47,7 @@ getcap -r / 2>/dev/null
 ls -la /etc/passwd /etc/shadow
 ```
 
-**Tool:** ls · **Platform:** Linux · **Tags:** Credentials, Permissions
+**Tool:** ls · **Platform:** Linux · **Tags:** Credentials, Permissions · **Context:** User
 
 ## Cron overview
 
@@ -55,7 +55,7 @@ ls -la /etc/passwd /etc/shadow
 cat /etc/crontab 2>/dev/null; ls -la /etc/cron.* 2>/dev/null; crontab -l 2>/dev/null
 ```
 
-**Tool:** cron · **Platform:** Linux · **Tags:** Scheduled Jobs
+**Tool:** cron · **Platform:** Linux · **Tags:** Scheduled Jobs · **Context:** User
 
 ## World-writable directories
 
@@ -63,7 +63,7 @@ cat /etc/crontab 2>/dev/null; ls -la /etc/cron.* 2>/dev/null; crontab -l 2>/dev/
 find / -xdev -type d -perm -0002 2>/dev/null
 ```
 
-**Tool:** find · **Platform:** Linux · **Tags:** Writable, Directories
+**Tool:** find · **Platform:** Linux · **Tags:** Writable, Directories · **Context:** User
 
 ## Root-owned files writable by current user
 
@@ -71,7 +71,7 @@ find / -xdev -type d -perm -0002 2>/dev/null
 find / -xdev -user root -writable -type f 2>/dev/null
 ```
 
-**Tool:** find · **Platform:** Linux · **Tags:** Writable, Files
+**Tool:** find · **Platform:** Linux · **Tags:** Writable, Files · **Context:** User
 
 ## Kernel and OS version
 
@@ -79,7 +79,7 @@ find / -xdev -user root -writable -type f 2>/dev/null
 uname -a; cat /etc/os-release
 ```
 
-**Tool:** uname · **Platform:** Linux · **Tags:** Kernel, OS
+**Tool:** uname · **Platform:** Linux · **Tags:** Kernel, OS · **Context:** User
 
 ## NFS exports
 
@@ -87,7 +87,7 @@ uname -a; cat /etc/os-release
 cat /etc/exports 2>/dev/null
 ```
 
-**Tool:** NFS · **Platform:** Linux · **Tags:** NFS, no_root_squash
+**Tool:** NFS · **Platform:** Linux · **Tags:** NFS, no_root_squash · **Context:** User
 
 ## Docker group membership
 
@@ -95,7 +95,7 @@ cat /etc/exports 2>/dev/null
 id | grep -E '\b(docker|lxd)\b'
 ```
 
-**Tool:** id · **Platform:** Linux · **Tags:** Containers, Groups
+**Tool:** id · **Platform:** Linux · **Tags:** Containers, Groups · **Context:** User
 
 ## Root processes
 
@@ -103,7 +103,7 @@ id | grep -E '\b(docker|lxd)\b'
 ps aux | awk '$1=="root"'
 ```
 
-**Tool:** ps + awk · **Platform:** Linux · **Tags:** Processes
+**Tool:** ps + awk · **Platform:** Linux · **Tags:** Processes · **Context:** User
 
 ## Environment and shell history
 
@@ -111,7 +111,7 @@ ps aux | awk '$1=="root"'
 env; tail -n 200 ~/.bash_history 2>/dev/null
 ```
 
-**Tool:** shell · **Platform:** Linux · **Tags:** Environment, History
+**Tool:** shell · **Platform:** Linux · **Tags:** Environment, History · **Context:** User
 
 ## Writable PATH files
 
@@ -119,7 +119,7 @@ env; tail -n 200 ~/.bash_history 2>/dev/null
 IFS=:; for d in $PATH; do find "$d" -maxdepth 1 -type f -writable 2>/dev/null; done
 ```
 
-**Tool:** find · **Platform:** Linux · **Tags:** PATH, Writable
+**Tool:** find · **Platform:** Linux · **Tags:** PATH, Writable · **Context:** User
 
 ## Running systemd services
 
@@ -127,4 +127,8 @@ IFS=:; for d in $PATH; do find "$d" -maxdepth 1 -type f -writable 2>/dev/null; d
 systemctl list-units --type=service --state=running --no-pager
 ```
 
-**Tool:** systemd · **Platform:** Linux · **Tags:** Services
+**Tool:** systemd · **Platform:** Linux · **Tags:** Services · **Context:** User
+
+---
+
+**Related:** [Overview](./) · [Path Hijacking](path-hijacking.md) · [Sudo](sudo.md)

@@ -10,7 +10,7 @@ Resolve, validate and inspect discovered names.
 dnsx -l subdomains.txt -silent -a -resp
 ```
 
-**Tool:** dnsx · **Platform:** Linux/macOS
+**Tool:** dnsx · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## Keep only resolvable names
@@ -19,7 +19,7 @@ dnsx -l subdomains.txt -silent -a -resp
 dnsx -l subdomains.txt -silent > resolved.txt
 ```
 
-**Tool:** dnsx · **Platform:** Linux/macOS
+**Tool:** dnsx · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## Resolve A records
@@ -28,7 +28,7 @@ dnsx -l subdomains.txt -silent > resolved.txt
 while read -r h; do dig +short A "$h" | sed "s#^#$h #"; done < subdomains.txt
 ```
 
-**Tool:** dig · **Platform:** Linux/macOS
+**Tool:** dig · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## Enumerate nameservers
@@ -37,7 +37,7 @@ while read -r h; do dig +short A "$h" | sed "s#^#$h #"; done < subdomains.txt
 dig +short NS <DOMAIN>
 ```
 
-**Tool:** dig · **Platform:** Cross-platform
+**Tool:** dig · **Platform:** Cross-platform · **Context:** No auth
 
 
 ## Enumerate MX records
@@ -46,7 +46,7 @@ dig +short NS <DOMAIN>
 dig +short MX <DOMAIN>
 ```
 
-**Tool:** dig · **Platform:** Cross-platform
+**Tool:** dig · **Platform:** Cross-platform · **Context:** No auth
 
 
 ## Enumerate TXT records
@@ -55,7 +55,7 @@ dig +short MX <DOMAIN>
 dig +short TXT <DOMAIN>
 ```
 
-**Tool:** dig · **Platform:** Cross-platform
+**Tool:** dig · **Platform:** Cross-platform · **Context:** No auth
 
 
 ## Find domain controllers via SRV
@@ -64,7 +64,7 @@ dig +short TXT <DOMAIN>
 dig +short SRV _ldap._tcp.dc._msdcs.<DOMAIN>
 ```
 
-**Tool:** dig · **Platform:** Cross-platform · **Tags:** AD, SRV
+**Tool:** dig · **Platform:** Cross-platform · **Tags:** AD, SRV · **Context:** No auth
 
 
 ## Reverse lookup a network
@@ -73,7 +73,7 @@ dig +short SRV _ldap._tcp.dc._msdcs.<DOMAIN>
 dnsx -l ips.txt -silent -ptr -resp
 ```
 
-**Tool:** dnsx · **Platform:** Linux/macOS
+**Tool:** dnsx · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## Wildcard check
@@ -82,4 +82,8 @@ dnsx -l ips.txt -silent -ptr -resp
 for i in {1..3}; do dig +short "$(openssl rand -hex 6).<DOMAIN>"; done
 ```
 
-**Tool:** dig + openssl · **Platform:** Linux/macOS · **Tags:** Wildcard
+**Tool:** dig + openssl · **Platform:** Linux/macOS · **Tags:** Wildcard · **Context:** No auth
+
+---
+
+**Related:** [Overview](./) · [Code Search](code-search.md) · [Favicon Hunting](favicon-hunting.md)

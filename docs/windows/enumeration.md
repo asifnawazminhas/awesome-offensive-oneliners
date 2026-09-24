@@ -8,7 +8,7 @@ Fast local host enumeration commands.
 whoami /all
 ```
 
-**Tool:** Windows · **Platform:** Windows · **Tags:** Identity, Privileges
+**Tool:** Windows · **Platform:** Windows · **Tags:** Identity, Privileges · **Context:** User
 
 ### OS information
 
@@ -16,7 +16,7 @@ whoami /all
 Get-ComputerInfo | Select-Object WindowsProductName,WindowsVersion,OsBuildNumber,OsArchitecture
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** OS, Enumeration
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** OS, Enumeration · **Context:** User
 
 ### Network configuration
 
@@ -24,7 +24,7 @@ Get-ComputerInfo | Select-Object WindowsProductName,WindowsVersion,OsBuildNumber
 Get-NetIPConfiguration
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** Network, Enumeration
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** Network, Enumeration · **Context:** User
 
 ### Listening TCP ports
 
@@ -32,7 +32,7 @@ Get-NetIPConfiguration
 Get-NetTCPConnection -State Listen | Sort-Object LocalPort | Format-Table -AutoSize
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** Network, Ports
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** Network, Ports · **Context:** User
 
 ### Local administrators
 
@@ -40,7 +40,7 @@ Get-NetTCPConnection -State Listen | Sort-Object LocalPort | Format-Table -AutoS
 Get-LocalGroupMember -Group Administrators
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** Groups, Local Admin
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** Groups, Local Admin · **Context:** User
 
 ### Installed hotfixes
 
@@ -48,7 +48,7 @@ Get-LocalGroupMember -Group Administrators
 Get-HotFix | Sort-Object InstalledOn -Descending
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** Patches, Enumeration
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** Patches, Enumeration · **Context:** User
 
 ### Scheduled tasks
 
@@ -56,7 +56,7 @@ Get-HotFix | Sort-Object InstalledOn -Descending
 Get-ScheduledTask | Where-Object State -ne Disabled | Select-Object TaskName,TaskPath,State
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** Scheduled Tasks
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** Scheduled Tasks · **Context:** Local admin
 
 ### Environment variables
 
@@ -64,5 +64,8 @@ Get-ScheduledTask | Where-Object State -ne Disabled | Select-Object TaskName,Tas
 Get-ChildItem Env: | Sort-Object Name
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** Environment
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** Environment · **Context:** User
 
+---
+
+**Related:** [Overview](./) · [Dpapi](dpapi.md) · [Environment](environment.md)

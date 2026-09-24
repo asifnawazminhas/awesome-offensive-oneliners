@@ -15,7 +15,7 @@ Fast PowerView reference for domain discovery and relationships.
 Get-Domain
 ```
 
-**Tool:** PowerView · **Platform:** Windows
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
 
 
 ## Domain controllers
@@ -24,7 +24,7 @@ Get-Domain
 Get-DomainController
 ```
 
-**Tool:** PowerView · **Platform:** Windows
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
 
 
 ## Users
@@ -33,7 +33,7 @@ Get-DomainController
 Get-DomainUser | Select samaccountname
 ```
 
-**Tool:** PowerView · **Platform:** Windows
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
 
 
 ## Groups
@@ -42,7 +42,7 @@ Get-DomainUser | Select samaccountname
 Get-DomainGroup | Select samaccountname
 ```
 
-**Tool:** PowerView · **Platform:** Windows
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
 
 
 ## Computers
@@ -51,7 +51,7 @@ Get-DomainGroup | Select samaccountname
 Get-DomainComputer | Select dnshostname,operatingsystem
 ```
 
-**Tool:** PowerView · **Platform:** Windows
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
 
 
 ## SPN users
@@ -60,7 +60,7 @@ Get-DomainComputer | Select dnshostname,operatingsystem
 Get-DomainUser -SPN
 ```
 
-**Tool:** PowerView · **Platform:** Windows
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
 
 
 ## AS-REP candidates
@@ -69,7 +69,7 @@ Get-DomainUser -SPN
 Get-DomainUser -PreauthNotRequired
 ```
 
-**Tool:** PowerView · **Platform:** Windows
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
 
 
 ## Constrained delegation
@@ -78,7 +78,7 @@ Get-DomainUser -PreauthNotRequired
 Get-DomainComputer -TrustedToAuth -Properties DnsHostName,msDS-AllowedToDelegateTo
 ```
 
-**Tool:** PowerView · **Platform:** Windows
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
 
 
 ## Unconstrained delegation
@@ -87,7 +87,7 @@ Get-DomainComputer -TrustedToAuth -Properties DnsHostName,msDS-AllowedToDelegate
 Get-DomainComputer -Unconstrained
 ```
 
-**Tool:** PowerView · **Platform:** Windows
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
 
 
 ## Domain trusts
@@ -96,7 +96,7 @@ Get-DomainComputer -Unconstrained
 Get-DomainTrust
 ```
 
-**Tool:** PowerView · **Platform:** Windows
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
 
 
 ## Interesting ACLs
@@ -105,4 +105,8 @@ Get-DomainTrust
 Find-InterestingDomainAcl -ResolveGUIDs
 ```
 
-**Tool:** PowerView · **Platform:** Windows
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
+
+---
+
+**Related:** [Overview](./) · [Powerview Rubeus](powerview-rubeus.md) · [Smbclient](smbclient.md)

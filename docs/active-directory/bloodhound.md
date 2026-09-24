@@ -10,7 +10,7 @@ Collect graph data quickly from Linux or Windows.
 bloodhound-python -u <USER> -p '<PASSWORD>' -d <DOMAIN> -ns <DC_IP> -c All
 ```
 
-**Tool:** bloodhound-python · **Platform:** Linux/macOS
+**Tool:** bloodhound-python · **Platform:** Linux/macOS · **Context:** Domain user
 
 
 ## BloodHound.py DC-only collection
@@ -19,7 +19,7 @@ bloodhound-python -u <USER> -p '<PASSWORD>' -d <DOMAIN> -ns <DC_IP> -c All
 bloodhound-python -u <USER> -p '<PASSWORD>' -d <DOMAIN> -ns <DC_IP> -c DCOnly
 ```
 
-**Tool:** bloodhound-python · **Platform:** Linux/macOS
+**Tool:** bloodhound-python · **Platform:** Linux/macOS · **Context:** Domain user
 
 
 ## SharpHound all collection
@@ -28,7 +28,7 @@ bloodhound-python -u <USER> -p '<PASSWORD>' -d <DOMAIN> -ns <DC_IP> -c DCOnly
 SharpHound.exe -c All --zipfilename bloodhound.zip
 ```
 
-**Tool:** SharpHound · **Platform:** Windows
+**Tool:** SharpHound · **Platform:** Windows · **Context:** Domain user
 
 
 ## SharpHound domain-controller only
@@ -37,7 +37,7 @@ SharpHound.exe -c All --zipfilename bloodhound.zip
 SharpHound.exe -c DCOnly --zipfilename dconly.zip
 ```
 
-**Tool:** SharpHound · **Platform:** Windows
+**Tool:** SharpHound · **Platform:** Windows · **Context:** Domain user
 
 
 ## SharpHound loop collection
@@ -46,4 +46,8 @@ SharpHound.exe -c DCOnly --zipfilename dconly.zip
 SharpHound.exe -c Session --Loop --LoopDuration 00:30:00 --LoopInterval 00:01:00
 ```
 
-**Tool:** SharpHound · **Platform:** Windows
+**Tool:** SharpHound · **Platform:** Windows · **Context:** Domain user
+
+---
+
+**Related:** [Overview](./) · [Ad Cs](adcs.md) · [Computers Dcs](computers-dcs.md)

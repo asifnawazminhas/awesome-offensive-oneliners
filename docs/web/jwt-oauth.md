@@ -10,7 +10,7 @@ Inspect tokens and common discovery metadata quickly.
 python3 -c "import base64,json,sys; t=sys.argv[1].split('.'); print(json.dumps(json.loads(base64.urlsafe_b64decode(t[0]+'==')),indent=2)); print(json.dumps(json.loads(base64.urlsafe_b64decode(t[1]+'==')),indent=2))" '<JWT>'
 ```
 
-**Tool:** Python · **Platform:** Cross-platform
+**Tool:** Python · **Platform:** Cross-platform · **Context:** No auth
 
 
 ## OIDC discovery document
@@ -19,7 +19,7 @@ python3 -c "import base64,json,sys; t=sys.argv[1].split('.'); print(json.dumps(j
 curl -sk https://<TARGET>/.well-known/openid-configuration | jq .
 ```
 
-**Tool:** curl + jq · **Platform:** Cross-platform
+**Tool:** curl + jq · **Platform:** Cross-platform · **Context:** No auth
 
 
 ## Fetch JWKS
@@ -28,7 +28,7 @@ curl -sk https://<TARGET>/.well-known/openid-configuration | jq .
 curl -sk https://<TARGET>/.well-known/jwks.json | jq .
 ```
 
-**Tool:** curl + jq · **Platform:** Cross-platform
+**Tool:** curl + jq · **Platform:** Cross-platform · **Context:** No auth
 
 
 ## Extract OIDC endpoints
@@ -37,7 +37,7 @@ curl -sk https://<TARGET>/.well-known/jwks.json | jq .
 curl -sk https://<TARGET>/.well-known/openid-configuration | jq -r '.authorization_endpoint,.token_endpoint,.userinfo_endpoint,.jwks_uri'
 ```
 
-**Tool:** curl + jq · **Platform:** Cross-platform
+**Tool:** curl + jq · **Platform:** Cross-platform · **Context:** User
 
 
 ## Inspect JWT algorithm
@@ -46,4 +46,8 @@ curl -sk https://<TARGET>/.well-known/openid-configuration | jq -r '.authorizati
 python3 -c "import base64,json,sys; print(json.loads(base64.urlsafe_b64decode(sys.argv[1].split('.')[0]+'=='))['alg'])" '<JWT>'
 ```
 
-**Tool:** Python · **Platform:** Cross-platform
+**Tool:** Python · **Platform:** Cross-platform · **Context:** No auth
+
+---
+
+**Related:** [Overview](./) · [Injection](injection.md) · [Open Redirect](open-redirect.md)

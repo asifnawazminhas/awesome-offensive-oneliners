@@ -141,3 +141,11 @@
 .md-typeset hr + p strong:first-child{color:var(--ol-muted)}
 .md-typeset .ol-mini-card a{font-weight:720;text-decoration:none}
 .md-typeset .ol-mini-card span{display:block;margin-top:.28rem;line-height:1.5}
+
+
+/* v9 polish */
+.ol-search-examples{display:flex;flex-wrap:wrap;align-items:center;gap:.38rem;margin:.48rem 0 .1rem;color:var(--ol-muted);font-size:.69rem}
+.ol-search-examples button{appearance:none;border:1px solid var(--ol-border);border-radius:999px;background:transparent;color:var(--ol-muted);padding:.16rem .46rem;font:inherit;cursor:pointer;transition:border-color .14s ease,color .14s ease,background .14s ease}
+.ol-search-examples button:hover{border-color:var(--ol-border-strong);color:var(--ol-cyan);background:var(--ol-cyan-soft)}
+.md-typeset p:last-child strong:first-child{color:var(--ol-muted)}
+.md-typeset p:last-child a{font-weight:650}

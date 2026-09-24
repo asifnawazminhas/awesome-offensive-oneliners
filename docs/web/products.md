@@ -15,7 +15,7 @@ Fast local checks for widely deployed software and frameworks.
 curl -sk https://<TARGET> | grep -Eio 'wp-content|wp-includes|wp-json|wordpress' | head
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Tags:** WordPress
+**Tool:** curl · **Platform:** Cross-platform · **Tags:** WordPress · **Context:** No auth
 
 
 ## WordPress REST API check
@@ -24,7 +24,7 @@ curl -sk https://<TARGET> | grep -Eio 'wp-content|wp-includes|wp-json|wordpress'
 curl -skI https://<TARGET>/wp-json/
 ```
 
-**Tool:** curl · **Platform:** Cross-platform
+**Tool:** curl · **Platform:** Cross-platform · **Context:** No auth
 
 
 ## Next.js fingerprint
@@ -33,7 +33,7 @@ curl -skI https://<TARGET>/wp-json/
 curl -sk https://<TARGET> | grep -Eio '__NEXT_DATA__|/_next/static/|/_next/image' | head
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Tags:** Next.js
+**Tool:** curl · **Platform:** Cross-platform · **Tags:** Next.js · **Context:** No auth
 
 
 ## Moodle fingerprint
@@ -42,7 +42,7 @@ curl -sk https://<TARGET> | grep -Eio '__NEXT_DATA__|/_next/static/|/_next/image
 curl -sk https://<TARGET> | grep -Eio 'moodle|/theme/[^"/]+|/lib/javascript.php' | head
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Tags:** Moodle
+**Tool:** curl · **Platform:** Cross-platform · **Tags:** Moodle · **Context:** No auth
 
 
 ## Joomla fingerprint
@@ -51,7 +51,7 @@ curl -sk https://<TARGET> | grep -Eio 'moodle|/theme/[^"/]+|/lib/javascript.php'
 curl -sk https://<TARGET> | grep -Eio 'joomla|/media/system/js/|com_[A-Za-z0-9_]+' | head
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Tags:** Joomla
+**Tool:** curl · **Platform:** Cross-platform · **Tags:** Joomla · **Context:** No auth
 
 
 ## Drupal fingerprint
@@ -60,7 +60,7 @@ curl -sk https://<TARGET> | grep -Eio 'joomla|/media/system/js/|com_[A-Za-z0-9_]
 curl -sk https://<TARGET> | grep -Eio 'drupal|sites/default|sites/all|drupalSettings' | head
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Tags:** Drupal
+**Tool:** curl · **Platform:** Cross-platform · **Tags:** Drupal · **Context:** No auth
 
 
 ## Laravel fingerprint headers
@@ -69,7 +69,7 @@ curl -sk https://<TARGET> | grep -Eio 'drupal|sites/default|sites/all|drupalSett
 curl -skI https://<TARGET> | grep -Ei 'laravel|XSRF-TOKEN|laravel_session'
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Tags:** Laravel
+**Tool:** curl · **Platform:** Cross-platform · **Tags:** Laravel · **Context:** User
 
 
 ## Django fingerprint
@@ -78,7 +78,7 @@ curl -skI https://<TARGET> | grep -Ei 'laravel|XSRF-TOKEN|laravel_session'
 curl -sk https://<TARGET> | grep -Ei 'csrfmiddlewaretoken|django' | head
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Tags:** Django
+**Tool:** curl · **Platform:** Cross-platform · **Tags:** Django · **Context:** No auth
 
 
 ## Jenkins fingerprint
@@ -87,7 +87,7 @@ curl -sk https://<TARGET> | grep -Ei 'csrfmiddlewaretoken|django' | head
 curl -skI https://<TARGET> | grep -Ei 'X-Jenkins|X-Hudson'
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Tags:** Jenkins
+**Tool:** curl · **Platform:** Cross-platform · **Tags:** Jenkins · **Context:** No auth
 
 
 ## Grafana fingerprint
@@ -96,7 +96,7 @@ curl -skI https://<TARGET> | grep -Ei 'X-Jenkins|X-Hudson'
 curl -sk https://<TARGET>/login | grep -Ei 'grafana|public/build' | head
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Tags:** Grafana
+**Tool:** curl · **Platform:** Cross-platform · **Tags:** Grafana · **Context:** No auth
 
 
 ## GitLab fingerprint
@@ -105,7 +105,7 @@ curl -sk https://<TARGET>/login | grep -Ei 'grafana|public/build' | head
 curl -skI https://<TARGET> | grep -Ei 'gitlab|_gitlab_session'
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Tags:** GitLab
+**Tool:** curl · **Platform:** Cross-platform · **Tags:** GitLab · **Context:** User
 
 
 ## Kibana fingerprint
@@ -114,7 +114,7 @@ curl -skI https://<TARGET> | grep -Ei 'gitlab|_gitlab_session'
 curl -skI https://<TARGET> | grep -Ei 'kbn-name|kibana'
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Tags:** Kibana
+**Tool:** curl · **Platform:** Cross-platform · **Tags:** Kibana · **Context:** No auth
 
 
 ## Tomcat fingerprint
@@ -123,7 +123,7 @@ curl -skI https://<TARGET> | grep -Ei 'kbn-name|kibana'
 curl -sk https://<TARGET> | grep -Ei 'Apache Tomcat|/manager/html' | head
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Tags:** Tomcat
+**Tool:** curl · **Platform:** Cross-platform · **Tags:** Tomcat · **Context:** No auth
 
 
 ## Confluence fingerprint
@@ -132,7 +132,7 @@ curl -sk https://<TARGET> | grep -Ei 'Apache Tomcat|/manager/html' | head
 curl -sk https://<TARGET> | grep -Ei 'confluence|ajs-version-number|Atlassian' | head
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Tags:** Confluence
+**Tool:** curl · **Platform:** Cross-platform · **Tags:** Confluence · **Context:** No auth
 
 
 ## Jira fingerprint
@@ -141,7 +141,7 @@ curl -sk https://<TARGET> | grep -Ei 'confluence|ajs-version-number|Atlassian' |
 curl -sk https://<TARGET> | grep -Ei 'jira|ajs-version-number|Atlassian' | head
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Tags:** Jira
+**Tool:** curl · **Platform:** Cross-platform · **Tags:** Jira · **Context:** No auth
 
 ## Keycloak fingerprint
 
@@ -149,7 +149,7 @@ curl -sk https://<TARGET> | grep -Ei 'jira|ajs-version-number|Atlassian' | head
 curl -sk https://<TARGET>/ | grep -Ei 'keycloak|/realms/|account-console' | head
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Tags:** Keycloak
+**Tool:** curl · **Platform:** Cross-platform · **Tags:** Keycloak · **Context:** No auth
 
 ## SonarQube fingerprint
 
@@ -157,7 +157,7 @@ curl -sk https://<TARGET>/ | grep -Ei 'keycloak|/realms/|account-console' | head
 curl -sk https://<TARGET>/api/system/status | jq .
 ```
 
-**Tool:** curl + jq · **Platform:** Cross-platform · **Tags:** SonarQube
+**Tool:** curl + jq · **Platform:** Cross-platform · **Tags:** SonarQube · **Context:** No auth
 
 ## Elasticsearch fingerprint
 
@@ -165,7 +165,7 @@ curl -sk https://<TARGET>/api/system/status | jq .
 curl -sk https://<TARGET>/ | jq '.name,.cluster_name,.version.number'
 ```
 
-**Tool:** curl + jq · **Platform:** Cross-platform · **Tags:** Elasticsearch
+**Tool:** curl + jq · **Platform:** Cross-platform · **Tags:** Elasticsearch · **Context:** No auth
 
 ## Prometheus fingerprint
 
@@ -173,7 +173,7 @@ curl -sk https://<TARGET>/ | jq '.name,.cluster_name,.version.number'
 curl -sk https://<TARGET>/-/ready
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Tags:** Prometheus
+**Tool:** curl · **Platform:** Cross-platform · **Tags:** Prometheus · **Context:** No auth
 
 ## Nexus Repository fingerprint
 
@@ -181,7 +181,7 @@ curl -sk https://<TARGET>/-/ready
 curl -skI https://<TARGET>/ | grep -Ei 'nexus|NX-ANTI-CSRF-TOKEN'
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Tags:** Nexus
+**Tool:** curl · **Platform:** Cross-platform · **Tags:** Nexus · **Context:** No auth
 
 ## JFrog Artifactory fingerprint
 
@@ -189,7 +189,7 @@ curl -skI https://<TARGET>/ | grep -Ei 'nexus|NX-ANTI-CSRF-TOKEN'
 curl -skI https://<TARGET>/ | grep -Ei 'artifactory|X-Artifactory'
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Tags:** Artifactory
+**Tool:** curl · **Platform:** Cross-platform · **Tags:** Artifactory · **Context:** No auth
 
 ## VMware vCenter fingerprint
 
@@ -197,7 +197,7 @@ curl -skI https://<TARGET>/ | grep -Ei 'artifactory|X-Artifactory'
 curl -sk https://<TARGET>/ | grep -Ei 'VMware|vSphere|vCenter' | head
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Tags:** VMware, vCenter
+**Tool:** curl · **Platform:** Cross-platform · **Tags:** VMware, vCenter · **Context:** No auth
 
 ## Citrix Gateway fingerprint
 
@@ -205,7 +205,7 @@ curl -sk https://<TARGET>/ | grep -Ei 'VMware|vSphere|vCenter' | head
 curl -skI https://<TARGET>/ | grep -Ei 'Citrix|NSC_|NetScaler'
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Tags:** Citrix, NetScaler
+**Tool:** curl · **Platform:** Cross-platform · **Tags:** Citrix, NetScaler · **Context:** No auth
 
 ## Fortinet fingerprint
 
@@ -213,7 +213,7 @@ curl -skI https://<TARGET>/ | grep -Ei 'Citrix|NSC_|NetScaler'
 curl -skI https://<TARGET>/ | grep -Ei 'FortiGate|Fortinet|APSCOOKIE'
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Tags:** Fortinet
+**Tool:** curl · **Platform:** Cross-platform · **Tags:** Fortinet · **Context:** User
 
 ## Palo Alto GlobalProtect fingerprint
 
@@ -221,7 +221,7 @@ curl -skI https://<TARGET>/ | grep -Ei 'FortiGate|Fortinet|APSCOOKIE'
 curl -sk https://<TARGET>/global-protect/login.esp | grep -Ei 'GlobalProtect|Palo Alto' | head
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Tags:** Palo Alto, GlobalProtect
+**Tool:** curl · **Platform:** Cross-platform · **Tags:** Palo Alto, GlobalProtect · **Context:** No auth
 
 ## Microsoft Exchange OWA fingerprint
 
@@ -229,7 +229,7 @@ curl -sk https://<TARGET>/global-protect/login.esp | grep -Ei 'GlobalProtect|Pal
 curl -skI https://<TARGET>/owa/ | grep -Ei 'X-OWA-Version|X-FEServer|OutlookSession'
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Tags:** Exchange, OWA
+**Tool:** curl · **Platform:** Cross-platform · **Tags:** Exchange, OWA · **Context:** User
 
 ## SharePoint fingerprint
 
@@ -237,7 +237,7 @@ curl -skI https://<TARGET>/owa/ | grep -Ei 'X-OWA-Version|X-FEServer|OutlookSess
 curl -skI https://<TARGET>/_layouts/15/start.aspx | grep -Ei 'MicrosoftSharePointTeamServices|SPRequestGuid'
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Tags:** SharePoint
+**Tool:** curl · **Platform:** Cross-platform · **Tags:** SharePoint · **Context:** No auth
 
 ## Apache Airflow fingerprint
 
@@ -245,7 +245,7 @@ curl -skI https://<TARGET>/_layouts/15/start.aspx | grep -Ei 'MicrosoftSharePoin
 curl -sk https://<TARGET>/health | jq .
 ```
 
-**Tool:** curl + jq · **Platform:** Cross-platform · **Tags:** Airflow
+**Tool:** curl + jq · **Platform:** Cross-platform · **Tags:** Airflow · **Context:** No auth
 
 ## RabbitMQ Management fingerprint
 
@@ -253,4 +253,8 @@ curl -sk https://<TARGET>/health | jq .
 curl -skI https://<TARGET>/ | grep -Ei 'RabbitMQ|X-Powered-By'
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Tags:** RabbitMQ
+**Tool:** curl · **Platform:** Cross-platform · **Tags:** RabbitMQ · **Context:** No auth
+
+---
+
+**Related:** [Overview](./) · [Path Traversal Lfi](path-traversal-lfi.md) · [Prototype Pollution](prototype-pollution.md)

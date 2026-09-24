@@ -28,7 +28,7 @@ Get-DomainController
 [System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()
 ```
 
-**Tool:** PowerShell/.NET · **Platform:** Windows
+**Tool:** PowerShell/.NET · **Platform:** Windows · **Context:** Domain user
 
 
 ## Native domain controller list
@@ -37,7 +37,7 @@ Get-DomainController
 nltest /dclist:<DOMAIN>
 ```
 
-**Tool:** nltest · **Platform:** Windows
+**Tool:** nltest · **Platform:** Windows · **Context:** Domain user
 
 
 ## DNS domain-controller SRV
@@ -46,7 +46,7 @@ nltest /dclist:<DOMAIN>
 nslookup -type=SRV _ldap._tcp.dc._msdcs.<DOMAIN>
 ```
 
-**Tool:** nslookup · **Platform:** Windows
+**Tool:** nslookup · **Platform:** Windows · **Context:** No auth
 
 
 ## NetExec LDAP users sanity check
@@ -74,3 +74,7 @@ net accounts /domain
 ```
 
 **Tool:** net.exe · **Platform:** Windows · **Context:** Domain user
+
+---
+
+**Related:** [Overview](./) · [Dns Spn](dns-spn.md) · [Gpo](gpo.md)

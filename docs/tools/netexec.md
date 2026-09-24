@@ -15,7 +15,7 @@ Fast NetExec reference grouped around common SMB and LDAP tasks.
 nxc smb <CIDR>
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
 
 
 ## SMB password authentication
@@ -24,7 +24,7 @@ nxc smb <CIDR>
 nxc smb <TARGETS> -u <USER> -p '<PASSWORD>'
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
 
 
 ## SMB NTLM authentication
@@ -33,7 +33,7 @@ nxc smb <TARGETS> -u <USER> -p '<PASSWORD>'
 nxc smb <TARGETS> -u <USER> -H <HASH>
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
 
 
 ## SMB shares
@@ -42,7 +42,7 @@ nxc smb <TARGETS> -u <USER> -H <HASH>
 nxc smb <TARGET> -u <USER> -p '<PASSWORD>' --shares
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
 
 
 ## SMB sessions
@@ -51,7 +51,7 @@ nxc smb <TARGET> -u <USER> -p '<PASSWORD>' --shares
 nxc smb <TARGET> -u <USER> -p '<PASSWORD>' --sessions
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
 
 
 ## SMB logged-on users
@@ -60,7 +60,7 @@ nxc smb <TARGET> -u <USER> -p '<PASSWORD>' --sessions
 nxc smb <TARGET> -u <USER> -p '<PASSWORD>' --loggedon-users
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
 
 
 ## SMB password policy
@@ -69,7 +69,7 @@ nxc smb <TARGET> -u <USER> -p '<PASSWORD>' --loggedon-users
 nxc smb <DC_IP> -u <USER> -p '<PASSWORD>' --pass-pol
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
 
 
 ## LDAP users
@@ -78,7 +78,7 @@ nxc smb <DC_IP> -u <USER> -p '<PASSWORD>' --pass-pol
 nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --users
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
 
 
 ## LDAP groups
@@ -87,7 +87,7 @@ nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --users
 nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --groups
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
 
 
 ## LDAP computers
@@ -96,7 +96,7 @@ nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --groups
 nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --computers
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
 
 
 ## Kerberoast
@@ -105,7 +105,7 @@ nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --computers
 nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --kerberoasting kerberoast.txt
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
 
 
 ## AS-REP roast
@@ -114,4 +114,8 @@ nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --kerberoasting kerberoast.txt
 nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --asreproast asrep.txt
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
+
+---
+
+**Related:** [Overview](./) · [Naabu](naabu.md) · [Nmap](nmap.md)

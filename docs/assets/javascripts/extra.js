@@ -1,10 +1,16 @@
 (() => {
-  const focusSearch = () => {
+  const focusSearch = (query = '') => {
     const input = document.querySelector('[data-md-component="search-query"]');
     if (input) {
       const toggle = document.querySelector('[data-md-component="search"] label.md-header__button');
       if (toggle && !input.offsetParent) toggle.click();
-      setTimeout(() => input.focus(), 30);
+      setTimeout(() => {
+        input.focus();
+        if (query) {
+          input.value = query;
+          input.dispatchEvent(new Event('input', { bubbles: true }));
+        }
+      }, 30);
     }
   };
 
@@ -12,21 +18,30 @@
     document.querySelectorAll('.ol-search-launch').forEach((el) => {
       if (el.dataset.bound) return;
       el.dataset.bound = '1';
-      el.addEventListener('click', focusSearch);
+      el.addEventListener('click', () => focusSearch());
       el.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); focusSearch(); }
       });
     });
 
+    document.querySelectorAll('[data-ol-search]').forEach((el) => {
+      if (el.dataset.bound) return;
+      el.dataset.bound = '1';
+      el.addEventListener('click', () => focusSearch(el.dataset.olSearch || ''));
+    });
+
     document.querySelectorAll('.md-typeset p').forEach((p) => {
       if (p.classList.contains('ol-meta')) return;
-      const text = p.textContent.trim();
-      const m = text.match(/^Tool:\s*(.*?)\s*·\s*Platform:\s*(.*?)\s*·\s*Tags:\s*(.*?)(?:\s*·\s*Context:\s*(.*))?$/);
-      if (!m) return;
-      p.className = 'ol-meta';
-      p.innerHTML = '';
-      const rows = [['Tool',m[1]],['Platform',m[2]],['Tags',m[3]]];
-      if (m[4]) rows.push(['Context',m[4]]);
+      const raw = p.textContent.trim();
+      if (!raw.startsWith('Tool:')) return;
+      const pieces = raw.split(/\s*·\s*/);
+      const rows = [];
+      for (const piece of pieces) {
+        const m = piece.match(/^(Tool|Platform|Tags|Context):\s*(.+)$/i);
+        if (m) rows.push([m[1][0].toUpperCase() + m[1].slice(1).toLowerCase(), m[2]]);
+      }
+      if (!rows.length) return;
+      p.className = 'ol-meta'; p.innerHTML = '';
       rows.forEach(([label,value]) => {
         const chip = document.createElement('span');
         chip.className = 'ol-chip' + (label === 'Context' ? ' ol-chip-context' : '');

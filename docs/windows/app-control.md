@@ -15,7 +15,7 @@ One-liners for AppLocker, WDAC, Code Integrity, CLM and Defender visibility.
 Get-AppLockerPolicy -Effective -Xml
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** AppLocker, Policy
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** AppLocker, Policy · **Context:** User
 
 ## Local AppLocker policy
 
@@ -23,7 +23,7 @@ Get-AppLockerPolicy -Effective -Xml
 Get-AppLockerPolicy -Local -Xml
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** AppLocker, Local Policy
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** AppLocker, Local Policy · **Context:** User
 
 ## AppLocker Identity service
 
@@ -31,7 +31,7 @@ Get-AppLockerPolicy -Local -Xml
 Get-Service AppIDSvc
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** AppLocker, Service
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** AppLocker, Service · **Context:** User
 
 ## AppLocker EXE and DLL events
 
@@ -39,7 +39,7 @@ Get-Service AppIDSvc
 Get-WinEvent -LogName 'Microsoft-Windows-AppLocker/EXE and DLL' -MaxEvents 30 | Select-Object TimeCreated,Id,Message
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** AppLocker, Events
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** AppLocker, Events · **Context:** User
 
 ## Test a path against effective policy
 
@@ -47,7 +47,7 @@ Get-WinEvent -LogName 'Microsoft-Windows-AppLocker/EXE and DLL' -MaxEvents 30 | 
 Test-AppLockerPolicy -PolicyObject (Get-AppLockerPolicy -Effective) -Path 'C:\Windows\Tasks\test.exe' -User 'Everyone'
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** AppLocker, Test
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** AppLocker, Test · **Context:** User
 
 ## WDAC registry policy
 
@@ -55,7 +55,7 @@ Test-AppLockerPolicy -PolicyObject (Get-AppLockerPolicy -Effective) -Path 'C:\Wi
 reg query "HKLM\SYSTEM\CurrentControlSet\Control\CI\Policy"
 ```
 
-**Tool:** reg.exe · **Platform:** Windows · **Tags:** WDAC, Code Integrity
+**Tool:** reg.exe · **Platform:** Windows · **Tags:** WDAC, Code Integrity · **Context:** User
 
 ## Active WDAC policy files
 
@@ -63,7 +63,7 @@ reg query "HKLM\SYSTEM\CurrentControlSet\Control\CI\Policy"
 Get-ChildItem "$env:WINDIR\System32\CodeIntegrity\CiPolicies\Active" -File -ErrorAction SilentlyContinue | Select-Object Name,Length,LastWriteTime,FullName
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** WDAC, Policy Files
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** WDAC, Policy Files · **Context:** User
 
 ## Code Integrity events
 
@@ -71,7 +71,7 @@ Get-ChildItem "$env:WINDIR\System32\CodeIntegrity\CiPolicies\Active" -File -Erro
 Get-WinEvent -LogName 'Microsoft-Windows-CodeIntegrity/Operational' -MaxEvents 30 | Select-Object TimeCreated,Id,Message
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** WDAC, Events
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** WDAC, Events · **Context:** User
 
 ## CiTool deployed policies
 
@@ -79,7 +79,7 @@ Get-WinEvent -LogName 'Microsoft-Windows-CodeIntegrity/Operational' -MaxEvents 3
 citool.exe --list-policies
 ```
 
-**Tool:** CiTool · **Platform:** Windows 11 / Server · **Tags:** WDAC, Policy
+**Tool:** CiTool · **Platform:** Windows 11 / Server · **Tags:** WDAC, Policy · **Context:** User
 
 ## PowerShell language mode
 
@@ -87,7 +87,7 @@ citool.exe --list-policies
 $ExecutionContext.SessionState.LanguageMode
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** CLM, PowerShell
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** CLM, PowerShell · **Context:** User
 
 ## CLM .NET capability check
 
@@ -95,7 +95,7 @@ $ExecutionContext.SessionState.LanguageMode
 try { [System.Diagnostics.Process]::GetCurrentProcess() | Out-Null; 'Type access available' } catch { $_.Exception.Message }
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** CLM, Validation
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** CLM, Validation · **Context:** User
 
 ## Defender ASR rules
 
@@ -103,4 +103,8 @@ try { [System.Diagnostics.Process]::GetCurrentProcess() | Out-Null; 'Type access
 Get-MpPreference | Select-Object AttackSurfaceReductionRules_Ids,AttackSurfaceReductionRules_Actions
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** Defender, ASR
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** Defender, ASR · **Context:** User
+
+---
+
+**Related:** [Overview](./) · [Amsi State](amsi-state.md) · [Defender Asr](defender-asr.md)

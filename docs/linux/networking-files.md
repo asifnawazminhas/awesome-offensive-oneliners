@@ -8,7 +8,7 @@ File transfer, search and network utility one-liners.
 python3 -m http.server 8000
 ```
 
-**Tool:** Python · **Platform:** Linux/macOS/Windows · **Tags:** HTTP, File Transfer
+**Tool:** Python · **Platform:** Linux/macOS/Windows · **Tags:** HTTP, File Transfer · **Context:** User
 
 ### Download with curl
 
@@ -16,7 +16,7 @@ python3 -m http.server 8000
 curl -fL http://<HOST>/<FILE> -o <FILE>
 ```
 
-**Tool:** curl · **Platform:** Linux/macOS · **Tags:** HTTP, Download
+**Tool:** curl · **Platform:** Linux/macOS · **Tags:** HTTP, Download · **Context:** User
 
 ### Download with wget
 
@@ -24,7 +24,7 @@ curl -fL http://<HOST>/<FILE> -o <FILE>
 wget http://<HOST>/<FILE> -O <FILE>
 ```
 
-**Tool:** wget · **Platform:** Linux · **Tags:** HTTP, Download
+**Tool:** wget · **Platform:** Linux · **Tags:** HTTP, Download · **Context:** User
 
 ### Recursive text search
 
@@ -32,7 +32,7 @@ wget http://<HOST>/<FILE> -O <FILE>
 grep -Rni --exclude-dir={proc,sys,dev} "<TEXT>" / 2>/dev/null
 ```
 
-**Tool:** grep · **Platform:** Linux · **Tags:** Search, Files
+**Tool:** grep · **Platform:** Linux · **Tags:** Search, Files · **Context:** User
 
 ### Find recently modified files
 
@@ -40,7 +40,7 @@ grep -Rni --exclude-dir={proc,sys,dev} "<TEXT>" / 2>/dev/null
 find <PATH> -type f -mtime -1 -print 2>/dev/null
 ```
 
-**Tool:** find · **Platform:** Linux · **Tags:** Files, Timeline
+**Tool:** find · **Platform:** Linux · **Tags:** Files, Timeline · **Context:** User
 
 ### DNS lookup
 
@@ -48,5 +48,8 @@ find <PATH> -type f -mtime -1 -print 2>/dev/null
 dig +short <HOSTNAME>
 ```
 
-**Tool:** dig · **Platform:** Linux/macOS · **Tags:** DNS, Recon
+**Tool:** dig · **Platform:** Linux/macOS · **Tags:** DNS, Recon · **Context:** User
 
+---
+
+**Related:** [Overview](./) · [Enumeration](enumeration.md) · [Nfs](nfs.md)

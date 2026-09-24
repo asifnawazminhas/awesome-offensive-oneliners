@@ -15,7 +15,7 @@ Fast local checks for common Windows privilege-escalation conditions.
 whoami /all
 ```
 
-**Tool:** Windows · **Platform:** Windows · **Tags:** Identity, Privileges
+**Tool:** Windows · **Platform:** Windows · **Tags:** Identity, Privileges · **Context:** User
 
 ## Token privileges of interest
 
@@ -23,7 +23,7 @@ whoami /all
 whoami /priv | findstr /i "SeImpersonate SeAssignPrimaryToken SeDebug SeBackup SeRestore"
 ```
 
-**Tool:** Windows · **Platform:** Windows · **Tags:** Token, Privileges
+**Tool:** Windows · **Platform:** Windows · **Tags:** Token, Privileges · **Context:** User
 
 ## Unquoted service paths
 
@@ -31,7 +31,7 @@ whoami /priv | findstr /i "SeImpersonate SeAssignPrimaryToken SeDebug SeBackup S
 wmic service get name,displayname,startmode,pathname | findstr /i /v "C:\Windows\\" | findstr /i /v "\""
 ```
 
-**Tool:** WMIC · **Platform:** Windows · **Tags:** Services, Unquoted Path
+**Tool:** WMIC · **Platform:** Windows · **Tags:** Services, Unquoted Path · **Context:** User
 
 ## Writable service permissions with AccessChk
 
@@ -39,7 +39,7 @@ wmic service get name,displayname,startmode,pathname | findstr /i /v "C:\Windows
 accesschk.exe -uwcqv "Everyone" * /accepteula
 ```
 
-**Tool:** AccessChk · **Platform:** Windows · **Tags:** Services, Permissions
+**Tool:** AccessChk · **Platform:** Windows · **Tags:** Services, Permissions · **Context:** User
 
 ## Scheduled tasks
 
@@ -47,7 +47,7 @@ accesschk.exe -uwcqv "Everyone" * /accepteula
 schtasks /query /fo LIST /v
 ```
 
-**Tool:** schtasks · **Platform:** Windows · **Tags:** Scheduled Tasks
+**Tool:** schtasks · **Platform:** Windows · **Tags:** Scheduled Tasks · **Context:** User
 
 ## AlwaysInstallElevated HKLM
 
@@ -55,7 +55,7 @@ schtasks /query /fo LIST /v
 reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
 ```
 
-**Tool:** reg.exe · **Platform:** Windows · **Tags:** MSI, Policy
+**Tool:** reg.exe · **Platform:** Windows · **Tags:** MSI, Policy · **Context:** User
 
 ## AlwaysInstallElevated HKCU
 
@@ -63,7 +63,7 @@ reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallEle
 reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
 ```
 
-**Tool:** reg.exe · **Platform:** Windows · **Tags:** MSI, Policy
+**Tool:** reg.exe · **Platform:** Windows · **Tags:** MSI, Policy · **Context:** User
 
 ## Unattended installation files
 
@@ -71,7 +71,7 @@ reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallEle
 dir /s /b C:\*unattend*.xml C:\*sysprep*.inf C:\*sysprep*.xml 2>nul
 ```
 
-**Tool:** cmd.exe · **Platform:** Windows · **Tags:** Files, Credentials
+**Tool:** cmd.exe · **Platform:** Windows · **Tags:** Files, Credentials · **Context:** User
 
 ## Stored credentials
 
@@ -79,7 +79,7 @@ dir /s /b C:\*unattend*.xml C:\*sysprep*.inf C:\*sysprep*.xml 2>nul
 cmdkey /list
 ```
 
-**Tool:** cmdkey · **Platform:** Windows · **Tags:** Credentials
+**Tool:** cmdkey · **Platform:** Windows · **Tags:** Credentials · **Context:** User
 
 ## Writable application directory
 
@@ -87,7 +87,7 @@ cmdkey /list
 icacls "C:\Program Files\<APP>"
 ```
 
-**Tool:** icacls · **Platform:** Windows · **Tags:** ACL, Writable Path
+**Tool:** icacls · **Platform:** Windows · **Tags:** ACL, Writable Path · **Context:** User
 
 ## PATH entries and ACLs
 
@@ -95,4 +95,8 @@ icacls "C:\Program Files\<APP>"
 $env:Path -split ';' | Where-Object { $_ } | ForEach-Object { "`n$_"; icacls $_ 2>$null }
 ```
 
-**Tool:** PowerShell + icacls · **Platform:** Windows · **Tags:** PATH, DLL Search
+**Tool:** PowerShell + icacls · **Platform:** Windows · **Tags:** PATH, DLL Search · **Context:** User
+
+---
+
+**Related:** [Overview](./) · [Powershell](powershell.md) · [Scheduled Tasks](scheduled-tasks.md)

@@ -10,7 +10,7 @@ Passive subdomain discovery with lightweight, composable output.
 subfinder -d <DOMAIN> -silent
 ```
 
-**Tool:** subfinder · **Platform:** Linux/macOS
+**Tool:** subfinder · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## Subfinder all providers
@@ -19,7 +19,7 @@ subfinder -d <DOMAIN> -silent
 subfinder -d <DOMAIN> -all -silent
 ```
 
-**Tool:** subfinder · **Platform:** Linux/macOS
+**Tool:** subfinder · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## Subfinder recursive
@@ -28,7 +28,7 @@ subfinder -d <DOMAIN> -all -silent
 subfinder -d <DOMAIN> -recursive -silent
 ```
 
-**Tool:** subfinder · **Platform:** Linux/macOS
+**Tool:** subfinder · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## Amass passive
@@ -37,7 +37,7 @@ subfinder -d <DOMAIN> -recursive -silent
 amass enum -passive -d <DOMAIN>
 ```
 
-**Tool:** Amass · **Platform:** Linux/macOS
+**Tool:** Amass · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## Merge results
@@ -46,4 +46,8 @@ amass enum -passive -d <DOMAIN>
 (subfinder -d <DOMAIN> -silent; amass enum -passive -d <DOMAIN>) | sort -u
 ```
 
-**Tool:** subfinder + Amass · **Platform:** Linux/macOS
+**Tool:** subfinder + Amass · **Platform:** Linux/macOS · **Context:** No auth
+
+---
+
+**Related:** [Overview](./) · [Smbclient](smbclient.md) · [Waybackurls](waybackurls.md)

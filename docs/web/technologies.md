@@ -10,7 +10,7 @@ Identify common frameworks, CMS products and management interfaces quickly.
 httpx -l urls.txt -silent -status-code -title -tech-detect
 ```
 
-**Tool:** httpx · **Platform:** Linux/macOS
+**Tool:** httpx · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## WhatWeb fingerprint
@@ -19,7 +19,7 @@ httpx -l urls.txt -silent -status-code -title -tech-detect
 whatweb -a 3 https://<TARGET>
 ```
 
-**Tool:** WhatWeb · **Platform:** Linux/macOS
+**Tool:** WhatWeb · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## Nuclei technology tags
@@ -28,7 +28,7 @@ whatweb -a 3 https://<TARGET>
 nuclei -l urls.txt -tags tech -silent
 ```
 
-**Tool:** nuclei · **Platform:** Linux/macOS
+**Tool:** nuclei · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## Wappalyzer CLI
@@ -37,7 +37,7 @@ nuclei -l urls.txt -tags tech -silent
 wappalyzer https://<TARGET>
 ```
 
-**Tool:** Wappalyzer · **Platform:** Cross-platform
+**Tool:** Wappalyzer · **Platform:** Cross-platform · **Context:** No auth
 
 
 ## Server headers
@@ -46,4 +46,8 @@ wappalyzer https://<TARGET>
 curl -skI https://<TARGET> | grep -Ei '^(server|x-powered-by|via|x-generator|x-aspnet-version):'
 ```
 
-**Tool:** curl · **Platform:** Cross-platform
+**Tool:** curl · **Platform:** Cross-platform · **Context:** No auth
+
+---
+
+**Related:** [Overview](./) · [Ssrf Ssti](ssrf-ssti.md) · [Tls Certificates](tls-certificates.md)

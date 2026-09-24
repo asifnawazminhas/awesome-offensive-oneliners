@@ -8,7 +8,7 @@ Compact discovery commands useful during authorised red team operations.
 whoami /user && whoami /groups
 ```
 
-**Tool:** Windows · **Platform:** Windows · **Tags:** Identity, Discovery
+**Tool:** Windows · **Platform:** Windows · **Tags:** Identity, Discovery · **Context:** User
 
 ### Domain controller discovery
 
@@ -16,7 +16,7 @@ whoami /user && whoami /groups
 nltest /dsgetdc:<DOMAIN>
 ```
 
-**Tool:** nltest · **Platform:** Windows · **Tags:** AD, DC Discovery
+**Tool:** nltest · **Platform:** Windows · **Tags:** AD, DC Discovery · **Context:** User
 
 ### Current logon sessions
 
@@ -24,7 +24,7 @@ nltest /dsgetdc:<DOMAIN>
 quser
 ```
 
-**Tool:** Windows · **Platform:** Windows · **Tags:** Sessions, Discovery
+**Tool:** Windows · **Platform:** Windows · **Tags:** Sessions, Discovery · **Context:** User
 
 ### ARP neighbors
 
@@ -32,7 +32,7 @@ quser
 arp -a
 ```
 
-**Tool:** Windows · **Platform:** Windows · **Tags:** Network, Discovery
+**Tool:** Windows · **Platform:** Windows · **Tags:** Network, Discovery · **Context:** User
 
 ### SMB shares
 
@@ -40,7 +40,7 @@ arp -a
 net view \<HOST>
 ```
 
-**Tool:** Windows · **Platform:** Windows · **Tags:** SMB, Shares
+**Tool:** Windows · **Platform:** Windows · **Tags:** SMB, Shares · **Context:** User
 
 ### Linux neighbors
 
@@ -48,5 +48,8 @@ net view \<HOST>
 ip neigh
 ```
 
-**Tool:** iproute2 · **Platform:** Linux · **Tags:** Network, Discovery
+**Tool:** iproute2 · **Platform:** Linux · **Tags:** Network, Discovery · **Context:** User
 
+---
+
+**Related:** [Overview](./) · [Download Cradles](download-cradles.md)

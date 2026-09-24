@@ -10,7 +10,7 @@ Find JavaScript assets and quickly mine endpoints and secrets candidates.
 katana -u <URL> -silent | grep -Ei '\.js($|\?)' | sort -u
 ```
 
-**Tool:** katana · **Platform:** Linux/macOS
+**Tool:** katana · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## Download discovered JavaScript
@@ -19,7 +19,7 @@ katana -u <URL> -silent | grep -Ei '\.js($|\?)' | sort -u
 mkdir -p js && cat js-urls.txt | while read -r u; do curl -ks "$u" -o "js/$(echo "$u" | sha1sum | cut -d\  -f1).js"; done
 ```
 
-**Tool:** curl · **Platform:** Linux/macOS
+**Tool:** curl · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## Extract absolute URLs from JavaScript
@@ -28,7 +28,7 @@ mkdir -p js && cat js-urls.txt | while read -r u; do curl -ks "$u" -o "js/$(echo
 rg -o 'https?://[^"''' )]+' js/ | sort -u
 ```
 
-**Tool:** ripgrep · **Platform:** Linux/macOS
+**Tool:** ripgrep · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## Extract API-looking paths
@@ -37,7 +37,7 @@ rg -o 'https?://[^"''' )]+' js/ | sort -u
 rg -o '/(api|v[0-9]+|graphql)/[A-Za-z0-9_./?=&%:-]+' js/ | sort -u
 ```
 
-**Tool:** ripgrep · **Platform:** Linux/macOS
+**Tool:** ripgrep · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## Search JavaScript for secret keywords
@@ -46,7 +46,7 @@ rg -o '/(api|v[0-9]+|graphql)/[A-Za-z0-9_./?=&%:-]+' js/ | sort -u
 rg -n -i '(api[_-]?key|secret|token|authorization|client[_-]?secret|access[_-]?key)' js/
 ```
 
-**Tool:** ripgrep · **Platform:** Linux/macOS
+**Tool:** ripgrep · **Platform:** Linux/macOS · **Context:** User
 
 
 ## LinkFinder against one JavaScript file
@@ -55,4 +55,8 @@ rg -n -i '(api[_-]?key|secret|token|authorization|client[_-]?secret|access[_-]?k
 python3 linkfinder.py -i <URL> -o cli
 ```
 
-**Tool:** LinkFinder · **Platform:** Linux/macOS
+**Tool:** LinkFinder · **Platform:** Linux/macOS · **Context:** No auth
+
+---
+
+**Related:** [Overview](./) · [Http Probing](http-probing.md) · [Passive Combinations](passive-combinations.md)

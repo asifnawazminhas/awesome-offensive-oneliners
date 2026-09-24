@@ -10,7 +10,7 @@ Small one-liners for template-driven validation and technology detection.
 nuclei -l urls.txt -silent
 ```
 
-**Tool:** nuclei · **Platform:** Linux/macOS
+**Tool:** nuclei · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## Technology templates
@@ -19,7 +19,7 @@ nuclei -l urls.txt -silent
 nuclei -l urls.txt -tags tech -silent
 ```
 
-**Tool:** nuclei · **Platform:** Linux/macOS
+**Tool:** nuclei · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## Severity filter
@@ -28,7 +28,7 @@ nuclei -l urls.txt -tags tech -silent
 nuclei -l urls.txt -severity medium,high,critical -silent
 ```
 
-**Tool:** nuclei · **Platform:** Linux/macOS
+**Tool:** nuclei · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## JSONL output
@@ -37,7 +37,7 @@ nuclei -l urls.txt -severity medium,high,critical -silent
 nuclei -l urls.txt -jsonl -o nuclei.jsonl
 ```
 
-**Tool:** nuclei · **Platform:** Linux/macOS
+**Tool:** nuclei · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## Specific template directory
@@ -46,4 +46,8 @@ nuclei -l urls.txt -jsonl -o nuclei.jsonl
 nuclei -u https://<TARGET> -t <TEMPLATE_DIR> -silent
 ```
 
-**Tool:** nuclei · **Platform:** Linux/macOS
+**Tool:** nuclei · **Platform:** Linux/macOS · **Context:** No auth
+
+---
+
+**Related:** [Overview](./) · [Nmap](nmap.md) · [Powerview Rubeus](powerview-rubeus.md)

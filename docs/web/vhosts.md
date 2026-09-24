@@ -10,7 +10,7 @@ Name-based virtual-host discovery one-liners for hosts that share the same IP ad
 ffuf -u http://<IP>/ -H "Host: FUZZ.<DOMAIN>" -w <WORDLIST> -ac
 ```
 
-**Tool:** ffuf · **Platform:** Linux/macOS · **Tags:** VHost, Host Header, Discovery
+**Tool:** ffuf · **Platform:** Linux/macOS · **Tags:** VHost, Host Header, Discovery · **Context:** No auth
 
 ## ffuf vhost with response-size filter
 
@@ -18,7 +18,7 @@ ffuf -u http://<IP>/ -H "Host: FUZZ.<DOMAIN>" -w <WORDLIST> -ac
 ffuf -u http://<IP>/ -H "Host: FUZZ.<DOMAIN>" -w <WORDLIST> -fs <BASELINE_SIZE>
 ```
 
-**Tool:** ffuf · **Platform:** Linux/macOS · **Tags:** VHost, Filtering
+**Tool:** ffuf · **Platform:** Linux/macOS · **Tags:** VHost, Filtering · **Context:** No auth
 
 ## ffuf vhost interesting status codes
 
@@ -26,7 +26,7 @@ ffuf -u http://<IP>/ -H "Host: FUZZ.<DOMAIN>" -w <WORDLIST> -fs <BASELINE_SIZE>
 ffuf -u https://<IP>/ -H "Host: FUZZ.<DOMAIN>" -w <WORDLIST> -mc 200,204,301,302,307,401,403 -ac
 ```
 
-**Tool:** ffuf · **Platform:** Linux/macOS · **Tags:** VHost, HTTP
+**Tool:** ffuf · **Platform:** Linux/macOS · **Tags:** VHost, HTTP · **Context:** No auth
 
 ## Gobuster vhost mode
 
@@ -34,7 +34,7 @@ ffuf -u https://<IP>/ -H "Host: FUZZ.<DOMAIN>" -w <WORDLIST> -mc 200,204,301,302
 gobuster vhost -u https://<DOMAIN> -w <WORDLIST> --append-domain
 ```
 
-**Tool:** gobuster · **Platform:** Linux/macOS · **Tags:** VHost, Discovery
+**Tool:** gobuster · **Platform:** Linux/macOS · **Tags:** VHost, Discovery · **Context:** No auth
 
 ## wfuzz Host-header discovery
 
@@ -42,7 +42,7 @@ gobuster vhost -u https://<DOMAIN> -w <WORDLIST> --append-domain
 wfuzz -c -w <WORDLIST> -H "Host: FUZZ.<DOMAIN>" --hh <BASELINE_CHARS> http://<IP>/
 ```
 
-**Tool:** wfuzz · **Platform:** Linux/macOS · **Tags:** VHost, Host Header
+**Tool:** wfuzz · **Platform:** Linux/macOS · **Tags:** VHost, Host Header · **Context:** No auth
 
 ## Manual curl vhost probe
 
@@ -50,7 +50,7 @@ wfuzz -c -w <WORDLIST> -H "Host: FUZZ.<DOMAIN>" --hh <BASELINE_CHARS> http://<IP
 curl -sk -H 'Host: <VHOST>.<DOMAIN>' http://<IP>/ -o /dev/null -w '%{http_code} %{size_download}\n'
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Tags:** VHost, Manual Validation
+**Tool:** curl · **Platform:** Cross-platform · **Tags:** VHost, Manual Validation · **Context:** No auth
 
 ## Compare default and candidate response hashes
 
@@ -58,7 +58,7 @@ curl -sk -H 'Host: <VHOST>.<DOMAIN>' http://<IP>/ -o /dev/null -w '%{http_code} 
 for h in invalid.<DOMAIN> admin.<DOMAIN>; do printf '%s ' "$h"; curl -sk -H "Host: $h" http://<IP>/ | sha256sum | cut -d' ' -f1; done
 ```
 
-**Tool:** curl + sha256sum · **Platform:** Linux/macOS · **Tags:** VHost, Differential
+**Tool:** curl + sha256sum · **Platform:** Linux/macOS · **Tags:** VHost, Differential · **Context:** No auth
 
 ## Resolve discovered vhosts locally
 
@@ -66,4 +66,8 @@ for h in invalid.<DOMAIN> admin.<DOMAIN>; do printf '%s ' "$h"; curl -sk -H "Hos
 while read -r h; do printf '%s\t%s\n' '<IP>' "$h"; done < vhosts.txt
 ```
 
-**Tool:** shell · **Platform:** Linux/macOS · **Tags:** Hosts File, Validation
+**Tool:** shell · **Platform:** Linux/macOS · **Tags:** Hosts File, Validation · **Context:** No auth
+
+---
+
+**Related:** [Overview](./) · [Vhosts Content](vhosts-content.md) · [Websockets](websockets.md)

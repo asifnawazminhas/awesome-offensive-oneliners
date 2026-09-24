@@ -10,7 +10,7 @@ Probe HTTP services and crawl endpoints with minimal output.
 httpx -l hosts.txt -silent -status-code -title -tech-detect
 ```
 
-**Tool:** httpx · **Platform:** Linux/macOS
+**Tool:** httpx · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## httpx JSON
@@ -19,7 +19,7 @@ httpx -l hosts.txt -silent -status-code -title -tech-detect
 httpx -l hosts.txt -silent -json -o httpx.json
 ```
 
-**Tool:** httpx · **Platform:** Linux/macOS
+**Tool:** httpx · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## Katana crawl
@@ -28,7 +28,7 @@ httpx -l hosts.txt -silent -json -o httpx.json
 katana -u https://<TARGET> -silent
 ```
 
-**Tool:** katana · **Platform:** Linux/macOS
+**Tool:** katana · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## Katana JavaScript only
@@ -37,7 +37,7 @@ katana -u https://<TARGET> -silent
 katana -u https://<TARGET> -silent | grep -Ei '\.js($|\?)' | sort -u
 ```
 
-**Tool:** katana · **Platform:** Linux/macOS
+**Tool:** katana · **Platform:** Linux/macOS · **Context:** No auth
 
 
 ## Katana parameterized URLs
@@ -46,4 +46,8 @@ katana -u https://<TARGET> -silent | grep -Ei '\.js($|\?)' | sort -u
 katana -u https://<TARGET> -silent | uro | grep '=' | sort -u
 ```
 
-**Tool:** katana + uro · **Platform:** Linux/macOS
+**Tool:** katana + uro · **Platform:** Linux/macOS · **Context:** No auth
+
+---
+
+**Related:** [Overview](./) · [Hashcat](hashcat.md) · [Impacket](impacket.md)
