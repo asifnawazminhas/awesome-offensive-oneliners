@@ -1,12 +1,47 @@
-document.addEventListener('DOMContentLoaded', () => {
+(() => {
   const focusSearch = () => {
     const input = document.querySelector('[data-md-component="search-query"]');
-    if (input) input.focus();
+    if (input) {
+      const toggle = document.querySelector('[data-md-component="search"] label.md-header__button');
+      if (toggle && !input.offsetParent) toggle.click();
+      setTimeout(() => input.focus(), 30);
+    }
   };
+
+  const enhance = () => {
+    document.querySelectorAll('.ol-search-launch').forEach((el) => {
+      if (el.dataset.bound) return;
+      el.dataset.bound = '1';
+      el.addEventListener('click', focusSearch);
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); focusSearch(); }
+      });
+    });
+
+    document.querySelectorAll('.md-typeset p').forEach((p) => {
+      if (p.classList.contains('ol-meta')) return;
+      const text = p.textContent.trim();
+      const m = text.match(/^Tool:\s*(.*?)\s*·\s*Platform:\s*(.*?)\s*·\s*Tags:\s*(.*)$/);
+      if (!m) return;
+      p.className = 'ol-meta';
+      p.innerHTML = '';
+      [['Tool',m[1]],['Platform',m[2]],['Tags',m[3]]].forEach(([label,value]) => {
+        const chip = document.createElement('span');
+        chip.className = 'ol-chip';
+        chip.innerHTML = `<b>${label}</b> ${value}`;
+        p.appendChild(chip);
+      });
+    });
+  };
+
   document.addEventListener('keydown', (event) => {
-    if (event.key === '/' && !['INPUT','TEXTAREA'].includes(document.activeElement.tagName)) {
+    const active = document.activeElement;
+    if (event.key === '/' && !['INPUT','TEXTAREA'].includes(active?.tagName) && !active?.isContentEditable) {
       event.preventDefault();
       focusSearch();
     }
   });
-});
+
+  if (typeof document$ !== 'undefined') document$.subscribe(enhance);
+  else document.addEventListener('DOMContentLoaded', enhance);
+})();

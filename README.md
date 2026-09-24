@@ -1,12 +1,20 @@
 # Awesome Offensive OneLiners
 
-A practical collection of one-line commands for penetration testing, Active Directory, red teaming, web security and offensive security operations.
+A practical collection of copyable one-line commands for penetration testing, Active Directory, red teaming, web security and offensive security operations.
 
 **Website:** https://oneliners.asifnawazminhas.com/
 
-## Why this project exists
+## What it is
 
-The goal is simple: one command, one objective, minimal noise. Entries are grouped by task so operators can quickly find a command, copy it, replace the placeholders and continue working.
+The project is designed as a fast operator reference: one command, one objective, minimal noise.
+
+- 183 practical commands
+- 31 focused pages
+- Active Directory, Windows, Linux, Web, Recon, Red Team, Credentials and Tools
+- Fast full-site search
+- Copyable command blocks
+- Consistent placeholders and metadata
+- Responsive dark/light interface
 
 ## Local development
 
@@ -27,12 +35,12 @@ mkdocs build --strict
 
 ## Contributing
 
-See [docs/contributing.md](docs/contributing.md).
+See [`docs/contributing.md`](docs/contributing.md).
 
 ## Responsible use
 
-This repository is intended for authorised penetration testing, red team exercises, labs, CTFs and security research. Use commands only where you have permission to test.
+This repository is intended for authorised penetration testing, red team exercises, labs, CTFs and security research. Use commands only in environments where you have permission to test.
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+MIT.

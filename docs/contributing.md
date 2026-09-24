@@ -1,6 +1,22 @@
 # Contributing
 
-Contributions are welcome when they keep the project fast to scan and easy to use.
+Contributions are welcome when they keep the project fast to scan, consistent and easy to use.
+
+## Command conventions
+
+Use predictable placeholders everywhere:
+
+| Placeholder | Meaning |
+| --- | --- |
+| `<TARGET>` | Hostname, IP address or URL |
+| `<CIDR>` | Network range |
+| `<DOMAIN>` | Active Directory or DNS domain |
+| `<USER>` | Username |
+| `<PASSWORD>` | Password |
+| `<HASH>` | Password or NTLM hash |
+| `<DC>` / `<DC_IP>` | Domain controller / address |
+| `<PORT>` | TCP or UDP port |
+| `<FILE>` | Local or remote file path |
 
 ## Entry format
 
@@ -19,9 +35,9 @@ command --with <PLACEHOLDERS>
 ## Rules
 
 1. Keep the command on one logical line whenever practical.
-2. Use obvious placeholders such as `<TARGET>`, `<DOMAIN>`, `<USER>`, `<PASSWORD>` and `<HASH>`.
+2. Use the shared placeholders above.
 3. Avoid organisation-specific hostnames, credentials or secrets.
-4. Do not duplicate an existing command unless the variant changes the technique or authentication method.
+4. Do not duplicate an existing command unless the variant materially changes the workflow.
 5. Keep explanations short. This is a one-liner reference, not a full methodology guide.
 6. Test the command before opening a pull request.
 7. Run `mkdocs build --strict` before submitting changes.
