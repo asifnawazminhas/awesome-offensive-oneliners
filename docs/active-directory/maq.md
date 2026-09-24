@@ -10,7 +10,7 @@ One-liners for reading the domain machine-account quota and related computer cre
 Get-DomainObject -Identity (Get-Domain).DistinguishedName -Properties ms-DS-MachineAccountQuota | Select ms-DS-MachineAccountQuota
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, MAQ · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, MAQ · **Context:** Domain user · **Noise:** Quiet
 
 ## LDAP MAQ
 
@@ -18,7 +18,7 @@ Get-DomainObject -Identity (Get-Domain).DistinguishedName -Properties ms-DS-Mach
 ldapsearch -x -H ldap://<DC_IP> -D "<DOMAIN>\<USER>" -w '<PASSWORD>' -b "<BASE_DN>" -s base "(objectClass=*)" ms-DS-MachineAccountQuota
 ```
 
-**Tool:** ldapsearch · **Platform:** Linux · **Tags:** AD, LDAP, MAQ · **Context:** Domain user
+**Tool:** ldapsearch · **Platform:** Linux · **Tags:** AD, LDAP, MAQ · **Context:** Domain user · **Noise:** Quiet
 
 ## NetExec MAQ query
 
@@ -26,7 +26,7 @@ ldapsearch -x -H ldap://<DC_IP> -D "<DOMAIN>\<USER>" -w '<PASSWORD>' -b "<BASE_D
 nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --query "(objectClass=domain)" "ms-DS-MachineAccountQuota"
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, LDAP, MAQ · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, LDAP, MAQ · **Context:** Domain user · **Noise:** Quiet
 
 ## List recently created computers
 
@@ -34,7 +34,7 @@ nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --query "(objectClass=domain)" "ms-DS
 Get-DomainComputer -Properties samaccountname,whenCreated | Sort-Object whenCreated -Descending | Select -First 20
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, computers, MAQ · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, computers, MAQ · **Context:** Domain user · **Noise:** Quiet
 
 ---
 

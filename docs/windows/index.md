@@ -22,5 +22,5 @@ Windows host, security-control and privilege-context one-liners.
 <div class="ol-mini-card"><strong><a href="execution-control/">Execution Control Validation</a></strong><span>7 commands · correlate policy and events</span></div>
 <div class="ol-mini-card"><strong><a href="lolbins-discovery/">LOLBin Discovery</a></strong><span>5 commands · available signed utilities</span></div>
 <div class="ol-mini-card"><strong><a href="powershell/">PowerShell</a></strong><span>6 commands · PowerShell operator commands</span></div>
-<div class="ol-mini-card"><strong><a href="clm/">Constrained Language Mode</a></strong><span>9 commands · CLM capability and logging checks</span></div>
+<div class="ol-mini-card"><strong><a href="clm/">Constrained Language Mode</a></strong><span>15 commands · CLM capability and logging checks</span></div>
 </div>

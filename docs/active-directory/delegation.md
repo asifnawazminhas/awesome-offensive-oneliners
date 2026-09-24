@@ -1,5 +1,7 @@
 # Delegation
 
+<span class="ol-search-aliases">kcd constrained delegation unconstrained delegation TrustedToAuth msDS-AllowedToDelegateTo kerberos delegation</span>
+
 Find unconstrained, constrained and resource-based delegation configuration.
 
 <div class="ol-section-kicker"><span>AD</span></div>
@@ -10,7 +12,7 @@ Find unconstrained, constrained and resource-based delegation configuration.
 Get-DomainComputer -Unconstrained | Select dnshostname,useraccountcontrol
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user · **Noise:** Moderate
 
 
 ## PowerView constrained delegation
@@ -19,7 +21,7 @@ Get-DomainComputer -Unconstrained | Select dnshostname,useraccountcontrol
 Get-DomainComputer -TrustedToAuth -Properties DnsHostName,msDS-AllowedToDelegateTo
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user · **Noise:** Moderate
 
 
 ## PowerView user constrained delegation
@@ -28,7 +30,7 @@ Get-DomainComputer -TrustedToAuth -Properties DnsHostName,msDS-AllowedToDelegate
 Get-DomainUser -TrustedToAuth -Properties samaccountname,msDS-AllowedToDelegateTo
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user · **Noise:** Moderate
 
 
 ## PowerView RBCD targets
@@ -37,7 +39,7 @@ Get-DomainUser -TrustedToAuth -Properties samaccountname,msDS-AllowedToDelegateT
 Get-DomainComputer -LDAPFilter '(msDS-AllowedToActOnBehalfOfOtherIdentity=*)' -Properties dnshostname,msDS-AllowedToActOnBehalfOfOtherIdentity
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user · **Noise:** Moderate
 
 
 ## NetExec trusted-for-delegation
@@ -46,7 +48,7 @@ Get-DomainComputer -LDAPFilter '(msDS-AllowedToActOnBehalfOfOtherIdentity=*)' -P
 nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --trusted-for-delegation
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user · **Noise:** Moderate
 
 
 ## LDAP constrained-delegation query
@@ -55,7 +57,7 @@ nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --trusted-for-delegation
 ldapsearch -x -H ldap://<DC_IP> -D '<USER>@<DOMAIN>' -w '<PASSWORD>' -b '<BASE_DN>' '(msDS-AllowedToDelegateTo=*)' sAMAccountName msDS-AllowedToDelegateTo
 ```
 
-**Tool:** ldapsearch · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** ldapsearch · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Moderate
 
 ---
 

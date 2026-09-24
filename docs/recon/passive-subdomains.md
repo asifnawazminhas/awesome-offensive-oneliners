@@ -15,7 +15,7 @@ Passive, active and resolver-backed subdomain discovery one-liners.
 subfinder -d <DOMAIN> -silent
 ```
 
-**Tool:** subfinder · **Platform:** Linux/macOS · **Tags:** Passive, Subdomains · **Context:** No auth
+**Tool:** subfinder · **Platform:** Linux/macOS · **Tags:** Passive, Subdomains · **Context:** No auth · **Noise:** Quiet
 
 ## Subfinder all configured sources
 
@@ -23,7 +23,7 @@ subfinder -d <DOMAIN> -silent
 subfinder -d <DOMAIN> -all -silent -o subfinder.txt
 ```
 
-**Tool:** subfinder · **Platform:** Linux/macOS · **Tags:** API, Passive · **Context:** No auth
+**Tool:** subfinder · **Platform:** Linux/macOS · **Tags:** API, Passive · **Context:** No auth · **Noise:** Quiet
 
 ## Subfinder selected API-backed sources
 
@@ -31,7 +31,7 @@ subfinder -d <DOMAIN> -all -silent -o subfinder.txt
 subfinder -d <DOMAIN> -s shodan,censys,virustotal,github -silent
 ```
 
-**Tool:** subfinder · **Platform:** Linux/macOS · **Tags:** API, Passive · **Context:** No auth
+**Tool:** subfinder · **Platform:** Linux/macOS · **Tags:** API, Passive · **Context:** No auth · **Noise:** Quiet
 
 Configured provider keys live in `~/.config/subfinder/provider-config.yaml`.
 
@@ -41,7 +41,7 @@ Configured provider keys live in `~/.config/subfinder/provider-config.yaml`.
 subfinder -ls
 ```
 
-**Tool:** subfinder · **Platform:** Linux/macOS · **Tags:** Sources, API · **Context:** No auth
+**Tool:** subfinder · **Platform:** Linux/macOS · **Tags:** Sources, API · **Context:** No auth · **Noise:** Quiet
 
 ## Subfinder recursive sources
 
@@ -49,7 +49,7 @@ subfinder -ls
 subfinder -d <DOMAIN> -recursive -silent
 ```
 
-**Tool:** subfinder · **Platform:** Linux/macOS · **Tags:** Recursive, Passive · **Context:** No auth
+**Tool:** subfinder · **Platform:** Linux/macOS · **Tags:** Recursive, Passive · **Context:** No auth · **Noise:** Quiet
 
 ## Amass passive
 
@@ -57,7 +57,7 @@ subfinder -d <DOMAIN> -recursive -silent
 amass enum -passive -d <DOMAIN> -o amass.txt
 ```
 
-**Tool:** Amass · **Platform:** Linux/macOS · **Tags:** OSINT, Passive · **Context:** No auth
+**Tool:** Amass · **Platform:** Linux/macOS · **Tags:** OSINT, Passive · **Context:** No auth · **Noise:** Quiet
 
 ## Amass active brute-force
 
@@ -65,7 +65,7 @@ amass enum -passive -d <DOMAIN> -o amass.txt
 amass enum -active -brute -d <DOMAIN> -o amass-active.txt
 ```
 
-**Tool:** Amass · **Platform:** Linux/macOS · **Tags:** Active, Brute Force · **Context:** No auth
+**Tool:** Amass · **Platform:** Linux/macOS · **Tags:** Active, Brute Force · **Context:** No auth · **Noise:** Quiet
 
 ## Assetfinder subdomains
 
@@ -73,7 +73,7 @@ amass enum -active -brute -d <DOMAIN> -o amass-active.txt
 assetfinder --subs-only <DOMAIN> | sort -u
 ```
 
-**Tool:** assetfinder · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** assetfinder · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Quiet
 
 ## Findomain quiet enumeration
 
@@ -81,7 +81,7 @@ assetfinder --subs-only <DOMAIN> | sort -u
 findomain -t <DOMAIN> -q | sort -u
 ```
 
-**Tool:** findomain · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** findomain · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Quiet
 
 ## Certificate Transparency via crt.sh
 
@@ -89,7 +89,7 @@ findomain -t <DOMAIN> -q | sort -u
 curl -s 'https://crt.sh/?q=%25.<DOMAIN>&output=json' | jq -r '.[].name_value' | sed 's/\*\.//g' | sort -u
 ```
 
-**Tool:** curl + jq · **Platform:** Linux/macOS · **Tags:** CT, Certificates · **Context:** No auth
+**Tool:** curl + jq · **Platform:** Linux/macOS · **Tags:** CT, Certificates · **Context:** No auth · **Noise:** Quiet
 
 ## PureDNS brute-force
 
@@ -97,7 +97,7 @@ curl -s 'https://crt.sh/?q=%25.<DOMAIN>&output=json' | jq -r '.[].name_value' | 
 puredns bruteforce <SUBDOMAIN_WORDLIST> <DOMAIN> -r <RESOLVERS> -w puredns.txt
 ```
 
-**Tool:** puredns · **Platform:** Linux/macOS · **Tags:** DNS, Brute Force · **Context:** No auth
+**Tool:** puredns · **Platform:** Linux/macOS · **Tags:** DNS, Brute Force · **Context:** No auth · **Noise:** Quiet
 
 ## GitHub code search for domain references
 
@@ -105,7 +105,7 @@ puredns bruteforce <SUBDOMAIN_WORDLIST> <DOMAIN> -r <RESOLVERS> -w puredns.txt
 gh search code '<DOMAIN>' --limit 100 --json repository,path,url | jq -r '.[] | [.repository.nameWithOwner,.path,.url] | @tsv'
 ```
 
-**Tool:** GitHub CLI · **Platform:** Cross-platform · **Tags:** OSINT, GitHub · **Context:** No auth
+**Tool:** GitHub CLI · **Platform:** Cross-platform · **Tags:** OSINT, GitHub · **Context:** No auth · **Noise:** Quiet
 
 ## Combine multiple sources
 
@@ -113,7 +113,7 @@ gh search code '<DOMAIN>' --limit 100 --json repository,path,url | jq -r '.[] | 
 (subfinder -d <DOMAIN> -silent; assetfinder --subs-only <DOMAIN>; findomain -t <DOMAIN> -q) | sort -u > all-subs.txt
 ```
 
-**Tool:** Multiple · **Platform:** Linux/macOS · **Tags:** Pipeline, Dedupe · **Context:** No auth
+**Tool:** Multiple · **Platform:** Linux/macOS · **Tags:** Pipeline, Dedupe · **Context:** No auth · **Noise:** Quiet
 
 ## Subfinder directly to live HTTP services
 
@@ -121,7 +121,7 @@ gh search code '<DOMAIN>' --limit 100 --json repository,path,url | jq -r '.[] | 
 subfinder -d <DOMAIN> -silent | httpx -silent -status-code -title -tech-detect
 ```
 
-**Tool:** subfinder + httpx · **Platform:** Linux/macOS · **Tags:** Pipeline, HTTP · **Context:** No auth
+**Tool:** subfinder + httpx · **Platform:** Linux/macOS · **Tags:** Pipeline, HTTP · **Context:** No auth · **Noise:** Quiet
 
 ---
 

@@ -10,7 +10,7 @@ One-liners for finding and validating redirect parameters.
 gau <DOMAIN> | grep -Ei "(url|uri|redirect|return|next|continue|dest|destination|callback)=" | sort -u
 ```
 
-**Tool:** gau · **Platform:** Linux · **Tags:** Web, redirect, parameters · **Context:** No auth
+**Tool:** gau · **Platform:** Linux · **Tags:** Web, redirect, parameters · **Context:** No auth · **Noise:** Moderate
 
 ## Direct redirect probe
 
@@ -18,7 +18,7 @@ gau <DOMAIN> | grep -Ei "(url|uri|redirect|return|next|continue|dest|destination
 curl -skI "https://<TARGET>/<PATH>?next=https://example.org" | grep -i "^Location:"
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** Web, open redirect · **Context:** No auth
+**Tool:** curl · **Platform:** Any · **Tags:** Web, open redirect · **Context:** No auth · **Noise:** Moderate
 
 ## Scheme-relative probe
 
@@ -26,7 +26,7 @@ curl -skI "https://<TARGET>/<PATH>?next=https://example.org" | grep -i "^Locatio
 curl -skI "https://<TARGET>/<PATH>?next=//example.org" | grep -i "^Location:"
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** Web, open redirect · **Context:** No auth
+**Tool:** curl · **Platform:** Any · **Tags:** Web, open redirect · **Context:** No auth · **Noise:** Moderate
 
 ## Encoded redirect probe
 
@@ -34,7 +34,7 @@ curl -skI "https://<TARGET>/<PATH>?next=//example.org" | grep -i "^Location:"
 curl -skI "https://<TARGET>/<PATH>?next=https%3A%2F%2Fexample.org" | grep -i "^Location:"
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** Web, open redirect, encoding · **Context:** No auth
+**Tool:** curl · **Platform:** Any · **Tags:** Web, open redirect, encoding · **Context:** No auth · **Noise:** Moderate
 
 ## ffuf redirect parameter values
 
@@ -42,7 +42,7 @@ curl -skI "https://<TARGET>/<PATH>?next=https%3A%2F%2Fexample.org" | grep -i "^L
 ffuf -u "https://<TARGET>/<PATH>?next=FUZZ" -w <REDIRECT_PAYLOADS> -mc 301,302,303,307,308
 ```
 
-**Tool:** ffuf · **Platform:** Linux · **Tags:** Web, open redirect, fuzzing · **Context:** No auth
+**Tool:** ffuf · **Platform:** Linux · **Tags:** Web, open redirect, fuzzing · **Context:** No auth · **Noise:** Moderate
 
 ---
 

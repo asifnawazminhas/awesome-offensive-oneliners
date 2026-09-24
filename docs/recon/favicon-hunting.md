@@ -10,7 +10,7 @@ One-liners for hashing favicons and pivoting on repeated web application fingerp
 curl -sk https://<TARGET>/favicon.ico -o favicon.ico
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** Recon, favicon · **Context:** No auth
+**Tool:** curl · **Platform:** Any · **Tags:** Recon, favicon · **Context:** No auth · **Noise:** Moderate
 
 ## MD5 favicon hash
 
@@ -18,7 +18,7 @@ curl -sk https://<TARGET>/favicon.ico -o favicon.ico
 md5sum favicon.ico
 ```
 
-**Tool:** md5sum · **Platform:** Linux · **Tags:** Recon, favicon, hash · **Context:** No auth
+**Tool:** md5sum · **Platform:** Linux · **Tags:** Recon, favicon, hash · **Context:** No auth · **Noise:** Moderate
 
 ## MMH3 hash for Shodan
 
@@ -26,7 +26,7 @@ md5sum favicon.ico
 python3 -c "import mmh3,base64;print(mmh3.hash(base64.encodebytes(open("favicon.ico","rb").read())))"
 ```
 
-**Tool:** Python,mmh3 · **Platform:** Linux · **Tags:** Recon, favicon, Shodan · **Context:** No auth
+**Tool:** Python,mmh3 · **Platform:** Linux · **Tags:** Recon, favicon, Shodan · **Context:** No auth · **Noise:** Moderate
 
 ## Shodan favicon search
 
@@ -34,7 +34,7 @@ python3 -c "import mmh3,base64;print(mmh3.hash(base64.encodebytes(open("favicon.
 shodan search "http.favicon.hash:<MMH3>"
 ```
 
-**Tool:** Shodan · **Platform:** Any · **Tags:** Recon, favicon, Shodan · **Context:** No auth
+**Tool:** Shodan · **Platform:** Any · **Tags:** Recon, favicon, Shodan · **Context:** No auth · **Noise:** Moderate
 
 ## httpx favicon hash
 
@@ -42,7 +42,7 @@ shodan search "http.favicon.hash:<MMH3>"
 httpx -u https://<TARGET> -favicon -silent
 ```
 
-**Tool:** httpx · **Platform:** Linux · **Tags:** Recon, favicon · **Context:** No auth
+**Tool:** httpx · **Platform:** Linux · **Tags:** Recon, favicon · **Context:** No auth · **Noise:** Moderate
 
 ---
 

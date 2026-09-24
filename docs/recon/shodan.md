@@ -10,7 +10,7 @@ Fast internet-exposure queries and CLI lookups.
 shodan host <IP>
 ```
 
-**Tool:** Shodan CLI · **Platform:** Cross-platform · **Context:** No auth
+**Tool:** Shodan CLI · **Platform:** Cross-platform · **Context:** No auth · **Noise:** Moderate
 
 
 ## Search hostname
@@ -19,7 +19,7 @@ shodan host <IP>
 shodan search --fields ip_str,port,org,hostnames 'hostname:<DOMAIN>'
 ```
 
-**Tool:** Shodan CLI · **Platform:** Cross-platform · **Context:** No auth
+**Tool:** Shodan CLI · **Platform:** Cross-platform · **Context:** No auth · **Noise:** Moderate
 
 
 ## Search SSL certificate CN
@@ -28,7 +28,7 @@ shodan search --fields ip_str,port,org,hostnames 'hostname:<DOMAIN>'
 shodan search --fields ip_str,port,hostnames 'ssl.cert.subject.cn:<DOMAIN>'
 ```
 
-**Tool:** Shodan CLI · **Platform:** Cross-platform · **Context:** No auth
+**Tool:** Shodan CLI · **Platform:** Cross-platform · **Context:** No auth · **Noise:** Moderate
 
 
 ## Search organisation
@@ -37,7 +37,7 @@ shodan search --fields ip_str,port,hostnames 'ssl.cert.subject.cn:<DOMAIN>'
 shodan search --fields ip_str,port,product 'org:"<ORG>"'
 ```
 
-**Tool:** Shodan CLI · **Platform:** Cross-platform · **Context:** No auth
+**Tool:** Shodan CLI · **Platform:** Cross-platform · **Context:** No auth · **Noise:** Moderate
 
 
 ## Search by HTTP title
@@ -46,7 +46,7 @@ shodan search --fields ip_str,port,product 'org:"<ORG>"'
 shodan search --fields ip_str,port,hostnames 'http.title:"<TITLE>"'
 ```
 
-**Tool:** Shodan CLI · **Platform:** Cross-platform · **Context:** No auth
+**Tool:** Shodan CLI · **Platform:** Cross-platform · **Context:** No auth · **Noise:** Moderate
 
 
 ## Download query results
@@ -55,7 +55,7 @@ shodan search --fields ip_str,port,hostnames 'http.title:"<TITLE>"'
 shodan download results 'hostname:<DOMAIN>'
 ```
 
-**Tool:** Shodan CLI · **Platform:** Cross-platform · **Context:** No auth
+**Tool:** Shodan CLI · **Platform:** Cross-platform · **Context:** No auth · **Noise:** Moderate
 
 
 ## Parse downloaded results
@@ -64,7 +64,7 @@ shodan download results 'hostname:<DOMAIN>'
 shodan parse --fields ip_str,port,hostnames results.json.gz
 ```
 
-**Tool:** Shodan CLI · **Platform:** Cross-platform · **Context:** No auth
+**Tool:** Shodan CLI · **Platform:** Cross-platform · **Context:** No auth · **Noise:** Moderate
 
 ---
 

@@ -10,7 +10,7 @@ One-liners for converting ASNs into target IPs and probing resulting services.
 curl -s "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS<ASN>" | jq -r ' .data.prefixes[].prefix ' > cidrs.txt
 ```
 
-**Tool:** curl,jq · **Platform:** Any · **Tags:** Recon, ASN, CIDR · **Context:** No auth
+**Tool:** curl,jq · **Platform:** Any · **Tags:** Recon, ASN, CIDR · **Context:** No auth · **Noise:** Moderate
 
 ## CIDRs to hosts
 
@@ -18,7 +18,7 @@ curl -s "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS<ASN
 cat cidrs.txt | mapcidr -silent > ips.txt
 ```
 
-**Tool:** mapcidr · **Platform:** Linux · **Tags:** Recon, CIDR, IPs · **Context:** No auth
+**Tool:** mapcidr · **Platform:** Linux · **Tags:** Recon, CIDR, IPs · **Context:** No auth · **Noise:** Moderate
 
 ## ASN to HTTP services
 
@@ -26,7 +26,7 @@ cat cidrs.txt | mapcidr -silent > ips.txt
 curl -s "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS<ASN>" | jq -r ' .data.prefixes[].prefix ' | mapcidr -silent | httpx -silent
 ```
 
-**Tool:** RIPE,mapcidr,httpx · **Platform:** Linux · **Tags:** Recon, ASN, HTTP · **Context:** No auth
+**Tool:** RIPE,mapcidr,httpx · **Platform:** Linux · **Tags:** Recon, ASN, HTTP · **Context:** No auth · **Noise:** Moderate
 
 ## ASN to common web ports
 
@@ -34,7 +34,7 @@ curl -s "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS<ASN
 cat cidrs.txt | mapcidr -silent | naabu -p 80,443,8080,8443 -silent
 ```
 
-**Tool:** mapcidr,naabu · **Platform:** Linux · **Tags:** Recon, ASN, ports · **Context:** No auth
+**Tool:** mapcidr,naabu · **Platform:** Linux · **Tags:** Recon, ASN, ports · **Context:** No auth · **Noise:** Moderate
 
 ---
 

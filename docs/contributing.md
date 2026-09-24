@@ -29,7 +29,7 @@ Use one task per entry:
 command --with <PLACEHOLDERS>
 ```
 
-**Tool:** Tool name · **Platform:** Linux/Windows/macOS · **Tags:** Tag1, Tag2 · **Context:** No auth / User / Domain user / Local admin / SYSTEM
+**Tool:** Tool name · **Platform:** Linux/Windows/macOS · **Tags:** Tag1, Tag2 · **Context:** No auth / User / Domain user / Local admin / SYSTEM · **Noise:** Quiet
 ````
 
 ## Rules

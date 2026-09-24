@@ -10,7 +10,7 @@ One-liners for searching public code for target domains, URLs and common secret 
 gh search code "<DOMAIN>" --limit 100
 ```
 
-**Tool:** GitHub CLI · **Platform:** Any · **Tags:** Recon, GitHub, code search · **Context:** No auth
+**Tool:** GitHub CLI · **Platform:** Any · **Tags:** Recon, GitHub, code search · **Context:** No auth · **Noise:** Quiet
 
 ## GitHub API code search
 
@@ -18,7 +18,7 @@ gh search code "<DOMAIN>" --limit 100
 gh api -H "Accept: application/vnd.github+json" "/search/code?q=<DOMAIN>&per_page=100" | jq -r ' .items[].html_url '
 ```
 
-**Tool:** GitHub CLI,jq · **Platform:** Any · **Tags:** Recon, GitHub, code search · **Context:** No auth
+**Tool:** GitHub CLI,jq · **Platform:** Any · **Tags:** Recon, GitHub, code search · **Context:** No auth · **Noise:** Quiet
 
 ## GitLab project search API
 
@@ -26,7 +26,7 @@ gh api -H "Accept: application/vnd.github+json" "/search/code?q=<DOMAIN>&per_pag
 curl -s "https://gitlab.com/api/v4/projects?search=<ORG>&simple=true&per_page=100" | jq -r ' .[].web_url '
 ```
 
-**Tool:** curl,jq · **Platform:** Any · **Tags:** Recon, GitLab · **Context:** No auth
+**Tool:** curl,jq · **Platform:** Any · **Tags:** Recon, GitLab · **Context:** No auth · **Noise:** Quiet
 
 ## Search cloned repos for domain
 
@@ -34,7 +34,7 @@ curl -s "https://gitlab.com/api/v4/projects?search=<ORG>&simple=true&per_page=10
 rg -n -i "<DOMAIN>" .
 ```
 
-**Tool:** ripgrep · **Platform:** Any · **Tags:** Recon, source code · **Context:** User
+**Tool:** ripgrep · **Platform:** Any · **Tags:** Recon, source code · **Context:** User · **Noise:** Quiet
 
 ## Search common secret keywords
 
@@ -42,7 +42,7 @@ rg -n -i "<DOMAIN>" .
 rg -n -i "(api[_-]?key|client[_-]?secret|access[_-]?token|password|passwd)" .
 ```
 
-**Tool:** ripgrep · **Platform:** Any · **Tags:** Recon, source code, secrets · **Context:** User
+**Tool:** ripgrep · **Platform:** Any · **Tags:** Recon, source code, secrets · **Context:** User · **Noise:** Quiet
 
 ---
 

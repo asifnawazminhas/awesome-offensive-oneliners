@@ -10,7 +10,7 @@ Enumerate hosts, operating systems and domain-controller properties.
 Get-DomainComputer | Select-Object dnshostname,operatingsystem
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user · **Noise:** Quiet
 
 
 ## PowerView servers only
@@ -19,7 +19,7 @@ Get-DomainComputer | Select-Object dnshostname,operatingsystem
 Get-DomainComputer -LDAPFilter '(operatingSystem=*Server*)' | Select dnshostname,operatingsystem
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user · **Noise:** Quiet
 
 
 ## NetExec LDAP computers
@@ -28,7 +28,7 @@ Get-DomainComputer -LDAPFilter '(operatingSystem=*Server*)' | Select dnshostname
 nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --computers
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user · **Noise:** Quiet
 
 
 ## NetExec SMB host discovery
@@ -37,7 +37,7 @@ nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --computers
 nxc smb <CIDR>
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user · **Noise:** Quiet
 
 
 ## PowerView domain controllers
@@ -46,7 +46,7 @@ nxc smb <CIDR>
 Get-DomainController | Select-Object Name,IPAddress,OperatingSystem,SiteName
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user · **Noise:** Quiet
 
 
 ## Native DC discovery
@@ -55,7 +55,7 @@ Get-DomainController | Select-Object Name,IPAddress,OperatingSystem,SiteName
 nltest /dsgetdc:<DOMAIN>
 ```
 
-**Tool:** nltest · **Platform:** Windows · **Context:** Domain user
+**Tool:** nltest · **Platform:** Windows · **Context:** Domain user · **Noise:** Quiet
 
 ---
 

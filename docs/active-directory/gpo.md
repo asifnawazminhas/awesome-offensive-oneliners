@@ -10,7 +10,7 @@ One-liners for discovering Group Policy objects, links and applied settings.
 Get-DomainGPO | Select-Object displayName,name
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, GPO · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, GPO · **Context:** Domain user · **Noise:** Quiet
 
 ## Find GPO by name
 
@@ -18,7 +18,7 @@ Get-DomainGPO | Select-Object displayName,name
 Get-DomainGPO -Identity "<GPO_NAME>"
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, GPO · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, GPO · **Context:** Domain user · **Noise:** Quiet
 
 ## Map GPOs to OUs
 
@@ -26,7 +26,7 @@ Get-DomainGPO -Identity "<GPO_NAME>"
 Get-DomainOU | Select-Object name,gplink
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, GPO, OU · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, GPO, OU · **Context:** Domain user · **Noise:** Quiet
 
 ## Applied GPOs for current host
 
@@ -34,7 +34,7 @@ Get-DomainOU | Select-Object name,gplink
 gpresult /r
 ```
 
-**Tool:** gpresult · **Platform:** Windows · **Tags:** AD, GPO · **Context:** User
+**Tool:** gpresult · **Platform:** Windows · **Tags:** AD, GPO · **Context:** User · **Noise:** Quiet
 
 ## Export detailed GPO result
 
@@ -42,7 +42,7 @@ gpresult /r
 gpresult /h C:\Windows\Temp\gp.html
 ```
 
-**Tool:** gpresult · **Platform:** Windows · **Tags:** AD, GPO · **Context:** User
+**Tool:** gpresult · **Platform:** Windows · **Tags:** AD, GPO · **Context:** User · **Noise:** Quiet
 
 ## List GPOs with native module
 
@@ -50,7 +50,7 @@ gpresult /h C:\Windows\Temp\gp.html
 Get-GPO -All | Select DisplayName,Id,GpoStatus
 ```
 
-**Tool:** GroupPolicy · **Platform:** Windows · **Tags:** AD, GPO · **Context:** Domain user
+**Tool:** GroupPolicy · **Platform:** Windows · **Tags:** AD, GPO · **Context:** Domain user · **Noise:** Quiet
 
 ## LDAP GPO objects
 
@@ -58,7 +58,7 @@ Get-GPO -All | Select DisplayName,Id,GpoStatus
 ldapsearch -x -H ldap://<DC_IP> -D "<DOMAIN>\<USER>" -w '<PASSWORD>' -b "CN=Policies,CN=System,<BASE_DN>" "(objectClass=groupPolicyContainer)" displayName name
 ```
 
-**Tool:** ldapsearch · **Platform:** Linux · **Tags:** AD, LDAP, GPO · **Context:** Domain user
+**Tool:** ldapsearch · **Platform:** Linux · **Tags:** AD, LDAP, GPO · **Context:** Domain user · **Noise:** Quiet
 
 ---
 

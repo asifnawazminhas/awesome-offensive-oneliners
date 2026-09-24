@@ -10,7 +10,7 @@ One-liners for checking Windows token privileges, group membership and integrity
 whoami /priv
 ```
 
-**Tool:** whoami · **Platform:** Windows · **Tags:** tokens, privileges · **Context:** User
+**Tool:** whoami · **Platform:** Windows · **Tags:** tokens, privileges · **Context:** User · **Noise:** Quiet
 
 ## Group memberships
 
@@ -18,7 +18,7 @@ whoami /priv
 whoami /groups
 ```
 
-**Tool:** whoami · **Platform:** Windows · **Tags:** groups, token · **Context:** User
+**Tool:** whoami · **Platform:** Windows · **Tags:** groups, token · **Context:** User · **Noise:** Quiet
 
 ## High-value privileges
 
@@ -26,7 +26,7 @@ whoami /groups
 whoami /priv | findstr /i "SeImpersonate SeAssignPrimaryToken SeDebug SeBackup SeRestore SeTakeOwnership SeLoadDriver"
 ```
 
-**Tool:** whoami · **Platform:** Windows · **Tags:** privileges · **Context:** User
+**Tool:** whoami · **Platform:** Windows · **Tags:** privileges · **Context:** User · **Noise:** Quiet
 
 ## Integrity level
 
@@ -34,7 +34,7 @@ whoami /priv | findstr /i "SeImpersonate SeAssignPrimaryToken SeDebug SeBackup S
 whoami /groups | findstr /i "Mandatory Label"
 ```
 
-**Tool:** whoami · **Platform:** Windows · **Tags:** integrity level · **Context:** User
+**Tool:** whoami · **Platform:** Windows · **Tags:** integrity level · **Context:** User · **Noise:** Quiet
 
 ## Current identity
 
@@ -42,7 +42,7 @@ whoami /groups | findstr /i "Mandatory Label"
 [System.Security.Principal.WindowsIdentity]::GetCurrent() | Select Name,ImpersonationLevel
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** token, identity · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** token, identity · **Context:** User · **Noise:** Quiet
 
 ## Admin role check
 
@@ -50,7 +50,7 @@ whoami /groups | findstr /i "Mandatory Label"
 ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** admin, token · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** admin, token · **Context:** User · **Noise:** Quiet
 
 ---
 

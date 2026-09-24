@@ -51,3 +51,8 @@ Use these commands only in systems and environments where you have explicit auth
 ## Recent coverage
 
 Expanded AD DNS/SPN/group/account discovery, modern web parser/header checks, recon quality pipelines, CLM validation, LOLBin coverage, Sliver C2, and additional operator tool references.
+
+
+## Coverage
+
+The library spans Active Directory, Windows, Linux, Web, Recon, Cloud, Kubernetes, Red Team, Credentials and operator tooling. Entries stay one-liner first, with compact Context, Requires, Noise and version-sensitive notes where useful.

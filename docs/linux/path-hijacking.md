@@ -10,7 +10,7 @@ One-liners for finding writable PATH entries and scripts invoking commands witho
 tr : '\n' <<< "$PATH"
 ```
 
-**Tool:** bash · **Platform:** Linux · **Tags:** PATH · **Context:** User
+**Tool:** bash · **Platform:** Linux · **Tags:** PATH · **Context:** User · **Noise:** Quiet
 
 ## Writable PATH directories
 
@@ -18,7 +18,7 @@ tr : '\n' <<< "$PATH"
 tr : '\n' <<< "$PATH" | while read d; do [ -d "$d" ] && [ -w "$d" ] && echo "$d"; done
 ```
 
-**Tool:** bash · **Platform:** Linux · **Tags:** PATH, writable · **Context:** User
+**Tool:** bash · **Platform:** Linux · **Tags:** PATH, writable · **Context:** User · **Noise:** Quiet
 
 ## PATH ownership and permissions
 
@@ -26,7 +26,7 @@ tr : '\n' <<< "$PATH" | while read d; do [ -d "$d" ] && [ -w "$d" ] && echo "$d"
 tr : '\n' <<< "$PATH" | xargs -r ls -ld 2>/dev/null
 ```
 
-**Tool:** ls · **Platform:** Linux · **Tags:** PATH, permissions · **Context:** User
+**Tool:** ls · **Platform:** Linux · **Tags:** PATH, permissions · **Context:** User · **Noise:** Quiet
 
 ## Scripts with bare command names
 
@@ -34,7 +34,7 @@ tr : '\n' <<< "$PATH" | xargs -r ls -ld 2>/dev/null
 grep -RHE "(^|[;&| ])(cp|mv|tar|rsync|curl|wget|python|perl|bash|sh)([ ;|&]|$)" /etc/cron* /usr/local/bin 2>/dev/null
 ```
 
-**Tool:** grep · **Platform:** Linux · **Tags:** PATH, scripts · **Context:** User
+**Tool:** grep · **Platform:** Linux · **Tags:** PATH, scripts · **Context:** User · **Noise:** Quiet
 
 ---
 

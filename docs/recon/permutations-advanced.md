@@ -10,7 +10,7 @@ Higher-coverage subdomain permutation one-liners with resolution and deduplicati
 cat subdomains.txt | alterx -silent | dnsx -silent
 ```
 
-**Tool:** alterx,dnsx · **Platform:** Linux · **Tags:** Recon, subdomains, permutations · **Context:** No auth
+**Tool:** alterx,dnsx · **Platform:** Linux · **Tags:** Recon, subdomains, permutations · **Context:** No auth · **Noise:** Moderate
 
 ## alterx plus original set
 
@@ -18,7 +18,7 @@ cat subdomains.txt | alterx -silent | dnsx -silent
 (cat subdomains.txt; cat subdomains.txt | alterx -silent) | sort -u | dnsx -silent
 ```
 
-**Tool:** alterx,dnsx · **Platform:** Linux · **Tags:** Recon, subdomains, permutations · **Context:** No auth
+**Tool:** alterx,dnsx · **Platform:** Linux · **Tags:** Recon, subdomains, permutations · **Context:** No auth · **Noise:** Moderate
 
 ## dnsgen to massdns
 
@@ -26,7 +26,7 @@ cat subdomains.txt | alterx -silent | dnsx -silent
 dnsgen subdomains.txt | massdns -r resolvers.txt -t A -o S -w resolved.txt
 ```
 
-**Tool:** dnsgen,massdns · **Platform:** Linux · **Tags:** Recon, subdomains, permutations · **Context:** No auth
+**Tool:** dnsgen,massdns · **Platform:** Linux · **Tags:** Recon, subdomains, permutations · **Context:** No auth · **Noise:** Moderate
 
 ## altdns permutations
 
@@ -34,7 +34,7 @@ dnsgen subdomains.txt | massdns -r resolvers.txt -t A -o S -w resolved.txt
 altdns -i subdomains.txt -o permutations.txt -w words.txt
 ```
 
-**Tool:** altdns · **Platform:** Linux · **Tags:** Recon, subdomains, permutations · **Context:** No auth
+**Tool:** altdns · **Platform:** Linux · **Tags:** Recon, subdomains, permutations · **Context:** No auth · **Noise:** Moderate
 
 ## puredns resolve permutations
 
@@ -42,7 +42,7 @@ altdns -i subdomains.txt -o permutations.txt -w words.txt
 cat permutations.txt | puredns resolve -r resolvers.txt -w resolved.txt
 ```
 
-**Tool:** puredns · **Platform:** Linux · **Tags:** Recon, DNS, permutations · **Context:** No auth
+**Tool:** puredns · **Platform:** Linux · **Tags:** Recon, DNS, permutations · **Context:** No auth · **Noise:** Moderate
 
 ---
 

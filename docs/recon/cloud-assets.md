@@ -10,7 +10,7 @@ One-liners for identifying cloud-hosted endpoints and common public cloud naming
 grep -Eio "[A-Za-z0-9._-]+\.s3[.-][A-Za-z0-9.-]*amazonaws\.com|s3[.-][A-Za-z0-9.-]*amazonaws\.com/[A-Za-z0-9._/-]+" urls.txt | sort -u
 ```
 
-**Tool:** grep · **Platform:** Linux · **Tags:** Recon, AWS, S3 · **Context:** No auth
+**Tool:** grep · **Platform:** Linux · **Tags:** Recon, AWS, S3 · **Context:** No auth · **Noise:** Moderate
 
 ## Azure Blob hostnames
 
@@ -18,7 +18,7 @@ grep -Eio "[A-Za-z0-9._-]+\.s3[.-][A-Za-z0-9.-]*amazonaws\.com|s3[.-][A-Za-z0-9.
 grep -Eio "[A-Za-z0-9-]+\.blob\.core\.windows\.net" urls.txt | sort -u
 ```
 
-**Tool:** grep · **Platform:** Linux · **Tags:** Recon, Azure, Blob · **Context:** No auth
+**Tool:** grep · **Platform:** Linux · **Tags:** Recon, Azure, Blob · **Context:** No auth · **Noise:** Moderate
 
 ## GCS hostnames
 
@@ -26,7 +26,7 @@ grep -Eio "[A-Za-z0-9-]+\.blob\.core\.windows\.net" urls.txt | sort -u
 grep -Eio "storage\.googleapis\.com/[A-Za-z0-9._/-]+|[A-Za-z0-9._-]+\.storage\.googleapis\.com" urls.txt | sort -u
 ```
 
-**Tool:** grep · **Platform:** Linux · **Tags:** Recon, GCP, storage · **Context:** No auth
+**Tool:** grep · **Platform:** Linux · **Tags:** Recon, GCP, storage · **Context:** No auth · **Noise:** Moderate
 
 ## Cloudfront endpoints
 
@@ -34,7 +34,7 @@ grep -Eio "storage\.googleapis\.com/[A-Za-z0-9._/-]+|[A-Za-z0-9._-]+\.storage\.g
 grep -Eio "[a-z0-9]+\.cloudfront\.net" urls.txt | sort -u
 ```
 
-**Tool:** grep · **Platform:** Linux · **Tags:** Recon, AWS, CloudFront · **Context:** No auth
+**Tool:** grep · **Platform:** Linux · **Tags:** Recon, AWS, CloudFront · **Context:** No auth · **Noise:** Moderate
 
 ## DNS CNAME cloud clues
 
@@ -42,7 +42,7 @@ grep -Eio "[a-z0-9]+\.cloudfront\.net" urls.txt | sort -u
 dnsx -l subdomains.txt -cname -resp-only -silent | grep -Ei "amazonaws|azure|windows.net|cloudfront|googleapis|herokudns|fastly|akamai"
 ```
 
-**Tool:** dnsx · **Platform:** Linux · **Tags:** Recon, cloud, CNAME · **Context:** No auth
+**Tool:** dnsx · **Platform:** Linux · **Tags:** Recon, cloud, CNAME · **Context:** No auth · **Noise:** Moderate
 
 ---
 

@@ -10,7 +10,7 @@ Identify common frameworks, CMS products and management interfaces quickly.
 httpx -l urls.txt -silent -status-code -title -tech-detect
 ```
 
-**Tool:** httpx · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** httpx · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Moderate
 
 
 ## WhatWeb fingerprint
@@ -19,7 +19,7 @@ httpx -l urls.txt -silent -status-code -title -tech-detect
 whatweb -a 3 https://<TARGET>
 ```
 
-**Tool:** WhatWeb · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** WhatWeb · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Moderate
 
 
 ## Nuclei technology tags
@@ -28,7 +28,7 @@ whatweb -a 3 https://<TARGET>
 nuclei -l urls.txt -tags tech -silent
 ```
 
-**Tool:** nuclei · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** nuclei · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Moderate
 
 
 ## Wappalyzer CLI
@@ -37,7 +37,7 @@ nuclei -l urls.txt -tags tech -silent
 wappalyzer https://<TARGET>
 ```
 
-**Tool:** Wappalyzer · **Platform:** Cross-platform · **Context:** No auth
+**Tool:** Wappalyzer · **Platform:** Cross-platform · **Context:** No auth · **Noise:** Moderate
 
 
 ## Server headers
@@ -46,7 +46,7 @@ wappalyzer https://<TARGET>
 curl -skI https://<TARGET> | grep -Ei '^(server|x-powered-by|via|x-generator|x-aspnet-version):'
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Context:** No auth
+**Tool:** curl · **Platform:** Cross-platform · **Context:** No auth · **Noise:** Moderate
 
 ---
 

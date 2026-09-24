@@ -15,7 +15,7 @@ Fast checks for common local privilege-escalation conditions.
 sudo -l
 ```
 
-**Tool:** sudo · **Platform:** Linux · **Tags:** Sudo, Privileges · **Context:** User
+**Tool:** sudo · **Platform:** Linux · **Tags:** Sudo, Privileges · **Context:** User · **Noise:** Quiet
 
 ## SUID binaries
 
@@ -23,7 +23,7 @@ sudo -l
 find / -perm -4000 -type f 2>/dev/null
 ```
 
-**Tool:** find · **Platform:** Linux · **Tags:** SUID, Privilege Escalation · **Context:** User
+**Tool:** find · **Platform:** Linux · **Tags:** SUID, Privilege Escalation · **Context:** User · **Noise:** Quiet
 
 ## SGID binaries
 
@@ -31,7 +31,7 @@ find / -perm -4000 -type f 2>/dev/null
 find / -perm -2000 -type f 2>/dev/null
 ```
 
-**Tool:** find · **Platform:** Linux · **Tags:** SGID, Privilege Escalation · **Context:** User
+**Tool:** find · **Platform:** Linux · **Tags:** SGID, Privilege Escalation · **Context:** User · **Noise:** Quiet
 
 ## File capabilities
 
@@ -39,7 +39,7 @@ find / -perm -2000 -type f 2>/dev/null
 getcap -r / 2>/dev/null
 ```
 
-**Tool:** getcap · **Platform:** Linux · **Tags:** Capabilities · **Context:** User
+**Tool:** getcap · **Platform:** Linux · **Tags:** Capabilities · **Context:** User · **Noise:** Quiet
 
 ## passwd and shadow permissions
 
@@ -47,7 +47,7 @@ getcap -r / 2>/dev/null
 ls -la /etc/passwd /etc/shadow
 ```
 
-**Tool:** ls · **Platform:** Linux · **Tags:** Credentials, Permissions · **Context:** User
+**Tool:** ls · **Platform:** Linux · **Tags:** Credentials, Permissions · **Context:** User · **Noise:** Quiet
 
 ## Cron overview
 
@@ -55,7 +55,7 @@ ls -la /etc/passwd /etc/shadow
 cat /etc/crontab 2>/dev/null; ls -la /etc/cron.* 2>/dev/null; crontab -l 2>/dev/null
 ```
 
-**Tool:** cron · **Platform:** Linux · **Tags:** Scheduled Jobs · **Context:** User
+**Tool:** cron · **Platform:** Linux · **Tags:** Scheduled Jobs · **Context:** User · **Noise:** Quiet
 
 ## World-writable directories
 
@@ -63,7 +63,7 @@ cat /etc/crontab 2>/dev/null; ls -la /etc/cron.* 2>/dev/null; crontab -l 2>/dev/
 find / -xdev -type d -perm -0002 2>/dev/null
 ```
 
-**Tool:** find · **Platform:** Linux · **Tags:** Writable, Directories · **Context:** User
+**Tool:** find · **Platform:** Linux · **Tags:** Writable, Directories · **Context:** User · **Noise:** Quiet
 
 ## Root-owned files writable by current user
 
@@ -71,7 +71,7 @@ find / -xdev -type d -perm -0002 2>/dev/null
 find / -xdev -user root -writable -type f 2>/dev/null
 ```
 
-**Tool:** find · **Platform:** Linux · **Tags:** Writable, Files · **Context:** User
+**Tool:** find · **Platform:** Linux · **Tags:** Writable, Files · **Context:** User · **Noise:** Quiet
 
 ## Kernel and OS version
 
@@ -79,7 +79,7 @@ find / -xdev -user root -writable -type f 2>/dev/null
 uname -a; cat /etc/os-release
 ```
 
-**Tool:** uname · **Platform:** Linux · **Tags:** Kernel, OS · **Context:** User
+**Tool:** uname · **Platform:** Linux · **Tags:** Kernel, OS · **Context:** User · **Noise:** Quiet
 
 ## NFS exports
 
@@ -87,7 +87,7 @@ uname -a; cat /etc/os-release
 cat /etc/exports 2>/dev/null
 ```
 
-**Tool:** NFS · **Platform:** Linux · **Tags:** NFS, no_root_squash · **Context:** User
+**Tool:** NFS · **Platform:** Linux · **Tags:** NFS, no_root_squash · **Context:** User · **Noise:** Quiet
 
 ## Docker group membership
 
@@ -95,7 +95,7 @@ cat /etc/exports 2>/dev/null
 id | grep -E '\b(docker|lxd)\b'
 ```
 
-**Tool:** id · **Platform:** Linux · **Tags:** Containers, Groups · **Context:** User
+**Tool:** id · **Platform:** Linux · **Tags:** Containers, Groups · **Context:** User · **Noise:** Quiet
 
 ## Root processes
 
@@ -103,7 +103,7 @@ id | grep -E '\b(docker|lxd)\b'
 ps aux | awk '$1=="root"'
 ```
 
-**Tool:** ps + awk · **Platform:** Linux · **Tags:** Processes · **Context:** User
+**Tool:** ps + awk · **Platform:** Linux · **Tags:** Processes · **Context:** User · **Noise:** Quiet
 
 ## Environment and shell history
 
@@ -111,7 +111,7 @@ ps aux | awk '$1=="root"'
 env; tail -n 200 ~/.bash_history 2>/dev/null
 ```
 
-**Tool:** shell · **Platform:** Linux · **Tags:** Environment, History · **Context:** User
+**Tool:** shell · **Platform:** Linux · **Tags:** Environment, History · **Context:** User · **Noise:** Quiet
 
 ## Writable PATH files
 
@@ -119,7 +119,7 @@ env; tail -n 200 ~/.bash_history 2>/dev/null
 IFS=:; for d in $PATH; do find "$d" -maxdepth 1 -type f -writable 2>/dev/null; done
 ```
 
-**Tool:** find · **Platform:** Linux · **Tags:** PATH, Writable · **Context:** User
+**Tool:** find · **Platform:** Linux · **Tags:** PATH, Writable · **Context:** User · **Noise:** Quiet
 
 ## Running systemd services
 
@@ -127,7 +127,7 @@ IFS=:; for d in $PATH; do find "$d" -maxdepth 1 -type f -writable 2>/dev/null; d
 systemctl list-units --type=service --state=running --no-pager
 ```
 
-**Tool:** systemd · **Platform:** Linux · **Tags:** Services · **Context:** User
+**Tool:** systemd · **Platform:** Linux · **Tags:** Services · **Context:** User · **Noise:** Quiet
 
 ---
 

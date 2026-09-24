@@ -10,7 +10,7 @@ One-liners for reading Microsoft Defender and Attack Surface Reduction state.
 Get-MpComputerStatus | Select AntivirusEnabled,RealTimeProtectionEnabled,BehaviorMonitorEnabled,IoavProtectionEnabled,AntispywareEnabled
 ```
 
-**Tool:** Defender · **Platform:** Windows · **Tags:** Defender, status · **Context:** User
+**Tool:** Defender · **Platform:** Windows · **Tags:** Defender, status · **Context:** User · **Noise:** Quiet
 
 ## Defender exclusions
 
@@ -18,7 +18,7 @@ Get-MpComputerStatus | Select AntivirusEnabled,RealTimeProtectionEnabled,Behavio
 Get-MpPreference | Select ExclusionPath,ExclusionProcess,ExclusionExtension
 ```
 
-**Tool:** Defender · **Platform:** Windows · **Tags:** Defender, exclusions · **Context:** User
+**Tool:** Defender · **Platform:** Windows · **Tags:** Defender, exclusions · **Context:** User · **Noise:** Quiet
 
 ## ASR IDs and actions
 
@@ -26,7 +26,7 @@ Get-MpPreference | Select ExclusionPath,ExclusionProcess,ExclusionExtension
 $p=Get-MpPreference; 0..($p.AttackSurfaceReductionRules_Ids.Count-1) | ForEach-Object {[pscustomobject]@{Id=$p.AttackSurfaceReductionRules_Ids[$_];Action=$p.AttackSurfaceReductionRules_Actions[$_]}}
 ```
 
-**Tool:** Defender · **Platform:** Windows · **Tags:** ASR, policy · **Context:** User
+**Tool:** Defender · **Platform:** Windows · **Tags:** ASR, policy · **Context:** User · **Noise:** Quiet
 
 ## Recent Defender events
 
@@ -34,7 +34,7 @@ $p=Get-MpPreference; 0..($p.AttackSurfaceReductionRules_Ids.Count-1) | ForEach-O
 Get-WinEvent -LogName "Microsoft-Windows-Windows Defender/Operational" -MaxEvents 30 | Select TimeCreated,Id,Message
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** Defender, events · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** Defender, events · **Context:** User · **Noise:** Quiet
 
 ## Defender service
 
@@ -42,7 +42,7 @@ Get-WinEvent -LogName "Microsoft-Windows-Windows Defender/Operational" -MaxEvent
 Get-Service WinDefend | Select Status,StartType,Name
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** Defender, service · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** Defender, service · **Context:** User · **Noise:** Quiet
 
 ---
 

@@ -10,7 +10,7 @@ DNS, SRV and SPN one-liners for quickly mapping Active Directory services.
 dig +short SRV _ldap._tcp.dc._msdcs.<DOMAIN>
 ```
 
-**Tool:** dig · **Platform:** Linux/macOS · **Tags:** AD, DNS, DC discovery · **Context:** No auth
+**Tool:** dig · **Platform:** Linux/macOS · **Tags:** AD, DNS, DC discovery · **Context:** No auth · **Noise:** Quiet
 
 ## Locate Kerberos services
 
@@ -18,7 +18,7 @@ dig +short SRV _ldap._tcp.dc._msdcs.<DOMAIN>
 dig +short SRV _kerberos._tcp.<DOMAIN>
 ```
 
-**Tool:** dig · **Platform:** Linux/macOS · **Tags:** AD, DNS, Kerberos · **Context:** No auth
+**Tool:** dig · **Platform:** Linux/macOS · **Tags:** AD, DNS, Kerberos · **Context:** No auth · **Noise:** Quiet
 
 ## Resolve DCs with nslookup
 
@@ -26,7 +26,7 @@ dig +short SRV _kerberos._tcp.<DOMAIN>
 nslookup -type=SRV _ldap._tcp.dc._msdcs.<DOMAIN>
 ```
 
-**Tool:** nslookup · **Platform:** Windows · **Tags:** AD, DNS, DC discovery · **Context:** No auth
+**Tool:** nslookup · **Platform:** Windows · **Tags:** AD, DNS, DC discovery · **Context:** No auth · **Noise:** Quiet
 
 ## Query all SPNs with setspn
 
@@ -34,7 +34,7 @@ nslookup -type=SRV _ldap._tcp.dc._msdcs.<DOMAIN>
 setspn -Q */*
 ```
 
-**Tool:** setspn · **Platform:** Windows · **Tags:** AD, SPN, Kerberos · **Context:** Domain user
+**Tool:** setspn · **Platform:** Windows · **Tags:** AD, SPN, Kerberos · **Context:** Domain user · **Noise:** Quiet
 
 ## Find user SPNs with PowerView
 
@@ -42,7 +42,7 @@ setspn -Q */*
 Get-DomainUser -SPN | Select-Object samaccountname,serviceprincipalname
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, SPN, Kerberoasting · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, SPN, Kerberoasting · **Context:** Domain user · **Noise:** Quiet
 
 ## Find computer SPNs with PowerView
 
@@ -50,7 +50,7 @@ Get-DomainUser -SPN | Select-Object samaccountname,serviceprincipalname
 Get-DomainComputer -Properties dNSHostName,servicePrincipalName | Select-Object dNSHostName,servicePrincipalName
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, SPN, computers · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, SPN, computers · **Context:** Domain user · **Noise:** Quiet
 
 ## Query SPNs over LDAP
 
@@ -58,7 +58,7 @@ Get-DomainComputer -Properties dNSHostName,servicePrincipalName | Select-Object 
 ldapsearch -x -H ldap://<DC_IP> -D "<DOMAIN>\<USER>" -w '<PASSWORD>' -b "<BASE_DN>" "(servicePrincipalName=*)" sAMAccountName servicePrincipalName
 ```
 
-**Tool:** ldapsearch · **Platform:** Linux · **Tags:** AD, LDAP, SPN · **Context:** Domain user
+**Tool:** ldapsearch · **Platform:** Linux · **Tags:** AD, LDAP, SPN · **Context:** Domain user · **Noise:** Quiet
 
 ## Enumerate SPNs with NetExec
 
@@ -66,7 +66,7 @@ ldapsearch -x -H ldap://<DC_IP> -D "<DOMAIN>\<USER>" -w '<PASSWORD>' -b "<BASE_D
 nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --query "(servicePrincipalName=*)" "sAMAccountName servicePrincipalName"
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, LDAP, SPN · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, LDAP, SPN · **Context:** Domain user · **Noise:** Quiet
 
 ---
 

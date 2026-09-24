@@ -10,7 +10,7 @@ Discover certificate services, templates and common AD CS exposure.
 certipy find -u '<USER>@<DOMAIN>' -p '<PASSWORD>' -dc-ip <DC_IP>
 ```
 
-**Tool:** Certipy · **Platform:** Linux/macOS · **Context:** Domain user
+**Tool:** Certipy · **Platform:** Linux/macOS · **Context:** Domain user · **Noise:** Moderate
 
 
 ## Certipy vulnerable templates
@@ -19,7 +19,7 @@ certipy find -u '<USER>@<DOMAIN>' -p '<PASSWORD>' -dc-ip <DC_IP>
 certipy find -u '<USER>@<DOMAIN>' -p '<PASSWORD>' -dc-ip <DC_IP> -vulnerable
 ```
 
-**Tool:** Certipy · **Platform:** Linux/macOS · **Context:** Domain user
+**Tool:** Certipy · **Platform:** Linux/macOS · **Context:** Domain user · **Noise:** Moderate
 
 
 ## Certipy JSON output
@@ -28,7 +28,7 @@ certipy find -u '<USER>@<DOMAIN>' -p '<PASSWORD>' -dc-ip <DC_IP> -vulnerable
 certipy find -u '<USER>@<DOMAIN>' -p '<PASSWORD>' -dc-ip <DC_IP> -json
 ```
 
-**Tool:** Certipy · **Platform:** Linux/macOS · **Context:** Domain user
+**Tool:** Certipy · **Platform:** Linux/macOS · **Context:** Domain user · **Noise:** Moderate
 
 
 ## Certify enumerate
@@ -37,7 +37,7 @@ certipy find -u '<USER>@<DOMAIN>' -p '<PASSWORD>' -dc-ip <DC_IP> -json
 Certify.exe find
 ```
 
-**Tool:** Certify · **Platform:** Windows · **Context:** Domain user
+**Tool:** Certify · **Platform:** Windows · **Context:** Domain user · **Noise:** Moderate
 
 
 ## Certify vulnerable templates
@@ -46,7 +46,7 @@ Certify.exe find
 Certify.exe find /vulnerable
 ```
 
-**Tool:** Certify · **Platform:** Windows · **Context:** Domain user
+**Tool:** Certify · **Platform:** Windows · **Context:** Domain user · **Noise:** Moderate
 
 
 ## PowerShell enterprise CAs
@@ -55,7 +55,7 @@ Certify.exe find /vulnerable
 Get-ChildItem Cert:\LocalMachine\CA | Select Subject,Thumbprint
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Context:** Domain user
+**Tool:** PowerShell · **Platform:** Windows · **Context:** Domain user · **Noise:** Moderate
 
 ---
 

@@ -10,7 +10,7 @@ One-liners for cron jobs, writable scripts and scheduled root execution paths.
 cat /etc/crontab 2>/dev/null
 ```
 
-**Tool:** cat · **Platform:** Linux · **Tags:** cron · **Context:** User
+**Tool:** cat · **Platform:** Linux · **Tags:** cron · **Context:** User · **Noise:** Quiet
 
 ## Cron directories
 
@@ -18,7 +18,7 @@ cat /etc/crontab 2>/dev/null
 ls -la /etc/cron.* 2>/dev/null
 ```
 
-**Tool:** ls · **Platform:** Linux · **Tags:** cron · **Context:** User
+**Tool:** ls · **Platform:** Linux · **Tags:** cron · **Context:** User · **Noise:** Quiet
 
 ## Current user crontab
 
@@ -26,7 +26,7 @@ ls -la /etc/cron.* 2>/dev/null
 crontab -l 2>/dev/null
 ```
 
-**Tool:** crontab · **Platform:** Linux · **Tags:** cron · **Context:** User
+**Tool:** crontab · **Platform:** Linux · **Tags:** cron · **Context:** User · **Noise:** Quiet
 
 ## All cron entries
 
@@ -34,7 +34,7 @@ crontab -l 2>/dev/null
 grep -RHEv "^#|^$" /etc/crontab /etc/cron.d/* 2>/dev/null
 ```
 
-**Tool:** grep · **Platform:** Linux · **Tags:** cron · **Context:** User
+**Tool:** grep · **Platform:** Linux · **Tags:** cron · **Context:** User · **Noise:** Quiet
 
 ## Writable files referenced by cron
 
@@ -42,7 +42,7 @@ grep -RHEv "^#|^$" /etc/crontab /etc/cron.d/* 2>/dev/null
 grep -RHEv "^#|^$" /etc/crontab /etc/cron.d/* 2>/dev/null | grep -Eo "/[^ ]+" | while read f; do [ -w "$f" ] && echo "$f"; done
 ```
 
-**Tool:** grep · **Platform:** Linux · **Tags:** cron, writable · **Context:** User
+**Tool:** grep · **Platform:** Linux · **Tags:** cron, writable · **Context:** User · **Noise:** Quiet
 
 ---
 

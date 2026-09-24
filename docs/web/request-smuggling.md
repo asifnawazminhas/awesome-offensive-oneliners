@@ -10,7 +10,7 @@ One-liners for protocol/version checks and fast smuggling-oriented triage.
 curl -sk --http1.1 -I https://<TARGET>/
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** Web, HTTP, smuggling · **Context:** No auth
+**Tool:** curl · **Platform:** Any · **Tags:** Web, HTTP, smuggling · **Context:** No auth · **Noise:** Moderate
 
 ## Force HTTP/2
 
@@ -18,7 +18,7 @@ curl -sk --http1.1 -I https://<TARGET>/
 curl -sk --http2 -I https://<TARGET>/
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** Web, HTTP2, smuggling · **Context:** No auth
+**Tool:** curl · **Platform:** Any · **Tags:** Web, HTTP2, smuggling · **Context:** No auth · **Noise:** Moderate
 
 ## Inspect proxy headers
 
@@ -26,7 +26,7 @@ curl -sk --http2 -I https://<TARGET>/
 curl -skI https://<TARGET>/ | grep -Ei "^(via|server|x-cache|x-served-by|x-forwarded|cf-|x-varnish)"
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** Web, proxy, headers · **Context:** No auth
+**Tool:** curl · **Platform:** Any · **Tags:** Web, proxy, headers · **Context:** No auth · **Noise:** Moderate
 
 ## OPTIONS for intermediary clues
 
@@ -34,7 +34,7 @@ curl -skI https://<TARGET>/ | grep -Ei "^(via|server|x-cache|x-served-by|x-forwa
 curl -sk -X OPTIONS -i https://<TARGET>/
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** Web, methods, smuggling · **Context:** No auth
+**Tool:** curl · **Platform:** Any · **Tags:** Web, methods, smuggling · **Context:** No auth · **Noise:** Moderate
 
 ## Nuclei HTTP smuggling templates
 
@@ -42,7 +42,7 @@ curl -sk -X OPTIONS -i https://<TARGET>/
 nuclei -u https://<TARGET> -tags request-smuggling -silent
 ```
 
-**Tool:** Nuclei · **Platform:** Linux · **Tags:** Web, smuggling · **Context:** No auth
+**Tool:** Nuclei · **Platform:** Linux · **Tags:** Web, smuggling · **Context:** No auth · **Noise:** Moderate
 
 ---
 

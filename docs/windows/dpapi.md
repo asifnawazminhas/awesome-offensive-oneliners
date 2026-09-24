@@ -10,7 +10,7 @@ One-liners for locating Windows DPAPI material and checking common credential st
 Get-ChildItem "$env:APPDATA\Microsoft\Protect" -Force -Recurse -ErrorAction SilentlyContinue
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** DPAPI, Protect · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** DPAPI, Protect · **Context:** User · **Noise:** Quiet
 
 ## List Credential Manager blobs
 
@@ -18,7 +18,7 @@ Get-ChildItem "$env:APPDATA\Microsoft\Protect" -Force -Recurse -ErrorAction Sile
 Get-ChildItem "$env:LOCALAPPDATA\Microsoft\Credentials","$env:APPDATA\Microsoft\Credentials" -Force -ErrorAction SilentlyContinue
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** DPAPI, credentials · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** DPAPI, credentials · **Context:** User · **Noise:** Quiet
 
 ## List Vault files
 
@@ -26,7 +26,7 @@ Get-ChildItem "$env:LOCALAPPDATA\Microsoft\Credentials","$env:APPDATA\Microsoft\
 Get-ChildItem "$env:LOCALAPPDATA\Microsoft\Vault" -Force -Recurse -ErrorAction SilentlyContinue
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** DPAPI, vault · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** DPAPI, vault · **Context:** User · **Noise:** Quiet
 
 ## Stored credential targets
 
@@ -34,7 +34,7 @@ Get-ChildItem "$env:LOCALAPPDATA\Microsoft\Vault" -Force -Recurse -ErrorAction S
 cmdkey /list
 ```
 
-**Tool:** cmdkey · **Platform:** Windows · **Tags:** credentials, DPAPI · **Context:** User
+**Tool:** cmdkey · **Platform:** Windows · **Tags:** credentials, DPAPI · **Context:** User · **Noise:** Quiet
 
 ## Browser profile locations
 
@@ -42,7 +42,7 @@ cmdkey /list
 Get-ChildItem "$env:LOCALAPPDATA\Google\Chrome\User Data","$env:LOCALAPPDATA\Microsoft\Edge\User Data" -ErrorAction SilentlyContinue
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** browser, DPAPI · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** browser, DPAPI · **Context:** User · **Noise:** Quiet
 
 ---
 

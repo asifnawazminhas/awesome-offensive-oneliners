@@ -10,7 +10,7 @@ One-liners for discovering scheduled tasks, actions and privileged execution con
 schtasks /query /fo LIST /v
 ```
 
-**Tool:** schtasks · **Platform:** Windows · **Tags:** scheduled tasks · **Context:** User
+**Tool:** schtasks · **Platform:** Windows · **Tags:** scheduled tasks · **Context:** User · **Noise:** Quiet
 
 ## PowerShell task actions
 
@@ -18,7 +18,7 @@ schtasks /query /fo LIST /v
 Get-ScheduledTask | Select TaskName,TaskPath,State,@{n="Actions";e={$_.Actions.Execute -join ";"}}
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** scheduled tasks · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** scheduled tasks · **Context:** User · **Noise:** Quiet
 
 ## Tasks running as SYSTEM
 
@@ -26,7 +26,7 @@ Get-ScheduledTask | Select TaskName,TaskPath,State,@{n="Actions";e={$_.Actions.E
 Get-ScheduledTask | Where-Object {$_.Principal.UserId -match "SYSTEM"} | Select TaskName,TaskPath,State
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** scheduled tasks, SYSTEM · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** scheduled tasks, SYSTEM · **Context:** User · **Noise:** Quiet
 
 ## Task details
 
@@ -34,7 +34,7 @@ Get-ScheduledTask | Where-Object {$_.Principal.UserId -match "SYSTEM"} | Select 
 Get-ScheduledTask -TaskName "<TASK>" | Get-ScheduledTaskInfo
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** scheduled tasks · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** scheduled tasks · **Context:** User · **Noise:** Quiet
 
 ## Export task XML
 
@@ -42,7 +42,7 @@ Get-ScheduledTask -TaskName "<TASK>" | Get-ScheduledTaskInfo
 schtasks /query /tn "<TASK>" /xml
 ```
 
-**Tool:** schtasks · **Platform:** Windows · **Tags:** scheduled tasks, XML · **Context:** User
+**Tool:** schtasks · **Platform:** Windows · **Tags:** scheduled tasks, XML · **Context:** User · **Noise:** Quiet
 
 ---
 

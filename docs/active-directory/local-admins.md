@@ -10,7 +10,7 @@ One-liners for identifying local administrator relationships across Windows esta
 net localgroup administrators
 ```
 
-**Tool:** net.exe · **Platform:** Windows · **Tags:** local admins · **Context:** User
+**Tool:** net.exe · **Platform:** Windows · **Tags:** local admins · **Context:** User · **Noise:** Quiet
 
 ## PowerShell local Administrators
 
@@ -18,7 +18,7 @@ net localgroup administrators
 Get-LocalGroupMember -Group Administrators
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** local admins · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** local admins · **Context:** User · **Noise:** Quiet
 
 ## PowerView local admin access
 
@@ -26,7 +26,7 @@ Get-LocalGroupMember -Group Administrators
 Find-LocalAdminAccess
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, local admins · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, local admins · **Context:** Domain user · **Noise:** Quiet
 
 ## NetExec admin validation
 
@@ -34,7 +34,7 @@ Find-LocalAdminAccess
 nxc smb <TARGETS> -u <USER> -p '<PASSWORD>'
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, local admins, SMB · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, local admins, SMB · **Context:** Domain user · **Noise:** Quiet
 
 ## NetExec local admins
 
@@ -42,7 +42,7 @@ nxc smb <TARGETS> -u <USER> -p '<PASSWORD>'
 nxc smb <TARGET> -u <USER> -p '<PASSWORD>' --local-groups Administrators
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, local groups · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, local groups · **Context:** Domain user · **Noise:** Quiet
 
 ## BloodHound local admin collection
 
@@ -50,7 +50,7 @@ nxc smb <TARGET> -u <USER> -p '<PASSWORD>' --local-groups Administrators
 bloodhound-python -u <USER> -p '<PASSWORD>' -d <DOMAIN> -ns <DC_IP> -c LocalAdmin
 ```
 
-**Tool:** BloodHound · **Platform:** Linux · **Tags:** AD, local admin · **Context:** Domain user
+**Tool:** BloodHound · **Platform:** Linux · **Tags:** AD, local admin · **Context:** Domain user · **Noise:** Quiet
 
 ---
 

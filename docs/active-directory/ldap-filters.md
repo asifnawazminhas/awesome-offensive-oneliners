@@ -10,7 +10,7 @@ Useful LDAP one-liners for targeted Active Directory searches.
 ldapsearch -x -H ldap://<DC_IP> -D "<DOMAIN>\<USER>" -w '<PASSWORD>' -b "<BASE_DN>" "(&(objectCategory=person)(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=2))" sAMAccountName
 ```
 
-**Tool:** ldapsearch · **Platform:** Linux · **Tags:** AD, LDAP, users · **Context:** Domain user
+**Tool:** ldapsearch · **Platform:** Linux · **Tags:** AD, LDAP, users · **Context:** Domain user · **Noise:** Quiet
 
 ## Users without pre-auth
 
@@ -18,7 +18,7 @@ ldapsearch -x -H ldap://<DC_IP> -D "<DOMAIN>\<USER>" -w '<PASSWORD>' -b "<BASE_D
 ldapsearch -x -H ldap://<DC_IP> -D "<DOMAIN>\<USER>" -w '<PASSWORD>' -b "<BASE_DN>" "(&(objectCategory=person)(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=4194304))" sAMAccountName
 ```
 
-**Tool:** ldapsearch · **Platform:** Linux · **Tags:** AD, LDAP, AS-REP · **Context:** Domain user
+**Tool:** ldapsearch · **Platform:** Linux · **Tags:** AD, LDAP, AS-REP · **Context:** Domain user · **Noise:** Quiet
 
 ## Trusted-for-delegation computers
 
@@ -26,7 +26,7 @@ ldapsearch -x -H ldap://<DC_IP> -D "<DOMAIN>\<USER>" -w '<PASSWORD>' -b "<BASE_D
 ldapsearch -x -H ldap://<DC_IP> -D "<DOMAIN>\<USER>" -w '<PASSWORD>' -b "<BASE_DN>" "(&(objectCategory=computer)(userAccountControl:1.2.840.113556.1.4.803:=524288))" dNSHostName
 ```
 
-**Tool:** ldapsearch · **Platform:** Linux · **Tags:** AD, LDAP, delegation · **Context:** Domain user
+**Tool:** ldapsearch · **Platform:** Linux · **Tags:** AD, LDAP, delegation · **Context:** Domain user · **Noise:** Quiet
 
 ## SPN users
 
@@ -34,7 +34,7 @@ ldapsearch -x -H ldap://<DC_IP> -D "<DOMAIN>\<USER>" -w '<PASSWORD>' -b "<BASE_D
 ldapsearch -x -H ldap://<DC_IP> -D "<DOMAIN>\<USER>" -w '<PASSWORD>' -b "<BASE_DN>" "(&(objectCategory=person)(objectClass=user)(servicePrincipalName=*))" sAMAccountName servicePrincipalName
 ```
 
-**Tool:** ldapsearch · **Platform:** Linux · **Tags:** AD, LDAP, SPN · **Context:** Domain user
+**Tool:** ldapsearch · **Platform:** Linux · **Tags:** AD, LDAP, SPN · **Context:** Domain user · **Noise:** Quiet
 
 ## Domain admins by group DN
 
@@ -42,7 +42,7 @@ ldapsearch -x -H ldap://<DC_IP> -D "<DOMAIN>\<USER>" -w '<PASSWORD>' -b "<BASE_D
 ldapsearch -x -H ldap://<DC_IP> -D "<DOMAIN>\<USER>" -w '<PASSWORD>' -b "<BASE_DN>" "(memberOf=CN=Domain Admins,CN=Users,<BASE_DN>)" sAMAccountName
 ```
 
-**Tool:** ldapsearch · **Platform:** Linux · **Tags:** AD, LDAP, groups · **Context:** Domain user
+**Tool:** ldapsearch · **Platform:** Linux · **Tags:** AD, LDAP, groups · **Context:** Domain user · **Noise:** Quiet
 
 ## Computers by OS
 
@@ -50,7 +50,7 @@ ldapsearch -x -H ldap://<DC_IP> -D "<DOMAIN>\<USER>" -w '<PASSWORD>' -b "<BASE_D
 ldapsearch -x -H ldap://<DC_IP> -D "<DOMAIN>\<USER>" -w '<PASSWORD>' -b "<BASE_DN>" "(&(objectCategory=computer)(operatingSystem=*Server*))" dNSHostName operatingSystem
 ```
 
-**Tool:** ldapsearch · **Platform:** Linux · **Tags:** AD, LDAP, computers · **Context:** Domain user
+**Tool:** ldapsearch · **Platform:** Linux · **Tags:** AD, LDAP, computers · **Context:** Domain user · **Noise:** Quiet
 
 ---
 

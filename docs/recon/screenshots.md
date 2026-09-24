@@ -10,7 +10,7 @@ One-liners for visual triage of large HTTP target sets.
 gowitness scan file -f urls.txt --screenshot-path screenshots
 ```
 
-**Tool:** gowitness · **Platform:** Linux · **Tags:** Recon, screenshots, HTTP · **Context:** No auth
+**Tool:** gowitness · **Platform:** Linux · **Tags:** Recon, screenshots, HTTP · **Context:** No auth · **Noise:** Moderate
 
 ## gowitness CIDR scan
 
@@ -18,7 +18,7 @@ gowitness scan file -f urls.txt --screenshot-path screenshots
 gowitness scan cidr --cidr <CIDR> --screenshot-path screenshots
 ```
 
-**Tool:** gowitness · **Platform:** Linux · **Tags:** Recon, screenshots, CIDR · **Context:** No auth
+**Tool:** gowitness · **Platform:** Linux · **Tags:** Recon, screenshots, CIDR · **Context:** No auth · **Noise:** Moderate
 
 ## EyeWitness URL list
 
@@ -26,7 +26,7 @@ gowitness scan cidr --cidr <CIDR> --screenshot-path screenshots
 python3 EyeWitness.py --web -f urls.txt --no-prompt
 ```
 
-**Tool:** EyeWitness · **Platform:** Linux · **Tags:** Recon, screenshots, HTTP · **Context:** No auth
+**Tool:** EyeWitness · **Platform:** Linux · **Tags:** Recon, screenshots, HTTP · **Context:** No auth · **Noise:** Moderate
 
 ## aquatone from stdin
 
@@ -34,7 +34,7 @@ python3 EyeWitness.py --web -f urls.txt --no-prompt
 cat hosts.txt | aquatone -out aquatone
 ```
 
-**Tool:** Aquatone · **Platform:** Linux · **Tags:** Recon, screenshots, HTTP · **Context:** No auth
+**Tool:** Aquatone · **Platform:** Linux · **Tags:** Recon, screenshots, HTTP · **Context:** No auth · **Noise:** Moderate
 
 ## httpx screenshot
 
@@ -42,7 +42,7 @@ cat hosts.txt | aquatone -out aquatone
 httpx -l urls.txt -screenshot -screenshot-timeout 10 -silent
 ```
 
-**Tool:** httpx · **Platform:** Linux · **Tags:** Recon, screenshots, HTTP · **Context:** No auth
+**Tool:** httpx · **Platform:** Linux · **Tags:** Recon, screenshots, HTTP · **Context:** No auth · **Noise:** Moderate
 
 ---
 

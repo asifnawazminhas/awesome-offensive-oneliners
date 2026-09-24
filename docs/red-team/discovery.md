@@ -8,7 +8,7 @@ Compact discovery commands useful during authorised red team operations.
 whoami /user && whoami /groups
 ```
 
-**Tool:** Windows · **Platform:** Windows · **Tags:** Identity, Discovery · **Context:** User
+**Tool:** Windows · **Platform:** Windows · **Tags:** Identity, Discovery · **Context:** User · **Noise:** Moderate
 
 ### Domain controller discovery
 
@@ -16,7 +16,7 @@ whoami /user && whoami /groups
 nltest /dsgetdc:<DOMAIN>
 ```
 
-**Tool:** nltest · **Platform:** Windows · **Tags:** AD, DC Discovery · **Context:** User
+**Tool:** nltest · **Platform:** Windows · **Tags:** AD, DC Discovery · **Context:** User · **Noise:** Moderate
 
 ### Current logon sessions
 
@@ -24,7 +24,7 @@ nltest /dsgetdc:<DOMAIN>
 quser
 ```
 
-**Tool:** Windows · **Platform:** Windows · **Tags:** Sessions, Discovery · **Context:** User
+**Tool:** Windows · **Platform:** Windows · **Tags:** Sessions, Discovery · **Context:** User · **Noise:** Moderate
 
 ### ARP neighbors
 
@@ -32,7 +32,7 @@ quser
 arp -a
 ```
 
-**Tool:** Windows · **Platform:** Windows · **Tags:** Network, Discovery · **Context:** User
+**Tool:** Windows · **Platform:** Windows · **Tags:** Network, Discovery · **Context:** User · **Noise:** Moderate
 
 ### SMB shares
 
@@ -40,7 +40,7 @@ arp -a
 net view \<HOST>
 ```
 
-**Tool:** Windows · **Platform:** Windows · **Tags:** SMB, Shares · **Context:** User
+**Tool:** Windows · **Platform:** Windows · **Tags:** SMB, Shares · **Context:** User · **Noise:** Moderate
 
 ### Linux neighbors
 
@@ -48,7 +48,7 @@ net view \<HOST>
 ip neigh
 ```
 
-**Tool:** iproute2 · **Platform:** Linux · **Tags:** Network, Discovery · **Context:** User
+**Tool:** iproute2 · **Platform:** Linux · **Tags:** Network, Discovery · **Context:** User · **Noise:** Moderate
 
 ---
 

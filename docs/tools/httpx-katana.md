@@ -1,5 +1,7 @@
 # httpx and Katana
 
+<div class="ol-version-note">Syntax can drift between releases. Confirm with the tool's local <code>--version</code> and <code>--help</code> output.</div>
+
 Probe HTTP services and crawl endpoints with minimal output.
 
 <div class="ol-section-kicker"><span>TOOLS</span></div>
@@ -10,7 +12,7 @@ Probe HTTP services and crawl endpoints with minimal output.
 httpx -l hosts.txt -silent -status-code -title -tech-detect
 ```
 
-**Tool:** httpx · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** httpx · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Moderate
 
 
 ## httpx JSON
@@ -19,7 +21,7 @@ httpx -l hosts.txt -silent -status-code -title -tech-detect
 httpx -l hosts.txt -silent -json -o httpx.json
 ```
 
-**Tool:** httpx · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** httpx · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Moderate
 
 
 ## Katana crawl
@@ -28,7 +30,7 @@ httpx -l hosts.txt -silent -json -o httpx.json
 katana -u https://<TARGET> -silent
 ```
 
-**Tool:** katana · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** katana · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Moderate
 
 
 ## Katana JavaScript only
@@ -37,7 +39,7 @@ katana -u https://<TARGET> -silent
 katana -u https://<TARGET> -silent | grep -Ei '\.js($|\?)' | sort -u
 ```
 
-**Tool:** katana · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** katana · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Moderate
 
 
 ## Katana parameterized URLs
@@ -46,7 +48,7 @@ katana -u https://<TARGET> -silent | grep -Ei '\.js($|\?)' | sort -u
 katana -u https://<TARGET> -silent | uro | grep '=' | sort -u
 ```
 
-**Tool:** katana + uro · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** katana + uro · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Moderate
 
 ---
 

@@ -1,5 +1,7 @@
 # Nuclei
 
+<div class="ol-version-note">Syntax can drift between releases. Confirm with the tool's local <code>--version</code> and <code>--help</code> output.</div>
+
 Small one-liners for template-driven validation and technology detection.
 
 <div class="ol-section-kicker"><span>TOOLS</span></div>
@@ -10,7 +12,7 @@ Small one-liners for template-driven validation and technology detection.
 nuclei -l urls.txt -silent
 ```
 
-**Tool:** nuclei · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** nuclei · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Moderate
 
 
 ## Technology templates
@@ -19,7 +21,7 @@ nuclei -l urls.txt -silent
 nuclei -l urls.txt -tags tech -silent
 ```
 
-**Tool:** nuclei · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** nuclei · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Moderate
 
 
 ## Severity filter
@@ -28,7 +30,7 @@ nuclei -l urls.txt -tags tech -silent
 nuclei -l urls.txt -severity medium,high,critical -silent
 ```
 
-**Tool:** nuclei · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** nuclei · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Moderate
 
 
 ## JSONL output
@@ -37,7 +39,7 @@ nuclei -l urls.txt -severity medium,high,critical -silent
 nuclei -l urls.txt -jsonl -o nuclei.jsonl
 ```
 
-**Tool:** nuclei · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** nuclei · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Moderate
 
 
 ## Specific template directory
@@ -46,7 +48,7 @@ nuclei -l urls.txt -jsonl -o nuclei.jsonl
 nuclei -u https://<TARGET> -t <TEMPLATE_DIR> -silent
 ```
 
-**Tool:** nuclei · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** nuclei · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Moderate
 
 ---
 

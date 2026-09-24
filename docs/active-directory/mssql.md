@@ -10,7 +10,7 @@ One-liners for discovering SQL Server SPNs, instances and reachable services.
 Get-DomainUser -SPN | Where-Object {$_.serviceprincipalname -match "MSSQLSvc"} | Select samaccountname,serviceprincipalname
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, MSSQL, SPN · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, MSSQL, SPN · **Context:** Domain user · **Noise:** Quiet
 
 ## Find SQL SPNs with setspn
 
@@ -18,7 +18,7 @@ Get-DomainUser -SPN | Where-Object {$_.serviceprincipalname -match "MSSQLSvc"} |
 setspn -Q MSSQLSvc/*
 ```
 
-**Tool:** setspn · **Platform:** Windows · **Tags:** AD, MSSQL, SPN · **Context:** Domain user
+**Tool:** setspn · **Platform:** Windows · **Tags:** AD, MSSQL, SPN · **Context:** Domain user · **Noise:** Quiet
 
 ## Discover MSSQL with NetExec
 
@@ -26,7 +26,7 @@ setspn -Q MSSQLSvc/*
 nxc mssql <TARGETS> -u <USER> -p '<PASSWORD>'
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, MSSQL · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, MSSQL · **Context:** Domain user · **Noise:** Quiet
 
 ## Windows integrated sqlcmd
 
@@ -34,7 +34,7 @@ nxc mssql <TARGETS> -u <USER> -p '<PASSWORD>'
 sqlcmd -S <SERVER> -E -Q "SELECT @@version"
 ```
 
-**Tool:** sqlcmd · **Platform:** Windows · **Tags:** MSSQL · **Context:** Domain user
+**Tool:** sqlcmd · **Platform:** Windows · **Tags:** MSSQL · **Context:** Domain user · **Noise:** Quiet
 
 ## SQL auth sqlcmd
 
@@ -42,7 +42,7 @@ sqlcmd -S <SERVER> -E -Q "SELECT @@version"
 sqlcmd -S <SERVER> -U <USER> -P '<PASSWORD>' -Q "SELECT SYSTEM_USER,@@servername"
 ```
 
-**Tool:** sqlcmd · **Platform:** Windows · **Tags:** MSSQL · **Context:** Authenticated
+**Tool:** sqlcmd · **Platform:** Windows · **Tags:** MSSQL · **Context:** Authenticated · **Noise:** Quiet
 
 ## Impacket MSSQL client
 
@@ -50,7 +50,7 @@ sqlcmd -S <SERVER> -U <USER> -P '<PASSWORD>' -Q "SELECT SYSTEM_USER,@@servername
 mssqlclient.py <DOMAIN>/<USER>:<PASSWORD>@<SERVER> -windows-auth
 ```
 
-**Tool:** Impacket · **Platform:** Linux · **Tags:** AD, MSSQL · **Context:** Domain user
+**Tool:** Impacket · **Platform:** Linux · **Tags:** AD, MSSQL · **Context:** Domain user · **Noise:** Quiet
 
 ---
 

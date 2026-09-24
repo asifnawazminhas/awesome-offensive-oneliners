@@ -1,5 +1,7 @@
 # naabu
 
+<div class="ol-version-note">Syntax can drift between releases. Confirm with the tool's local <code>--version</code> and <code>--help</code> output.</div>
+
 Fast naabu one-liners for port discovery before deeper service enumeration.
 
 <div class="ol-section-kicker"><span>TOOL</span><strong>5 one-liners</strong></div>
@@ -10,7 +12,7 @@ Fast naabu one-liners for port discovery before deeper service enumeration.
 naabu -host <TARGET> -top-ports 100 -silent
 ```
 
-**Tool:** naabu · **Platform:** Linux · **Tags:** ports, recon · **Context:** No auth
+**Tool:** naabu · **Platform:** Linux · **Tags:** ports, recon · **Context:** No auth · **Noise:** Moderate
 
 ## Specific ports
 
@@ -18,7 +20,7 @@ naabu -host <TARGET> -top-ports 100 -silent
 naabu -host <TARGET> -p 80,443,445,3389,5985,5986 -silent
 ```
 
-**Tool:** naabu · **Platform:** Linux · **Tags:** ports, recon · **Context:** No auth
+**Tool:** naabu · **Platform:** Linux · **Tags:** ports, recon · **Context:** No auth · **Noise:** Moderate
 
 ## List input
 
@@ -26,7 +28,7 @@ naabu -host <TARGET> -p 80,443,445,3389,5985,5986 -silent
 naabu -list hosts.txt -top-ports 1000 -silent
 ```
 
-**Tool:** naabu · **Platform:** Linux · **Tags:** ports, recon · **Context:** No auth
+**Tool:** naabu · **Platform:** Linux · **Tags:** ports, recon · **Context:** No auth · **Noise:** Moderate
 
 ## Feed httpx
 
@@ -34,7 +36,7 @@ naabu -list hosts.txt -top-ports 1000 -silent
 naabu -list hosts.txt -p 80,443,8080,8443 -silent | httpx -silent
 ```
 
-**Tool:** naabu,httpx · **Platform:** Linux · **Tags:** ports, HTTP, pipeline · **Context:** No auth
+**Tool:** naabu,httpx · **Platform:** Linux · **Tags:** ports, HTTP, pipeline · **Context:** No auth · **Noise:** Moderate
 
 ## Exclude CDN
 
@@ -42,7 +44,7 @@ naabu -list hosts.txt -p 80,443,8080,8443 -silent | httpx -silent
 naabu -list hosts.txt -exclude-cdn -top-ports 1000 -silent
 ```
 
-**Tool:** naabu · **Platform:** Linux · **Tags:** ports, CDN · **Context:** No auth
+**Tool:** naabu · **Platform:** Linux · **Tags:** ports, CDN · **Context:** No auth · **Noise:** Moderate
 
 ---
 

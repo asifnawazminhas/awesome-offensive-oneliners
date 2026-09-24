@@ -10,7 +10,7 @@ One-liners for sudo rights, sudoers configuration and common privilege escalatio
 sudo -l
 ```
 
-**Tool:** sudo · **Platform:** Linux · **Tags:** sudo, privilege escalation · **Context:** User
+**Tool:** sudo · **Platform:** Linux · **Tags:** sudo, privilege escalation · **Context:** User · **Noise:** Quiet
 
 ## Sudo version
 
@@ -18,7 +18,7 @@ sudo -l
 sudo --version | head -1
 ```
 
-**Tool:** sudo · **Platform:** Linux · **Tags:** sudo, version · **Context:** User
+**Tool:** sudo · **Platform:** Linux · **Tags:** sudo, version · **Context:** User · **Noise:** Quiet
 
 ## Read sudoers includes
 
@@ -26,7 +26,7 @@ sudo --version | head -1
 grep -RHEv "^#|^$" /etc/sudoers /etc/sudoers.d/* 2>/dev/null
 ```
 
-**Tool:** grep · **Platform:** Linux · **Tags:** sudo, configuration · **Context:** User
+**Tool:** grep · **Platform:** Linux · **Tags:** sudo, configuration · **Context:** User · **Noise:** Quiet
 
 ## Find NOPASSWD rules
 
@@ -34,7 +34,7 @@ grep -RHEv "^#|^$" /etc/sudoers /etc/sudoers.d/* 2>/dev/null
 grep -RHi "NOPASSWD" /etc/sudoers /etc/sudoers.d 2>/dev/null
 ```
 
-**Tool:** grep · **Platform:** Linux · **Tags:** sudo, NOPASSWD · **Context:** User
+**Tool:** grep · **Platform:** Linux · **Tags:** sudo, NOPASSWD · **Context:** User · **Noise:** Quiet
 
 ## Check env_keep
 
@@ -42,7 +42,7 @@ grep -RHi "NOPASSWD" /etc/sudoers /etc/sudoers.d 2>/dev/null
 grep -RHi "env_keep" /etc/sudoers /etc/sudoers.d 2>/dev/null
 ```
 
-**Tool:** grep · **Platform:** Linux · **Tags:** sudo, environment · **Context:** User
+**Tool:** grep · **Platform:** Linux · **Tags:** sudo, environment · **Context:** User · **Noise:** Quiet
 
 ---
 

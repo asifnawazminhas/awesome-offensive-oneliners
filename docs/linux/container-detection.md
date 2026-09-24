@@ -10,7 +10,7 @@ One-liners for determining whether the current Linux process is inside a contain
 test -f /.dockerenv && echo Docker
 ```
 
-**Tool:** bash · **Platform:** Linux · **Tags:** Docker, detection · **Context:** User
+**Tool:** bash · **Platform:** Linux · **Tags:** Docker, detection · **Context:** User · **Noise:** Quiet
 
 ## cgroup clues
 
@@ -18,7 +18,7 @@ test -f /.dockerenv && echo Docker
 cat /proc/1/cgroup | grep -Ei "docker|kubepods|containerd|lxc"
 ```
 
-**Tool:** procfs · **Platform:** Linux · **Tags:** container, detection · **Context:** User
+**Tool:** procfs · **Platform:** Linux · **Tags:** container, detection · **Context:** User · **Noise:** Quiet
 
 ## PID 1 identity
 
@@ -26,7 +26,7 @@ cat /proc/1/cgroup | grep -Ei "docker|kubepods|containerd|lxc"
 ps -p 1 -o pid,comm,args
 ```
 
-**Tool:** ps · **Platform:** Linux · **Tags:** container, process · **Context:** User
+**Tool:** ps · **Platform:** Linux · **Tags:** container, process · **Context:** User · **Noise:** Quiet
 
 ## Mount namespace clues
 
@@ -34,7 +34,7 @@ ps -p 1 -o pid,comm,args
 mount | grep -Ei "overlay|docker|containerd|kubepods"
 ```
 
-**Tool:** mount · **Platform:** Linux · **Tags:** container, mounts · **Context:** User
+**Tool:** mount · **Platform:** Linux · **Tags:** container, mounts · **Context:** User · **Noise:** Quiet
 
 ## Kubernetes service account
 
@@ -42,7 +42,7 @@ mount | grep -Ei "overlay|docker|containerd|kubepods"
 ls -la /var/run/secrets/kubernetes.io/serviceaccount 2>/dev/null
 ```
 
-**Tool:** ls · **Platform:** Linux · **Tags:** Kubernetes, detection · **Context:** User
+**Tool:** ls · **Platform:** Linux · **Tags:** Kubernetes, detection · **Context:** User · **Noise:** Quiet
 
 ---
 

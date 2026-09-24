@@ -10,7 +10,7 @@ One-liners for discovering allowed methods and method-dependent behavior.
 curl -sk -i -X OPTIONS https://<TARGET>/<PATH>
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** Web, HTTP methods · **Context:** No auth
+**Tool:** curl · **Platform:** Any · **Tags:** Web, HTTP methods · **Context:** No auth · **Noise:** Moderate
 
 ## HEAD request
 
@@ -18,7 +18,7 @@ curl -sk -i -X OPTIONS https://<TARGET>/<PATH>
 curl -skI https://<TARGET>/<PATH>
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** Web, HTTP, HEAD · **Context:** No auth
+**Tool:** curl · **Platform:** Any · **Tags:** Web, HTTP, HEAD · **Context:** No auth · **Noise:** Moderate
 
 ## TRACE probe
 
@@ -26,7 +26,7 @@ curl -skI https://<TARGET>/<PATH>
 curl -sk -i -X TRACE https://<TARGET>/<PATH>
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** Web, TRACE · **Context:** No auth
+**Tool:** curl · **Platform:** Any · **Tags:** Web, TRACE · **Context:** No auth · **Noise:** Moderate
 
 ## PUT probe
 
@@ -34,7 +34,7 @@ curl -sk -i -X TRACE https://<TARGET>/<PATH>
 curl -sk -i -X PUT https://<TARGET>/<PATH>/<NAME> --data-binary 'test'
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** Web, PUT · **Context:** Authenticated
+**Tool:** curl · **Platform:** Any · **Tags:** Web, PUT · **Context:** Authenticated · **Noise:** Moderate
 
 ## DELETE probe
 
@@ -42,7 +42,7 @@ curl -sk -i -X PUT https://<TARGET>/<PATH>/<NAME> --data-binary 'test'
 curl -sk -i -X DELETE https://<TARGET>/<PATH>/<RESOURCE>
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** Web, DELETE · **Context:** Authenticated
+**Tool:** curl · **Platform:** Any · **Tags:** Web, DELETE · **Context:** Authenticated · **Noise:** Moderate
 
 ## Nmap methods script
 
@@ -50,7 +50,7 @@ curl -sk -i -X DELETE https://<TARGET>/<PATH>/<RESOURCE>
 nmap -Pn -p443 --script http-methods --script-args http-methods.url-path='/<PATH>' <TARGET>
 ```
 
-**Tool:** Nmap · **Platform:** Linux · **Tags:** Web, HTTP methods · **Context:** No auth
+**Tool:** Nmap · **Platform:** Linux · **Tags:** Web, HTTP methods · **Context:** No auth · **Noise:** Moderate
 
 ---
 

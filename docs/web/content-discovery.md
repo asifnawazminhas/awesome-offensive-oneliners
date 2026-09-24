@@ -10,7 +10,7 @@ Directory, file and endpoint discovery one-liners.
 ffuf -u https://<TARGET>/FUZZ -w <WORDLIST> -ac
 ```
 
-**Tool:** ffuf · **Platform:** Linux/macOS · **Tags:** Content, Discovery · **Context:** No auth
+**Tool:** ffuf · **Platform:** Linux/macOS · **Tags:** Content, Discovery · **Context:** No auth · **Noise:** Moderate
 
 ## ffuf interesting status codes
 
@@ -18,7 +18,7 @@ ffuf -u https://<TARGET>/FUZZ -w <WORDLIST> -ac
 ffuf -u https://<TARGET>/FUZZ -w <WORDLIST> -mc 200,204,301,302,307,401,403 -ac
 ```
 
-**Tool:** ffuf · **Platform:** Linux/macOS · **Tags:** Content, HTTP · **Context:** No auth
+**Tool:** ffuf · **Platform:** Linux/macOS · **Tags:** Content, HTTP · **Context:** No auth · **Noise:** Moderate
 
 ## ffuf extension discovery
 
@@ -26,7 +26,7 @@ ffuf -u https://<TARGET>/FUZZ -w <WORDLIST> -mc 200,204,301,302,307,401,403 -ac
 ffuf -u https://<TARGET>/FUZZ -w <WORDLIST> -e .php,.asp,.aspx,.jsp,.json,.txt,.bak,.old,.zip -ac
 ```
 
-**Tool:** ffuf · **Platform:** Linux/macOS · **Tags:** Files, Extensions · **Context:** No auth
+**Tool:** ffuf · **Platform:** Linux/macOS · **Tags:** Files, Extensions · **Context:** No auth · **Noise:** Moderate
 
 ## ffuf recursive discovery
 
@@ -34,7 +34,7 @@ ffuf -u https://<TARGET>/FUZZ -w <WORDLIST> -e .php,.asp,.aspx,.jsp,.json,.txt,.
 ffuf -u https://<TARGET>/FUZZ -w <WORDLIST> -recursion -recursion-depth 2 -ac
 ```
 
-**Tool:** ffuf · **Platform:** Linux/macOS · **Tags:** Recursive, Discovery · **Context:** No auth
+**Tool:** ffuf · **Platform:** Linux/macOS · **Tags:** Recursive, Discovery · **Context:** No auth · **Noise:** Moderate
 
 ## Gobuster directory discovery
 
@@ -42,7 +42,7 @@ ffuf -u https://<TARGET>/FUZZ -w <WORDLIST> -recursion -recursion-depth 2 -ac
 gobuster dir -u https://<TARGET> -w <WORDLIST> -x php,asp,aspx,jsp,html,js,json,txt,bak -k
 ```
 
-**Tool:** gobuster · **Platform:** Linux/macOS · **Tags:** Content, Discovery · **Context:** No auth
+**Tool:** gobuster · **Platform:** Linux/macOS · **Tags:** Content, Discovery · **Context:** No auth · **Noise:** Moderate
 
 ## Feroxbuster recursive discovery
 
@@ -50,7 +50,7 @@ gobuster dir -u https://<TARGET> -w <WORDLIST> -x php,asp,aspx,jsp,html,js,json,
 feroxbuster -u https://<TARGET> -w <WORDLIST> -x php,html,js,json,txt,bak -k
 ```
 
-**Tool:** feroxbuster · **Platform:** Linux/macOS · **Tags:** Recursive, Discovery · **Context:** No auth
+**Tool:** feroxbuster · **Platform:** Linux/macOS · **Tags:** Recursive, Discovery · **Context:** No auth · **Noise:** Moderate
 
 ## Dirsearch common extensions
 
@@ -58,7 +58,7 @@ feroxbuster -u https://<TARGET> -w <WORDLIST> -x php,html,js,json,txt,bak -k
 dirsearch -u https://<TARGET> -e php,asp,aspx,jsp,html,js,json,txt,bak,old,zip --random-agent
 ```
 
-**Tool:** dirsearch · **Platform:** Linux/macOS · **Tags:** Content, Discovery · **Context:** No auth
+**Tool:** dirsearch · **Platform:** Linux/macOS · **Tags:** Content, Discovery · **Context:** No auth · **Noise:** Moderate
 
 ## Katana crawl endpoints
 
@@ -66,7 +66,7 @@ dirsearch -u https://<TARGET> -e php,asp,aspx,jsp,html,js,json,txt,bak,old,zip -
 katana -u https://<TARGET> -silent -jc -kf all | uro | sort -u
 ```
 
-**Tool:** katana + uro · **Platform:** Linux/macOS · **Tags:** Crawl, Endpoints · **Context:** No auth
+**Tool:** katana + uro · **Platform:** Linux/macOS · **Tags:** Crawl, Endpoints · **Context:** No auth · **Noise:** Moderate
 
 ---
 

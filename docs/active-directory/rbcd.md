@@ -1,5 +1,7 @@
 # RBCD Discovery
 
+<span class="ol-search-aliases">rbcd resource based constrained delegation msDS-AllowedToActOnBehalfOfOtherIdentity</span>
+
 Resource-based constrained delegation discovery one-liners.
 
 <div class="ol-section-kicker"><span>AD</span><strong>5 one-liners</strong></div>
@@ -10,7 +12,7 @@ Resource-based constrained delegation discovery one-liners.
 Get-DomainComputer -Properties dNSHostName,msDS-AllowedToActOnBehalfOfOtherIdentity | Where-Object {$_.'msDS-AllowedToActOnBehalfOfOtherIdentity'}
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, RBCD, delegation · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, RBCD, delegation · **Context:** Domain user · **Noise:** Moderate
 
 ## LDAP RBCD objects
 
@@ -18,7 +20,7 @@ Get-DomainComputer -Properties dNSHostName,msDS-AllowedToActOnBehalfOfOtherIdent
 ldapsearch -x -H ldap://<DC_IP> -D "<DOMAIN>\<USER>" -w '<PASSWORD>' -b "<BASE_DN>" "(msDS-AllowedToActOnBehalfOfOtherIdentity=*)" dNSHostName msDS-AllowedToActOnBehalfOfOtherIdentity
 ```
 
-**Tool:** ldapsearch · **Platform:** Linux · **Tags:** AD, LDAP, RBCD · **Context:** Domain user
+**Tool:** ldapsearch · **Platform:** Linux · **Tags:** AD, LDAP, RBCD · **Context:** Domain user · **Noise:** Moderate
 
 ## NetExec RBCD LDAP query
 
@@ -26,7 +28,7 @@ ldapsearch -x -H ldap://<DC_IP> -D "<DOMAIN>\<USER>" -w '<PASSWORD>' -b "<BASE_D
 nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --query "(msDS-AllowedToActOnBehalfOfOtherIdentity=*)" "dNSHostName msDS-AllowedToActOnBehalfOfOtherIdentity"
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, LDAP, RBCD · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, LDAP, RBCD · **Context:** Domain user · **Noise:** Moderate
 
 ## Find writable computer ACLs
 
@@ -34,7 +36,7 @@ nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --query "(msDS-AllowedToActOnBehalfOf
 Find-InterestingDomainAcl -ResolveGUIDs | Where-Object {$_.ObjectAceType -match "Computer" -and $_.ActiveDirectoryRights -match "GenericWrite|GenericAll|WriteDacl|WriteOwner"}
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, ACL, RBCD · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, ACL, RBCD · **Context:** Domain user · **Noise:** Moderate
 
 ## Check machine account quota
 
@@ -42,7 +44,7 @@ Find-InterestingDomainAcl -ResolveGUIDs | Where-Object {$_.ObjectAceType -match 
 Get-DomainObject -Identity "DC=<DOMAIN_COMPONENT>" -Properties ms-DS-MachineAccountQuota
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, MAQ, RBCD · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, MAQ, RBCD · **Context:** Domain user · **Noise:** Moderate
 
 ---
 

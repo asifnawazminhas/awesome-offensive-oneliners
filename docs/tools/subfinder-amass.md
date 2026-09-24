@@ -1,5 +1,7 @@
 # Subfinder and Amass
 
+<div class="ol-version-note">Syntax can drift between releases. Confirm with the tool's local <code>--version</code> and <code>--help</code> output.</div>
+
 Passive subdomain discovery with lightweight, composable output.
 
 <div class="ol-section-kicker"><span>TOOLS</span></div>
@@ -10,7 +12,7 @@ Passive subdomain discovery with lightweight, composable output.
 subfinder -d <DOMAIN> -silent
 ```
 
-**Tool:** subfinder · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** subfinder · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Quiet
 
 
 ## Subfinder all providers
@@ -19,7 +21,7 @@ subfinder -d <DOMAIN> -silent
 subfinder -d <DOMAIN> -all -silent
 ```
 
-**Tool:** subfinder · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** subfinder · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Quiet
 
 
 ## Subfinder recursive
@@ -28,7 +30,7 @@ subfinder -d <DOMAIN> -all -silent
 subfinder -d <DOMAIN> -recursive -silent
 ```
 
-**Tool:** subfinder · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** subfinder · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Quiet
 
 
 ## Amass passive
@@ -37,7 +39,7 @@ subfinder -d <DOMAIN> -recursive -silent
 amass enum -passive -d <DOMAIN>
 ```
 
-**Tool:** Amass · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** Amass · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Quiet
 
 
 ## Merge results
@@ -46,7 +48,7 @@ amass enum -passive -d <DOMAIN>
 (subfinder -d <DOMAIN> -silent; amass enum -passive -d <DOMAIN>) | sort -u
 ```
 
-**Tool:** subfinder + Amass · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** subfinder + Amass · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Quiet
 
 ---
 

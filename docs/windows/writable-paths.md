@@ -10,7 +10,7 @@ One-liners for identifying user-writable directories and files in trusted or pri
 Get-ChildItem "C:\Program Files","C:\Program Files (x86)" -Directory -Recurse -ErrorAction SilentlyContinue | Where-Object {try{ $t=Join-Path $_.FullName ([IO.Path]::GetRandomFileName()); [IO.File]::WriteAllText($t,"x"); Remove-Item $t -Force; $true }catch{$false}} | Select -Expand FullName
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** writable paths · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** writable paths · **Context:** User · **Noise:** Quiet
 
 ## ACLs containing Users write rights
 
@@ -18,7 +18,7 @@ Get-ChildItem "C:\Program Files","C:\Program Files (x86)" -Directory -Recurse -E
 icacls C:\ProgramData | findstr /i "Users Everyone"
 ```
 
-**Tool:** icacls · **Platform:** Windows · **Tags:** ACL, writable paths · **Context:** User
+**Tool:** icacls · **Platform:** Windows · **Tags:** ACL, writable paths · **Context:** User · **Noise:** Quiet
 
 ## PATH entries
 
@@ -26,7 +26,7 @@ icacls C:\ProgramData | findstr /i "Users Everyone"
 $env:PATH -split ';'
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** PATH · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** PATH · **Context:** User · **Noise:** Quiet
 
 ## ACLs for PATH entries
 
@@ -34,7 +34,7 @@ $env:PATH -split ';'
 $env:PATH -split ';' | ForEach-Object { if(Test-Path $_){ Write-Host "=== $_ ==="; icacls $_ } }
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** PATH, ACL · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** PATH, ACL · **Context:** User · **Noise:** Quiet
 
 ## Writable temp locations
 
@@ -42,7 +42,7 @@ $env:PATH -split ';' | ForEach-Object { if(Test-Path $_){ Write-Host "=== $_ ===
 Get-Item $env:TEMP,$env:TMP,"C:\Windows\Temp","C:\ProgramData" | Select FullName,@{n="Writable";e={try{$f=Join-Path $_.FullName ([IO.Path]::GetRandomFileName());New-Item $f -ItemType File -Force|Out-Null;Remove-Item $f -Force;$true}catch{$false}}}
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** writable paths, temp · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** writable paths, temp · **Context:** User · **Noise:** Quiet
 
 ---
 

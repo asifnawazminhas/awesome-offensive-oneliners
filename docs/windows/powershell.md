@@ -8,7 +8,7 @@ Small, reusable PowerShell one-liners for assessment work.
 Invoke-WebRequest -Uri "http://<HOST>/<FILE>" -OutFile "$env:TEMP\<FILE>"
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** HTTP, Download · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** HTTP, Download · **Context:** User · **Noise:** Quiet
 
 ### Download text in memory
 
@@ -16,7 +16,7 @@ Invoke-WebRequest -Uri "http://<HOST>/<FILE>" -OutFile "$env:TEMP\<FILE>"
 (Invoke-WebRequest -UseBasicParsing -Uri "http://<HOST>/<FILE>").Content
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** HTTP, Memory · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** HTTP, Memory · **Context:** User · **Noise:** Quiet
 
 ### SHA256 file hash
 
@@ -24,7 +24,7 @@ Invoke-WebRequest -Uri "http://<HOST>/<FILE>" -OutFile "$env:TEMP\<FILE>"
 Get-FileHash <FILE> -Algorithm SHA256
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** Hashing, Files · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** Hashing, Files · **Context:** User · **Noise:** Quiet
 
 ### Search files recursively
 
@@ -32,7 +32,7 @@ Get-FileHash <FILE> -Algorithm SHA256
 Get-ChildItem <PATH> -Recurse -File -ErrorAction SilentlyContinue | Select-String -Pattern "<TEXT>"
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** Search, Files · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** Search, Files · **Context:** User · **Noise:** Quiet
 
 ### Test TCP port
 
@@ -40,7 +40,7 @@ Get-ChildItem <PATH> -Recurse -File -ErrorAction SilentlyContinue | Select-Strin
 Test-NetConnection <HOST> -Port <PORT>
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** Network, TCP · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** Network, TCP · **Context:** User · **Noise:** Quiet
 
 ### Resolve DNS
 
@@ -48,7 +48,7 @@ Test-NetConnection <HOST> -Port <PORT>
 Resolve-DnsName <HOSTNAME>
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** DNS, Network · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** DNS, Network · **Context:** User · **Noise:** Quiet
 
 ---
 

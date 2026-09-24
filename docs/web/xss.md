@@ -10,7 +10,7 @@ Prioritise reflected parameters and simple encoding behaviour.
 cat urls.txt | grep = | uro | kxss
 ```
 
-**Tool:** kxss · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** kxss · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Moderate
 
 
 ## Replace all values with marker
@@ -19,7 +19,7 @@ cat urls.txt | grep = | uro | kxss
 cat urls.txt | grep = | uro | qsreplace 'xssMARK' | sort -u
 ```
 
-**Tool:** qsreplace · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** qsreplace · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Moderate
 
 
 ## curl reflection check
@@ -28,7 +28,7 @@ cat urls.txt | grep = | uro | qsreplace 'xssMARK' | sort -u
 curl -sk 'https://<TARGET>/page?q=xssMARK' | grep -n 'xssMARK'
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Context:** No auth
+**Tool:** curl · **Platform:** Cross-platform · **Context:** No auth · **Noise:** Moderate
 
 
 ## Dalfox URL mode
@@ -37,7 +37,7 @@ curl -sk 'https://<TARGET>/page?q=xssMARK' | grep -n 'xssMARK'
 dalfox url 'https://<TARGET>/page?q=test' --silence
 ```
 
-**Tool:** Dalfox · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** Dalfox · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Moderate
 
 
 ## Dalfox pipe mode
@@ -46,7 +46,7 @@ dalfox url 'https://<TARGET>/page?q=test' --silence
 cat urls.txt | dalfox pipe --silence
 ```
 
-**Tool:** Dalfox · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** Dalfox · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Moderate
 
 ---
 

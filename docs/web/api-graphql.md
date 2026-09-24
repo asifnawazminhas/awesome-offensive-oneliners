@@ -10,7 +10,7 @@ Quick endpoint, schema and HTTP-method checks.
 curl -sk https://<TARGET>/api/endpoint | jq .
 ```
 
-**Tool:** curl + jq · **Platform:** Cross-platform · **Context:** No auth
+**Tool:** curl + jq · **Platform:** Cross-platform · **Context:** No auth · **Noise:** Moderate
 
 
 ## OPTIONS methods
@@ -19,7 +19,7 @@ curl -sk https://<TARGET>/api/endpoint | jq .
 curl -sk -X OPTIONS -i https://<TARGET>/api/endpoint
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Context:** No auth
+**Tool:** curl · **Platform:** Cross-platform · **Context:** No auth · **Noise:** Moderate
 
 
 ## JSON POST
@@ -28,7 +28,7 @@ curl -sk -X OPTIONS -i https://<TARGET>/api/endpoint
 curl -sk https://<TARGET>/api/endpoint -H 'Content-Type: application/json' -d '{"key":"value"}'
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Context:** No auth
+**Tool:** curl · **Platform:** Cross-platform · **Context:** No auth · **Noise:** Moderate
 
 
 ## Bearer token request
@@ -37,7 +37,7 @@ curl -sk https://<TARGET>/api/endpoint -H 'Content-Type: application/json' -d '{
 curl -sk https://<TARGET>/api/me -H 'Authorization: Bearer <TOKEN>'
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Context:** User
+**Tool:** curl · **Platform:** Cross-platform · **Context:** User · **Noise:** Moderate
 
 
 ## GraphQL typename probe
@@ -46,7 +46,7 @@ curl -sk https://<TARGET>/api/me -H 'Authorization: Bearer <TOKEN>'
 curl -sk https://<TARGET>/graphql -H 'Content-Type: application/json' --data '{"query":"{__typename}"}'
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Context:** No auth
+**Tool:** curl · **Platform:** Cross-platform · **Context:** No auth · **Noise:** Moderate
 
 
 ## GraphQL introspection type names
@@ -55,7 +55,7 @@ curl -sk https://<TARGET>/graphql -H 'Content-Type: application/json' --data '{"
 curl -sk https://<TARGET>/graphql -H 'Content-Type: application/json' --data '{"query":"{__schema{types{name}}}"}' | jq -r '.data.__schema.types[].name'
 ```
 
-**Tool:** curl + jq · **Platform:** Cross-platform · **Context:** No auth
+**Tool:** curl + jq · **Platform:** Cross-platform · **Context:** No auth · **Noise:** Moderate
 
 
 ## Discover API paths from URLs
@@ -64,7 +64,7 @@ curl -sk https://<TARGET>/graphql -H 'Content-Type: application/json' --data '{"
 cat urls.txt | grep -Ei '/(api|graphql|v[0-9]+)/' | sort -u
 ```
 
-**Tool:** grep · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** grep · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Moderate
 
 ---
 

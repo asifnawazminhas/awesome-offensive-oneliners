@@ -10,7 +10,7 @@ One-liners for quickly probing upload handlers, MIME checks and resulting file p
 curl -sk -F "file=@<FILE>" https://<TARGET>/<UPLOAD_ENDPOINT>
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** Web, file upload · **Context:** Authenticated
+**Tool:** curl · **Platform:** Any · **Tags:** Web, file upload · **Context:** Authenticated · **Noise:** Moderate
 
 ## Override multipart MIME type
 
@@ -18,7 +18,7 @@ curl -sk -F "file=@<FILE>" https://<TARGET>/<UPLOAD_ENDPOINT>
 curl -sk -F "file=@<FILE>;type=image/jpeg" https://<TARGET>/<UPLOAD_ENDPOINT>
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** Web, file upload, MIME · **Context:** Authenticated
+**Tool:** curl · **Platform:** Any · **Tags:** Web, file upload, MIME · **Context:** Authenticated · **Noise:** Moderate
 
 ## Custom filename in multipart
 
@@ -26,7 +26,7 @@ curl -sk -F "file=@<FILE>;type=image/jpeg" https://<TARGET>/<UPLOAD_ENDPOINT>
 curl -sk -F "file=@<FILE>;filename=<NAME>" https://<TARGET>/<UPLOAD_ENDPOINT>
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** Web, file upload, filename · **Context:** Authenticated
+**Tool:** curl · **Platform:** Any · **Tags:** Web, file upload, filename · **Context:** Authenticated · **Noise:** Moderate
 
 ## Upload with bearer token
 
@@ -34,7 +34,7 @@ curl -sk -F "file=@<FILE>;filename=<NAME>" https://<TARGET>/<UPLOAD_ENDPOINT>
 curl -sk -H "Authorization: Bearer <TOKEN>" -F "file=@<FILE>" https://<TARGET>/<UPLOAD_ENDPOINT>
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** Web, file upload, API · **Context:** Authenticated
+**Tool:** curl · **Platform:** Any · **Tags:** Web, file upload, API · **Context:** Authenticated · **Noise:** Moderate
 
 ## Probe common upload paths
 
@@ -42,7 +42,7 @@ curl -sk -H "Authorization: Bearer <TOKEN>" -F "file=@<FILE>" https://<TARGET>/<
 ffuf -u https://<TARGET>/FUZZ -w <WORDLIST> -mc 200,301,302,401,403
 ```
 
-**Tool:** ffuf · **Platform:** Linux · **Tags:** Web, file upload, discovery · **Context:** No auth
+**Tool:** ffuf · **Platform:** Linux · **Tags:** Web, file upload, discovery · **Context:** No auth · **Noise:** Moderate
 
 ## Check uploaded file URL
 
@@ -50,7 +50,7 @@ ffuf -u https://<TARGET>/FUZZ -w <WORDLIST> -mc 200,301,302,401,403
 curl -skI https://<TARGET>/<UPLOAD_PATH>/<NAME>
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** Web, file upload, validation · **Context:** No auth
+**Tool:** curl · **Platform:** Any · **Tags:** Web, file upload, validation · **Context:** No auth · **Noise:** Moderate
 
 ---
 

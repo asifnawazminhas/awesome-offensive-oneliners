@@ -1,5 +1,5 @@
 site_name: Awesome Offensive OneLiners
-site_description: A practical collection of one-line commands for penetration testing, Active Directory, red teaming, web security and offensive security operations.
+site_description: A practical collection of one-line commands for penetration testing, Active Directory, cloud, Kubernetes, red teaming, web security and offensive security operations.
 site_author: Asif Nawaz Minhas
 site_url: https://oneliners.asifnawazminhas.com/
 repo_name: asifnawazminhas/awesome-offensive-oneliners
@@ -18,7 +18,6 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
-    - navigation.expand
     - navigation.indexes
     - navigation.top
     - search.suggest
@@ -71,9 +70,9 @@ markdown_extensions:
       custom_checkbox: true
 
 extra_css:
-  - assets/stylesheets/extra.css?v=10
+  - assets/stylesheets/extra.css?v=11
 extra_javascript:
-  - assets/javascripts/extra.js?v=10
+  - assets/javascripts/extra.js?v=11
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -84,6 +83,7 @@ extra:
 
 nav:
   - Home: index.md
+  - Start Here: start-here.md
   - Active Directory:
       - Overview: active-directory/index.md
       - Domain Discovery: active-directory/domain-discovery.md
@@ -188,6 +188,23 @@ nav:
       - Cache Poisoning & Deception: web/cache.md
       - JWT & OAuth/OIDC: web/jwt-oauth.md
       - CORS, CSRF & Headers: web/cors-csrf-headers.md
+  - Cloud:
+      - Overview: cloud/index.md
+      - AWS IAM: cloud/aws-iam.md
+      - Azure Identity: cloud/azure-identity.md
+      - GCP IAM: cloud/gcp-iam.md
+      - Cloud Storage: cloud/storage.md
+      - Metadata Services: cloud/metadata.md
+      - Cloud Inventory: cloud/inventory.md
+  - Kubernetes:
+      - Overview: kubernetes/index.md
+      - Context Discovery: kubernetes/context-discovery.md
+      - RBAC: kubernetes/rbac.md
+      - Service Accounts: kubernetes/service-accounts.md
+      - Secrets: kubernetes/secrets.md
+      - Workloads: kubernetes/workloads.md
+      - Privilege Signals: kubernetes/privilege-signals.md
+      - Network: kubernetes/network.md
   - Recon:
       - Overview: recon/index.md
       - Passive Subdomains: recon/passive-subdomains.md
@@ -265,3 +282,4 @@ nav:
       - Hashcat: tools/hashcat.md
       - John: tools/john.md
       - curl & jq: tools/curl-jq.md
+

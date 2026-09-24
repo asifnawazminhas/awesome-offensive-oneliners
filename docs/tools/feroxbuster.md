@@ -1,5 +1,7 @@
 # Feroxbuster
 
+<div class="ol-version-note">Syntax can drift between releases. Confirm with the tool's local <code>--version</code> and <code>--help</code> output.</div>
+
 Feroxbuster one-liners for recursive web content discovery.
 
 <div class="ol-section-kicker"><span>TOOL</span><strong>5 one-liners</strong></div>
@@ -10,7 +12,7 @@ Feroxbuster one-liners for recursive web content discovery.
 feroxbuster -u https://<TARGET> -w <WORDLIST>
 ```
 
-**Tool:** Feroxbuster · **Platform:** Linux · **Tags:** content discovery, web · **Context:** No auth
+**Tool:** Feroxbuster · **Platform:** Linux · **Tags:** content discovery, web · **Context:** No auth · **Noise:** Moderate
 
 ## Extensions
 
@@ -18,7 +20,7 @@ feroxbuster -u https://<TARGET> -w <WORDLIST>
 feroxbuster -u https://<TARGET> -w <WORDLIST> -x php,html,js,txt,json
 ```
 
-**Tool:** Feroxbuster · **Platform:** Linux · **Tags:** content discovery, extensions · **Context:** No auth
+**Tool:** Feroxbuster · **Platform:** Linux · **Tags:** content discovery, extensions · **Context:** No auth · **Noise:** Moderate
 
 ## Authenticated cookie
 
@@ -26,7 +28,7 @@ feroxbuster -u https://<TARGET> -w <WORDLIST> -x php,html,js,txt,json
 feroxbuster -u https://<TARGET> -w <WORDLIST> -H "Cookie: <COOKIE>"
 ```
 
-**Tool:** Feroxbuster · **Platform:** Linux · **Tags:** content discovery, auth · **Context:** Authenticated
+**Tool:** Feroxbuster · **Platform:** Linux · **Tags:** content discovery, auth · **Context:** Authenticated · **Noise:** Moderate
 
 ## Rate limit
 
@@ -34,7 +36,7 @@ feroxbuster -u https://<TARGET> -w <WORDLIST> -H "Cookie: <COOKIE>"
 feroxbuster -u https://<TARGET> -w <WORDLIST> --rate-limit 10
 ```
 
-**Tool:** Feroxbuster · **Platform:** Linux · **Tags:** content discovery, rate limit · **Context:** No auth
+**Tool:** Feroxbuster · **Platform:** Linux · **Tags:** content discovery, rate limit · **Context:** No auth · **Noise:** Moderate
 
 ## No recursion
 
@@ -42,7 +44,7 @@ feroxbuster -u https://<TARGET> -w <WORDLIST> --rate-limit 10
 feroxbuster -u https://<TARGET> -w <WORDLIST> -n
 ```
 
-**Tool:** Feroxbuster · **Platform:** Linux · **Tags:** content discovery · **Context:** No auth
+**Tool:** Feroxbuster · **Platform:** Linux · **Tags:** content discovery · **Context:** No auth · **Noise:** Moderate
 
 ---
 

@@ -8,7 +8,7 @@ Credential validation and remote access commands for scoped lateral movement tes
 nxc smb <CIDR> -u <USER> -p <PASSWORD> --continue-on-success
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** SMB, Credential Validation · **Context:** User
+**Tool:** NetExec · **Platform:** Linux · **Tags:** SMB, Credential Validation · **Context:** User · **Noise:** Loud
 
 ### Test WinRM credentials
 
@@ -16,7 +16,7 @@ nxc smb <CIDR> -u <USER> -p <PASSWORD> --continue-on-success
 nxc winrm <CIDR> -u <USER> -p <PASSWORD>
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** WinRM, Credential Validation · **Context:** User
+**Tool:** NetExec · **Platform:** Linux · **Tags:** WinRM, Credential Validation · **Context:** User · **Noise:** Loud
 
 ### Test RDP credentials
 
@@ -24,7 +24,7 @@ nxc winrm <CIDR> -u <USER> -p <PASSWORD>
 nxc rdp <CIDR> -u <USER> -p <PASSWORD>
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** RDP, Credential Validation · **Context:** User
+**Tool:** NetExec · **Platform:** Linux · **Tags:** RDP, Credential Validation · **Context:** User · **Noise:** Loud
 
 ### Copy file over SMB
 
@@ -32,7 +32,7 @@ nxc rdp <CIDR> -u <USER> -p <PASSWORD>
 smbclient //<HOST>/<SHARE> -U <DOMAIN>/<USER>%<PASSWORD> -c "put <FILE>"
 ```
 
-**Tool:** smbclient · **Platform:** Linux · **Tags:** SMB, File Transfer · **Context:** User
+**Tool:** smbclient · **Platform:** Linux · **Tags:** SMB, File Transfer · **Context:** User · **Noise:** Loud
 
 ### RDP session
 
@@ -40,7 +40,7 @@ smbclient //<HOST>/<SHARE> -U <DOMAIN>/<USER>%<PASSWORD> -c "put <FILE>"
 xfreerdp /v:<HOST> /u:<USER> /p:<PASSWORD> /dynamic-resolution /cert:ignore
 ```
 
-**Tool:** FreeRDP · **Platform:** Linux · **Tags:** RDP, Remote Access · **Context:** User
+**Tool:** FreeRDP · **Platform:** Linux · **Tags:** RDP, Remote Access · **Context:** User · **Noise:** Loud
 
 ---
 

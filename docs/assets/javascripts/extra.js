@@ -24,10 +24,35 @@
       });
     });
 
+    document.querySelectorAll('[data-ol-random]').forEach((el) => {
+      if (el.dataset.bound) return;
+      el.dataset.bound = '1';
+      el.addEventListener('click', () => {
+        const links = [...document.querySelectorAll('.ol-mini-card a[href]')]
+          .map(a => a.href)
+          .filter(h => h && !h.includes('#'));
+        if (links.length) window.location.href = links[Math.floor(Math.random() * links.length)];
+      });
+    });
+
     document.querySelectorAll('[data-ol-search]').forEach((el) => {
       if (el.dataset.bound) return;
       el.dataset.bound = '1';
       el.addEventListener('click', () => focusSearch(el.dataset.olSearch || ''));
+    });
+
+    document.querySelectorAll('.md-clipboard').forEach((btn) => {
+      if (btn.dataset.olCopyBound) return;
+      btn.dataset.olCopyBound = '1';
+      btn.addEventListener('click', () => {
+        let toast = document.querySelector('.ol-copy-toast');
+        if (!toast) {
+          toast = document.createElement('div'); toast.className = 'ol-copy-toast'; toast.textContent = 'Copied'; document.body.appendChild(toast);
+        }
+        toast.classList.add('show');
+        clearTimeout(window.__olCopyTimer);
+        window.__olCopyTimer = setTimeout(() => toast.classList.remove('show'), 900);
+      });
     });
 
     document.querySelectorAll('.md-typeset p').forEach((p) => {
@@ -37,14 +62,14 @@
       const pieces = raw.split(/\s*·\s*/);
       const rows = [];
       for (const piece of pieces) {
-        const m = piece.match(/^(Tool|Platform|Tags|Context):\s*(.+)$/i);
+        const m = piece.match(/^(Tool|Platform|Tags|Context|Requires|Noise|Version):\s*(.+)$/i);
         if (m) rows.push([m[1][0].toUpperCase() + m[1].slice(1).toLowerCase(), m[2]]);
       }
       if (!rows.length) return;
       p.className = 'ol-meta'; p.innerHTML = '';
       rows.forEach(([label,value]) => {
         const chip = document.createElement('span');
-        chip.className = 'ol-chip' + (label === 'Context' ? ' ol-chip-context' : '');
+        chip.className = 'ol-chip' + (label === 'Context' ? ' ol-chip-context' : '') + (label === 'Requires' ? ' ol-chip-requires' : '') + (label === 'Version' ? ' ol-chip-version' : '') + (label === 'Noise' ? ' ol-chip-noise-' + value.toLowerCase().replace(/[^a-z]+/g,'-') : '');
         const b = document.createElement('b'); b.textContent = label;
         chip.appendChild(b); chip.appendChild(document.createTextNode(' ' + value));
         p.appendChild(chip);

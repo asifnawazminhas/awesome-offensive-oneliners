@@ -10,7 +10,7 @@ One-liners for mapping domain and forest trust relationships.
 Get-DomainTrust
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, trusts · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, trusts · **Context:** Domain user · **Noise:** Quiet
 
 ## PowerView forest trusts
 
@@ -18,7 +18,7 @@ Get-DomainTrust
 Get-ForestTrust
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, forest, trusts · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, forest, trusts · **Context:** Domain user · **Noise:** Quiet
 
 ## Native domain trusts
 
@@ -26,7 +26,7 @@ Get-ForestTrust
 nltest /domain_trusts
 ```
 
-**Tool:** nltest · **Platform:** Windows · **Tags:** AD, trusts · **Context:** Domain user
+**Tool:** nltest · **Platform:** Windows · **Tags:** AD, trusts · **Context:** Domain user · **Noise:** Quiet
 
 ## Native trusted domains
 
@@ -34,7 +34,7 @@ nltest /domain_trusts
 nltest /trusted_domains
 ```
 
-**Tool:** nltest · **Platform:** Windows · **Tags:** AD, trusts · **Context:** Domain user
+**Tool:** nltest · **Platform:** Windows · **Tags:** AD, trusts · **Context:** Domain user · **Noise:** Quiet
 
 ## List forest domains
 
@@ -42,7 +42,7 @@ nltest /trusted_domains
 Get-ForestDomain
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, forest · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, forest · **Context:** Domain user · **Noise:** Quiet
 
 ## LDAP trustedDomain objects
 
@@ -50,7 +50,7 @@ Get-ForestDomain
 ldapsearch -x -H ldap://<DC_IP> -D "<DOMAIN>\<USER>" -w '<PASSWORD>' -b "<BASE_DN>" "(objectClass=trustedDomain)" cn trustDirection trustType trustAttributes
 ```
 
-**Tool:** ldapsearch · **Platform:** Linux · **Tags:** AD, LDAP, trusts · **Context:** Domain user
+**Tool:** ldapsearch · **Platform:** Linux · **Tags:** AD, LDAP, trusts · **Context:** Domain user · **Noise:** Quiet
 
 ## NetExec LDAP trust query
 
@@ -58,7 +58,7 @@ ldapsearch -x -H ldap://<DC_IP> -D "<DOMAIN>\<USER>" -w '<PASSWORD>' -b "<BASE_D
 nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --query "(objectClass=trustedDomain)" "cn trustDirection trustType trustAttributes"
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, LDAP, trusts · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, LDAP, trusts · **Context:** Domain user · **Noise:** Quiet
 
 ---
 

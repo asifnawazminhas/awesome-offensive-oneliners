@@ -10,7 +10,7 @@ Quick service discovery before deeper enumeration.
 naabu -list hosts.txt -top-ports 1000 -silent
 ```
 
-**Tool:** naabu · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** naabu · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Moderate
 
 
 ## Naabu to Nmap service scan
@@ -19,7 +19,7 @@ naabu -list hosts.txt -top-ports 1000 -silent
 naabu -list hosts.txt -top-ports 1000 -silent | nmap -sV -iL -
 ```
 
-**Tool:** naabu + nmap · **Platform:** Linux/macOS · **Tags:** Pipeline · **Context:** No auth
+**Tool:** naabu + nmap · **Platform:** Linux/macOS · **Tags:** Pipeline · **Context:** No auth · **Noise:** Moderate
 
 
 ## Nmap all TCP ports
@@ -28,7 +28,7 @@ naabu -list hosts.txt -top-ports 1000 -silent | nmap -sV -iL -
 nmap -Pn -p- --min-rate 2000 -T4 <TARGET>
 ```
 
-**Tool:** nmap · **Platform:** Cross-platform · **Context:** No auth
+**Tool:** nmap · **Platform:** Cross-platform · **Context:** No auth · **Noise:** Moderate
 
 
 ## Nmap service detection
@@ -37,7 +37,7 @@ nmap -Pn -p- --min-rate 2000 -T4 <TARGET>
 nmap -Pn -sV -sC -p <PORTS> <TARGET>
 ```
 
-**Tool:** nmap · **Platform:** Cross-platform · **Context:** No auth
+**Tool:** nmap · **Platform:** Cross-platform · **Context:** No auth · **Noise:** Moderate
 
 
 ## Masscan fast sweep
@@ -46,7 +46,7 @@ nmap -Pn -sV -sC -p <PORTS> <TARGET>
 masscan <CIDR> -p1-65535 --rate 5000 -oL masscan.txt
 ```
 
-**Tool:** masscan · **Platform:** Linux · **Context:** No auth
+**Tool:** masscan · **Platform:** Linux · **Context:** No auth · **Noise:** Moderate
 
 
 ## Extract open host:port pairs from Nmap grepable
@@ -55,7 +55,7 @@ masscan <CIDR> -p1-65535 --rate 5000 -oL masscan.txt
 awk '/Ports:/{ip=$2; for(i=1;i<=NF;i++) if($i ~ /open\//) print ip,$i}' nmap.gnmap
 ```
 
-**Tool:** awk · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** awk · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Moderate
 
 ---
 

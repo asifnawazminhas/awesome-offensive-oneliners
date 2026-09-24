@@ -10,7 +10,7 @@ Compact NetExec one-liners for common AD enumeration modules and protocol pivots
 nxc smb -L
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, SMB, modules · **Context:** User
+**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, SMB, modules · **Context:** User · **Noise:** Moderate
 
 ## List LDAP modules
 
@@ -18,7 +18,7 @@ nxc smb -L
 nxc ldap -L
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, LDAP, modules · **Context:** User
+**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, LDAP, modules · **Context:** User · **Noise:** Moderate
 
 ## Enumerate shares
 
@@ -26,7 +26,7 @@ nxc ldap -L
 nxc smb <TARGETS> -u <USER> -p '<PASSWORD>' --shares
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, SMB, shares · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, SMB, shares · **Context:** Domain user · **Noise:** Moderate
 
 ## Enumerate sessions
 
@@ -34,7 +34,7 @@ nxc smb <TARGETS> -u <USER> -p '<PASSWORD>' --shares
 nxc smb <TARGETS> -u <USER> -p '<PASSWORD>' --sessions
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, SMB, sessions · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, SMB, sessions · **Context:** Domain user · **Noise:** Moderate
 
 ## Enumerate users
 
@@ -42,7 +42,7 @@ nxc smb <TARGETS> -u <USER> -p '<PASSWORD>' --sessions
 nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --users
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, LDAP, users · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, LDAP, users · **Context:** Domain user · **Noise:** Moderate
 
 ## Enumerate groups
 
@@ -50,7 +50,7 @@ nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --users
 nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --groups
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, LDAP, groups · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, LDAP, groups · **Context:** Domain user · **Noise:** Moderate
 
 ## Enumerate computers
 
@@ -58,7 +58,7 @@ nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --groups
 nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --computers
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, LDAP, computers · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, LDAP, computers · **Context:** Domain user · **Noise:** Moderate
 
 ## Password policy
 
@@ -66,7 +66,7 @@ nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --computers
 nxc smb <DC_IP> -u <USER> -p '<PASSWORD>' --pass-pol
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, SMB, password policy · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, SMB, password policy · **Context:** Domain user · **Noise:** Moderate
 
 ## Kerberoast
 
@@ -74,7 +74,7 @@ nxc smb <DC_IP> -u <USER> -p '<PASSWORD>' --pass-pol
 nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --kerberoasting kerberoast.txt
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, Kerberos · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, Kerberos · **Context:** Domain user · **Noise:** Moderate
 
 ## AS-REP roast
 
@@ -82,7 +82,7 @@ nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --kerberoasting kerberoast.txt
 nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --asreproast asrep.txt
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, Kerberos · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, Kerberos · **Context:** Domain user · **Noise:** Moderate
 
 ---
 

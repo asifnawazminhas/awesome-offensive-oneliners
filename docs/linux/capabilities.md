@@ -10,7 +10,7 @@ One-liners for discovering binaries with file capabilities and high-value capabi
 getcap -r / 2>/dev/null
 ```
 
-**Tool:** getcap · **Platform:** Linux · **Tags:** capabilities, privilege escalation · **Context:** User
+**Tool:** getcap · **Platform:** Linux · **Tags:** capabilities, privilege escalation · **Context:** User · **Noise:** Quiet
 
 ## High-value capabilities
 
@@ -18,7 +18,7 @@ getcap -r / 2>/dev/null
 getcap -r / 2>/dev/null | grep -Ei "cap_setuid|cap_setgid|cap_dac_override|cap_sys_admin|cap_sys_ptrace|cap_chown"
 ```
 
-**Tool:** getcap · **Platform:** Linux · **Tags:** capabilities, privilege escalation · **Context:** User
+**Tool:** getcap · **Platform:** Linux · **Tags:** capabilities, privilege escalation · **Context:** User · **Noise:** Quiet
 
 ## Current process capabilities
 
@@ -26,7 +26,7 @@ getcap -r / 2>/dev/null | grep -Ei "cap_setuid|cap_setgid|cap_dac_override|cap_s
 grep -E "^Cap(Inh|Prm|Eff|Bnd|Amb):" /proc/self/status
 ```
 
-**Tool:** procfs · **Platform:** Linux · **Tags:** capabilities, process · **Context:** User
+**Tool:** procfs · **Platform:** Linux · **Tags:** capabilities, process · **Context:** User · **Noise:** Quiet
 
 ## Decode current capabilities
 
@@ -34,7 +34,7 @@ grep -E "^Cap(Inh|Prm|Eff|Bnd|Amb):" /proc/self/status
 capsh --decode=$(awk '/CapEff/{print $2}' /proc/self/status)
 ```
 
-**Tool:** capsh · **Platform:** Linux · **Tags:** capabilities, process · **Context:** User
+**Tool:** capsh · **Platform:** Linux · **Tags:** capabilities, process · **Context:** User · **Noise:** Quiet
 
 ---
 

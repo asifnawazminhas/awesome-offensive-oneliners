@@ -1,5 +1,7 @@
 # John the Ripper
 
+<div class="ol-version-note">Syntax can drift between releases. Confirm with the tool's local <code>--version</code> and <code>--help</code> output.</div>
+
 John one-liners for identifying, cracking and displaying common password hashes.
 
 <div class="ol-section-kicker"><span>TOOL</span><strong>6 one-liners</strong></div>
@@ -10,7 +12,7 @@ John one-liners for identifying, cracking and displaying common password hashes.
 john hashes.txt --wordlist=<WORDLIST>
 ```
 
-**Tool:** John · **Platform:** Any · **Tags:** hash cracking · **Context:** User
+**Tool:** John · **Platform:** Any · **Tags:** hash cracking · **Context:** User · **Noise:** Quiet
 
 ## Show cracked
 
@@ -18,7 +20,7 @@ john hashes.txt --wordlist=<WORDLIST>
 john hashes.txt --show
 ```
 
-**Tool:** John · **Platform:** Any · **Tags:** hash cracking · **Context:** User
+**Tool:** John · **Platform:** Any · **Tags:** hash cracking · **Context:** User · **Noise:** Quiet
 
 ## List formats
 
@@ -26,7 +28,7 @@ john hashes.txt --show
 john --list=formats
 ```
 
-**Tool:** John · **Platform:** Any · **Tags:** hash cracking, formats · **Context:** User
+**Tool:** John · **Platform:** Any · **Tags:** hash cracking, formats · **Context:** User · **Noise:** Quiet
 
 ## NT hash format
 
@@ -34,7 +36,7 @@ john --list=formats
 john hashes.txt --format=NT --wordlist=<WORDLIST>
 ```
 
-**Tool:** John · **Platform:** Any · **Tags:** hash cracking, NTLM · **Context:** User
+**Tool:** John · **Platform:** Any · **Tags:** hash cracking, NTLM · **Context:** User · **Noise:** Quiet
 
 ## SSH key conversion
 
@@ -42,7 +44,7 @@ john hashes.txt --format=NT --wordlist=<WORDLIST>
 ssh2john <KEY_FILE> > ssh.hash && john ssh.hash --wordlist=<WORDLIST>
 ```
 
-**Tool:** ssh2john,John · **Platform:** Any · **Tags:** SSH, hash cracking · **Context:** User
+**Tool:** ssh2john,John · **Platform:** Any · **Tags:** SSH, hash cracking · **Context:** User · **Noise:** Quiet
 
 ## ZIP conversion
 
@@ -50,7 +52,7 @@ ssh2john <KEY_FILE> > ssh.hash && john ssh.hash --wordlist=<WORDLIST>
 zip2john <ARCHIVE.zip> > zip.hash && john zip.hash --wordlist=<WORDLIST>
 ```
 
-**Tool:** zip2john,John · **Platform:** Any · **Tags:** ZIP, hash cracking · **Context:** User
+**Tool:** zip2john,John · **Platform:** Any · **Tags:** ZIP, hash cracking · **Context:** User · **Noise:** Quiet
 
 ---
 

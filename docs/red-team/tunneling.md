@@ -8,7 +8,7 @@ Common pivoting and port-forwarding one-liners.
 ./proxy -selfcert -laddr 0.0.0.0:11601
 ```
 
-**Tool:** Ligolo-ng · **Platform:** Linux · **Tags:** Tunneling, Pivoting · **Context:** User
+**Tool:** Ligolo-ng · **Platform:** Linux · **Tags:** Tunneling, Pivoting · **Context:** User · **Noise:** Moderate
 
 ### Ligolo agent
 
@@ -16,7 +16,7 @@ Common pivoting and port-forwarding one-liners.
 .\agent.exe -connect <SERVER>:11601 -ignore-cert
 ```
 
-**Tool:** Ligolo-ng · **Platform:** Windows · **Tags:** Tunneling, Pivoting · **Context:** User
+**Tool:** Ligolo-ng · **Platform:** Windows · **Tags:** Tunneling, Pivoting · **Context:** User · **Noise:** Moderate
 
 ### Chisel reverse server
 
@@ -24,7 +24,7 @@ Common pivoting and port-forwarding one-liners.
 chisel server --reverse --port 8000
 ```
 
-**Tool:** Chisel · **Platform:** Linux · **Tags:** Tunneling, Reverse · **Context:** User
+**Tool:** Chisel · **Platform:** Linux · **Tags:** Tunneling, Reverse · **Context:** User · **Noise:** Moderate
 
 ### Chisel SOCKS client
 
@@ -32,7 +32,7 @@ chisel server --reverse --port 8000
 chisel client <SERVER>:8000 R:socks
 ```
 
-**Tool:** Chisel · **Platform:** Linux/Windows · **Tags:** Tunneling, SOCKS · **Context:** User
+**Tool:** Chisel · **Platform:** Linux/Windows · **Tags:** Tunneling, SOCKS · **Context:** User · **Noise:** Moderate
 
 ### SSH dynamic SOCKS
 
@@ -40,7 +40,7 @@ chisel client <SERVER>:8000 R:socks
 ssh -N -D 1080 <USER>@<HOST>
 ```
 
-**Tool:** OpenSSH · **Platform:** Linux/macOS · **Tags:** SSH, SOCKS · **Context:** User
+**Tool:** OpenSSH · **Platform:** Linux/macOS · **Tags:** SSH, SOCKS · **Context:** User · **Noise:** Moderate
 
 ### SSH local forward
 
@@ -48,7 +48,7 @@ ssh -N -D 1080 <USER>@<HOST>
 ssh -N -L 127.0.0.1:<LOCAL_PORT>:<INTERNAL_HOST>:<REMOTE_PORT> <USER>@<JUMP_HOST>
 ```
 
-**Tool:** OpenSSH · **Platform:** Linux/macOS · **Tags:** SSH, Port Forward · **Context:** User
+**Tool:** OpenSSH · **Platform:** Linux/macOS · **Tags:** SSH, Port Forward · **Context:** User · **Noise:** Moderate
 
 ---
 

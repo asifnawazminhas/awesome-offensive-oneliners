@@ -10,7 +10,7 @@ ACL-focused one-liners for finding interesting delegated rights and object contr
 Find-InterestingDomainAcl -ResolveGUIDs
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, ACL · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, ACL · **Context:** Domain user · **Noise:** Quiet
 
 ## ACLs for one object
 
@@ -18,7 +18,7 @@ Find-InterestingDomainAcl -ResolveGUIDs
 Get-DomainObjectAcl -Identity <OBJECT> -ResolveGUIDs
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, ACL · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, ACL · **Context:** Domain user · **Noise:** Quiet
 
 ## ACLs for one principal
 
@@ -26,7 +26,7 @@ Get-DomainObjectAcl -Identity <OBJECT> -ResolveGUIDs
 Get-DomainObjectAcl -ResolveGUIDs | Where-Object {$_.SecurityIdentifier -eq "<SID>"}
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, ACL · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, ACL · **Context:** Domain user · **Noise:** Quiet
 
 ## Find GenericAll
 
@@ -34,7 +34,7 @@ Get-DomainObjectAcl -ResolveGUIDs | Where-Object {$_.SecurityIdentifier -eq "<SI
 Find-InterestingDomainAcl -ResolveGUIDs | Where-Object {$_.ActiveDirectoryRights -match "GenericAll"}
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, ACL, GenericAll · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, ACL, GenericAll · **Context:** Domain user · **Noise:** Quiet
 
 ## Find GenericWrite
 
@@ -42,7 +42,7 @@ Find-InterestingDomainAcl -ResolveGUIDs | Where-Object {$_.ActiveDirectoryRights
 Find-InterestingDomainAcl -ResolveGUIDs | Where-Object {$_.ActiveDirectoryRights -match "GenericWrite"}
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, ACL, GenericWrite · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, ACL, GenericWrite · **Context:** Domain user · **Noise:** Quiet
 
 ## Find WriteDacl or WriteOwner
 
@@ -50,7 +50,7 @@ Find-InterestingDomainAcl -ResolveGUIDs | Where-Object {$_.ActiveDirectoryRights
 Find-InterestingDomainAcl -ResolveGUIDs | Where-Object {$_.ActiveDirectoryRights -match "WriteDacl|WriteOwner"}
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, ACL · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, ACL · **Context:** Domain user · **Noise:** Quiet
 
 ## BloodHound ACL collection
 
@@ -58,7 +58,7 @@ Find-InterestingDomainAcl -ResolveGUIDs | Where-Object {$_.ActiveDirectoryRights
 bloodhound-python -u <USER> -p '<PASSWORD>' -d <DOMAIN> -ns <DC_IP> -c ACL,ObjectProps
 ```
 
-**Tool:** BloodHound · **Platform:** Linux · **Tags:** AD, ACL, BloodHound · **Context:** Domain user
+**Tool:** BloodHound · **Platform:** Linux · **Tags:** AD, ACL, BloodHound · **Context:** Domain user · **Noise:** Quiet
 
 ---
 

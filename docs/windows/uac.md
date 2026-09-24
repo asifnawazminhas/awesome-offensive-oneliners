@@ -10,7 +10,7 @@ One-liners for reading User Account Control configuration and current elevation 
 reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA
 ```
 
-**Tool:** reg.exe · **Platform:** Windows · **Tags:** UAC · **Context:** User
+**Tool:** reg.exe · **Platform:** Windows · **Tags:** UAC · **Context:** User · **Noise:** Quiet
 
 ## ConsentPromptBehaviorAdmin
 
@@ -18,7 +18,7 @@ reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v Enab
 reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v ConsentPromptBehaviorAdmin
 ```
 
-**Tool:** reg.exe · **Platform:** Windows · **Tags:** UAC · **Context:** User
+**Tool:** reg.exe · **Platform:** Windows · **Tags:** UAC · **Context:** User · **Noise:** Quiet
 
 ## PromptOnSecureDesktop
 
@@ -26,7 +26,7 @@ reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v Cons
 reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v PromptOnSecureDesktop
 ```
 
-**Tool:** reg.exe · **Platform:** Windows · **Tags:** UAC · **Context:** User
+**Tool:** reg.exe · **Platform:** Windows · **Tags:** UAC · **Context:** User · **Noise:** Quiet
 
 ## Token elevation type
 
@@ -34,7 +34,7 @@ reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v Prom
 whoami /groups | findstr /i "Mandatory Label"
 ```
 
-**Tool:** whoami · **Platform:** Windows · **Tags:** UAC, token · **Context:** User
+**Tool:** whoami · **Platform:** Windows · **Tags:** UAC, token · **Context:** User · **Noise:** Quiet
 
 ## Current admin membership
 
@@ -42,7 +42,7 @@ whoami /groups | findstr /i "Mandatory Label"
 net localgroup administrators | findstr /i /c:"%USERNAME%"
 ```
 
-**Tool:** net.exe · **Platform:** Windows · **Tags:** UAC, admin · **Context:** User
+**Tool:** net.exe · **Platform:** Windows · **Tags:** UAC, admin · **Context:** User · **Noise:** Quiet
 
 ---
 

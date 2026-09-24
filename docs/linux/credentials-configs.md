@@ -10,7 +10,7 @@ One-liners for locating common configuration files, histories and credential-bea
 find ~ -maxdepth 4 -type f \( -iname "*.env" -o -iname "*.ini" -o -iname "*.conf" -o -iname "*.yaml" -o -iname "*.yml" -o -iname "*.json" \) 2>/dev/null
 ```
 
-**Tool:** find · **Platform:** Linux · **Tags:** credentials, configs · **Context:** User
+**Tool:** find · **Platform:** Linux · **Tags:** credentials, configs · **Context:** User · **Noise:** Quiet
 
 ## Secret keywords in config files
 
@@ -18,7 +18,7 @@ find ~ -maxdepth 4 -type f \( -iname "*.env" -o -iname "*.ini" -o -iname "*.conf
 grep -RIniE "(password|passwd|secret|token|api[_-]?key|client[_-]?secret)" ~ /etc 2>/dev/null | head -100
 ```
 
-**Tool:** grep · **Platform:** Linux · **Tags:** credentials, configs · **Context:** User
+**Tool:** grep · **Platform:** Linux · **Tags:** credentials, configs · **Context:** User · **Noise:** Quiet
 
 ## Shell histories
 
@@ -26,7 +26,7 @@ grep -RIniE "(password|passwd|secret|token|api[_-]?key|client[_-]?secret)" ~ /et
 find ~ -maxdepth 2 -type f -name ".*history" -print -exec tail -n 50 {} \; 2>/dev/null
 ```
 
-**Tool:** find · **Platform:** Linux · **Tags:** credentials, history · **Context:** User
+**Tool:** find · **Platform:** Linux · **Tags:** credentials, history · **Context:** User · **Noise:** Quiet
 
 ## Environment secret keywords
 
@@ -34,7 +34,7 @@ find ~ -maxdepth 2 -type f -name ".*history" -print -exec tail -n 50 {} \; 2>/de
 env | grep -Ei "(password|passwd|secret|token|key|credential)"
 ```
 
-**Tool:** env · **Platform:** Linux · **Tags:** credentials, environment · **Context:** User
+**Tool:** env · **Platform:** Linux · **Tags:** credentials, environment · **Context:** User · **Noise:** Quiet
 
 ## SSH private keys
 
@@ -42,7 +42,7 @@ env | grep -Ei "(password|passwd|secret|token|key|credential)"
 find ~ -type f \( -name "id_rsa" -o -name "id_ed25519" -o -name "*.pem" \) -maxdepth 4 2>/dev/null
 ```
 
-**Tool:** find · **Platform:** Linux · **Tags:** SSH, credentials · **Context:** User
+**Tool:** find · **Platform:** Linux · **Tags:** SSH, credentials · **Context:** User · **Noise:** Quiet
 
 ---
 

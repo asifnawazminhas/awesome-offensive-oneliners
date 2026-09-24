@@ -1,5 +1,7 @@
 # Virtual Host Discovery
 
+<span class="ol-search-aliases">vhost virtual host host header ffuf gobuster wfuzz</span>
+
 Name-based virtual-host discovery one-liners for hosts that share the same IP address.
 
 <div class="ol-section-kicker"><span>WEB</span><strong>VHOST</strong></div>
@@ -10,7 +12,7 @@ Name-based virtual-host discovery one-liners for hosts that share the same IP ad
 ffuf -u http://<IP>/ -H "Host: FUZZ.<DOMAIN>" -w <WORDLIST> -ac
 ```
 
-**Tool:** ffuf · **Platform:** Linux/macOS · **Tags:** VHost, Host Header, Discovery · **Context:** No auth
+**Tool:** ffuf · **Platform:** Linux/macOS · **Tags:** VHost, Host Header, Discovery · **Context:** No auth · **Noise:** Moderate
 
 ## ffuf vhost with response-size filter
 
@@ -18,7 +20,7 @@ ffuf -u http://<IP>/ -H "Host: FUZZ.<DOMAIN>" -w <WORDLIST> -ac
 ffuf -u http://<IP>/ -H "Host: FUZZ.<DOMAIN>" -w <WORDLIST> -fs <BASELINE_SIZE>
 ```
 
-**Tool:** ffuf · **Platform:** Linux/macOS · **Tags:** VHost, Filtering · **Context:** No auth
+**Tool:** ffuf · **Platform:** Linux/macOS · **Tags:** VHost, Filtering · **Context:** No auth · **Noise:** Moderate
 
 ## ffuf vhost interesting status codes
 
@@ -26,7 +28,7 @@ ffuf -u http://<IP>/ -H "Host: FUZZ.<DOMAIN>" -w <WORDLIST> -fs <BASELINE_SIZE>
 ffuf -u https://<IP>/ -H "Host: FUZZ.<DOMAIN>" -w <WORDLIST> -mc 200,204,301,302,307,401,403 -ac
 ```
 
-**Tool:** ffuf · **Platform:** Linux/macOS · **Tags:** VHost, HTTP · **Context:** No auth
+**Tool:** ffuf · **Platform:** Linux/macOS · **Tags:** VHost, HTTP · **Context:** No auth · **Noise:** Moderate
 
 ## Gobuster vhost mode
 
@@ -34,7 +36,7 @@ ffuf -u https://<IP>/ -H "Host: FUZZ.<DOMAIN>" -w <WORDLIST> -mc 200,204,301,302
 gobuster vhost -u https://<DOMAIN> -w <WORDLIST> --append-domain
 ```
 
-**Tool:** gobuster · **Platform:** Linux/macOS · **Tags:** VHost, Discovery · **Context:** No auth
+**Tool:** gobuster · **Platform:** Linux/macOS · **Tags:** VHost, Discovery · **Context:** No auth · **Noise:** Moderate
 
 ## wfuzz Host-header discovery
 
@@ -42,7 +44,7 @@ gobuster vhost -u https://<DOMAIN> -w <WORDLIST> --append-domain
 wfuzz -c -w <WORDLIST> -H "Host: FUZZ.<DOMAIN>" --hh <BASELINE_CHARS> http://<IP>/
 ```
 
-**Tool:** wfuzz · **Platform:** Linux/macOS · **Tags:** VHost, Host Header · **Context:** No auth
+**Tool:** wfuzz · **Platform:** Linux/macOS · **Tags:** VHost, Host Header · **Context:** No auth · **Noise:** Moderate
 
 ## Manual curl vhost probe
 
@@ -50,7 +52,7 @@ wfuzz -c -w <WORDLIST> -H "Host: FUZZ.<DOMAIN>" --hh <BASELINE_CHARS> http://<IP
 curl -sk -H 'Host: <VHOST>.<DOMAIN>' http://<IP>/ -o /dev/null -w '%{http_code} %{size_download}\n'
 ```
 
-**Tool:** curl · **Platform:** Cross-platform · **Tags:** VHost, Manual Validation · **Context:** No auth
+**Tool:** curl · **Platform:** Cross-platform · **Tags:** VHost, Manual Validation · **Context:** No auth · **Noise:** Moderate
 
 ## Compare default and candidate response hashes
 
@@ -58,7 +60,7 @@ curl -sk -H 'Host: <VHOST>.<DOMAIN>' http://<IP>/ -o /dev/null -w '%{http_code} 
 for h in invalid.<DOMAIN> admin.<DOMAIN>; do printf '%s ' "$h"; curl -sk -H "Host: $h" http://<IP>/ | sha256sum | cut -d' ' -f1; done
 ```
 
-**Tool:** curl + sha256sum · **Platform:** Linux/macOS · **Tags:** VHost, Differential · **Context:** No auth
+**Tool:** curl + sha256sum · **Platform:** Linux/macOS · **Tags:** VHost, Differential · **Context:** No auth · **Noise:** Moderate
 
 ## Resolve discovered vhosts locally
 
@@ -66,7 +68,7 @@ for h in invalid.<DOMAIN> admin.<DOMAIN>; do printf '%s ' "$h"; curl -sk -H "Hos
 while read -r h; do printf '%s\t%s\n' '<IP>' "$h"; done < vhosts.txt
 ```
 
-**Tool:** shell · **Platform:** Linux/macOS · **Tags:** Hosts File, Validation · **Context:** No auth
+**Tool:** shell · **Platform:** Linux/macOS · **Tags:** Hosts File, Validation · **Context:** No auth · **Noise:** Moderate
 
 ---
 

@@ -12,30 +12,30 @@ Duplicate-parameter probes for parser differences and precedence.
 ```bash
 curl -sk 'https://<TARGET>/endpoint?id=1&id=2'
 ```
-**Tool:** curl · **Platform:** Any · **Tags:** HPP, GET · **Context:** No auth
+**Tool:** curl · **Platform:** Any · **Tags:** HPP, GET · **Context:** No auth · **Noise:** Moderate
 
 ## Reverse duplicate order
 ```bash
 curl -sk 'https://<TARGET>/endpoint?id=2&id=1'
 ```
-**Tool:** curl · **Platform:** Any · **Tags:** HPP, Parser · **Context:** No auth
+**Tool:** curl · **Platform:** Any · **Tags:** HPP, Parser · **Context:** No auth · **Noise:** Moderate
 
 ## Duplicate POST parameter
 ```bash
 curl -sk -X POST https://<TARGET>/endpoint -d 'id=1&id=2'
 ```
-**Tool:** curl · **Platform:** Any · **Tags:** HPP, POST · **Context:** No auth
+**Tool:** curl · **Platform:** Any · **Tags:** HPP, POST · **Context:** No auth · **Noise:** Moderate
 
 ## Array-style duplicate
 ```bash
 curl -sk 'https://<TARGET>/endpoint?id[]=1&id[]=2'
 ```
-**Tool:** curl · **Platform:** Any · **Tags:** Arrays, HPP · **Context:** No auth
+**Tool:** curl · **Platform:** Any · **Tags:** Arrays, HPP · **Context:** No auth · **Noise:** Moderate
 
 ## Mixed query and body
 ```bash
 curl -sk -X POST 'https://<TARGET>/endpoint?id=1' -d 'id=2'
 ```
-**Tool:** curl · **Platform:** Any · **Tags:** Query, Body, HPP · **Context:** No auth
+**Tool:** curl · **Platform:** Any · **Tags:** Query, Body, HPP · **Context:** No auth · **Noise:** Moderate
 
 **Related:** [Parameters](parameters.md) · [API Authorization](api-authz.md) · [Injection](injection.md)

@@ -12,30 +12,30 @@ Fast code-search one-liners for public exposure and asset discovery.
 ```bash
 gh search code '<DOMAIN>' --limit 100
 ```
-**Tool:** GitHub CLI · **Platform:** Any · **Tags:** GitHub, Code Search · **Context:** Authenticated CLI
+**Tool:** GitHub CLI · **Platform:** Any · **Tags:** GitHub, Code Search · **Context:** Authenticated CLI · **Noise:** Quiet
 
 ## GitHub filename search
 ```bash
 gh search code 'filename:.env <DOMAIN>' --limit 100
 ```
-**Tool:** GitHub CLI · **Platform:** Any · **Tags:** GitHub, .env · **Context:** Authenticated CLI
+**Tool:** GitHub CLI · **Platform:** Any · **Tags:** GitHub, .env · **Context:** Authenticated CLI · **Noise:** Quiet
 
 ## GitHub API code search
 ```bash
 curl -s -H 'Authorization: Bearer <GITHUB_TOKEN>' 'https://api.github.com/search/code?q=<DOMAIN>+in:file' | jq -r '.items[].html_url'
 ```
-**Tool:** curl/jq · **Platform:** Any · **Tags:** GitHub API, Code Search · **Context:** API token
+**Tool:** curl/jq · **Platform:** Any · **Tags:** GitHub API, Code Search · **Context:** API token · **Noise:** Quiet
 
 ## GitLab API project search
 ```bash
 curl -s --header 'PRIVATE-TOKEN: <GITLAB_TOKEN>' 'https://gitlab.com/api/v4/projects?search=<DOMAIN>' | jq -r '.[].web_url'
 ```
-**Tool:** curl/jq · **Platform:** Any · **Tags:** GitLab, Projects · **Context:** API token
+**Tool:** curl/jq · **Platform:** Any · **Tags:** GitLab, Projects · **Context:** API token · **Noise:** Quiet
 
 ## GitLab code-search endpoint
 ```bash
 curl -s --header 'PRIVATE-TOKEN: <GITLAB_TOKEN>' 'https://gitlab.com/api/v4/search?scope=blobs&search=<DOMAIN>' | jq -r '.[].path'
 ```
-**Tool:** curl/jq · **Platform:** Any · **Tags:** GitLab, Code Search · **Context:** API token
+**Tool:** curl/jq · **Platform:** Any · **Tags:** GitLab, Code Search · **Context:** API token · **Noise:** Quiet
 
 **Related:** [Code Search](code-search.md) · [Cloud Assets](cloud-assets.md) · [Passive Combinations](passive-combinations.md)

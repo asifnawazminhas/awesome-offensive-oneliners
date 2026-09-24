@@ -10,7 +10,7 @@ One-liners for container-group membership, sockets, images and host-mount clues.
 id | grep -E "docker|lxd|lxc"
 ```
 
-**Tool:** id · **Platform:** Linux · **Tags:** Docker, LXC, groups · **Context:** User
+**Tool:** id · **Platform:** Linux · **Tags:** Docker, LXC, groups · **Context:** User · **Noise:** Quiet
 
 ## Docker socket permissions
 
@@ -18,7 +18,7 @@ id | grep -E "docker|lxd|lxc"
 ls -l /var/run/docker.sock 2>/dev/null
 ```
 
-**Tool:** ls · **Platform:** Linux · **Tags:** Docker, socket · **Context:** User
+**Tool:** ls · **Platform:** Linux · **Tags:** Docker, socket · **Context:** User · **Noise:** Quiet
 
 ## Docker info
 
@@ -26,7 +26,7 @@ ls -l /var/run/docker.sock 2>/dev/null
 docker info 2>/dev/null | head -40
 ```
 
-**Tool:** Docker · **Platform:** Linux · **Tags:** Docker, environment · **Context:** User
+**Tool:** Docker · **Platform:** Linux · **Tags:** Docker, environment · **Context:** User · **Noise:** Quiet
 
 ## Docker images
 
@@ -34,7 +34,7 @@ docker info 2>/dev/null | head -40
 docker images 2>/dev/null
 ```
 
-**Tool:** Docker · **Platform:** Linux · **Tags:** Docker, images · **Context:** User
+**Tool:** Docker · **Platform:** Linux · **Tags:** Docker, images · **Context:** User · **Noise:** Quiet
 
 ## LXD containers
 
@@ -42,7 +42,7 @@ docker images 2>/dev/null
 lxc list 2>/dev/null
 ```
 
-**Tool:** LXC · **Platform:** Linux · **Tags:** LXD, containers · **Context:** User
+**Tool:** LXC · **Platform:** Linux · **Tags:** LXD, containers · **Context:** User · **Noise:** Quiet
 
 ## Container mounts
 
@@ -50,7 +50,7 @@ lxc list 2>/dev/null
 mount | grep -Ei "docker|overlay|lxc|container"
 ```
 
-**Tool:** mount · **Platform:** Linux · **Tags:** containers, mounts · **Context:** User
+**Tool:** mount · **Platform:** Linux · **Tags:** containers, mounts · **Context:** User · **Noise:** Quiet
 
 ---
 

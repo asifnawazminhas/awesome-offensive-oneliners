@@ -10,7 +10,7 @@ One-liners for correlating AppLocker, WDAC, CLM and Code Integrity state.
 Get-AppLockerPolicy -Effective -Xml
 ```
 
-**Tool:** AppLocker · **Platform:** Windows · **Tags:** AppLocker, policy · **Context:** User
+**Tool:** AppLocker · **Platform:** Windows · **Tags:** AppLocker, policy · **Context:** User · **Noise:** Quiet
 
 ## AppLocker rule collections
 
@@ -18,7 +18,7 @@ Get-AppLockerPolicy -Effective -Xml
 [xml]$p=(Get-AppLockerPolicy -Effective).ToXml(); $p.AppLockerPolicy.RuleCollection | Select Type,EnforcementMode
 ```
 
-**Tool:** AppLocker · **Platform:** Windows · **Tags:** AppLocker, policy · **Context:** User
+**Tool:** AppLocker · **Platform:** Windows · **Tags:** AppLocker, policy · **Context:** User · **Noise:** Quiet
 
 ## Language mode
 
@@ -26,7 +26,7 @@ Get-AppLockerPolicy -Effective -Xml
 $ExecutionContext.SessionState.LanguageMode
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** CLM, PowerShell · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** CLM, PowerShell · **Context:** User · **Noise:** Quiet
 
 ## WDAC active policies
 
@@ -34,7 +34,7 @@ $ExecutionContext.SessionState.LanguageMode
 Get-ChildItem "$env:WINDIR\System32\CodeIntegrity\CiPolicies\Active" -ErrorAction SilentlyContinue | Select Name,Length,LastWriteTime
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** WDAC, Code Integrity · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** WDAC, Code Integrity · **Context:** User · **Noise:** Quiet
 
 ## Code Integrity events
 
@@ -42,7 +42,7 @@ Get-ChildItem "$env:WINDIR\System32\CodeIntegrity\CiPolicies\Active" -ErrorActio
 Get-WinEvent -LogName "Microsoft-Windows-CodeIntegrity/Operational" -MaxEvents 30 | Select TimeCreated,Id,Message
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** WDAC, events · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** WDAC, events · **Context:** User · **Noise:** Quiet
 
 ## AppLocker EXE/DLL events
 
@@ -50,7 +50,7 @@ Get-WinEvent -LogName "Microsoft-Windows-CodeIntegrity/Operational" -MaxEvents 3
 Get-WinEvent -LogName "Microsoft-Windows-AppLocker/EXE and DLL" -MaxEvents 30 | Select TimeCreated,Id,Message
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** AppLocker, events · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** AppLocker, events · **Context:** User · **Noise:** Quiet
 
 ## CITool policy listing
 
@@ -58,7 +58,7 @@ Get-WinEvent -LogName "Microsoft-Windows-AppLocker/EXE and DLL" -MaxEvents 30 | 
 citool.exe --list-policies
 ```
 
-**Tool:** CITool · **Platform:** Windows · **Tags:** WDAC, policy · **Context:** User
+**Tool:** CITool · **Platform:** Windows · **Tags:** WDAC, policy · **Context:** User · **Noise:** Quiet
 
 ---
 

@@ -10,7 +10,7 @@ One-liners for services, unit files, timers and writable systemd paths.
 systemctl --type=service --state=running --no-pager
 ```
 
-**Tool:** systemctl · **Platform:** Linux · **Tags:** systemd, services · **Context:** User
+**Tool:** systemctl · **Platform:** Linux · **Tags:** systemd, services · **Context:** User · **Noise:** Quiet
 
 ## Enabled services
 
@@ -18,7 +18,7 @@ systemctl --type=service --state=running --no-pager
 systemctl list-unit-files --type=service --state=enabled --no-pager
 ```
 
-**Tool:** systemctl · **Platform:** Linux · **Tags:** systemd, services · **Context:** User
+**Tool:** systemctl · **Platform:** Linux · **Tags:** systemd, services · **Context:** User · **Noise:** Quiet
 
 ## Timers
 
@@ -26,7 +26,7 @@ systemctl list-unit-files --type=service --state=enabled --no-pager
 systemctl list-timers --all --no-pager
 ```
 
-**Tool:** systemctl · **Platform:** Linux · **Tags:** systemd, timers · **Context:** User
+**Tool:** systemctl · **Platform:** Linux · **Tags:** systemd, timers · **Context:** User · **Noise:** Quiet
 
 ## Unit file for service
 
@@ -34,7 +34,7 @@ systemctl list-timers --all --no-pager
 systemctl cat <SERVICE>
 ```
 
-**Tool:** systemctl · **Platform:** Linux · **Tags:** systemd, service · **Context:** User
+**Tool:** systemctl · **Platform:** Linux · **Tags:** systemd, service · **Context:** User · **Noise:** Quiet
 
 ## Writable unit files
 
@@ -42,7 +42,7 @@ systemctl cat <SERVICE>
 find /etc/systemd /usr/lib/systemd /lib/systemd -type f -writable 2>/dev/null
 ```
 
-**Tool:** find · **Platform:** Linux · **Tags:** systemd, writable · **Context:** User
+**Tool:** find · **Platform:** Linux · **Tags:** systemd, writable · **Context:** User · **Noise:** Quiet
 
 ## Writable service ExecStart targets
 
@@ -50,7 +50,7 @@ find /etc/systemd /usr/lib/systemd /lib/systemd -type f -writable 2>/dev/null
 grep -RHE "^ExecStart=" /etc/systemd/system /lib/systemd/system /usr/lib/systemd/system 2>/dev/null | cut -d= -f2-
 ```
 
-**Tool:** grep · **Platform:** Linux · **Tags:** systemd, services · **Context:** User
+**Tool:** grep · **Platform:** Linux · **Tags:** systemd, services · **Context:** User · **Noise:** Quiet
 
 ---
 

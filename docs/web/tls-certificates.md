@@ -10,7 +10,7 @@ TLS, certificate and SAN discovery one-liners for web targets.
 echo | openssl s_client -connect <TARGET>:443 -servername <TARGET> 2>/dev/null | openssl x509 -noout -subject -issuer -dates
 ```
 
-**Tool:** OpenSSL · **Platform:** Any · **Tags:** TLS, certificate · **Context:** No auth
+**Tool:** OpenSSL · **Platform:** Any · **Tags:** TLS, certificate · **Context:** No auth · **Noise:** Moderate
 
 ## Extract SANs
 
@@ -18,7 +18,7 @@ echo | openssl s_client -connect <TARGET>:443 -servername <TARGET> 2>/dev/null |
 echo | openssl s_client -connect <TARGET>:443 -servername <TARGET> 2>/dev/null | openssl x509 -noout -ext subjectAltName
 ```
 
-**Tool:** OpenSSL · **Platform:** Any · **Tags:** TLS, SAN, recon · **Context:** No auth
+**Tool:** OpenSSL · **Platform:** Any · **Tags:** TLS, SAN, recon · **Context:** No auth · **Noise:** Moderate
 
 ## Show certificate fingerprint
 
@@ -26,7 +26,7 @@ echo | openssl s_client -connect <TARGET>:443 -servername <TARGET> 2>/dev/null |
 echo | openssl s_client -connect <TARGET>:443 -servername <TARGET> 2>/dev/null | openssl x509 -noout -fingerprint -sha256
 ```
 
-**Tool:** OpenSSL · **Platform:** Any · **Tags:** TLS, fingerprint · **Context:** No auth
+**Tool:** OpenSSL · **Platform:** Any · **Tags:** TLS, fingerprint · **Context:** No auth · **Noise:** Moderate
 
 ## Enumerate TLS ciphers
 
@@ -34,7 +34,7 @@ echo | openssl s_client -connect <TARGET>:443 -servername <TARGET> 2>/dev/null |
 nmap -Pn -p443 --script ssl-enum-ciphers <TARGET>
 ```
 
-**Tool:** Nmap · **Platform:** Linux · **Tags:** TLS, ciphers · **Context:** No auth
+**Tool:** Nmap · **Platform:** Linux · **Tags:** TLS, ciphers · **Context:** No auth · **Noise:** Moderate
 
 ## Test TLS versions
 
@@ -42,7 +42,7 @@ nmap -Pn -p443 --script ssl-enum-ciphers <TARGET>
 for v in -tls1 -tls1_1 -tls1_2 -tls1_3; do echo | openssl s_client $v -connect <TARGET>:443 -servername <TARGET> 2>&1 | grep -m1 Protocol; done
 ```
 
-**Tool:** OpenSSL · **Platform:** Any · **Tags:** TLS, versions · **Context:** No auth
+**Tool:** OpenSSL · **Platform:** Any · **Tags:** TLS, versions · **Context:** No auth · **Noise:** Moderate
 
 ## httpx TLS metadata
 
@@ -50,7 +50,7 @@ for v in -tls1 -tls1_1 -tls1_2 -tls1_3; do echo | openssl s_client $v -connect <
 httpx -u https://<TARGET> -tls-grab -silent
 ```
 
-**Tool:** httpx · **Platform:** Linux · **Tags:** TLS, certificate, recon · **Context:** No auth
+**Tool:** httpx · **Platform:** Linux · **Tags:** TLS, certificate, recon · **Context:** No auth · **Noise:** Moderate
 
 ---
 

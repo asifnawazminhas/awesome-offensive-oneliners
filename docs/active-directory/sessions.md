@@ -10,7 +10,7 @@ One-liners for finding logged-on users and active SMB/session relationships.
 Get-NetLoggedon -ComputerName <HOST>
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, sessions · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, sessions · **Context:** Domain user · **Noise:** Quiet
 
 ## PowerView sessions
 
@@ -18,7 +18,7 @@ Get-NetLoggedon -ComputerName <HOST>
 Get-NetSession -ComputerName <HOST>
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, sessions · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, sessions · **Context:** Domain user · **Noise:** Quiet
 
 ## NetExec sessions
 
@@ -26,7 +26,7 @@ Get-NetSession -ComputerName <HOST>
 nxc smb <TARGETS> -u <USER> -p '<PASSWORD>' --sessions
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, SMB, sessions · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, SMB, sessions · **Context:** Domain user · **Noise:** Quiet
 
 ## NetExec logged-on users
 
@@ -34,7 +34,7 @@ nxc smb <TARGETS> -u <USER> -p '<PASSWORD>' --sessions
 nxc smb <TARGETS> -u <USER> -p '<PASSWORD>' --loggedon-users
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, sessions · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, sessions · **Context:** Domain user · **Noise:** Quiet
 
 ## Native SMB sessions
 
@@ -42,7 +42,7 @@ nxc smb <TARGETS> -u <USER> -p '<PASSWORD>' --loggedon-users
 net session
 ```
 
-**Tool:** net.exe · **Platform:** Windows · **Tags:** SMB, sessions · **Context:** Local admin
+**Tool:** net.exe · **Platform:** Windows · **Tags:** SMB, sessions · **Context:** Local admin · **Noise:** Quiet
 
 ## Current interactive users
 
@@ -50,7 +50,7 @@ net session
 quser
 ```
 
-**Tool:** quser · **Platform:** Windows · **Tags:** sessions, RDP · **Context:** User
+**Tool:** quser · **Platform:** Windows · **Tags:** sessions, RDP · **Context:** User · **Noise:** Quiet
 
 ## Remote query user
 
@@ -58,7 +58,7 @@ quser
 quser /server:<HOST>
 ```
 
-**Tool:** quser · **Platform:** Windows · **Tags:** sessions, RDP · **Context:** Domain user
+**Tool:** quser · **Platform:** Windows · **Tags:** sessions, RDP · **Context:** Domain user · **Noise:** Quiet
 
 ---
 

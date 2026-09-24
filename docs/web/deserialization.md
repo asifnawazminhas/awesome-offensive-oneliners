@@ -10,7 +10,7 @@ Fast one-liners for spotting serialized formats and common deserialization surfa
 grep -RIl $'\xAC\xED\x00\x05' . 2>/dev/null
 ```
 
-**Tool:** grep · **Platform:** Linux · **Tags:** Web, deserialization, Java · **Context:** User
+**Tool:** grep · **Platform:** Linux · **Tags:** Web, deserialization, Java · **Context:** User · **Noise:** Moderate
 
 ## Find PHP serialized parameters
 
@@ -18,7 +18,7 @@ grep -RIl $'\xAC\xED\x00\x05' . 2>/dev/null
 grep -RIE "(^|[=:\"'])O:[0-9]+:\"|a:[0-9]+:\{" urls.txt
 ```
 
-**Tool:** grep · **Platform:** Linux · **Tags:** Web, deserialization, PHP · **Context:** User
+**Tool:** grep · **Platform:** Linux · **Tags:** Web, deserialization, PHP · **Context:** User · **Noise:** Moderate
 
 ## Decode base64-looking cookie
 
@@ -26,7 +26,7 @@ grep -RIE "(^|[=:\"'])O:[0-9]+:\"|a:[0-9]+:\{" urls.txt
 echo '<COOKIE>' | base64 -d 2>/dev/null | strings
 ```
 
-**Tool:** base64 · **Platform:** Any · **Tags:** Web, cookies, deserialization · **Context:** Authenticated
+**Tool:** base64 · **Platform:** Any · **Tags:** Web, cookies, deserialization · **Context:** Authenticated · **Noise:** Moderate
 
 ## Search responses for Java class names
 
@@ -34,7 +34,7 @@ echo '<COOKIE>' | base64 -d 2>/dev/null | strings
 curl -sk https://<TARGET>/ | grep -Eo "java\.[A-Za-z0-9_.]+|javax\.[A-Za-z0-9_.]+" | sort -u
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** Web, Java, fingerprinting · **Context:** No auth
+**Tool:** curl · **Platform:** Any · **Tags:** Web, Java, fingerprinting · **Context:** No auth · **Noise:** Moderate
 
 ## Nuclei deserialization templates
 
@@ -42,7 +42,7 @@ curl -sk https://<TARGET>/ | grep -Eo "java\.[A-Za-z0-9_.]+|javax\.[A-Za-z0-9_.]
 nuclei -u https://<TARGET> -tags deserialization -silent
 ```
 
-**Tool:** Nuclei · **Platform:** Linux · **Tags:** Web, deserialization · **Context:** No auth
+**Tool:** Nuclei · **Platform:** Linux · **Tags:** Web, deserialization · **Context:** No auth · **Noise:** Moderate
 
 ---
 

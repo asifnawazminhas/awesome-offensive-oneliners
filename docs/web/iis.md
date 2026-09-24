@@ -10,7 +10,7 @@ One-liners for fingerprinting IIS and common Microsoft web application surfaces.
 curl -skI https://<TARGET>/ | grep -i "^Server:"
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** IIS, fingerprinting · **Context:** No auth
+**Tool:** curl · **Platform:** Any · **Tags:** IIS, fingerprinting · **Context:** No auth · **Noise:** Moderate
 
 ## ASP.NET headers
 
@@ -18,7 +18,7 @@ curl -skI https://<TARGET>/ | grep -i "^Server:"
 curl -skI https://<TARGET>/ | grep -Ei "X-AspNet-Version|X-Powered-By|ASP.NET"
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** IIS, ASP.NET · **Context:** No auth
+**Tool:** curl · **Platform:** Any · **Tags:** IIS, ASP.NET · **Context:** No auth · **Noise:** Moderate
 
 ## Common IIS files
 
@@ -26,7 +26,7 @@ curl -skI https://<TARGET>/ | grep -Ei "X-AspNet-Version|X-Powered-By|ASP.NET"
 ffuf -u https://<TARGET>/FUZZ -w <IIS_WORDLIST> -mc 200,301,302,401,403
 ```
 
-**Tool:** ffuf · **Platform:** Linux · **Tags:** IIS, content discovery · **Context:** No auth
+**Tool:** ffuf · **Platform:** Linux · **Tags:** IIS, content discovery · **Context:** No auth · **Noise:** Moderate
 
 ## Shortname scan with nuclei
 
@@ -34,7 +34,7 @@ ffuf -u https://<TARGET>/FUZZ -w <IIS_WORDLIST> -mc 200,301,302,401,403
 nuclei -u https://<TARGET> -tags iis -silent
 ```
 
-**Tool:** Nuclei · **Platform:** Linux · **Tags:** IIS · **Context:** No auth
+**Tool:** Nuclei · **Platform:** Linux · **Tags:** IIS · **Context:** No auth · **Noise:** Moderate
 
 ## WebDAV OPTIONS probe
 
@@ -42,7 +42,7 @@ nuclei -u https://<TARGET> -tags iis -silent
 curl -sk -i -X OPTIONS https://<TARGET>/ | grep -Ei "Allow:|DAV:"
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** IIS, WebDAV · **Context:** No auth
+**Tool:** curl · **Platform:** Any · **Tags:** IIS, WebDAV · **Context:** No auth · **Noise:** Moderate
 
 ## IIS tilde character probe
 
@@ -50,7 +50,7 @@ curl -sk -i -X OPTIONS https://<TARGET>/ | grep -Ei "Allow:|DAV:"
 curl -skI "https://<TARGET>/*~1*/a.aspx"
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** IIS, shortname · **Context:** No auth
+**Tool:** curl · **Platform:** Any · **Tags:** IIS, shortname · **Context:** No auth · **Noise:** Moderate
 
 ---
 

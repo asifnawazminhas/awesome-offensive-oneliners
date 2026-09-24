@@ -10,7 +10,7 @@ One-liners for discovering commonly available signed Windows utilities used duri
 "certutil","mshta","rundll32","regsvr32","msiexec","cscript","wscript","wmic","bitsadmin" | ForEach-Object {Get-Command $_ -ErrorAction SilentlyContinue | Select Name,Source}
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** LOLBins, discovery · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** LOLBins, discovery · **Context:** User · **Noise:** Quiet
 
 ## MSBuild paths
 
@@ -18,7 +18,7 @@ One-liners for discovering commonly available signed Windows utilities used duri
 Get-ChildItem "$env:WINDIR\Microsoft.NET" -Filter MSBuild.exe -Recurse -ErrorAction SilentlyContinue | Select -Expand FullName
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** MSBuild, LOLBins · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** MSBuild, LOLBins · **Context:** User · **Noise:** Quiet
 
 ## InstallUtil paths
 
@@ -26,7 +26,7 @@ Get-ChildItem "$env:WINDIR\Microsoft.NET" -Filter MSBuild.exe -Recurse -ErrorAct
 Get-ChildItem "$env:WINDIR\Microsoft.NET" -Filter InstallUtil.exe -Recurse -ErrorAction SilentlyContinue | Select -Expand FullName
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** InstallUtil, LOLBins · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** InstallUtil, LOLBins · **Context:** User · **Noise:** Quiet
 
 ## curl version
 
@@ -34,7 +34,7 @@ Get-ChildItem "$env:WINDIR\Microsoft.NET" -Filter InstallUtil.exe -Recurse -Erro
 curl.exe --version
 ```
 
-**Tool:** curl · **Platform:** Windows · **Tags:** LOLBins, transfer · **Context:** User
+**Tool:** curl · **Platform:** Windows · **Tags:** LOLBins, transfer · **Context:** User · **Noise:** Quiet
 
 ## WMIC presence
 
@@ -42,7 +42,7 @@ curl.exe --version
 where.exe wmic.exe
 ```
 
-**Tool:** where.exe · **Platform:** Windows · **Tags:** WMIC, LOLBins · **Context:** User
+**Tool:** where.exe · **Platform:** Windows · **Tags:** WMIC, LOLBins · **Context:** User · **Noise:** Quiet
 
 ---
 

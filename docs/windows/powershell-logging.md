@@ -10,7 +10,7 @@ One-liners for checking Script Block, Module and transcription logging policy/st
 reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging
 ```
 
-**Tool:** reg.exe · **Platform:** Windows · **Tags:** PowerShell, logging · **Context:** User
+**Tool:** reg.exe · **Platform:** Windows · **Tags:** PowerShell, logging · **Context:** User · **Noise:** Quiet
 
 ## Module Logging policy
 
@@ -18,7 +18,7 @@ reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging
 reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\PowerShell\ModuleLogging
 ```
 
-**Tool:** reg.exe · **Platform:** Windows · **Tags:** PowerShell, logging · **Context:** User
+**Tool:** reg.exe · **Platform:** Windows · **Tags:** PowerShell, logging · **Context:** User · **Noise:** Quiet
 
 ## Transcription policy
 
@@ -26,7 +26,7 @@ reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\PowerShell\ModuleLogging
 reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\PowerShell\Transcription
 ```
 
-**Tool:** reg.exe · **Platform:** Windows · **Tags:** PowerShell, logging · **Context:** User
+**Tool:** reg.exe · **Platform:** Windows · **Tags:** PowerShell, logging · **Context:** User · **Noise:** Quiet
 
 ## Recent script block events
 
@@ -34,7 +34,7 @@ reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\PowerShell\Transcription
 Get-WinEvent -LogName "Microsoft-Windows-PowerShell/Operational" -FilterXPath "*[System[(EventID=4104)]]" -MaxEvents 20 | Select TimeCreated,Message
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** PowerShell, 4104, logging · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** PowerShell, 4104, logging · **Context:** User · **Noise:** Quiet
 
 ## PowerShell operational log state
 
@@ -42,7 +42,7 @@ Get-WinEvent -LogName "Microsoft-Windows-PowerShell/Operational" -FilterXPath "*
 Get-WinEvent -ListLog "Microsoft-Windows-PowerShell/Operational" | Select LogName,IsEnabled,RecordCount
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** PowerShell, logging · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** PowerShell, logging · **Context:** User · **Noise:** Quiet
 
 ---
 

@@ -10,7 +10,7 @@ One-liners to identify the domain, domain controllers, policy and LDAP context.
 Get-Domain
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user · **Noise:** Quiet
 
 
 ## PowerView domain controllers
@@ -19,7 +19,7 @@ Get-Domain
 Get-DomainController
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user · **Noise:** Quiet
 
 
 ## Native current domain
@@ -28,7 +28,7 @@ Get-DomainController
 [System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()
 ```
 
-**Tool:** PowerShell/.NET · **Platform:** Windows · **Context:** Domain user
+**Tool:** PowerShell/.NET · **Platform:** Windows · **Context:** Domain user · **Noise:** Quiet
 
 
 ## Native domain controller list
@@ -37,7 +37,7 @@ Get-DomainController
 nltest /dclist:<DOMAIN>
 ```
 
-**Tool:** nltest · **Platform:** Windows · **Context:** Domain user
+**Tool:** nltest · **Platform:** Windows · **Context:** Domain user · **Noise:** Quiet
 
 
 ## DNS domain-controller SRV
@@ -46,7 +46,7 @@ nltest /dclist:<DOMAIN>
 nslookup -type=SRV _ldap._tcp.dc._msdcs.<DOMAIN>
 ```
 
-**Tool:** nslookup · **Platform:** Windows · **Context:** No auth
+**Tool:** nslookup · **Platform:** Windows · **Context:** No auth · **Noise:** Quiet
 
 
 ## NetExec LDAP users sanity check
@@ -55,7 +55,7 @@ nslookup -type=SRV _ldap._tcp.dc._msdcs.<DOMAIN>
 nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --users
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user · **Noise:** Quiet
 
 
 ## NetExec password policy
@@ -64,7 +64,7 @@ nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --users
 nxc smb <DC_IP> -u <USER> -p '<PASSWORD>' --pass-pol
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user · **Noise:** Quiet
 
 
 ## Native domain policy
@@ -73,7 +73,7 @@ nxc smb <DC_IP> -u <USER> -p '<PASSWORD>' --pass-pol
 net accounts /domain
 ```
 
-**Tool:** net.exe · **Platform:** Windows · **Context:** Domain user
+**Tool:** net.exe · **Platform:** Windows · **Context:** Domain user · **Noise:** Quiet
 
 ---
 

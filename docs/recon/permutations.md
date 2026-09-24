@@ -10,7 +10,7 @@ Generate and resolve likely mutations from discovered names.
 cat subdomains.txt | alterx -silent | dnsx -silent | sort -u
 ```
 
-**Tool:** alterx + dnsx · **Platform:** Linux/macOS · **Tags:** Pipeline · **Context:** No auth
+**Tool:** alterx + dnsx · **Platform:** Linux/macOS · **Tags:** Pipeline · **Context:** No auth · **Noise:** Moderate
 
 
 ## Alterx with custom patterns
@@ -19,7 +19,7 @@ cat subdomains.txt | alterx -silent | dnsx -silent | sort -u
 alterx -l subdomains.txt -p '{{word}}-dev.{{suffix}},{{word}}-staging.{{suffix}}' -silent | dnsx -silent
 ```
 
-**Tool:** alterx · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** alterx · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Moderate
 
 
 ## Simple environment mutations
@@ -28,7 +28,7 @@ alterx -l subdomains.txt -p '{{word}}-dev.{{suffix}},{{word}}-staging.{{suffix}}
 sed -E 's/^([^.]+)\./\1-{dev,test,stage,staging,prod}./' subdomains.txt
 ```
 
-**Tool:** sed · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** sed · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Moderate
 
 
 ## MassDNS resolve permutations
@@ -37,7 +37,7 @@ sed -E 's/^([^.]+)\./\1-{dev,test,stage,staging,prod}./' subdomains.txt
 massdns -r resolvers.txt -t A -o S -w massdns.out permutations.txt
 ```
 
-**Tool:** massdns · **Platform:** Linux/macOS · **Context:** No auth
+**Tool:** massdns · **Platform:** Linux/macOS · **Context:** No auth · **Noise:** Moderate
 
 ---
 

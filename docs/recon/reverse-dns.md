@@ -10,7 +10,7 @@ One-liners for PTR enumeration and reverse-DNS enrichment.
 dig -x <IP> +short
 ```
 
-**Tool:** dig · **Platform:** Any · **Tags:** Recon, DNS, PTR · **Context:** No auth
+**Tool:** dig · **Platform:** Any · **Tags:** Recon, DNS, PTR · **Context:** No auth · **Noise:** Quiet
 
 ## Host reverse lookup
 
@@ -18,7 +18,7 @@ dig -x <IP> +short
 host <IP>
 ```
 
-**Tool:** host · **Platform:** Any · **Tags:** Recon, DNS, PTR · **Context:** No auth
+**Tool:** host · **Platform:** Any · **Tags:** Recon, DNS, PTR · **Context:** No auth · **Noise:** Quiet
 
 ## dnsx PTR list
 
@@ -26,7 +26,7 @@ host <IP>
 dnsx -l ips.txt -ptr -resp-only -silent
 ```
 
-**Tool:** dnsx · **Platform:** Linux · **Tags:** Recon, DNS, PTR · **Context:** No auth
+**Tool:** dnsx · **Platform:** Linux · **Tags:** Recon, DNS, PTR · **Context:** No auth · **Noise:** Quiet
 
 ## Parallel PTR with xargs
 
@@ -34,7 +34,7 @@ dnsx -l ips.txt -ptr -resp-only -silent
 cat ips.txt | xargs -I{} -P50 sh -c 'printf "{} "; dig -x {} +short'
 ```
 
-**Tool:** dig,xargs · **Platform:** Linux · **Tags:** Recon, DNS, PTR · **Context:** No auth
+**Tool:** dig,xargs · **Platform:** Linux · **Tags:** Recon, DNS, PTR · **Context:** No auth · **Noise:** Quiet
 
 ## Nmap reverse DNS sweep
 
@@ -42,7 +42,7 @@ cat ips.txt | xargs -I{} -P50 sh -c 'printf "{} "; dig -x {} +short'
 nmap -sL <CIDR> | grep "Nmap scan report"
 ```
 
-**Tool:** Nmap · **Platform:** Linux · **Tags:** Recon, DNS, PTR · **Context:** No auth
+**Tool:** Nmap · **Platform:** Linux · **Tags:** Recon, DNS, PTR · **Context:** No auth · **Noise:** Quiet
 
 ---
 

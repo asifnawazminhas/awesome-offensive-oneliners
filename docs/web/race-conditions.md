@@ -10,7 +10,7 @@ Simple concurrent-request one-liners for detecting duplicate processing and stat
 seq 1 20 | xargs -I{} -P20 curl -sk "https://<TARGET>/<ENDPOINT>" -o /dev/null -w "%{http_code}\n"
 ```
 
-**Tool:** xargs,curl · **Platform:** Linux · **Tags:** Web, race conditions · **Context:** Authenticated
+**Tool:** xargs,curl · **Platform:** Linux · **Tags:** Web, race conditions · **Context:** Authenticated · **Noise:** Moderate
 
 ## 20 parallel POST requests
 
@@ -18,7 +18,7 @@ seq 1 20 | xargs -I{} -P20 curl -sk "https://<TARGET>/<ENDPOINT>" -o /dev/null -
 seq 1 20 | xargs -I{} -P20 curl -sk -X POST https://<TARGET>/<ENDPOINT> -d "<BODY>" -o /dev/null -w "%{http_code} %{size_download}\n"
 ```
 
-**Tool:** xargs,curl · **Platform:** Linux · **Tags:** Web, race conditions, POST · **Context:** Authenticated
+**Tool:** xargs,curl · **Platform:** Linux · **Tags:** Web, race conditions, POST · **Context:** Authenticated · **Noise:** Moderate
 
 ## GNU parallel request burst
 
@@ -26,7 +26,7 @@ seq 1 20 | xargs -I{} -P20 curl -sk -X POST https://<TARGET>/<ENDPOINT> -d "<BOD
 seq 1 30 | parallel -j30 curl -sk -o /dev/null -w "%{http_code}\n" https://<TARGET>/<ENDPOINT>
 ```
 
-**Tool:** parallel,curl · **Platform:** Linux · **Tags:** Web, race conditions · **Context:** Authenticated
+**Tool:** parallel,curl · **Platform:** Linux · **Tags:** Web, race conditions · **Context:** Authenticated · **Noise:** Moderate
 
 ## Compare response hashes
 
@@ -34,7 +34,7 @@ seq 1 30 | parallel -j30 curl -sk -o /dev/null -w "%{http_code}\n" https://<TARG
 seq 1 20 | xargs -I{} -P20 curl -sk https://<TARGET>/<ENDPOINT> | sha256sum | sort | uniq -c
 ```
 
-**Tool:** curl,sha256sum · **Platform:** Linux · **Tags:** Web, race conditions, diff · **Context:** Authenticated
+**Tool:** curl,sha256sum · **Platform:** Linux · **Tags:** Web, race conditions, diff · **Context:** Authenticated · **Noise:** Moderate
 
 ---
 

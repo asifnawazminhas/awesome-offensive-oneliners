@@ -1,5 +1,7 @@
 # curl & jq
 
+<div class="ol-version-note">Syntax can drift between releases. Confirm with the tool's local <code>--version</code> and <code>--help</code> output.</div>
+
 Small HTTP and JSON one-liners that are useful everywhere.
 
 ### GET JSON
@@ -8,7 +10,7 @@ Small HTTP and JSON one-liners that are useful everywhere.
 curl -sk https://<TARGET>/api | jq
 ```
 
-**Tool:** curl + jq · **Platform:** Linux/macOS · **Tags:** HTTP, JSON · **Context:** User
+**Tool:** curl + jq · **Platform:** Linux/macOS · **Tags:** HTTP, JSON · **Context:** User · **Noise:** Moderate
 
 ### POST JSON
 
@@ -16,7 +18,7 @@ curl -sk https://<TARGET>/api | jq
 curl -sk -X POST https://<TARGET>/api -H "Content-Type: application/json" -d '{"key":"value"}' | jq
 ```
 
-**Tool:** curl + jq · **Platform:** Linux/macOS · **Tags:** HTTP, JSON · **Context:** User
+**Tool:** curl + jq · **Platform:** Linux/macOS · **Tags:** HTTP, JSON · **Context:** User · **Noise:** Moderate
 
 ### Extract JSON field
 
@@ -24,7 +26,7 @@ curl -sk -X POST https://<TARGET>/api -H "Content-Type: application/json" -d '{"
 curl -sk https://<TARGET>/api | jq -r '.items[].name'
 ```
 
-**Tool:** curl + jq · **Platform:** Linux/macOS · **Tags:** JSON, Parsing · **Context:** User
+**Tool:** curl + jq · **Platform:** Linux/macOS · **Tags:** JSON, Parsing · **Context:** User · **Noise:** Moderate
 
 ### Save response headers
 
@@ -32,7 +34,7 @@ curl -sk https://<TARGET>/api | jq -r '.items[].name'
 curl -skD headers.txt https://<TARGET>/ -o body.html
 ```
 
-**Tool:** curl · **Platform:** Linux/macOS · **Tags:** HTTP, Headers · **Context:** User
+**Tool:** curl · **Platform:** Linux/macOS · **Tags:** HTTP, Headers · **Context:** User · **Noise:** Moderate
 
 ### Send custom Host header
 
@@ -40,7 +42,7 @@ curl -skD headers.txt https://<TARGET>/ -o body.html
 curl -ski https://<IP>/ -H "Host: <HOSTNAME>"
 ```
 
-**Tool:** curl · **Platform:** Linux/macOS · **Tags:** HTTP, Host Header · **Context:** User
+**Tool:** curl · **Platform:** Linux/macOS · **Tags:** HTTP, Host Header · **Context:** User · **Noise:** Moderate
 
 ### Send Referer header
 
@@ -48,7 +50,7 @@ curl -ski https://<IP>/ -H "Host: <HOSTNAME>"
 curl -ski https://<TARGET>/ -H "Referer: https://example.com/"
 ```
 
-**Tool:** curl · **Platform:** Linux/macOS · **Tags:** HTTP, Referer · **Context:** User
+**Tool:** curl · **Platform:** Linux/macOS · **Tags:** HTTP, Referer · **Context:** User · **Noise:** Moderate
 
 ---
 

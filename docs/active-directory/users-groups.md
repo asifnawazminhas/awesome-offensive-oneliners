@@ -10,7 +10,7 @@ Enumerate accounts, groups, memberships and common account properties.
 Get-DomainUser | Select-Object samaccountname
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user · **Noise:** Quiet
 
 
 ## PowerView enabled users
@@ -19,7 +19,7 @@ Get-DomainUser | Select-Object samaccountname
 Get-DomainUser -LDAPFilter '(!(userAccountControl:1.2.840.113556.1.4.803:=2))' | Select samaccountname
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user · **Noise:** Quiet
 
 
 ## PowerView privileged descriptions
@@ -28,7 +28,7 @@ Get-DomainUser -LDAPFilter '(!(userAccountControl:1.2.840.113556.1.4.803:=2))' |
 Get-DomainUser -Properties samaccountname,description | Where-Object description | Format-Table -Auto
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user · **Noise:** Quiet
 
 
 ## NetExec LDAP users
@@ -37,7 +37,7 @@ Get-DomainUser -Properties samaccountname,description | Where-Object description
 nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --users
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user · **Noise:** Quiet
 
 
 ## NetExec LDAP groups
@@ -46,7 +46,7 @@ nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --users
 nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --groups
 ```
 
-**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux/macOS · **Context:** Domain user · **Noise:** Quiet
 
 
 ## Impacket GetADUsers
@@ -55,7 +55,7 @@ nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --groups
 GetADUsers.py -all '<DOMAIN>/<USER>:<PASSWORD>' -dc-ip <DC_IP>
 ```
 
-**Tool:** Impacket · **Platform:** Linux/macOS · **Context:** Domain user
+**Tool:** Impacket · **Platform:** Linux/macOS · **Context:** Domain user · **Noise:** Quiet
 
 
 ## Native domain users
@@ -64,7 +64,7 @@ GetADUsers.py -all '<DOMAIN>/<USER>:<PASSWORD>' -dc-ip <DC_IP>
 net user /domain
 ```
 
-**Tool:** net.exe · **Platform:** Windows · **Context:** Domain user
+**Tool:** net.exe · **Platform:** Windows · **Context:** Domain user · **Noise:** Quiet
 
 
 ## Native domain admins
@@ -73,7 +73,7 @@ net user /domain
 net group "Domain Admins" /domain
 ```
 
-**Tool:** net.exe · **Platform:** Windows · **Context:** Domain user
+**Tool:** net.exe · **Platform:** Windows · **Context:** Domain user · **Noise:** Quiet
 
 
 ## PowerView members of a group
@@ -82,7 +82,7 @@ net group "Domain Admins" /domain
 Get-DomainGroupMember -Identity 'Domain Admins' -Recurse
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Context:** Domain user · **Noise:** Quiet
 
 ---
 

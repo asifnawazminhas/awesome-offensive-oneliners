@@ -1,5 +1,7 @@
 # PowerView & Rubeus
 
+<div class="ol-version-note">Syntax can drift between releases. Confirm with the tool's local <code>--version</code> and <code>--help</code> output.</div>
+
 Compact reference for common PowerView and Rubeus tasks.
 
 ### PowerView users
@@ -8,7 +10,7 @@ Compact reference for common PowerView and Rubeus tasks.
 Get-DomainUser | Select-Object samaccountname
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, Users · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, Users · **Context:** Domain user · **Noise:** Moderate
 
 ### PowerView computers
 
@@ -16,7 +18,7 @@ Get-DomainUser | Select-Object samaccountname
 Get-DomainComputer | Select-Object dnshostname,operatingsystem
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, Computers · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, Computers · **Context:** Domain user · **Noise:** Moderate
 
 ### PowerView trusts
 
@@ -24,7 +26,7 @@ Get-DomainComputer | Select-Object dnshostname,operatingsystem
 Get-DomainTrust
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, Trusts · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, Trusts · **Context:** Domain user · **Noise:** Moderate
 
 ### Rubeus tickets
 
@@ -32,7 +34,7 @@ Get-DomainTrust
 Rubeus.exe triage
 ```
 
-**Tool:** Rubeus · **Platform:** Windows · **Tags:** Kerberos, Tickets · **Context:** Domain user
+**Tool:** Rubeus · **Platform:** Windows · **Tags:** Kerberos, Tickets · **Context:** Domain user · **Noise:** Moderate
 
 ### Rubeus Kerberoast
 
@@ -40,7 +42,7 @@ Rubeus.exe triage
 Rubeus.exe kerberoast /outfile:kerberoast.txt
 ```
 
-**Tool:** Rubeus · **Platform:** Windows · **Tags:** Kerberos, Kerberoast · **Context:** Domain user
+**Tool:** Rubeus · **Platform:** Windows · **Tags:** Kerberos, Kerberoast · **Context:** Domain user · **Noise:** Moderate
 
 ### Rubeus AS-REP roast
 
@@ -48,7 +50,7 @@ Rubeus.exe kerberoast /outfile:kerberoast.txt
 Rubeus.exe asreproast /format:hashcat /outfile:asrep.txt
 ```
 
-**Tool:** Rubeus · **Platform:** Windows · **Tags:** Kerberos, AS-REP · **Context:** Domain user
+**Tool:** Rubeus · **Platform:** Windows · **Tags:** Kerberos, AS-REP · **Context:** Domain user · **Noise:** Moderate
 
 ---
 

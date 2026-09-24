@@ -10,7 +10,7 @@ One-liners for finding WebSocket endpoints and probing upgrade behavior.
 grep -RIEo "wss?://[^"' ]+" <JS_DIR> | sort -u
 ```
 
-**Tool:** grep · **Platform:** Linux · **Tags:** Web, WebSockets, JavaScript · **Context:** User
+**Tool:** grep · **Platform:** Linux · **Tags:** Web, WebSockets, JavaScript · **Context:** User · **Noise:** Moderate
 
 ## Search crawled URLs for WebSockets
 
@@ -18,7 +18,7 @@ grep -RIEo "wss?://[^"' ]+" <JS_DIR> | sort -u
 grep -Ei "(^|/)ws($|/)|websocket|socket.io" urls.txt | sort -u
 ```
 
-**Tool:** grep · **Platform:** Linux · **Tags:** Web, WebSockets · **Context:** User
+**Tool:** grep · **Platform:** Linux · **Tags:** Web, WebSockets · **Context:** User · **Noise:** Moderate
 
 ## Manual upgrade probe
 
@@ -26,7 +26,7 @@ grep -Ei "(^|/)ws($|/)|websocket|socket.io" urls.txt | sort -u
 curl -sk --http1.1 -i -H "Connection: Upgrade" -H "Upgrade: websocket" -H "Sec-WebSocket-Version: 13" -H "Sec-WebSocket-Key: SGVsbG9Xb3JsZA==" https://<TARGET>/<WS_PATH>
 ```
 
-**Tool:** curl · **Platform:** Any · **Tags:** Web, WebSockets, upgrade · **Context:** No auth
+**Tool:** curl · **Platform:** Any · **Tags:** Web, WebSockets, upgrade · **Context:** No auth · **Noise:** Moderate
 
 ## websocat connect
 
@@ -34,7 +34,7 @@ curl -sk --http1.1 -i -H "Connection: Upgrade" -H "Upgrade: websocket" -H "Sec-W
 websocat -v wss://<TARGET>/<WS_PATH>
 ```
 
-**Tool:** websocat · **Platform:** Linux · **Tags:** Web, WebSockets · **Context:** No auth
+**Tool:** websocat · **Platform:** Linux · **Tags:** Web, WebSockets · **Context:** No auth · **Noise:** Moderate
 
 ## wscat connect
 
@@ -42,7 +42,7 @@ websocat -v wss://<TARGET>/<WS_PATH>
 wscat -c wss://<TARGET>/<WS_PATH>
 ```
 
-**Tool:** wscat · **Platform:** Any · **Tags:** Web, WebSockets · **Context:** No auth
+**Tool:** wscat · **Platform:** Any · **Tags:** Web, WebSockets · **Context:** No auth · **Noise:** Moderate
 
 ---
 

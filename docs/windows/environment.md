@@ -10,7 +10,7 @@ One-liners for quickly profiling Windows version, architecture, domain and secur
 Get-ComputerInfo | Select WindowsProductName,WindowsVersion,OsBuildNumber,OsArchitecture
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** environment, OS · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** environment, OS · **Context:** User · **Noise:** Quiet
 
 ## Compact systeminfo
 
@@ -18,7 +18,7 @@ Get-ComputerInfo | Select WindowsProductName,WindowsVersion,OsBuildNumber,OsArch
 systeminfo | findstr /B /C:"OS Name" /C:"OS Version" /C:"System Type" /C:"Domain"
 ```
 
-**Tool:** systeminfo · **Platform:** Windows · **Tags:** environment, OS, domain · **Context:** User
+**Tool:** systeminfo · **Platform:** Windows · **Tags:** environment, OS, domain · **Context:** User · **Noise:** Quiet
 
 ## Current domain
 
@@ -26,7 +26,7 @@ systeminfo | findstr /B /C:"OS Name" /C:"OS Version" /C:"System Type" /C:"Domain
 (Get-CimInstance Win32_ComputerSystem).Domain
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** domain, environment · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** domain, environment · **Context:** User · **Noise:** Quiet
 
 ## Network adapters
 
@@ -34,7 +34,7 @@ systeminfo | findstr /B /C:"OS Name" /C:"OS Version" /C:"System Type" /C:"Domain
 Get-NetIPConfiguration | Select InterfaceAlias,IPv4Address,IPv4DefaultGateway,DNSServer
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** network, environment · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** network, environment · **Context:** User · **Noise:** Quiet
 
 ## Proxy settings
 
@@ -42,7 +42,7 @@ Get-NetIPConfiguration | Select InterfaceAlias,IPv4Address,IPv4DefaultGateway,DN
 netsh winhttp show proxy
 ```
 
-**Tool:** netsh · **Platform:** Windows · **Tags:** proxy, environment · **Context:** User
+**Tool:** netsh · **Platform:** Windows · **Tags:** proxy, environment · **Context:** User · **Noise:** Quiet
 
 ## PowerShell version
 
@@ -50,7 +50,7 @@ netsh winhttp show proxy
 $PSVersionTable
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** PowerShell, environment · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** PowerShell, environment · **Context:** User · **Noise:** Quiet
 
 ---
 

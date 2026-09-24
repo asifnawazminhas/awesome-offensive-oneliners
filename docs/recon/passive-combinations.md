@@ -10,7 +10,7 @@ High-coverage passive subdomain pipelines that combine multiple independent sour
 (subfinder -d <DOMAIN> -silent; assetfinder --subs-only <DOMAIN>) | sort -u
 ```
 
-**Tool:** subfinder,assetfinder · **Platform:** Linux · **Tags:** Recon, subdomains, passive · **Context:** No auth
+**Tool:** subfinder,assetfinder · **Platform:** Linux · **Tags:** Recon, subdomains, passive · **Context:** No auth · **Noise:** Quiet
 
 ## Subfinder + Amass + crt.sh
 
@@ -18,7 +18,7 @@ High-coverage passive subdomain pipelines that combine multiple independent sour
 (subfinder -d <DOMAIN> -silent; amass enum -passive -d <DOMAIN>; curl -s "https://crt.sh/?q=%25.<DOMAIN>&output=json" | jq -r ' .[].name_value ') | sed 's/^\*\.//' | sort -u
 ```
 
-**Tool:** subfinder,Amass,crt.sh · **Platform:** Linux · **Tags:** Recon, subdomains, passive · **Context:** No auth
+**Tool:** subfinder,Amass,crt.sh · **Platform:** Linux · **Tags:** Recon, subdomains, passive · **Context:** No auth · **Noise:** Quiet
 
 ## Passive to DNS-resolved
 
@@ -26,7 +26,7 @@ High-coverage passive subdomain pipelines that combine multiple independent sour
 (subfinder -d <DOMAIN> -silent; assetfinder --subs-only <DOMAIN>) | sort -u | dnsx -silent
 ```
 
-**Tool:** subfinder,assetfinder,dnsx · **Platform:** Linux · **Tags:** Recon, subdomains, DNS · **Context:** No auth
+**Tool:** subfinder,assetfinder,dnsx · **Platform:** Linux · **Tags:** Recon, subdomains, DNS · **Context:** No auth · **Noise:** Quiet
 
 ## Passive to live HTTP
 
@@ -34,7 +34,7 @@ High-coverage passive subdomain pipelines that combine multiple independent sour
 (subfinder -d <DOMAIN> -silent; amass enum -passive -d <DOMAIN>) | sort -u | dnsx -silent | httpx -silent -title -status-code -tech-detect
 ```
 
-**Tool:** subfinder,Amass,dnsx,httpx · **Platform:** Linux · **Tags:** Recon, pipeline · **Context:** No auth
+**Tool:** subfinder,Amass,dnsx,httpx · **Platform:** Linux · **Tags:** Recon, pipeline · **Context:** No auth · **Noise:** Quiet
 
 ## Passive plus permutations
 
@@ -42,7 +42,7 @@ High-coverage passive subdomain pipelines that combine multiple independent sour
 (subfinder -d <DOMAIN> -silent; assetfinder --subs-only <DOMAIN>) | sort -u | tee passive.txt | alterx -silent | dnsx -silent
 ```
 
-**Tool:** subfinder,assetfinder,alterx,dnsx · **Platform:** Linux · **Tags:** Recon, pipeline, permutations · **Context:** No auth
+**Tool:** subfinder,assetfinder,alterx,dnsx · **Platform:** Linux · **Tags:** Recon, pipeline, permutations · **Context:** No auth · **Noise:** Quiet
 
 ---
 

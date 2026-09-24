@@ -8,7 +8,7 @@ Common offline password audit one-liners.
 hashcat -m 1000 <HASHFILE> <WORDLIST>
 ```
 
-**Tool:** Hashcat · **Platform:** Linux/Windows · **Tags:** NTLM, Cracking · **Context:** User
+**Tool:** Hashcat · **Platform:** Linux/Windows · **Tags:** NTLM, Cracking · **Context:** User · **Noise:** Moderate
 
 ### NetNTLMv2 hashcat
 
@@ -16,7 +16,7 @@ hashcat -m 1000 <HASHFILE> <WORDLIST>
 hashcat -m 5600 <HASHFILE> <WORDLIST>
 ```
 
-**Tool:** Hashcat · **Platform:** Linux/Windows · **Tags:** NetNTLMv2, Cracking · **Context:** User
+**Tool:** Hashcat · **Platform:** Linux/Windows · **Tags:** NetNTLMv2, Cracking · **Context:** User · **Noise:** Moderate
 
 ### SHA-256 hashcat
 
@@ -24,7 +24,7 @@ hashcat -m 5600 <HASHFILE> <WORDLIST>
 hashcat -m 1400 <HASHFILE> <WORDLIST>
 ```
 
-**Tool:** Hashcat · **Platform:** Linux/Windows · **Tags:** SHA256, Cracking · **Context:** User
+**Tool:** Hashcat · **Platform:** Linux/Windows · **Tags:** SHA256, Cracking · **Context:** User · **Noise:** Moderate
 
 ### John auto-detect
 
@@ -32,7 +32,7 @@ hashcat -m 1400 <HASHFILE> <WORDLIST>
 john <HASHFILE> --wordlist=<WORDLIST>
 ```
 
-**Tool:** John the Ripper · **Platform:** Linux/macOS · **Tags:** Hashes, Cracking · **Context:** User
+**Tool:** John the Ripper · **Platform:** Linux/macOS · **Tags:** Hashes, Cracking · **Context:** User · **Noise:** Moderate
 
 ### Show cracked John results
 
@@ -40,7 +40,7 @@ john <HASHFILE> --wordlist=<WORDLIST>
 john <HASHFILE> --show
 ```
 
-**Tool:** John the Ripper · **Platform:** Linux/macOS · **Tags:** Hashes, Results · **Context:** User
+**Tool:** John the Ripper · **Platform:** Linux/macOS · **Tags:** Hashes, Results · **Context:** User · **Noise:** Moderate
 
 ---
 

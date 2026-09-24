@@ -10,7 +10,7 @@ One-liners for reading domain password and lockout policy.
 net accounts /domain
 ```
 
-**Tool:** net.exe · **Platform:** Windows · **Tags:** AD, password policy · **Context:** Domain user
+**Tool:** net.exe · **Platform:** Windows · **Tags:** AD, password policy · **Context:** Domain user · **Noise:** Quiet
 
 ## PowerView policy
 
@@ -18,7 +18,7 @@ net accounts /domain
 Get-DomainPolicyData | Select-Object -ExpandProperty SystemAccess
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, password policy · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, password policy · **Context:** Domain user · **Noise:** Quiet
 
 ## NetExec password policy
 
@@ -26,7 +26,7 @@ Get-DomainPolicyData | Select-Object -ExpandProperty SystemAccess
 nxc smb <DC_IP> -u <USER> -p '<PASSWORD>' --pass-pol
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, password policy · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, password policy · **Context:** Domain user · **Noise:** Quiet
 
 ## LDAP default domain policy
 
@@ -34,7 +34,7 @@ nxc smb <DC_IP> -u <USER> -p '<PASSWORD>' --pass-pol
 ldapsearch -x -H ldap://<DC_IP> -D "<DOMAIN>\<USER>" -w '<PASSWORD>' -b "<BASE_DN>" -s base "(objectClass=domain)" minPwdLength pwdHistoryLength lockoutThreshold maxPwdAge minPwdAge
 ```
 
-**Tool:** ldapsearch · **Platform:** Linux · **Tags:** AD, LDAP, password policy · **Context:** Domain user
+**Tool:** ldapsearch · **Platform:** Linux · **Tags:** AD, LDAP, password policy · **Context:** Domain user · **Noise:** Quiet
 
 ## Fine-grained password policies
 
@@ -42,7 +42,7 @@ ldapsearch -x -H ldap://<DC_IP> -D "<DOMAIN>\<USER>" -w '<PASSWORD>' -b "<BASE_D
 Get-ADFineGrainedPasswordPolicy -Filter *
 ```
 
-**Tool:** ActiveDirectory · **Platform:** Windows · **Tags:** AD, FGPP, password policy · **Context:** Domain user
+**Tool:** ActiveDirectory · **Platform:** Windows · **Tags:** AD, FGPP, password policy · **Context:** Domain user · **Noise:** Quiet
 
 ---
 

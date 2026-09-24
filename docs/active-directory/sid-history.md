@@ -10,7 +10,7 @@ One-liners for finding accounts with SIDHistory and resolving inherited identifi
 Get-DomainUser -Properties samaccountname,sidhistory | Where-Object {$_.sidhistory}
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, SIDHistory · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, SIDHistory · **Context:** Domain user · **Noise:** Quiet
 
 ## PowerView SIDHistory groups
 
@@ -18,7 +18,7 @@ Get-DomainUser -Properties samaccountname,sidhistory | Where-Object {$_.sidhisto
 Get-DomainGroup -Properties samaccountname,sidhistory | Where-Object {$_.sidhistory}
 ```
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, SIDHistory · **Context:** Domain user
+**Tool:** PowerView · **Platform:** Windows · **Tags:** AD, SIDHistory · **Context:** Domain user · **Noise:** Quiet
 
 ## LDAP SIDHistory users
 
@@ -26,7 +26,7 @@ Get-DomainGroup -Properties samaccountname,sidhistory | Where-Object {$_.sidhist
 ldapsearch -x -H ldap://<DC_IP> -D "<DOMAIN>\<USER>" -w '<PASSWORD>' -b "<BASE_DN>" "(sIDHistory=*)" sAMAccountName sIDHistory
 ```
 
-**Tool:** ldapsearch · **Platform:** Linux · **Tags:** AD, LDAP, SIDHistory · **Context:** Domain user
+**Tool:** ldapsearch · **Platform:** Linux · **Tags:** AD, LDAP, SIDHistory · **Context:** Domain user · **Noise:** Quiet
 
 ## NetExec SIDHistory query
 
@@ -34,7 +34,7 @@ ldapsearch -x -H ldap://<DC_IP> -D "<DOMAIN>\<USER>" -w '<PASSWORD>' -b "<BASE_D
 nxc ldap <DC_IP> -u <USER> -p '<PASSWORD>' --query "(sIDHistory=*)" "sAMAccountName sIDHistory"
 ```
 
-**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, SIDHistory · **Context:** Domain user
+**Tool:** NetExec · **Platform:** Linux · **Tags:** AD, SIDHistory · **Context:** Domain user · **Noise:** Quiet
 
 ---
 

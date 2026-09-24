@@ -1,5 +1,7 @@
 # smbclient
 
+<div class="ol-version-note">Syntax can drift between releases. Confirm with the tool's local <code>--version</code> and <code>--help</code> output.</div>
+
 smbclient one-liners for share enumeration and file operations.
 
 <div class="ol-section-kicker"><span>TOOL</span><strong>5 one-liners</strong></div>
@@ -10,7 +12,7 @@ smbclient one-liners for share enumeration and file operations.
 smbclient -L //<TARGET> -N
 ```
 
-**Tool:** smbclient · **Platform:** Linux · **Tags:** SMB, shares · **Context:** No auth
+**Tool:** smbclient · **Platform:** Linux · **Tags:** SMB, shares · **Context:** No auth · **Noise:** Moderate
 
 ## Authenticated share list
 
@@ -18,7 +20,7 @@ smbclient -L //<TARGET> -N
 smbclient -L //<TARGET> -U '<DOMAIN>/<USER>%<PASSWORD>'
 ```
 
-**Tool:** smbclient · **Platform:** Linux · **Tags:** SMB, shares · **Context:** Domain user
+**Tool:** smbclient · **Platform:** Linux · **Tags:** SMB, shares · **Context:** Domain user · **Noise:** Moderate
 
 ## Connect to share
 
@@ -26,7 +28,7 @@ smbclient -L //<TARGET> -U '<DOMAIN>/<USER>%<PASSWORD>'
 smbclient //<TARGET>/<SHARE> -U '<DOMAIN>/<USER>%<PASSWORD>'
 ```
 
-**Tool:** smbclient · **Platform:** Linux · **Tags:** SMB, share · **Context:** Domain user
+**Tool:** smbclient · **Platform:** Linux · **Tags:** SMB, share · **Context:** Domain user · **Noise:** Moderate
 
 ## Recursive list
 
@@ -34,7 +36,7 @@ smbclient //<TARGET>/<SHARE> -U '<DOMAIN>/<USER>%<PASSWORD>'
 smbclient //<TARGET>/<SHARE> -U '<DOMAIN>/<USER>%<PASSWORD>' -c 'recurse;ls'
 ```
 
-**Tool:** smbclient · **Platform:** Linux · **Tags:** SMB, files · **Context:** Domain user
+**Tool:** smbclient · **Platform:** Linux · **Tags:** SMB, files · **Context:** Domain user · **Noise:** Moderate
 
 ## Download file
 
@@ -42,7 +44,7 @@ smbclient //<TARGET>/<SHARE> -U '<DOMAIN>/<USER>%<PASSWORD>' -c 'recurse;ls'
 smbclient //<TARGET>/<SHARE> -U '<DOMAIN>/<USER>%<PASSWORD>' -c 'get <REMOTE_FILE> <LOCAL_FILE>'
 ```
 
-**Tool:** smbclient · **Platform:** Linux · **Tags:** SMB, transfer · **Context:** Domain user
+**Tool:** smbclient · **Platform:** Linux · **Tags:** SMB, transfer · **Context:** Domain user · **Noise:** Moderate
 
 ---
 

