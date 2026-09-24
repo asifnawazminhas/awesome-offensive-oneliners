@@ -4,17 +4,11 @@ A practical collection of copyable one-line commands for penetration testing, Ac
 
 **Website:** https://oneliners.asifnawazminhas.com/
 
-## What it is
+## What this project is
 
-The project is designed as a fast operator reference: one command, one objective, minimal noise.
+One command. One objective. Minimal noise.
 
-- 183 practical commands
-- 31 focused pages
-- Active Directory, Windows, Linux, Web, Recon, Red Team, Credentials and Tools
-- Fast full-site search
-- Copyable command blocks
-- Consistent placeholders and metadata
-- Responsive dark/light interface
+The library is organised into Active Directory, Windows, Linux, Web, Recon, Red Team, Credentials and Tools. Each command is kept short, copyable and easy to find through site search.
 
 ## Local development
 
@@ -39,8 +33,4 @@ See [`docs/contributing.md`](docs/contributing.md).
 
 ## Responsible use
 
-This repository is intended for authorised penetration testing, red team exercises, labs, CTFs and security research. Use commands only in environments where you have permission to test.
-
-## License
-
-MIT.
+This repository is intended for authorised penetration testing, red team exercises, labs, CTFs and security research.

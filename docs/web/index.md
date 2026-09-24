@@ -1,43 +1,46 @@
+---
+hide:
+  - toc
+---
+
 # Web
 
 One-liners for web reconnaissance, authentication checks, API testing and injection workflows.
 
-<div class="ol-section-summary">
-  <span class="ol-section-badge">WEB</span>
-  <span><strong>21</strong> commands in 4 focused pages</span>
-</div>
+<div class="ol-section-kicker"><span>WEB</span><strong>21</strong> commands · 4 focused pages</div>
 
-<div class="ol-section-grid">
-<a class="ol-section-card" href="recon/">
-  <div class="ol-section-card-top">
-    <span class="ol-section-name">Recon</span>
-    <span class="ol-section-count">6 commands</span>
-  </div>
-  <p>HTTP discovery, fingerprints and content checks.</p>
-  <span class="ol-section-link">Explore <span aria-hidden="true">→</span></span>
-</a>
-<a class="ol-section-card" href="authentication/">
-  <div class="ol-section-card-top">
-    <span class="ol-section-name">Authentication</span>
-    <span class="ol-section-count">6 commands</span>
-  </div>
-  <p>Session, headers and authentication-focused requests.</p>
-  <span class="ol-section-link">Explore <span aria-hidden="true">→</span></span>
-</a>
-<a class="ol-section-card" href="api/">
-  <div class="ol-section-card-top">
-    <span class="ol-section-name">APIs</span>
-    <span class="ol-section-count">5 commands</span>
-  </div>
-  <p>JSON, REST and API workflow helpers.</p>
-  <span class="ol-section-link">Explore <span aria-hidden="true">→</span></span>
-</a>
-<a class="ol-section-card" href="injection/">
-  <div class="ol-section-card-top">
-    <span class="ol-section-name">Injection</span>
-    <span class="ol-section-count">4 commands</span>
-  </div>
-  <p>Fast payload and response-testing helpers.</p>
-  <span class="ol-section-link">Explore <span aria-hidden="true">→</span></span>
-</a>
+<div class="grid cards ol-section-native" markdown>
+
+-   :material-web-search:{ .lg .middle } **Recon** · `6 commands`
+
+    ---
+
+    HTTP discovery, fingerprints and content checks.
+
+    [:octicons-arrow-right-24: Open Recon](recon/)
+
+-   :material-account-key-outline:{ .lg .middle } **Authentication** · `6 commands`
+
+    ---
+
+    Session, headers and authentication-focused requests.
+
+    [:octicons-arrow-right-24: Open Authentication](authentication/)
+
+-   :material-api:{ .lg .middle } **APIs** · `5 commands`
+
+    ---
+
+    JSON, REST and API workflow helpers.
+
+    [:octicons-arrow-right-24: Open APIs](api/)
+
+-   :material-code-tags:{ .lg .middle } **Injection** · `4 commands`
+
+    ---
+
+    Fast payload and response-testing helpers.
+
+    [:octicons-arrow-right-24: Open Injection](injection/)
+
 </div>

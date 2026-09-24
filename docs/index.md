@@ -1,3 +1,9 @@
+---
+hide:
+  - navigation
+  - toc
+---
+
 <div class="ol-hero" markdown>
 
 <div class="ol-eyebrow">$ one command at a time</div>
@@ -28,84 +34,93 @@ A practical collection of copyable one-line commands for penetration testing, Ac
 
 ## Explore the library
 
-<div class="ol-category-grid">
-<a class="ol-category-card" href="active-directory/">
-  <div class="ol-category-head"><span class="ol-category-icon">AD</span><span class="ol-category-count">32</span></div>
-  <strong>Active Directory</strong>
-  <p>domain enumeration, Kerberos, delegation, AD CS and graph-based analysis.</p>
-  <span class="ol-card-cta">Explore →</span>
-</a>
-<a class="ol-category-card" href="windows/">
-  <div class="ol-category-head"><span class="ol-category-icon">WIN</span><span class="ol-category-count">26</span></div>
-  <strong>Windows</strong>
-  <p>host discovery, application control checks, services, registry and PowerShell.</p>
-  <span class="ol-card-cta">Explore →</span>
-</a>
-<a class="ol-category-card" href="linux/">
-  <div class="ol-category-head"><span class="ol-category-icon">LNX</span><span class="ol-category-count">20</span></div>
-  <strong>Linux</strong>
-  <p>host enumeration, privilege escalation checks, networking and file operations.</p>
-  <span class="ol-card-cta">Explore →</span>
-</a>
-<a class="ol-category-card" href="web/">
-  <div class="ol-category-head"><span class="ol-category-icon">WEB</span><span class="ol-category-count">21</span></div>
-  <strong>Web</strong>
-  <p>web reconnaissance, authentication checks, API testing and injection workflows.</p>
-  <span class="ol-card-cta">Explore →</span>
-</a>
-<a class="ol-category-card" href="recon/">
-  <div class="ol-category-head"><span class="ol-category-icon">REC</span><span class="ol-category-count">17</span></div>
-  <strong>Recon</strong>
-  <p>Fast discovery commands for DNS, subdomains, HTTP services and Nmap.</p>
-  <span class="ol-card-cta">Explore →</span>
-</a>
-<a class="ol-category-card" href="red-team/">
-  <div class="ol-category-head"><span class="ol-category-icon">RT</span><span class="ol-category-count">22</span></div>
-  <strong>Red Team</strong>
-  <p>Operational one-liners for discovery, execution, lateral movement and tunneling in authorised environments.</p>
-  <span class="ol-card-cta">Explore →</span>
-</a>
-<a class="ol-category-card" href="credentials/">
-  <div class="ol-category-head"><span class="ol-category-icon">CREDS</span><span class="ol-category-count">14</span></div>
-  <strong>Credentials</strong>
-  <p>Kerberos, hashes, NTLM and DPAPI-oriented testing.</p>
-  <span class="ol-card-cta">Explore →</span>
-</a>
-<a class="ol-category-card" href="tools/">
-  <div class="ol-category-head"><span class="ol-category-icon">TOOLS</span><span class="ol-category-count">31</span></div>
-  <strong>Tools</strong>
-  <p>commonly used offensive security tools.</p>
-  <span class="ol-card-cta">Explore →</span>
-</a>
+<div class="grid cards ol-library-grid" markdown>
+
+-   :material-domain:{ .lg .middle } **Active Directory** · `32 commands`
+
+    ---
+
+    Domain enumeration, Kerberos, delegation, AD CS and graph-based analysis.
+
+    [:octicons-arrow-right-24: Browse Active Directory](active-directory/)
+
+-   :material-microsoft-windows:{ .lg .middle } **Windows** · `26 commands`
+
+    ---
+
+    Host discovery, application control checks, services, registry and PowerShell.
+
+    [:octicons-arrow-right-24: Browse Windows](windows/)
+
+-   :material-linux:{ .lg .middle } **Linux** · `20 commands`
+
+    ---
+
+    Host enumeration, privilege escalation checks, networking and file operations.
+
+    [:octicons-arrow-right-24: Browse Linux](linux/)
+
+-   :material-web:{ .lg .middle } **Web** · `21 commands`
+
+    ---
+
+    Web reconnaissance, authentication checks, API testing and injection workflows.
+
+    [:octicons-arrow-right-24: Browse Web](web/)
+
+-   :material-radar:{ .lg .middle } **Recon** · `17 commands`
+
+    ---
+
+    DNS, subdomains, HTTP services, content discovery and Nmap.
+
+    [:octicons-arrow-right-24: Browse Recon](recon/)
+
+-   :material-target:{ .lg .middle } **Red Team** · `22 commands`
+
+    ---
+
+    Discovery, execution, lateral movement and tunneling for authorised environments.
+
+    [:octicons-arrow-right-24: Browse Red Team](red-team/)
+
+-   :material-key:{ .lg .middle } **Credentials** · `14 commands`
+
+    ---
+
+    Kerberos, hashes, NTLM and DPAPI-oriented testing.
+
+    [:octicons-arrow-right-24: Browse Credentials](credentials/)
+
+-   :material-tools:{ .lg .middle } **Tools** · `31 commands`
+
+    ---
+
+    NetExec, Impacket, PowerView, Rubeus, Certipy, BloodHound, curl and jq.
+
+    [:octicons-arrow-right-24: Browse Tools](tools/)
+
 </div>
 
 ## Quick launch
 
-<div class="ol-quick-grid">
+<div class="grid cards ol-quick-grid" markdown>
 
-<div class="ol-quick-card" markdown>
+-   **Find constrained delegation**
 
-### Find constrained delegation
+    ```powershell
+    Get-DomainComputer -TrustedToAuth -Properties DnsHostName,msDS-AllowedToDelegateTo
+    ```
 
-```powershell
-Get-DomainComputer -TrustedToAuth -Properties DnsHostName,msDS-AllowedToDelegateTo
-```
+    `PowerView` · `Windows` · `Kerberos`
 
-**Tool:** PowerView · **Platform:** Windows · **Tags:** Kerberos, Delegation, Enumeration
+-   **Discover live web services**
 
-</div>
+    ```bash
+    httpx -l hosts.txt -silent -status-code -title -tech-detect
+    ```
 
-<div class="ol-quick-card" markdown>
-
-### Discover live web services
-
-```bash
-httpx -l hosts.txt -silent -status-code -title -tech-detect
-```
-
-**Tool:** httpx · **Platform:** Linux/macOS · **Tags:** Recon, HTTP, Fingerprinting
-
-</div>
+    `httpx` · `Linux/macOS` · `Recon`
 
 </div>
 

@@ -21,13 +21,11 @@ theme:
     - navigation.expand
     - navigation.indexes
     - navigation.top
-    - navigation.footer
     - search.suggest
     - search.highlight
     - search.share
     - content.code.copy
     - content.code.annotate
-    - content.action.edit
   palette:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
@@ -136,4 +134,3 @@ nav:
       - PowerView & Rubeus: tools/powerview-rubeus.md
       - Certipy & BloodHound: tools/certipy-bloodhound.md
       - curl & jq: tools/curl-jq.md
-  - Contributing: contributing.md
