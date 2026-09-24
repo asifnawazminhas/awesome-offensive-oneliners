@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # NetExec
 
 Fast NetExec reference grouped around common SMB and LDAP tasks.

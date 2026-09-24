@@ -59,7 +59,6 @@ markdown_extensions:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
-  # Required for Material and Octicons used throughout the navigation cards.
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
@@ -72,11 +71,9 @@ markdown_extensions:
       custom_checkbox: true
 
 extra_css:
-  - assets/stylesheets/extra.css
-
+  - assets/stylesheets/extra.css?v=8
 extra_javascript:
-  - assets/javascripts/extra.js
-
+  - assets/javascripts/extra.js?v=8
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -90,51 +87,109 @@ nav:
   - Active Directory:
       - Overview: active-directory/index.md
       - Domain Discovery: active-directory/domain-discovery.md
+      - DNS & SPN Discovery: active-directory/dns-spn.md
       - Users & Groups: active-directory/users-groups.md
       - Computers & DCs: active-directory/computers-dcs.md
       - SMB, Shares & Sessions: active-directory/smb-shares-sessions.md
+      - Local Admin Discovery: active-directory/local-admins.md
+      - Session Hunting: active-directory/sessions.md
       - Kerberos: active-directory/kerberos.md
       - Delegation: active-directory/delegation.md
-      - ACLs, GPOs & Trusts: active-directory/acls-gpo-trusts.md
+      - RBCD: active-directory/rbcd.md
+      - ACLs: active-directory/acls.md
+      - GPO Enumeration: active-directory/gpo.md
+      - Trusts: active-directory/trusts.md
+      - SID History: active-directory/sid-history.md
       - AD CS: active-directory/adcs.md
       - BloodHound: active-directory/bloodhound.md
       - LAPS & gMSA: active-directory/laps-gmsa.md
+      - Machine Account Quota: active-directory/maq.md
+      - Password Policy: active-directory/password-policy.md
+      - MSSQL: active-directory/mssql.md
+      - WinRM & RDP: active-directory/winrm-rdp.md
+      - LDAP Filters: active-directory/ldap-filters.md
+      - NetExec Modules: active-directory/netexec-modules.md
       - LDAP & Native: active-directory/ldap-native.md
   - Windows:
       - Overview: windows/index.md
       - Enumeration: windows/enumeration.md
-      - App Control: windows/app-control.md
-      - Privilege Escalation: windows/privilege-escalation.md
+      - Environment Checks: windows/environment.md
+      - Tokens & Privileges: windows/tokens-privileges.md
+      - DPAPI Discovery: windows/dpapi.md
+      - Services: windows/services.md
       - Services & Registry: windows/services-registry.md
+      - Scheduled Tasks: windows/scheduled-tasks.md
+      - Writable Paths: windows/writable-paths.md
+      - Privilege Escalation: windows/privilege-escalation.md
+      - UAC State: windows/uac.md
+      - Defender & ASR: windows/defender-asr.md
+      - AMSI State: windows/amsi-state.md
+      - PowerShell Logging: windows/powershell-logging.md
+      - App Control: windows/app-control.md
+      - Execution Control Validation: windows/execution-control.md
+      - LOLBin Discovery: windows/lolbins-discovery.md
       - PowerShell: windows/powershell.md
   - Linux:
       - Overview: linux/index.md
       - Enumeration: linux/enumeration.md
       - Privilege Escalation: linux/privilege-escalation.md
+      - Sudo Checks: linux/sudo.md
+      - Capabilities: linux/capabilities.md
+      - systemd: linux/systemd.md
+      - Writable Services: linux/writable-services.md
+      - Cron: linux/cron.md
+      - PATH Hijacking: linux/path-hijacking.md
+      - Docker & LXC: linux/containers.md
+      - Container Detection: linux/container-detection.md
+      - NFS: linux/nfs.md
+      - Credentials & Configs: linux/credentials-configs.md
       - Networking & Files: linux/networking-files.md
   - Web:
       - Overview: web/index.md
       - VHost Discovery: web/vhosts.md
       - Content Discovery: web/content-discovery.md
       - Parameters: web/parameters.md
+      - File Upload: web/file-upload.md
+      - Path Traversal & LFI: web/path-traversal-lfi.md
+      - HTTP Methods: web/http-methods.md
+      - TLS & Certificates: web/tls-certificates.md
+      - IIS Enumeration: web/iis.md
       - Technologies: web/technologies.md
       - Popular Software: web/products.md
       - Authentication: web/authentication.md
+      - API Authorization: web/api-authz.md
       - APIs & GraphQL: web/api-graphql.md
+      - WebSockets: web/websockets.md
       - XSS: web/xss.md
+      - Prototype Pollution: web/prototype-pollution.md
+      - Open Redirect: web/open-redirect.md
       - Injection: web/injection.md
       - SSRF & SSTI: web/ssrf-ssti.md
+      - Deserialization: web/deserialization.md
+      - Request Smuggling: web/request-smuggling.md
+      - Race Conditions: web/race-conditions.md
+      - Cache Poisoning & Deception: web/cache.md
       - JWT & OAuth/OIDC: web/jwt-oauth.md
       - CORS, CSRF & Headers: web/cors-csrf-headers.md
   - Recon:
       - Overview: recon/index.md
       - Passive Subdomains: recon/passive-subdomains.md
+      - Passive Combinations: recon/passive-combinations.md
+      - ASN & CIDR: recon/asn-cidr.md
+      - ASN to IP: recon/asn-to-ip.md
+      - Cloud Assets: recon/cloud-assets.md
       - DNS Resolution: recon/dns-resolution.md
+      - Reverse DNS: recon/reverse-dns.md
+      - Certificate SANs: recon/certificate-sans.md
       - Permutations: recon/permutations.md
+      - Permutation Pipelines: recon/permutations-advanced.md
       - HTTP Probing: recon/http-probing.md
       - Ports & Services: recon/ports-services.md
+      - Screenshots: recon/screenshots.md
+      - Favicon Hunting: recon/favicon-hunting.md
       - Historical URLs: recon/urls-history.md
       - JavaScript: recon/javascript.md
+      - Code Search: recon/code-search.md
       - Shodan: recon/shodan.md
       - Pipelines: recon/pipelines.md
   - Red Team:
@@ -156,11 +211,25 @@ nav:
       - Overview: tools/index.md
       - NetExec: tools/netexec.md
       - PowerView: tools/powerview.md
-      - Subfinder & Amass: tools/subfinder-amass.md
-      - ffuf & Gobuster: tools/ffuf-gobuster.md
-      - httpx & Katana: tools/httpx-katana.md
-      - Nuclei: tools/nuclei.md
       - Impacket: tools/impacket.md
       - Rubeus: tools/powerview-rubeus.md
       - Certipy & BloodHound: tools/certipy-bloodhound.md
+      - Certify: tools/certify.md
+      - ldapsearch: tools/ldapsearch.md
+      - smbclient: tools/smbclient.md
+      - Kerbrute: tools/kerbrute.md
+      - dnsx: tools/dnsx.md
+      - Subfinder & Amass: tools/subfinder-amass.md
+      - naabu: tools/naabu.md
+      - Nmap: tools/nmap.md
+      - gau: tools/gau.md
+      - waybackurls: tools/waybackurls.md
+      - ffuf & Gobuster: tools/ffuf-gobuster.md
+      - Feroxbuster: tools/feroxbuster.md
+      - Arjun: tools/arjun.md
+      - kxss: tools/kxss.md
+      - httpx & Katana: tools/httpx-katana.md
+      - Nuclei: tools/nuclei.md
+      - Hashcat: tools/hashcat.md
+      - John: tools/john.md
       - curl & jq: tools/curl-jq.md

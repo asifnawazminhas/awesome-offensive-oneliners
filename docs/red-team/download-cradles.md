@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Download Cradles
 
 Compact payload retrieval and staging one-liners for Windows and Linux.

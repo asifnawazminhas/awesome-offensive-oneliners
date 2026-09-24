@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Linux Privilege Escalation Checks
 
 Fast checks for common local privilege-escalation conditions.

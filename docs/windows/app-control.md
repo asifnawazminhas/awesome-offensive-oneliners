@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Windows Application Control
 
 One-liners for AppLocker, WDAC, Code Integrity, CLM and Defender visibility.

@@ -18,8 +18,8 @@ Copyable one-liners for penetration testing, Active Directory, web security, rec
 </div>
 
 <div class="ol-stats">
-<div class="ol-stat"><strong>360+</strong><span>practical one-liners</span></div>
-<div class="ol-stat"><strong>70+</strong><span>focused pages</span></div>
+<div class="ol-stat"><strong>840+</strong><span>practical one-liners</span></div>
+<div class="ol-stat"><strong>140+</strong><span>focused pages</span></div>
 <div class="ol-stat"><strong>8</strong><span>major sections</span></div>
 <div class="ol-stat"><strong>/</strong><span>instant search</span></div>
 </div>

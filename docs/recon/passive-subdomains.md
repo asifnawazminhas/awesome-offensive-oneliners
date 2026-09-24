@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Subdomain Enumeration
 
 Passive, active and resolver-backed subdomain discovery one-liners.

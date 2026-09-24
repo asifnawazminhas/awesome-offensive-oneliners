@@ -1,10 +1,23 @@
 # Awesome Offensive OneLiners
 
-A practical collection of copyable one-line commands for penetration testing, Active Directory, web security, reconnaissance and offensive security operations.
+A practical collection of copyable one-line commands for penetration testing, Active Directory, red teaming, web security and offensive security operations.
 
 **Website:** https://oneliners.asifnawazminhas.com/
 
-The project stays intentionally scan-first: one command, one objective, brief context only where it helps you use the one-liner correctly.
+## Philosophy
+
+**One command. One objective. Minimal noise.**
+
+The project prioritises scan-first one-liners, short metadata, useful tool alternatives, context labels, and related-command navigation instead of long tutorials.
+
+## Coverage
+
+- Active Directory: discovery, DNS/SPNs, ACLs, GPOs, trusts, RBCD, MSSQL, WinRM/RDP, sessions, local admins, password policy, LDAP and more
+- Web: VHosts, parameters, uploads, traversal/LFI, APIs, authorization, WebSockets, request smuggling, cache, TLS, IIS and more
+- Recon: passive sources, ASN/CIDR, cloud assets, DNS, permutations, screenshots, favicon pivots, code search and pipelines
+- Windows: tokens, DPAPI, services, scheduled tasks, writable paths, Defender/ASR, UAC, PowerShell logging, AMSI and execution controls
+- Linux: sudo, capabilities, systemd, cron, containers, NFS, writable services, PATH hijacking and credentials/configs
+- Tools: NetExec, PowerView, Impacket, Certify, ldapsearch, dnsx, naabu, Nmap, gau, waybackurls, Feroxbuster, Arjun, kxss, Hashcat, John and more
 
 ## Local development
 
@@ -15,24 +28,14 @@ pip install -r requirements.txt
 mkdocs serve
 ```
 
+Open `http://127.0.0.1:8000/`.
+
 ## Build
 
 ```bash
 mkdocs build --strict
 ```
 
-See `docs/contributing.md` for contributions and `docs/conventions.md` for placeholder conventions.
+## Responsible use
 
-
-## Deep red-team one-liners
-
-The Red Team section also includes focused pages for download cradles, LOLBin/local execution, reverse shells, staging paths and SMB file transfer. Entries stay scan-first and copyable, with only short operational notes where useful.
-
-## Coverage highlights
-
-- Active Directory with NetExec, PowerView, Impacket, Kerberos, delegation, ACLs, AD CS and BloodHound.
-- Recon with Subfinder, Amass, crt.sh, PureDNS, DNS resolution, HTTP probing, Shodan and pipelines.
-- Web with dedicated VHost discovery, content discovery, parameter discovery/fuzzing, technology hunting and common web attack surfaces.
-- Windows and Linux local enumeration, application-control checks, privilege-escalation checks and red-team execution/transfer references.
-
-The website contains 360+ scan-first one-liners across 70+ focused pages.
+Use these commands only in systems and environments where you have explicit authorization to test.

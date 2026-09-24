@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Parameter Discovery & Fuzzing
 
 Hidden parameter discovery, archived parameter mining, reflection triage and value fuzzing.

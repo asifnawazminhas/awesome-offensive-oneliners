@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Popular software fingerprints
 
 Fast local checks for widely deployed software and frameworks.

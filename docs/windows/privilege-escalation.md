@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Windows Privilege Escalation Checks
 
 Fast local checks for common Windows privilege-escalation conditions.

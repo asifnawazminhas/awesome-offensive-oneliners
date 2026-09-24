@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # PowerView
 
 Fast PowerView reference for domain discovery and relationships.

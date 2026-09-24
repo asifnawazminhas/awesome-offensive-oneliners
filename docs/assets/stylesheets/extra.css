@@ -134,3 +134,10 @@
 .ol-mini-card strong { display:block; margin-bottom:.25rem; }
 .ol-mini-card span { color:var(--ol-muted); font-size:.76rem; }
 @media (max-width:700px){ .ol-mini-grid{grid-template-columns:1fr;} }
+
+/* v8 depth expansion */
+.ol-chip-context{border-color:rgba(34,211,238,.28);background:rgba(34,211,238,.07);color:var(--ol-cyan)}
+.md-typeset p > strong:first-child:last-child{letter-spacing:-.01em}
+.md-typeset hr + p strong:first-child{color:var(--ol-muted)}
+.md-typeset .ol-mini-card a{font-weight:720;text-decoration:none}
+.md-typeset .ol-mini-card span{display:block;margin-top:.28rem;line-height:1.5}
